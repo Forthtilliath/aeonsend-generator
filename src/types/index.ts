@@ -1,3 +1,5 @@
+import type { Tuple } from "./helpers";
+
 export interface Card {
 	id: string;
 	name: string;
@@ -25,7 +27,7 @@ type PowerPhase =
 	| "currentPlayerEndDraw";
 
 export interface Mage {
-  id: string;
+	id: string;
 	name: string;
 	title: string;
 	breachs: [Breach, Breach, Breach, Breach];
@@ -36,14 +38,36 @@ export interface Mage {
 	abilityCharge: number;
 }
 
-export interface MarketCondition {
-	type: "gem" | "relic" | "spell";
-	operator: "<=" | ">=" | "=" | "any";
-	cost: number | null;
-}
+type CardType = "gem" | "relic" | "spell";
+
+type MarketConditionAny = {
+	type: CardType;
+	operator: "any";
+	cost: null;
+	costMax?: never;
+};
+
+type MarketConditionComparison = {
+	type: CardType;
+	operator: "<=" | ">=" | "=";
+	cost: number;
+	costMax?: never;
+};
+
+type MarketConditionRange = {
+	type: CardType;
+	operator: "range";
+	cost: number;
+	costMax: number;
+};
+
+export type MarketCondition =
+	| MarketConditionAny
+	| MarketConditionComparison
+	| MarketConditionRange;
 
 export interface SupplyCard extends Card {
-	type: "gem" | "relic" | "spell";
+	type: CardType;
 	position: number;
 	criteria: MarketCondition;
 }
@@ -57,7 +81,7 @@ export interface Battle {
 }
 
 export interface Expedition {
-	battles: Battle[];
+	battles: Tuple<Battle, 4>;
 	playerInfo: {
 		mode: "perPlayer" | "total";
 		numPlayers: number;
@@ -81,5 +105,5 @@ export interface RerollConfig {
 
 export interface MarketTemplate {
 	name: string;
-	config: MarketCondition[];
+	config: Tuple<MarketCondition, 9>;
 }

@@ -766,9 +766,345 @@ export const cards: Record<string, Card[]> = {
 				"Lorsque préparé, une fois par tour, pendant votre phase principale, vous pouvez gagner 1 charge. Lancer : Infligez 3 dégâts.",
 			image: "",
 		},
-		{ id: "", name: "", cost: 3, description: "", image: "" },
-		{ id: "", name: "", cost: 3, description: "", image: "" },
-		{ id: "", name: "", cost: 3, description: "", image: "" },
+		{
+			id: "R19",
+			name: "Vol d'essence",
+			cost: 3,
+			description:
+				"Lancer : Infligez 3 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, un joueur gagne 1 point de vie.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-080",
+			name: "Flèche Éclair",
+			cost: 5,
+			description:
+				"Lancer : Infligez 3 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, Gravehold gagne 1 point de vie.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-085",
+			name: "Vivacité d'Esprit",
+			cost: 6,
+			description:
+				"Lorsque préparé, si vous acquérez une carte, vous pouvez la placer sur votre pioche. Lancer : Infligez 4 dégâts.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-087",
+			name: "Relais Arcanique",
+			cost: 8,
+			description:
+				"Lancer : Un allié pioche une carte, puis révèle sa main. Infligez 4 dégâts. Infligez 1 dégâts supplémentaire par carte de sa main coûtant 1 Ether ou plus.",
+			image: "",
+		},
+		{
+			id: "SE127",
+			name: "Lame de sagesse",
+			cost: 6,
+			description:
+				"Lorsque vous acquerez cette carte, si sept autres cartes ou plus se trouvent dans votre défausse, gagnez 2 points de vie. Lancer : Infligez 5 dégâts.",
+			image: "",
+		},
+		{
+			id: "SE130",
+			name: "Coup double",
+			cost: 3,
+			description:
+				"Lancer : Infligez 1 dégât. Infligez 1 dégât. (Les effets modifiant les dégâts concernent les deux sources de dégâts.)",
+			image: "",
+		},
+		{
+			id: "SE129",
+			name: "Courant flamboyant",
+			cost: 3,
+			description:
+				"Lorsque préparé, lors de votre phase d'incantation, vous pouvez perdre 2 jetons Pulsation. Si vous le faites, les sorts que vous lancez ce tour infligent 1 dégât supplémentaire. Lancer : Infligez 1 dégâts. Gagnez 1 jeton Pulsation.",
+			image: "",
+		},
+		{
+			id: "SE145",
+			name: "Force colossale",
+			cost: 5,
+			description:
+				"Lancer : Infligez 4 dégâts à la némésis. Réduisez une serviteur au silence.",
+			image: "",
+		},
+		{
+			id: "R27",
+			name: "Fouet ardent",
+			cost: 6,
+			description:
+				"Lorsque préparé, vous pouvez dépenser 2 Ether durant votre phase principale, pour lancer un sort préparé chez n'importe quel joueur. Lancer : Infligez 4 dégâts.",
+			image: "",
+		},
+		{
+			id: "SE140",
+			name: "Tir de précision",
+			cost: 3,
+			description:
+				"Lien (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 2 dégâts. Si six autres cartes ou plus se trouvent dans votre défausse, infligez 2 dégâts supplémentaires.",
+			image: "",
+		},
+		{
+			id: "SE138",
+			name: "Frappe audacieuse",
+			cost: 2,
+			description:
+				"Lancer : Infligez 1 dégât. Réduisez un serviteur au silence.",
+			image: "",
+		},
+		{
+			id: "R14",
+			name: "Vision amplifiée",
+			cost: 4,
+			description:
+				"Lancer : Stabilisez votre brèche ayant le coût le plus faible. Infligez 2 dégâts. Si toutes vos brèches sont ouvertes, infligez 1 dégât de plus.",
+			image: "",
+		},
+		{
+			id: "R41",
+			name: "La marque du sage",
+			cost: 7,
+			description:
+				"Ce sort doit être préparé sur deux brèches adjacentes, de manière à ce qu'il touche les deux brèches. Les deux brèches sont occupées par ce sort. Lorsque préparé, piochez une carte de plus lors de votre phase de pioche. Lancer : Infligez 6 dégâts.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-056",
+			name: "Ascension spirituelle",
+			cost: 8,
+			description:
+				"Lorsque préparé, une fois par tour, si vous gagnez une charge lors de votre tour, un allié gagne 2 charges. Lancer : Infligez 5 dégâts.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-082",
+			name: "Faille Instable",
+			cost: 5,
+			description:
+				"Lorsque préparé, à la fin de votre phase d'incantation, infligez 1 dégât et gagnez 1 Ether. Lancer : Infligez 4 dégâts.",
+			image: "",
+		},
+		{
+			id: "R23",
+			name: "Vague d'oubli",
+			cost: 5,
+			description:
+				"Lorsque préparé, une fois par tour, durant votre phase principale, gagnez 1 Ether. Lancer : Infligez 2 dégâts. Vous pouvez défausser une gemme pour infliger autant de dégâts supplémentaire que son coût.",
+			image: "",
+		},
+		{
+			id: "R22",
+			name: "Tentacule de lave",
+			cost: 4,
+			description:
+				"Lorsque préparé, à la fin de votre phase d'incantation, infligez 1 dégât. Lancer : Infligez 3 dégâts.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-083",
+			name: "Afflux de Volonté",
+			cost: 5,
+			description:
+				"Lancer : Infligez 2 dégâts. Vous pouvez acquérir un sort d'une pile de la réserve coûtant 4 Ether ou moins et le placer sur votre pioche.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-076",
+			name: "Orage Jumelé",
+			cost: 3,
+			description:
+				"LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 2 dégâts. S'il s'agit du second Orage jumelé que vous lancez ce tour, infligez 2 dégâts supplémentaires.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-088",
+			name: "Explosion Étourdissante",
+			cost: 8,
+			description:
+				"Lancer : Infligez 6 dégâts. Révélez puis replacez les cartes du paquet d'ordre du tour dans l'ordre de votre choix.",
+			image: "",
+		},
+		{
+			id: "SE131",
+			name: "Toucher vampirique",
+			cost: 2,
+			description: "Lancer : Infligez 1 dégât. Gagnez 1 charge.",
+			image: "",
+		},
+		{
+			id: "R40",
+			name: "Radiance",
+			cost: 8,
+			description: "Lancer : Infligez 5 dégâts. Chaque allié pioche une carte.",
+			image: "",
+		},
+		{
+			id: "R37",
+			name: "Pyromancie",
+			cost: 7,
+			description:
+				"Lancer : Infligez 1 dégât. Les alliés peuvent collectivement défausser jusqu'à deux cartes. Pour chaque carte ainsi défaussée, infligez 3 dégâts supplémentaires.",
+			image: "",
+		},
+		{
+			id: "R25",
+			name: "Aperçu planaire",
+			cost: 6,
+			description:
+				"Lancer : Infligez 2 dégâts. Infligez 1 dégât supplémentaire pour chacune de vos brèches ouvertes.",
+			image: "",
+		},
+		{
+			id: "R16",
+			name: "Arc chaotique",
+			cost: 6,
+			description:
+				"Lancer : Infligez 3 dégâts. Infligez 2 dégâts supplémentaires par sort préparé sur une brèche adjacente.",
+			image: "",
+		},
+		{
+			id: "R24",
+			name: "Flamme du phénix",
+			cost: 3,
+			description:
+				"Lancer : Infligez 2 dégâts. Vous pouvez perdre 1 charge pour infliger 2 dégâts supplémentaires.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-086",
+			name: "Effusion de Flammes",
+			cost: 6,
+			description:
+				"Lancer : Infligez 5 dégâts. Vous pouvez lancer le sort préparé d'un joueur coûtant 5 Ether ou moins.",
+			image: "",
+		},
+		{
+			id: "SE141",
+			name: "Éruption psychique",
+			cost: 8,
+			description:
+				"Lancer : Infligez autant de dégâts que le nombre de cartes présentes dans la défausse d'un joueur.",
+			image: "",
+		},
+		{
+			id: "R26",
+			name: "Écho spectral",
+			cost: 3,
+			description:
+				"Lancer : Infligez 2 dégâts. Vous pouvez détruire une carte de votre main.",
+			image: "",
+		},
+		{
+			id: "R21",
+			name: "Mise à feu",
+			cost: 4,
+			description: "Lancer : Infligez 2 dégâts. Un allié gagne 1 charge.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-052",
+			name: "Rebonds explosifs",
+			cost: 6,
+			description: "Écho. Lancer : Infligez 2 dégâts.",
+			image: "",
+		},
+		{
+			id: "P23",
+			name: "Esprit voleur",
+			cost: 5,
+			description: "Lancer : Infligez 4 dégâts. Gagnez 1 Ether.",
+			image: "",
+		},
+		{
+			id: "SE132",
+			name: "Éclair de génie",
+			cost: 4,
+			description:
+				"LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 3 dégâts. Si six autres cartes ou plus se trouvent dans votre défausse, vous pouvez acquérir un Éclair de génie de la réserve et le placer sur votre pioche.",
+			image: "",
+		},
+		{
+			id: "R15",
+			name: "Nexus des arcanes",
+			cost: 7,
+			description:
+				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez reprendre une gemme jouée ce tour-ci en main. Lancer : Infligez 4 dégâts.",
+			image: "",
+		},
+		{
+			id: "P086",
+			name: "Flamme éclairante",
+			cost: 6,
+			description:
+				"Lancer : Infligez 5 dégâts. Si ce sort a été lancé depuis une brèche III ou IV ouverte, vous pouvez le détruire. Si vous le faites, gagnez 3 charges.",
+			image: "",
+		},
+		{
+			id: "P088",
+			name: "Arc temporel",
+			cost: 7,
+			description:
+				"Ce sort doit être préparé sur deux brèches adjacentes (la carte doit toucher les deux brèches). Les deux brèches sont occupées. Lancer : Infligez 4 dégâts. Vous pouvez placer cette carte dans votre main.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-078",
+			name: "Éclair Destructeur",
+			cost: 4,
+			description:
+				"Lancer : Infligez 2 dégâts. Vous pouvez détruire une carte de votre main. OU Lancer : Défaussez une gemme de votre main. Si vous le faites, infligez 4 dégâts.",
+			image: "",
+		},
+		{
+			id: "R39",
+			name: "Flamber",
+			cost: 4,
+			description:
+				"Lorsque vous gagnez cette carte, vous pouvez la placer sur la défausse de n'importe quel joueur. Lancer : Infligez 2 dégâts. Infligez 1 dégât supplémentaire par Flamber que vous avez lancé ce tour et par autre Flamber préparé sur vos brèches.",
+			image: "",
+		},
+		{
+			id: "R36",
+			name: "Conduit du néant",
+			cost: 7,
+			description:
+				"Lancer : Révélez une carte de votre main coûtant 2 Ether ou plus. Si vous le faites, infligez autant de dégâts que le nombre de cartes manquantes dans la pile de cette carte dans la réserve. Puis un allié gagne une carte de cette pile. (Au départ, les piles de gemmes contiennent 7 cartes, et les piles de sorts et de reliques 5 cartes.)",
+			image: "",
+		},
+		{
+			id: "EN-FIN-055",
+			name: "Impact concetré",
+			cost: 5,
+			description:
+				"Lancer : Infligez 4 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, infligez 2 dégâts à la némésis. (Les effets modifiant les dégâts concernent les deux sources de dégâts.)",
+			image: "",
+		},
+		{
+			id: "EN-FIN-053",
+			name: "Déluge de puissance",
+			cost: 6,
+			description:
+				"Lancer : Infligez 4 dégâts. Un allié peut défausser jusqu'à deux cartes de sa main et pioche ensuite une carte pour chaque carte ainsi défaussée.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-051",
+			name: "Symbiose léthale",
+			cost: 5,
+			description:
+				"Lancer : Infligez 4 dégâts. Un allié peut défausser une Symbiose léthale de sa main pour pioche une carte. S'il le fait, infligez 3 dégâts. (Les effets modifiants les dégâts concernent les deux sources de dégâts.)",
+			image: "",
+		},
+		{
+			id: "R42",
+			name: "Éclair de prophétie",
+			cost: 6,
+			description:
+				"Lancer : Infligez 5 dégâts. Vous pouvez perdre 1 charge. Si vous le faites, révélez les deux premières cartes de la pioche de la némésis et replacez-les dans l'ordre de votre choix.",
+			image: "",
+		},
 		{ id: "", name: "", cost: 3, description: "", image: "" },
 		{ id: "", name: "", cost: 3, description: "", image: "" },
 		{ id: "", name: "", cost: 3, description: "", image: "" },

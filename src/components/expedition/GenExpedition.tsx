@@ -14,11 +14,12 @@ import type {
 	Battle,
 	Expedition,
 	MarketCondition,
+	Nemesis,
 	PlayerConfig,
 	RerollConfig,
 	SupplyCard,
 } from "../../types";
-
+import type { Tuple } from "../../types/helpers";
 import {
 	generateSupply,
 	getTypeLabel,
@@ -59,7 +60,7 @@ const FormExpedition: FunctionComponent = () => {
 		const selectedNemeses = [1, 2, 3, 4].map((tier) => {
 			const tierNemeses = nemeses[tier];
 			return tierNemeses[Math.floor(Math.random() * tierNemeses.length)];
-		});
+		}) as Tuple<Nemesis, 4>;
 
 		const numMages =
 			playerConfig.mode === "perPlayer"
@@ -72,7 +73,7 @@ const FormExpedition: FunctionComponent = () => {
 				: marketTemplates[selectedMarket].config;
 
 		const allMages = [...mages];
-		const battles: Battle[] = selectedNemeses.map((nemesis, index) => {
+		const battles = selectedNemeses.map((nemesis, index) => {
 			const shuffledMages = [...allMages].sort(() => Math.random() - 0.5);
 			const selectedMages = shuffledMages.slice(
 				0,
@@ -86,7 +87,7 @@ const FormExpedition: FunctionComponent = () => {
 				supply: generateSupply(marketConfig, [], rerollConfig.removeExcess),
 				remainingRerolls: rerollConfig.maxIndividualRerolls,
 			};
-		});
+		}) as Tuple<Battle, 4>;
 
 		setExpedition({
 			battles,
@@ -238,7 +239,7 @@ ${battle.nemesis.description}
 Difficulte: ${battle.nemesis.difficulty} | Vie: ${battle.nemesis.hp}
 
 MAGES:
-${battle.mages.map((m) => `  - ${m.name} (${m.specialty})`).join("\n")}
+${battle.mages.map((m) => `  - ${m.name} (${m.title})`).join("\n")}
 
 MARCHE:
 ${battle.supply.map((c) => `  - ${c.name} - ${c.cost} Aether (${getTypeLabel(c.type)})`).join("\n")}
@@ -322,7 +323,7 @@ ${battle.supply.map((c) => `  - ${c.name} - ${c.cost} Aether (${getTypeLabel(c.t
 								const excessByType = hasExcessCards(battle, marketConfig);
 
 								return (
-									<Fragment key={idx}>
+									<Fragment key={battle.number}>
 										<div className="bg-slate-900/90 rounded-lg p-4 border border-red-700/40 shadow-lg shadow-red-900/20">
 											<div className="flex justify-between items-start mb-3">
 												<div>
@@ -361,9 +362,9 @@ ${battle.supply.map((c) => `  - ${c.name} - ${c.cost} Aether (${getTypeLabel(c.t
 													Vos {battle.mages.length} mages :
 												</h3>
 												<div className="grid gap-2 grid-cols-2 md:grid-cols-4">
-													{battle.mages.map((mage, mageIdx) => (
+													{battle.mages.map((mage) => (
 														<div
-															key={mageIdx}
+															key={mage.id}
 															className="bg-linear-to-br from-indigo-800/30 to-purple-800/30 rounded-lg p-2 border border-indigo-500/40 text-center shadow-md"
 														>
 															<div className="font-bold text-sm">
@@ -386,7 +387,7 @@ ${battle.supply.map((c) => `  - ${c.name} - ${c.cost} Aether (${getTypeLabel(c.t
 												)}
 											</h3>
 											<div className="grid gap-2 grid-cols-3 md:grid-cols-9">
-												{battle.supply.map((card, cardIdx) => {
+												{battle.supply.map((card) => {
 													const canReroll =
 														rerollConfig.type === "individual" &&
 														battle.remainingRerolls > 0;
@@ -394,7 +395,7 @@ ${battle.supply.map((c) => `  - ${c.name} - ${c.cost} Aether (${getTypeLabel(c.t
 
 													return (
 														<SupplyCardComponent
-															key={card.id ?? cardIdx}
+															key={card.id}
 															card={card}
 															canReroll={canReroll}
 															showRemove={showRemove}

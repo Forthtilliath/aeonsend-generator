@@ -98,15 +98,18 @@ export const MarketSelector = ({
 							</div>
 							<div className="grid grid-cols-3 md:grid-cols-9 gap-2">
 								{customMarket.map((slot, idx) => (
+									// biome-ignore lint/suspicious/noArrayIndexKey: can't use anything else here
 									<div key={idx} className="bg-gray-600/50 rounded p-2">
 										<select
 											value={slot.type}
 											onChange={(e) => {
 												const newMarket = [...customMarket];
-												newMarket[idx].type = e.currentTarget.value as
+												const newType = e.currentTarget.value as
 													| "gem"
 													| "relic"
 													| "spell";
+												// Préserver la structure existante en changeant juste le type
+												newMarket[idx] = { ...newMarket[idx], type: newType };
 												setCustomMarket(newMarket);
 											}}
 											className="w-full bg-gray-700 rounded px-1 py-1 text-xs mb-1"
@@ -122,13 +125,35 @@ export const MarketSelector = ({
 											value={slot.operator}
 											onChange={(e) => {
 												const newMarket = [...customMarket];
-												newMarket[idx].operator = e.currentTarget.value as
+												const newOperator = e.currentTarget.value as
+													| "any"
 													| "<="
 													| ">="
 													| "="
-													| "any";
-												if (e.currentTarget.value === "any")
-													newMarket[idx].cost = null;
+													| "range";
+
+												// Créer une nouvelle condition avec le bon type
+												if (newOperator === "any") {
+													newMarket[idx] = {
+														type: slot.type,
+														operator: "any",
+														cost: null,
+													};
+												} else if (newOperator === "range") {
+													newMarket[idx] = {
+														type: slot.type,
+														operator: "range",
+														cost: slot.operator !== "any" ? slot.cost : 4,
+														costMax:
+															slot.operator === "range" ? slot.costMax : 5,
+													};
+												} else {
+													newMarket[idx] = {
+														type: slot.type,
+														operator: newOperator,
+														cost: slot.operator !== "any" ? slot.cost : 4,
+													};
+												}
 												setCustomMarket(newMarket);
 											}}
 											className="w-full bg-gray-700 rounded px-1 py-1 text-xs mb-1"
@@ -136,23 +161,61 @@ export const MarketSelector = ({
 											<option value="<=">≤</option>
 											<option value=">=">≥</option>
 											<option value="=">=</option>
+											<option value="range">Range</option>
 											<option value="any">any</option>
 										</select>
-										{slot.operator !== "any" && (
+										{slot.operator === "range" ? (
+											<div className="flex gap-1">
+												<input
+													type="number"
+													min="0"
+													max="9"
+													value={slot.cost}
+													onChange={(e) => {
+														const newMarket = [...customMarket];
+														newMarket[idx] = {
+															...slot,
+															cost: parseInt(e.currentTarget.value, 10) || 0,
+														};
+														setCustomMarket(newMarket);
+													}}
+													className="w-full bg-gray-700 rounded px-1 py-1 text-xs text-center"
+													placeholder="Min"
+												/>
+												<input
+													type="number"
+													min="0"
+													max="9"
+													value={slot.costMax}
+													onChange={(e) => {
+														const newMarket = [...customMarket];
+														newMarket[idx] = {
+															...slot,
+															costMax: parseInt(e.currentTarget.value, 10) || 0,
+														};
+														setCustomMarket(newMarket);
+													}}
+													className="w-full bg-gray-700 rounded px-1 py-1 text-xs text-center"
+													placeholder="Max"
+												/>
+											</div>
+										) : slot.operator !== "any" ? (
 											<input
 												type="number"
 												min="0"
 												max="9"
-												value={slot.cost || 0}
+												value={slot.cost}
 												onChange={(e) => {
 													const newMarket = [...customMarket];
-													newMarket[idx].cost =
-														parseInt(e.currentTarget.value, 10) || 0;
+													newMarket[idx] = {
+														...slot,
+														cost: parseInt(e.currentTarget.value, 10) || 0,
+													};
 													setCustomMarket(newMarket);
 												}}
 												className="w-full bg-gray-700 rounded px-1 py-1 text-xs text-center"
 											/>
-										)}
+										) : null}
 									</div>
 								))}
 							</div>
@@ -171,6 +234,7 @@ export const MarketSelector = ({
 							<div className="grid grid-cols-3 md:grid-cols-9 gap-2">
 								{marketTemplates[selectedMarket].config.map((slot, idx) => (
 									<div
+										// biome-ignore lint/suspicious/noArrayIndexKey: can't use anything else here
 										key={idx}
 										className="bg-gray-600/30 rounded p-2 opacity-75"
 									>
