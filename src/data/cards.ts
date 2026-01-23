@@ -1,0 +1,778 @@
+import type { Card } from "../types";
+
+export const cards: Record<string, Card[]> = {
+	gems: [
+		{
+			id: "P089",
+			name: "Quartz fracturé",
+			cost: 4,
+			description:
+				"Gagnez 2 Ether. Vous pouvez détruire deux cartes de cette piles de cartes. Si vous le faites, gagnez 1 Ether supplémentaire",
+			image: "💎",
+		},
+		{
+			id: "R39",
+			name: "Scarabée fossilisé",
+			cost: 3,
+			description: "Gagnez 2 Ether OU Détruisez une carte de votre main.",
+			image: "💜",
+		},
+		{
+			id: "DVS-050",
+			name: "Fluorite lumineuse",
+			cost: 7,
+			description:
+				"Gagnez 3 Ether. Placez le prochain sort que vous acquérez ce tour dans votre main.",
+			image: "💚",
+		},
+		{
+			id: "EN-FIN-035",
+			name: "Perle résonnante",
+			cost: 3,
+			description:
+				"Gagnez 2 Ether. Un allié peut défauser une Perle résonnante de sa main pour pioche une carte. S'il le fait, gagnez 1 Ether supplémentaire.",
+			image: "🟡",
+		},
+		{
+			id: "EN-FIN-036",
+			name: "Exogranite",
+			cost: 3,
+			description: "Gagnez 2 Ether. OU Détruisez cette carte. Gagnez 3 Ether.",
+			image: "⚫",
+		},
+		{
+			id: "EN-FIN-037",
+			name: "Sionite de l'ombre",
+			cost: 3,
+			description:
+				"Gagnez 2 Ether. Si une Sionite de l'ombre se trouve dans la défausse d'un allié, gagnez 1 Ether supplémentaire.",
+			image: "⬜",
+		},
+		{
+			id: "EN-FIN-038",
+			name: "Jaspe périodiquee",
+			cost: 4,
+			description:
+				"Gagnez 2 Ether. Si la première carte de vote défausse est un sort, vous pouvez placer cette gemme sur votre pioche.",
+			image: "🟢",
+		},
+		{
+			id: "EN-FIN-039",
+			name: "Rubidium énergisé",
+			cost: 5,
+			description:
+				"Gagnez 3 Ether. Un allié peut défausse une carte de sa main. S'il le fait, ce joueur gagne 1 charge.",
+			image: "🔵",
+		},
+		{
+			id: "EN-FIN-040",
+			name: "Explosite brute",
+			cost: 6,
+			description:
+				"Gagnez 3 Ether. OU Détruisez une carte présente dans la pile de la réserve de cette carte. Si vous le faites, infigez 3 dégâts.",
+			image: "🔴",
+		},
+		{
+			id: "LP-FIN-064",
+			name: "Héliolite Intense",
+			cost: 5,
+			description:
+				"Lorsque vous acquérez cette carte, s'il s'agit de la seconde carte que vous acquérez ce tour, prenez-la en main. Gagnez 3 Ether.",
+			image: "💠",
+		},
+		{
+			id: "SE143",
+			name: "Tétrite lumineuse",
+			cost: 6,
+			description:
+				"Gagnez 4 Ether qui ne peuvent être utilisés que pour acquérir des cartes.",
+			image: "",
+		},
+		{
+			id: "R04",
+			name: "Jade",
+			cost: 2,
+			description: "Gagnez 2 Ether.",
+			image: "",
+		},
+		{
+			id: "R36",
+			name: "Agate sangsue",
+			cost: 3,
+			description:
+				"Lorsque vous gagnez cette carte, gagnez 1 charge. Gagnez 2 Ether.",
+			image: "",
+		},
+		{
+			id: "R06",
+			name: "Perle filtrante",
+			cost: 3,
+			description:
+				"Gagnez 2 Ether. Chaque joueur révèle la première carte de sa pioche et peut soit la défausser soit la remettre sur le dessus de sa pioche.",
+			image: "",
+		},
+		{
+			id: "R30",
+			name: "Pierre de douleur",
+			cost: 6,
+			description: "Gangez 3 Ether. OU Gagnez 2 Ether et infligez 1 dégât.",
+			image: "",
+		},
+		{
+			id: "R02",
+			name: "Saphir nuageux",
+			cost: 6,
+			description:
+				"Gagnez 3 Ether. S'il s'agit du premier Saphir nuageux que vous jouez ce tour, un allié gagne 1 charge.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-059",
+			name: "Péridot en Fusion",
+			cost: 3,
+			description:
+				"Gagnez 2 Ether. S'il s'agit du second Péridot en Fusion que vous jouez ce tour, vous pouvez détruire cette carte pour acquérir une carte d'un pile de la réserve coûtant 4 Ether ou moins.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-065",
+			name: "Sazite de Duplication",
+			cost: 6,
+			description:
+				"Gagnez 3 Ether. La prochaine fois que vous acquérez une carte ce tour, vous pouvez défausser une sort préparé coûtant 1 Ether ou plus pour qu'un allié acquière une carte de la réserve coûtant aussi cher ou moins cher que la carte que vous avez acquise.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-058",
+			name: "Pyrite Instable",
+			cost: 2,
+			description:
+				"Gagnez 1 ETher. Vous pouvez détruire cette carte pour gagner 2 Ether supplémentaire.",
+			image: "",
+		},
+		{
+			id: "R07",
+			name: "Ambre de V'risbois",
+			cost: 3,
+			description:
+				"Lorsque vous acquérez cette carte, vous pouvez la placer au-dessus de votre pioche. Gagnez 2 Ether.",
+			image: "",
+		},
+		{
+			id: "R03",
+			name: "Agréagat de diamants",
+			cost: 4,
+			description:
+				"Gagnez 2 Ether. Si c'est le second Agrégat de diamants que vous jouez ce tour, gagnez 2 Ether de plus.",
+			image: "",
+		},
+		{
+			id: "GE01",
+			name: "Pierre de sang",
+			cost: 6,
+			description:
+				"Lorsque vous acquérez une Pierre de Sang pour la première fois de votre tour, gagnez 3 Ether. Gagnez 3 Ether.",
+			image: "",
+		},
+		{
+			id: "GE02",
+			name: "Minerai de la brèche",
+			cost: 4,
+			description:
+				"Gagnez 2 Ether. OU Stabilisez votre brèche fermée ayant le coût de stabilisation le plus faible.",
+			image: "",
+		},
+		{
+			id: "R01",
+			name: "Opale brûlante",
+			cost: 5,
+			description:
+				"Gagnez 3 Ether. Vous pouvez défausser une carte de votre main pour qu'un allié pioche une carte.",
+			image: "",
+		},
+		{
+			id: "R05",
+			name: "Rubis fulgurant",
+			cost: 4,
+			description:
+				"Gagnez 2 Ether. Gagnez 1 Ether supplémentaire qui ne peut être utilisé que pour acquérir un sort.",
+			image: "",
+		},
+		{
+			id: "R29",
+			name: "Berylite hantée",
+			cost: 3,
+			description:
+				"Gagnez 2 Ether. OU Défaussez une carte de votre main. Si vous le faites, gagnez 2 charges.",
+			image: "",
+		},
+		{
+			id: "R28",
+			name: "Élément extraterrestre",
+			cost: 4,
+			description:
+				"Gagnez 1 Ether. Gagnez 1 Ether supplémentaire pour chacune de vos brèches ayant un sort préparé.",
+			image: "",
+		},
+		{
+			id: "GE04",
+			name: "Lingot erratique",
+			cost: 5,
+			description:
+				"Gagnez 2 Ether. Gagnez 2 Ether supplémentaire s'il y a au moins une carte Ordre du tour de la némésis dans la défausse des cartes Ordre du tour.",
+			image: "",
+		},
+		{
+			id: "GE03",
+			name: "Diamant inquiétant",
+			cost: 3,
+			description:
+				"Gagnez 2 Ether. Vous pouvez défausser une sort préparé. Si vous le faites, gagnez 1 Ether supplémentaire.",
+			image: "",
+		},
+		{
+			id: "GE05",
+			name: "Magnétite congelée",
+			cost: 3,
+			description:
+				"Gagnez 2 Ether. Vous pouvez placer la prochainre carte que vous acquérez lors de ce tour au somment de votre pioche.",
+			image: "",
+		},
+		{
+			id: "GE06",
+			name: "Bouquet de scories",
+			cost: 4,
+			description:
+				"Gagnez 2 Ether. Si le plaier de la némésis est supérieur ou égal à 2, gagnez 1 Ether supplémentaire.",
+			image: "",
+		},
+		{
+			id: "GE07",
+			name: "Verre pyroclastique",
+			cost: 3,
+			description:
+				"Lorsque vous acquérez cette carte lors de votre tour, vous pouvez dépenser 2 Ether. Si vous le faites, un allié acquiert lui aussi un Verre pyroclastique et le place au somment de sa pioche. Gagnez 2 Ether.",
+			image: "",
+		},
+		{
+			id: "SE139",
+			name: "Résine d'oubli",
+			cost: 5,
+			description:
+				"Gagnez 2 Ether. Si vous avez trois cartes ou plus coûtant 0 Ether en main, gagnez 2 Ether supplémentaire.",
+			image: "",
+		},
+		{
+			id: "SE146",
+			name: "Invoquine",
+			cost: 3,
+			description:
+				"Gagnez 2 Ether. OU Acquérez une Invoquine de la réserve et placez-la sur la défausse d'un allié.",
+			image: "",
+		},
+		{
+			id: "SE137",
+			name: "Lacosite muette",
+			cost: 5,
+			description:
+				"Lorsque vous acquérez cette carte, réduisez un serviteur au silence. Gagnez 3 Ether.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-063",
+			name: "Cyclite Oblongue",
+			cost: 4,
+			description:
+				"Gagnez 2 Ether. La prochaine fois que vous ouvrez ou stabilisez une brèche ce tour, gagnez 1 charge.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-061",
+			name: "Phénixium Fossilisé",
+			cost: 4,
+			description:
+				"Gagnez 2 Ether. La prochaine fois que vous acquérez une carte ce tour, vous pouvez lancer le sort préparé d'un joueur.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-062",
+			name: "Saphir Galvanisé",
+			cost: 4,
+			description: "Gagnez 2 Ether. Xaxos : Paria gagne 1 charge.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-060",
+			name: "Spirale d'Ambre",
+			cost: 3,
+			description:
+				"Gagnez 2 Ether. Vous pouvez subir 1 dégâts pour détruire une carte de votre main coûtant 0 Ether.",
+			image: "",
+		},
+		{
+			id: "SE148",
+			name: "Pointe de vide",
+			cost: 3,
+			description:
+				"Gagnez 2 Ether. Chaque allié peut défausser une carte de samain pour gagner 1 charge.",
+			image: "",
+		},
+		{
+			id: "SE147",
+			name: "Noyaux de triplite",
+			cost: 4,
+			description:
+				"Gagnez 3 Ether qui ne peuvent être utilisés que pour acquérir des cartes.",
+			image: "",
+		},
+		{
+			id: "SE133",
+			name: "Voltécorce",
+			cost: 3,
+			description:
+				"Gagnez 2 Ether. Gagnez 1 jeton Pulsation. OU Gagnez 2 Ether. Perdez 1 jeton Pulsation. Si vous le faites, gagnez 1 charge.",
+			image: "",
+		},
+		{
+			id: "SE136",
+			name: "Fragment de mentite",
+			cost: 5,
+			description:
+				"Gagnez 3 Ether. Si sept cartes ou plus se trouve dans votre défausse, gagnez 1 Ether supplémentaire.",
+			image: "",
+		},
+	],
+	relics: [
+		{
+			id: "GE08",
+			name: "Boussole de cairn",
+			cost: 4,
+			description:
+				"Un allié peut préparer un sort de sa défausse en le plaçant sur l'une de ses brèches ouvertes ou fermées.",
+			image: "",
+		},
+		{
+			id: "GE09",
+			name: "Parchemin du conclave",
+			cost: 3,
+			description:
+				"Gagnez 1 charge. Si la pile de cette carte est vide dans la réserve, vous pouvez détruire la première carte de la défausse d'un allié.",
+			image: "",
+		},
+		{
+			id: "GE10",
+			name: "Attrapeur de démons",
+			cost: 3,
+			description:
+				"Vous pouvez détruire une carte de votre main ou de votre défausse. Révélez la première carte du paquet d'ordre de tour. Si vous révélez une carte Ordre du tour de la némésis, vous pouvez cette en dessous du paquet d'ordre de tour.",
+			image: "",
+		},
+		{
+			id: "GE11",
+			name: "Totem de mage",
+			cost: 2,
+			description:
+				"Détruisez une gemme ou une relique que vous avez jouée lors de ce tour. OU Détruisez cette carte. Gravehold gagne 1 point de vie.",
+			image: "",
+		},
+		{
+			id: "GE12",
+			name: "Fétiche primordial",
+			cost: 4,
+			description:
+				"Stabilisez une brècge de n'importe quel joueur. OU Détruisez cette carte. Gagnez 3 points de vie.",
+			image: "",
+		},
+		{
+			id: "GE13",
+			name: "Gantelet de vorticité",
+			cost: 6,
+			description:
+				"Lancez un sort préparé de n'importe quel joueur. Renvoyez ce sort dans la main de ce joueur.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-041",
+			name: "Galaxie de poche",
+			cost: 3,
+			description:
+				"Un allié peut défausser une Galaxie de poche de sa main pour pioche une carte. Gagnez 1 charge ou stabilisez votre brèche fermée qui présente le coût de stabilisation le plus faible. Si un allié a défaussé une Galaxie de poche. résolvez ces deux effets.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-042",
+			name: "Babiole galvanisée",
+			cost: 3,
+			description:
+				"Stabilisez la brèche d'un allié. OU Lancez le sort préparé d'un joueur. Vous pouvez détruire ce sort.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-043",
+			name: "Feu en cage",
+			cost: 3,
+			description:
+				"Détruisez la prmeière carte de la défausse d'un joueur. OU Détruisez cette carte. Gagnez 2 points de vie.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-44",
+			name: "Conduit de douleur",
+			cost: 3,
+			description:
+				"Connectez cette relique à la brèche d'un joueur. Lorsqu'un sort est lancé depuis cette brèche, il inflige 2 dégâts supplémentaires. Cette relique est ensuite défaussée.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-45",
+			name: "Conduit d'éther",
+			cost: 4,
+			description:
+				"Connectez cette relique à la brèche d'un joueur. Lorsqu'un sort est lancé depuis cette brèche, le joueur qui lance ce soir gagne 1 Ether.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-46",
+			name: "Conduit de lien",
+			cost: 6,
+			description:
+				"Connectez cette relique à la brèche d'un joueur. Deux sorts peuvent être préparés sur cette brèche.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-47",
+			name: "Puits d'énergie",
+			cost: 7,
+			description:
+				"Gravehold gagne 2 points de vie. OU Une joueur gagne 2 points de vie.",
+			image: "",
+		},
+		{
+			id: "SE144",
+			name: "Filaments d'âme",
+			cost: 5,
+			description:
+				"Un joueur gagne un jeton Pulsation. Chaque joueur qui possède au moins 2 jetons Pulsations gagne 1 charge.",
+			image: "",
+		},
+		{
+			id: "R37",
+			name: "Manteau en fusion",
+			cost: 5,
+			description:
+				"Gagnez 1 charge. Vous pouvez détruire une carte de votre main ou du dessus de la défausse de n'importe quel joueur.",
+			image: "",
+		},
+		{
+			id: "R09",
+			name: "Vortex en bouteille",
+			cost: 3,
+			description:
+				"Détruisez cette carte. Détruisez jusqu'à deux cartes de votre main ou de votre défausse. Pioche une carte.",
+			image: "",
+		},
+		{
+			id: "R08",
+			name: "Bâton d'explosion",
+			cost: 4,
+			description:
+				"Vous pouvez lancer un sort que vous avez préparé ce tour-ci et infliger 2 dégâts supplémentaires avec ce sort.",
+			image: "",
+		},
+		{
+			id: "R32",
+			name: "Sphère des secrets",
+			cost: 3,
+			description:
+				"Gagnez 1 charge. OU Vous pouvez perdre 2 charges. Si vous le faites, gagnez 5 Ether.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-069",
+			name: "Circuit de Reconstitution",
+			cost: 3,
+			description:
+				"Xaxos : Paria gagne 1 charge. Vous pouvez détruire 1 carte de votre main.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-071",
+			name: "Chaîne de Restitution",
+			cost: 4,
+			description:
+				"Stabilisez la brèche d'un allié. OU Reprenez en main une carte de votre défausse coûtant 6 Ether ou moins.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-073",
+			name: "Réflecteur de Transmutation",
+			cost: 5,
+			description:
+				"Détruisez cette carte. Vous pouvez détruire une carte de votre main ou de votre défausse. Acquez une carte d'une pile de la réservé coûtant jusqu'à 6 Ether.",
+			image: "",
+		},
+		{
+			id: "R13",
+			name: "Prisma instable",
+			cost: 3,
+			description:
+				"Appliquez deux fois l'effet d'une gemme de votre main, puis détruisez-là. OU Gagnez 2 Ether.",
+			image: "",
+		},
+		{
+			id: "SE128",
+			name: "Étoile miniature",
+			cost: 7,
+			description: "Gagnez 3 charges",
+			image: "",
+		},
+		{
+			id: "LP-FIN-072",
+			name: "Soleil en Bouteille",
+			cost: 6,
+			description: "Xaxos : Paria gagne 3 charges.",
+			image: "",
+		},
+		{
+			id: "R12",
+			name: "Talisman de mage",
+			cost: 5,
+			description: "Gagnez 1 charge. Un allié gagne 1 charge.",
+			image: "",
+		},
+		{
+			id: "LP-1a-074",
+			name: "Vortex Déséquilibré",
+			cost: 7,
+			description:
+				"Un allié pioche trois carte. Puis, il défausse une carte de sa main. OU Vous pouvez stabiliser la brèche d'un allié. Un allié peut reprendre en main une carte de sa défausse.",
+			image: "",
+		},
+		{
+			id: "SE142",
+			name: "Œuvre de l'érudit",
+			cost: 3,
+			description:
+				"Gagnez 1 charge. Si sept cartes ou plus se trouvent dans votre défausse, gagnez 1 charge supplémentaire.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-070",
+			name: "Altérateur de Destin",
+			cost: 4,
+			description:
+				"Un allié peut détruire une carte de sa main. Ce joueur peut acquérir une carte coûtant jusqu'à 2 Ether de plus que la carte détruite et la prendre en main. OU Détruiez cette carte pour gagner 2 charges.",
+			image: "",
+		},
+		{
+			id: "R10",
+			name: "Dague fléchissante",
+			cost: 2,
+			description:
+				"La prochaine brèche que vous stabilisez ou que vous ouvrez lors de ce tour vous coûte 3 Ether de moins. OU Détruisez cette carte. Infligez 1 dégât.",
+			image: "",
+		},
+		{
+			id: "R38",
+			name: "Spirale temporelle",
+			cost: 7,
+			description:
+				"Lancez un sort préparé de n'importe quel joueur sans le défausser.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-067",
+			name: "Racive Carnivore",
+			cost: 3,
+			description:
+				"Gagnez 1 Ether. Vous pouvez détruire une carte de votre main pour gagner d'autant d'Ether que son coût. OU Détruisez cette carte pour stabiliser deux fois votre brèche fermée ayant le coût de stabilisation le plus faible.",
+			image: "",
+		},
+		{
+			id: "R31",
+			name: "Cube astral",
+			cost: 5,
+			description:
+				"Reprenez en main une gemme que vous avez jouée ce tour-ci. Révélez la première carte du paquet d'ordre du tour. S'il s'agit d'un joueur, ce dernier gagne 1 point de vie.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-066",
+			name: "Orbe des Profondeurs",
+			cost: 2,
+			description:
+				"Stabilisez votre brèche fermées ayant le coût de stabilisation le plus faible. OU Détruisez cette carte. Gagnez 1 charge.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-068",
+			name: "Dague de Faille",
+			cost: 3,
+			description:
+				"Acquérez une carte d'une autre pile de la réserve dont les cartes coûtent 3 Ether ou moins. Vous pouvez détruire cette relique pour acquérir une carte coûtant jusqu'à 4 Ether à la place. Vous pouvez dépenser 1 Ether pour prendre la carte acquise en main.",
+			image: "",
+		},
+		{
+			id: "SE134",
+			name: "Gantelet vivant",
+			cost: 4,
+			description:
+				"Révélez la première carte de votre pioche. Vous pouvez la détruire ou la défausser. Chaque allié peut piocher une carte. Dans ce cas, il défausse ensuite une carte de sa main.",
+			image: "",
+		},
+		{
+			id: "R11",
+			name: "Orbe de stabilisation",
+			cost: 4,
+			description:
+				"Stabilisez la brèche d'un joueur. OU Détruisez cette carte pour faire gagner 3 points de vie à Gravehold.",
+			image: "",
+		},
+		{
+			id: "SE135",
+			name: "Cube sans fond",
+			cost: 4,
+			description:
+				"Gagnez 1 Ether. Ce tour, lors de votre prochaine acquisition de carte, vous pouvez acquérir gratuitement une seconde carte qui coûte moins cher que la première carte acquise.",
+			image: "",
+		},
+		{
+			id: "P085",
+			name: "Bouclier de combustion",
+			cost: 4,
+			description:
+				"Vous pouvez lancer le sort préparé d'un allié. Un allié pioche une carte.",
+			image: "",
+		},
+		{
+			id: "P087",
+			name: "Lance-pierres précieuses",
+			cost: 3,
+			description:
+				"Défaussez ou détruisez une carte de votre main. Si vous le faites, infligez un nombre de dégâts égal à son coût.",
+			image: "",
+		},
+	],
+	spells: [
+		{
+			id: "GE27",
+			name: "Familier imaginaire",
+			cost: 3,
+			description:
+				"Lancer : Infligez 2 dégâts. Infligez 1 dégât supplémentaire pour chacun de vos autres sorts préparés.",
+			image: "",
+		},
+		{
+			id: "GE26",
+			name: "Retour à la poussière",
+			cost: 7,
+			description:
+				"Lorsque préparé, au début de votre phase d'incantation, révélez la carte du sommet de votre pioche. Vous pouvez détruire la carte révélée. Lancer : Infligez 4 dégâts.",
+			image: "",
+		},
+		{
+			id: "GE25",
+			name: "Afflux pyrotechnique",
+			cost: 4,
+			description:
+				"Ce sort doit être préparé sur deux brèches adjacentes (la carte doit toucher les deux brèches). Les deux brèches sont occupées. Lancer : Infligez 4 dégâts. Vous pouvez détruire une carte de votre défausse.",
+			image: "",
+		},
+		{
+			id: "GE24",
+			name: "Foge Nova",
+			cost: 6,
+			description:
+				"Lorsque préparé, une fois par tour pendant votre phase principale, vous pouvez gagner 2 Ether qui ne peuvent être utilisés que pour acquérir un sort. Lancer : Infligez 4 dégâts.",
+			image: "",
+		},
+		{
+			id: "GE23",
+			name: "Mèche",
+			cost: 4,
+			description:
+				"Lorsque préparé, pendant votre phase principale, vous pouvez aussi préparer une Étincelle sur la brèche où ce sort est préparé. (Vous ne pouvez pas utiliser cet effet si une Étincelle est préparée sur cette brèche). Lancer : Infligez 3 dégâts.",
+			image: "",
+		},
+		{
+			id: "GE22",
+			name: "Éclair déchirant",
+			cost: 4,
+			description:
+				"Lancer : Infligez 3 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, un joueurs stabilise sa brèche fermée ayant le coût de stabilisation le plus faible.",
+			image: "",
+		},
+		{
+			id: "GE21",
+			name: "Torrent ardent",
+			cost: 5,
+			description:
+				"Lancer : Infligez 2 dégâts. Infligez 2 dégâts supplémentaires pour chaque autre Torrent Ardent préparé par n'importe quel joueur.",
+			image: "",
+		},
+		{
+			id: "GE20",
+			name: "Équilibre",
+			cost: 7,
+			description:
+				"Lorsque préparé, réduisez de 1 les dégâts que vous subbissez, jusqu'à un minimum de 1. Lancer : Infligez 4 dégâts.",
+			image: "",
+		},
+		{
+			id: "GE19",
+			name: "Cristallisation",
+			cost: 8,
+			description:
+				"Ce sort doit être préparé sur deux brèches adjacentes (la carte doit toucher les deux brèches). Les deux brèches sont occupées. Lancer : Un allié révèle sa main. Infligez 2 dégâts pour chaque gemme ainsi révélée.",
+			image: "",
+		},
+		{
+			id: "GE18",
+			name: "Champ de convection",
+			cost: 5,
+			description:
+				"Lancer : Infligez 4 dégâts. OU Lancer : Infligez 2 dégâts. Un allié peut détruire une carte de sa main.",
+			image: "",
+		},
+		{
+			id: "GE17",
+			name: "Flèche céleste",
+			cost: 5,
+			description:
+				"Lancer : Infligez 3 dégâts. Si la pile de cette carte est vide dans la réserve, un allié pioche une carte.",
+			image: "",
+		},
+		{
+			id: "GE16",
+			name: "Conjuration des oubliés",
+			cost: 6,
+			description:
+				"Lancer : Infligez 5 dégâts. Vous pouvez détruire cette carte. Si vous le faites, Gravehold gagne 4 points de vie.",
+			image: "",
+		},
+		{
+			id: "GE15",
+			name: "Carbonisation",
+			cost: 4,
+			description:
+				"Lancer : Infligez 3 dégâts. Révélez la première carte du paquet d'ordre de tour. Vous pouvez placer cette carte en dessous du paquet d'ordre du tour.",
+			image: "",
+		},
+		{
+			id: "GE14",
+			name: "Aurore",
+			cost: 5,
+			description:
+				"Lorsque préparé, une fois par tour, pendant votre phase principale, vous pouvez gagner 1 charge. Lancer : Infligez 3 dégâts.",
+			image: "",
+		},
+		{ id: "", name: "", cost: 3, description: "", image: "" },
+		{ id: "", name: "", cost: 3, description: "", image: "" },
+		{ id: "", name: "", cost: 3, description: "", image: "" },
+		{ id: "", name: "", cost: 3, description: "", image: "" },
+		{ id: "", name: "", cost: 3, description: "", image: "" },
+		{ id: "", name: "", cost: 3, description: "", image: "" },
+		{ id: "", name: "", cost: 3, description: "", image: "" },
+		{ id: "", name: "", cost: 3, description: "", image: "" },
+	],
+};
