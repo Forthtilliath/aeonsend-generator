@@ -13,7 +13,7 @@ export const CardModal = ({ card, onClose }: CardModalProps) => {
 	return (
 		<Modal isOpen={!!card} onClose={onClose} title={card.name}>
 			<div
-				className={`bg-gradient-to-br ${getTypeColor(card.type)} rounded-xl p-8 border-4 border-white/20 shadow-2xl`}
+				className={`bg-linear-to-br ${getTypeColor(card.type)} rounded-xl p-8 border-4 border-white/20 shadow-2xl`}
 			>
 				<div className="text-6xl text-center mb-4">{card.image}</div>
 				<h3 id="card-title" className="text-3xl font-bold text-center mb-2">
