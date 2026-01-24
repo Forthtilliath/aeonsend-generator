@@ -18,7 +18,7 @@ export const Button = ({
 
 	const variantClasses = {
 		primary:
-			"bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 shadow-lg shadow-amber-900/30",
+			"bg-linear-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 shadow-lg shadow-amber-900/30",
 		secondary: "bg-indigo-600 hover:bg-indigo-700 shadow-md",
 		danger: "bg-red-600 hover:bg-red-700",
 		ghost: "bg-gray-600 hover:bg-gray-500",
