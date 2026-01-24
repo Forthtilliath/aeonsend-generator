@@ -2,9 +2,11 @@ import { X } from "lucide-preact";
 import { marketTemplates } from "../../data/marketTemplates";
 import type { MarketCondition } from "../../types";
 import type { Tuple } from "../../types/helpers";
-import { copyTuple, getCriteriaLabel, getTypeLabel } from "../../utils/helpers";
+import { copyTuple, getTypeLabel } from "../../utils/helpers";
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
+import { AetherIcon } from "../ui/Icons";
+import { CriteriaLabel } from "./CriteriaLabel";
 
 interface MarketSelectorProps {
 	selectedMarket: string;
@@ -99,8 +101,19 @@ export const MarketSelector = ({
 							</div>
 							<div className="grid grid-cols-3 gap-2">
 								{customMarket.map((slot, idx) => (
-									// biome-ignore lint/suspicious/noArrayIndexKey: can't use anything else here
-									<div key={idx} className="bg-gray-600/50 rounded p-2">
+									<div
+										// biome-ignore lint/suspicious/noArrayIndexKey: can't use anything else here
+										key={idx}
+										className={`rounded p-2 opacity-75 border text-gray-800 ${
+											slot.type === "gem"
+												? "bg-purple-400/80"
+												: slot.type === "relic"
+													? "bg-blue-400/80"
+													: slot.type === "spell"
+														? "bg-yellow-400/90"
+														: "bg-gray-600/30"
+										}`}
+									>
 										<select
 											value={slot.type}
 											onChange={(e) => {
@@ -114,7 +127,7 @@ export const MarketSelector = ({
 												newMarket[idx] = { ...newMarket[idx], type: newType };
 												setCustomMarket(newMarket);
 											}}
-											className="w-full bg-gray-700 rounded px-1 py-1 text-xs mb-1"
+											className="w-full bg-gray-300 rounded px-1 py-1 text-xs mb-1"
 										>
 											<option value="gem">Gemme</option>
 											<option value="relic">Relique</option>
@@ -122,7 +135,7 @@ export const MarketSelector = ({
 											<option value="any">Tout</option>
 										</select>
 										<div className="text-xs mb-1 text-center font-semibold">
-											Coût en ⚡
+											Coût en <AetherIcon />
 										</div>
 										<select
 											value={slot.operator}
@@ -159,7 +172,7 @@ export const MarketSelector = ({
 												}
 												setCustomMarket(newMarket);
 											}}
-											className="w-full bg-gray-700 rounded px-1 py-1 text-xs mb-1"
+											className="w-full bg-gray-300 rounded px-1 py-1 text-xs mb-1"
 										>
 											<option value="<=">≤</option>
 											<option value=">=">≥</option>
@@ -182,7 +195,7 @@ export const MarketSelector = ({
 														};
 														setCustomMarket(newMarket);
 													}}
-													className="w-full bg-gray-700 rounded px-1 py-1 text-xs text-center"
+													className="w-full bg-gray-300 rounded px-1 py-1 text-xs text-center"
 													placeholder="Min"
 												/>
 												<input
@@ -198,7 +211,7 @@ export const MarketSelector = ({
 														};
 														setCustomMarket(newMarket);
 													}}
-													className="w-full bg-gray-700 rounded px-1 py-1 text-xs text-center"
+													className="w-full bg-gray-300 rounded px-1 py-1 text-xs text-center"
 													placeholder="Max"
 												/>
 											</div>
@@ -216,7 +229,7 @@ export const MarketSelector = ({
 													};
 													setCustomMarket(newMarket);
 												}}
-												className="w-full bg-gray-700 rounded px-1 py-1 text-xs text-center"
+												className="w-full bg-gray-300 rounded px-1 py-1 text-xs text-center"
 											/>
 										) : null}
 									</div>
@@ -241,7 +254,15 @@ export const MarketSelector = ({
 										<div
 											// biome-ignore lint/suspicious/noArrayIndexKey: can't use anything else here
 											key={idx}
-											className="bg-gray-600/30 rounded p-2 opacity-75"
+											className={`rounded p-2 opacity-75 border ${
+												slot.type === "gem"
+													? "bg-purple-800/40 border-purple-400/70"
+													: slot.type === "relic"
+														? "bg-blue-800/40 border-blue-400/70"
+														: slot.type === "spell"
+															? "bg-yellow-800/40 border-yellow-400/70"
+															: "bg-gray-600/30 border-gray-500/50"
+											}`}
 										>
 											<div className="text-xs text-center font-semibold mb-1">
 												{slot.type === "gem"
@@ -254,7 +275,7 @@ export const MarketSelector = ({
 												{getTypeLabel(slot.type)}
 											</div>
 											<div className="text-xs text-center font-bold">
-												{getCriteriaLabel(slot)}
+												<CriteriaLabel criteria={slot} />
 											</div>
 										</div>
 									))}

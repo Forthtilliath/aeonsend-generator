@@ -1,9 +1,10 @@
 import type { SupplyCard as SupplyCardType } from "../../types";
 import {
-	getCriteriaLabel,
 	getTypeBgColor,
 	getTypeLabel,
 } from "../../utils/helpers";
+import { AetherIcon } from "../ui/Icons";
+import { CriteriaLabel } from "./CriteriaLabel";
 
 interface SupplyCardProps {
 	card: SupplyCardType;
@@ -33,11 +34,14 @@ export const SupplyCard = ({
 					{getTypeLabel(card.type)}
 				</div>
 				<div className="text-xs font-semibold text-blue-300 mb-1">
-					{getCriteriaLabel(card.criteria)}
+					<CriteriaLabel criteria={card.criteria} />
 				</div>
 				<div className="text-2xl mb-1">{card.image}</div>
 				<div className="text-xs font-bold">{card.name}</div>
-				<div className="text-xs mt-1">{card.cost}⚡</div>
+				<div className="text-xs mt-1 flex items-center justify-center gap-1">
+					{card.cost}
+					<AetherIcon />
+				</div>
 			</button>
 
 			{showRemove && (
