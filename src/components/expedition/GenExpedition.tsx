@@ -1,7 +1,6 @@
 import { FileText, Shuffle } from "lucide-preact";
 import { Fragment, type FunctionComponent } from "preact";
 import { useRef, useState } from "preact/hooks";
-
 import { cards } from "../../data/cards";
 import { mages } from "../../data/mages";
 import {
@@ -9,7 +8,6 @@ import {
 	marketTemplates,
 } from "../../data/marketTemplates";
 import { nemeses } from "../../data/nemeses";
-
 import type {
 	Battle,
 	Expedition,
@@ -22,9 +20,11 @@ import type {
 import type { Tuple } from "../../types/helpers";
 import {
 	generateSupply,
+	getRandomItemFromArray,
 	getTypeLabel,
 	hasExcessCards,
 	matchesCondition,
+	shuffle,
 } from "../../utils/helpers";
 import { Button } from "../ui/Button";
 import { CardModal } from "./CardModal";
@@ -39,7 +39,7 @@ const FormExpedition: FunctionComponent = () => {
 	const [showMarketConfig, setShowMarketConfig] = useState<boolean>(false);
 	const expeditionRef = useRef<HTMLDivElement>(null);
 
-	const [customMarket, setCustomMarket] = useState<MarketCondition[]>([
+	const [customMarket, setCustomMarket] = useState<Tuple<MarketCondition, 9>>([
 		...defaultCustomMarket,
 	]);
 
@@ -56,10 +56,12 @@ const FormExpedition: FunctionComponent = () => {
 		removeExcess: false,
 	});
 
+	const selectedMarketConfig =
+		marketTemplates.get(selectedMarket)?.config ?? customMarket;
+
 	const generateExpedition = (): void => {
 		const selectedNemeses = [1, 2, 3, 4].map((tier) => {
-			const tierNemeses = nemeses[tier];
-			return tierNemeses[Math.floor(Math.random() * tierNemeses.length)];
+			return getRandomItemFromArray(nemeses[tier]);
 		}) as Tuple<Nemesis, 4>;
 
 		const numMages =
@@ -68,13 +70,11 @@ const FormExpedition: FunctionComponent = () => {
 				: playerConfig.totalMages;
 
 		const marketConfig =
-			selectedMarket === "custom"
-				? customMarket
-				: marketTemplates[selectedMarket].config;
+			selectedMarket === "custom" ? customMarket : selectedMarketConfig;
 
 		const allMages = [...mages];
 		const battles = selectedNemeses.map((nemesis, index) => {
-			const shuffledMages = [...allMages].sort(() => Math.random() - 0.5);
+			const shuffledMages = shuffle(allMages);
 			const selectedMages = shuffledMages.slice(
 				0,
 				Math.min(numMages, allMages.length),
@@ -110,9 +110,7 @@ const FormExpedition: FunctionComponent = () => {
 	const regenerateBattle = (battleIndex: number): void => {
 		if (!expedition) return;
 		const marketConfig =
-			selectedMarket === "custom"
-				? customMarket
-				: marketTemplates[selectedMarket].config;
+			selectedMarket === "custom" ? customMarket : selectedMarketConfig;
 		const newExpedition = { ...expedition };
 		newExpedition.battles[battleIndex].supply = generateSupply(
 			marketConfig,
@@ -146,14 +144,19 @@ const FormExpedition: FunctionComponent = () => {
 				? "gems"
 				: criteria.type === "relic"
 					? "relics"
-					: "spells";
+					: criteria.type === "spell"
+						? "spells"
+						: getRandomItemFromArray<"gems" | "relics" | "spells">([
+								"gems",
+								"relics",
+								"spells",
+							]);
 		const availableCards = cards[typeKey].filter(
 			(card) => matchesCondition(card, criteria) && !usedCards.has(card.name),
 		);
 
 		if (availableCards.length > 0) {
-			const newCard =
-				availableCards[Math.floor(Math.random() * availableCards.length)];
+			const newCard = getRandomItemFromArray(availableCards);
 
 			currentBattle.supply.push({
 				...newCard,
@@ -170,9 +173,7 @@ const FormExpedition: FunctionComponent = () => {
 
 				if (rerollConfig.removeExcess) {
 					const marketConfig =
-						selectedMarket === "custom"
-							? customMarket
-							: marketTemplates[selectedMarket].config;
+						selectedMarket === "custom" ? customMarket : selectedMarketConfig;
 					const maxCount = marketConfig.filter((c) => c.type === type).length;
 					if (cardsOfType.length > maxCount) {
 						cardsOfType = cardsOfType.slice(0, maxCount);
@@ -211,7 +212,9 @@ const FormExpedition: FunctionComponent = () => {
 	};
 
 	const loadMarketTemplate = (templateKey: string): void => {
-		setCustomMarket([...marketTemplates[templateKey].config]);
+		const template = marketTemplates.get(templateKey);
+		if (!template) return;
+		setCustomMarket([...template.config]);
 		setSelectedMarket("custom");
 	};
 
@@ -319,7 +322,7 @@ ${battle.supply.map((c) => `  - ${c.name} - ${c.cost} Aether (${getTypeLabel(c.t
 								const marketConfig =
 									selectedMarket === "custom"
 										? customMarket
-										: marketTemplates[selectedMarket].config;
+										: selectedMarketConfig;
 								const excessByType = hasExcessCards(battle, marketConfig);
 
 								return (
@@ -386,7 +389,7 @@ ${battle.supply.map((c) => `  - ${c.name} - ${c.cost} Aether (${getTypeLabel(c.t
 													</span>
 												)}
 											</h3>
-											<div className="grid gap-2 grid-cols-3 md:grid-cols-9">
+											<div className="grid gap-2 grid-cols-3">
 												{battle.supply.map((card) => {
 													const canReroll =
 														rerollConfig.type === "individual" &&

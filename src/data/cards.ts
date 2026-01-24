@@ -8,14 +8,14 @@ export const cards: Record<string, Card[]> = {
 			cost: 4,
 			description:
 				"Gagnez 2 Ether. Vous pouvez détruire deux cartes de cette piles de cartes. Si vous le faites, gagnez 1 Ether supplémentaire",
-			image: "💎",
+			image: "",
 		},
 		{
 			id: "R39",
 			name: "Scarabée fossilisé",
 			cost: 3,
 			description: "Gagnez 2 Ether OU Détruisez une carte de votre main.",
-			image: "💜",
+			image: "",
 		},
 		{
 			id: "DVS-050",
@@ -23,7 +23,7 @@ export const cards: Record<string, Card[]> = {
 			cost: 7,
 			description:
 				"Gagnez 3 Ether. Placez le prochain sort que vous acquérez ce tour dans votre main.",
-			image: "💚",
+			image: "",
 		},
 		{
 			id: "EN-FIN-035",
@@ -31,14 +31,14 @@ export const cards: Record<string, Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. Un allié peut défauser une Perle résonnante de sa main pour pioche une carte. S'il le fait, gagnez 1 Ether supplémentaire.",
-			image: "🟡",
+			image: "",
 		},
 		{
 			id: "EN-FIN-036",
 			name: "Exogranite",
 			cost: 3,
 			description: "Gagnez 2 Ether. OU Détruisez cette carte. Gagnez 3 Ether.",
-			image: "⚫",
+			image: "",
 		},
 		{
 			id: "EN-FIN-037",
@@ -46,7 +46,7 @@ export const cards: Record<string, Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. Si une Sionite de l'ombre se trouve dans la défausse d'un allié, gagnez 1 Ether supplémentaire.",
-			image: "⬜",
+			image: "",
 		},
 		{
 			id: "EN-FIN-038",
@@ -54,7 +54,7 @@ export const cards: Record<string, Card[]> = {
 			cost: 4,
 			description:
 				"Gagnez 2 Ether. Si la première carte de vote défausse est un sort, vous pouvez placer cette gemme sur votre pioche.",
-			image: "🟢",
+			image: "",
 		},
 		{
 			id: "EN-FIN-039",
@@ -62,7 +62,7 @@ export const cards: Record<string, Card[]> = {
 			cost: 5,
 			description:
 				"Gagnez 3 Ether. Un allié peut défausse une carte de sa main. S'il le fait, ce joueur gagne 1 charge.",
-			image: "🔵",
+			image: "",
 		},
 		{
 			id: "EN-FIN-040",
@@ -70,7 +70,7 @@ export const cards: Record<string, Card[]> = {
 			cost: 6,
 			description:
 				"Gagnez 3 Ether. OU Détruisez une carte présente dans la pile de la réserve de cette carte. Si vous le faites, infigez 3 dégâts.",
-			image: "🔴",
+			image: "",
 		},
 		{
 			id: "LP-FIN-064",
@@ -78,7 +78,7 @@ export const cards: Record<string, Card[]> = {
 			cost: 5,
 			description:
 				"Lorsque vous acquérez cette carte, s'il s'agit de la seconde carte que vous acquérez ce tour, prenez-la en main. Gagnez 3 Ether.",
-			image: "💠",
+			image: "",
 		},
 		{
 			id: "SE143",
@@ -1105,10 +1105,140 @@ export const cards: Record<string, Card[]> = {
 				"Lancer : Infligez 5 dégâts. Vous pouvez perdre 1 charge. Si vous le faites, révélez les deux premières cartes de la pioche de la némésis et replacez-les dans l'ordre de votre choix.",
 			image: "",
 		},
-		{ id: "", name: "", cost: 3, description: "", image: "" },
-		{ id: "", name: "", cost: 3, description: "", image: "" },
-		{ id: "", name: "", cost: 3, description: "", image: "" },
-		{ id: "", name: "", cost: 3, description: "", image: "" },
-		{ id: "", name: "", cost: 3, description: "", image: "" },
+		{
+			id: "LP-FIN-075",
+			name: "Givre Renforcé",
+			cost: 2,
+			description:
+				"Lancer : Infligez 2 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, infligez 1 dégât supplémentaire.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-077",
+			name: "Lancer : Infligez 3 dégâts. Si la pile de la réserve de cette carte est vide, infligez 1 dégât supplémentaire.",
+			cost: 4,
+			description: "",
+			image: "",
+		},
+		{
+			id: "LP-FIN-084",
+			name: "Tornade de Lucidité",
+			cost: 6,
+			description:
+				"Lancer : Infligez 5 dégâts. Si vous ne possédez aucune brèche fermée, gagnez 1 charge.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-081",
+			name: "Confluence de Radiance",
+			cost: 5,
+			description:
+				"Lancer : Infligez 3 dégâts. Un allié peut piocher une carte, puis défausser une carte de sa main.",
+			image: "",
+		},
+		{
+			id: "LP-FIN-079",
+			name: "Combustion Enrichie",
+			cost: 4,
+			description:
+				"Lancer : Infligez 3 dégâts. Si Xaxos : Paria a 4 charges ou moins, il gagne 1 charge.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-049",
+			name: "Choc répercuté",
+			cost: 4,
+			description:
+				"Écho. Lancer : Infligez 1 dégât. Gagnez 1 Ether qui ne peut être utilisé que pour acquérir des cartes.",
+			image: "",
+		},
+		{
+			id: "R35",
+			name: "Aura de réaction",
+			cost: 5,
+			description:
+				"Lancer : Infligez 3 dégâts. Si vous possédez 4 charges ou plus, vous infligez 3 dégâts supplémentaires.",
+			image: "",
+		},
+		{
+			id: "R34",
+			name: "Catalyseur",
+			cost: 6,
+			description:
+				"Lancer : Infligez 2 dégâts. Si vous avez 2 points de vie ou moins, infligez 5 dégâts supplémentaires.",
+			image: "",
+		},
+		{
+			id: "R20",
+			name: "Éclair enragé",
+			cost: 5,
+			description:
+				"Ce sort peut être préparé sur une brèche fermée sans qu'elle doive être stabilisée. Lancer : Infligez 3 dégâts.",
+			image: "",
+		},
+		{
+			id: "R38",
+			name: "Calciner",
+			cost: 5,
+			description:
+				"Lancer : Infligez 4 dégâts. Si ces dégâts permettent de défausser un serviteur du paquet Némésis, un allié gagne 2 charges.",
+			image: "",
+		},
+		{
+			id: "R17",
+			name: "Vide dévorant",
+			cost: 7,
+			description:
+				"Lancer : Détruisez jusqu'à deux cartes de votre main. Infligez 3 dégâts par carte détruite de cette manière.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-054",
+			name: "Frappe calculée",
+			cost: 7,
+			description:
+				"Lancer : Infligez 4 dégâts. Vous pouvez reprendre en main jusqu'à deux cartes de votre défausse coûtant 0 Ether.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-050",
+			name: "Décuple-force",
+			cost: 4,
+			description:
+				"Lancer : Infligez 3 dégâts. Si ce sort a été lancé depuis une brèche III ou IV ouverte, infligez 1 dégât supplémentaire.",
+			image: "",
+		},
+		{
+			id: "EN-FIN-048",
+			name: "Épines en chaîne",
+			cost: 3,
+			description:
+				"Lancer : Infligez 2 dégâts. Si ce sort a été lancé depuis une brèche III ou IV ouverte, vous pouvez le placer dans la main d'un allié.",
+			image: "",
+		},
+		{
+			id: "R42",
+			name: "Résonance",
+			cost: 6,
+			description:
+				"Lancer : Infligez 4 dégâts. S'il y a six cartes ou plus dans votre défausse, infligez 3 dégâts supplémentaires.",
+			image: "",
+		},
+		{
+			id: "R18",
+			name: "Feu obscur",
+			cost: 5,
+			description:
+				"Lancer : Défaussez jusqu'à deux cartes de votre main. Infligez 3 dégâts par carte que vous avez dfaussée de cette manière.",
+			image: "",
+		},
+		{
+			id: "R33",
+			name: "Carboniser",
+			cost: 8,
+			description:
+				"Lancer : Infligez 6 dégâts. Si ces dégâts permettent de défausser un serviteur, un joueur gagne 2 points de vie.",
+			image: "",
+		},
 	],
 };

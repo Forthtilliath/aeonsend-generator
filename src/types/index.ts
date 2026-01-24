@@ -39,23 +39,24 @@ export interface Mage {
 }
 
 type CardType = "gem" | "relic" | "spell";
+type CardTypeMarket = CardType | "any";
 
 type MarketConditionAny = {
-	type: CardType;
+	type: CardTypeMarket;
 	operator: "any";
 	cost: null;
 	costMax?: never;
 };
 
 type MarketConditionComparison = {
-	type: CardType;
+	type: CardTypeMarket;
 	operator: "<=" | ">=" | "=";
 	cost: number;
 	costMax?: never;
 };
 
 type MarketConditionRange = {
-	type: CardType;
+	type: CardTypeMarket;
 	operator: "range";
 	cost: number;
 	costMax: number;
@@ -67,7 +68,7 @@ export type MarketCondition =
 	| MarketConditionRange;
 
 export interface SupplyCard extends Card {
-	type: CardType;
+	type: CardTypeMarket;
 	position: number;
 	criteria: MarketCondition;
 }
@@ -104,6 +105,7 @@ export interface RerollConfig {
 }
 
 export interface MarketTemplate {
+	id: string;
 	name: string;
 	config: Tuple<MarketCondition, 9>;
 }

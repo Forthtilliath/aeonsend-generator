@@ -1,4 +1,4 @@
-import { Camera, FileText, Shuffle, Users, X } from "lucide-preact";
+import { FileText, Shuffle, Users, X } from "lucide-preact";
 import { Fragment, type FunctionComponent } from "preact";
 import { useRef, useState } from "preact/hooks";
 import { cards } from "../data/cards";
@@ -13,14 +13,17 @@ import type {
 	RerollConfig,
 	SupplyCard,
 } from "../types";
+import type { Tuple } from "../types/helpers";
 import {
 	generateSupply,
 	getCriteriaLabel,
+	getRandomItemFromArray,
 	getTypeBgColor,
 	getTypeColor,
 	getTypeLabel,
 	hasExcessCards,
 	matchesCondition,
+	shuffle,
 } from "../utils/helpers";
 
 const AeonsEndExpedition: FunctionComponent = () => {
@@ -50,8 +53,7 @@ const AeonsEndExpedition: FunctionComponent = () => {
 
 	const generateExpedition = (): void => {
 		const selectedNemeses = [1, 2, 3, 4].map((tier) => {
-			const tierNemeses = nemeses[tier];
-			return tierNemeses[Math.floor(Math.random() * tierNemeses.length)];
+			return getRandomItemFromArray(nemeses[tier]);
 		});
 
 		const numMages =
@@ -65,8 +67,8 @@ const AeonsEndExpedition: FunctionComponent = () => {
 				: marketTemplates[selectedMarket].config;
 
 		const allMages = [...mages];
-		const battles: Battle[] = selectedNemeses.map((nemesis, index) => {
-			const shuffledMages = [...allMages].sort(() => Math.random() - 0.5);
+		const battles = selectedNemeses.map((nemesis, index) => {
+			const shuffledMages = shuffle(allMages);
 			const selectedMages = shuffledMages.slice(
 				0,
 				Math.min(numMages, allMages.length),
@@ -79,7 +81,7 @@ const AeonsEndExpedition: FunctionComponent = () => {
 				supply: generateSupply(marketConfig, [], rerollConfig.removeExcess),
 				remainingRerolls: rerollConfig.maxIndividualRerolls,
 			};
-		});
+		}) as Tuple<Battle, 4>;
 
 		setExpedition({
 			battles,
@@ -144,8 +146,7 @@ const AeonsEndExpedition: FunctionComponent = () => {
 		);
 
 		if (availableCards.length > 0) {
-			const newCard =
-				availableCards[Math.floor(Math.random() * availableCards.length)];
+			const newCard = getRandomItemFromArray(availableCards);
 
 			currentBattle.supply.push({
 				...newCard,
@@ -231,7 +232,7 @@ ${battle.nemesis.description}
 Difficulte: ${battle.nemesis.difficulty} | Vie: ${battle.nemesis.hp}
 
 MAGES:
-${battle.mages.map((m) => `  - ${m.name} (${m.specialty})`).join("\n")}
+${battle.mages.map((m) => `  - ${m.name} (${m.title})`).join("\n")}
 
 MARCHE:
 ${battle.supply.map((c) => `  - ${c.name} - ${c.cost} Aether (${getTypeLabel(c.type)})`).join("\n")}
@@ -249,65 +250,6 @@ ${battle.supply.map((c) => `  - ${c.name} - ${c.cost} Aether (${getTypeLabel(c.t
 		document.body.removeChild(link);
 		URL.revokeObjectURL(url);
 	};
-
-	// const generateImage = async (): Promise<void> => {
-	// 	if (!expedition || !expeditionRef.current) return;
-
-	// 	setIsExporting(true);
-
-	// 	try {
-	// 		if (typeof (window as any).html2canvas === "undefined") {
-	// 			const script = document.createElement("script");
-	// 			script.src =
-	// 				"https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
-
-	// 			await new Promise((resolve, reject) => {
-	// 				script.onload = resolve;
-	// 				script.onerror = reject;
-	// 				document.head.appendChild(script);
-	// 			});
-	// 		}
-
-	// 		if (typeof (window as any).html2canvas === "undefined") {
-	// 			throw new Error("html2canvas not loaded");
-	// 		}
-
-	// 		await new Promise((resolve) => setTimeout(resolve, 200));
-
-	// 		const element = expeditionRef.current;
-
-	// 		const canvas = await (window as any).html2canvas(element, {
-	// 			backgroundColor: "#1e1b4b",
-	// 			scale: 2,
-	// 			logging: false,
-	// 			useCORS: true,
-	// 			allowTaint: true,
-	// 			scrollX: 0,
-	// 			scrollY: -window.scrollY,
-	// 			windowWidth: element.scrollWidth,
-	// 			windowHeight: element.scrollHeight,
-	// 			width: element.offsetWidth,
-	// 			height: element.offsetHeight,
-	// 		});
-
-	// 		canvas.toBlob((blob: Blob | null) => {
-	// 			if (!blob) return;
-	// 			const url = URL.createObjectURL(blob);
-	// 			const link = document.createElement("a");
-	// 			link.href = url;
-	// 			link.download = "aeons-end-campagne.png";
-	// 			document.body.appendChild(link);
-	// 			link.click();
-	// 			document.body.removeChild(link);
-	// 			URL.revokeObjectURL(url);
-	// 			setIsExporting(false);
-	// 		});
-	// 	} catch (error) {
-	// 		console.error("Erreur lors de la génération de l'image:", error);
-	// 		alert("Erreur lors de la génération de l'image. Veuillez réessayer.");
-	// 		setIsExporting(false);
-	// 	}
-	// };
 
 	return (
 		<div className="min-h-screen bg-linear-to-br from-indigo-950 via-purple-950 to-slate-900 text-white p-3 md:p-6">

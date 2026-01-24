@@ -1,7 +1,8 @@
 import { X } from "lucide-preact";
 import { marketTemplates } from "../../data/marketTemplates";
 import type { MarketCondition } from "../../types";
-import { getCriteriaLabel, getTypeLabel } from "../../utils/helpers";
+import type { Tuple } from "../../types/helpers";
+import { copyTuple, getCriteriaLabel, getTypeLabel } from "../../utils/helpers";
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
 
@@ -10,8 +11,8 @@ interface MarketSelectorProps {
 	setSelectedMarket: (market: string) => void;
 	showMarketConfig: boolean;
 	setShowMarketConfig: (show: boolean) => void;
-	customMarket: MarketCondition[];
-	setCustomMarket: (market: MarketCondition[]) => void;
+	customMarket: Tuple<MarketCondition, 9>;
+	setCustomMarket: (market: Tuple<MarketCondition, 9>) => void;
 	onLoadTemplate: (key: string) => void;
 	onResetCustom: () => void;
 }
@@ -31,25 +32,25 @@ export const MarketSelector = ({
 			<h2 className="text-lg font-bold mb-3 text-amber-200">Marché</h2>
 
 			<div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
-				{(["balanced", "pierced", "master"] as const).map((key) => (
+				{Array.from(marketTemplates.entries()).map(([id, market]) => (
 					<button
 						type="button"
-						key={key}
+						key={id}
 						onClick={() => {
-							setSelectedMarket(key);
+							setSelectedMarket(id);
 							setShowMarketConfig(true);
 						}}
 						className={`p-2 rounded-lg border-2 transition-all ${
-							selectedMarket === key
+							selectedMarket === id
 								? "border-amber-500 bg-amber-900/40 shadow-lg shadow-amber-900/30"
 								: "border-slate-700 bg-slate-800/50 hover:border-amber-700/50"
 						}`}
 					>
 						<div className="text-sm font-semibold">
-							{marketTemplates[key].name.split(":")[0]}
+							{market.name.split(":")[0]}
 						</div>
 						<div className="text-xs text-gray-400">
-							{marketTemplates[key].name.split(":")[1]}
+							{market.name.split(":")[1]}
 						</div>
 					</button>
 				))}
@@ -66,7 +67,7 @@ export const MarketSelector = ({
 							: "border-slate-700 bg-slate-800/50 hover:border-amber-700/50"
 					}`}
 				>
-					<div className="text-sm font-semibold">Marché #8</div>
+					<div className="text-sm font-semibold">Marché Personnalisable</div>
 					<div className="text-xs text-gray-400">Personnalisé</div>
 				</button>
 			</div>
@@ -77,8 +78,8 @@ export const MarketSelector = ({
 						<h3 className="font-bold">
 							Configuration:{" "}
 							{selectedMarket === "custom"
-								? "Marché #8 Personnalisé"
-								: marketTemplates[selectedMarket].name}
+								? "Marché Personnalisable"
+								: marketTemplates.get(selectedMarket)?.name}
 						</h3>
 						<button
 							type="button"
@@ -96,18 +97,19 @@ export const MarketSelector = ({
 									Réinitialiser
 								</Button>
 							</div>
-							<div className="grid grid-cols-3 md:grid-cols-9 gap-2">
+							<div className="grid grid-cols-3 gap-2">
 								{customMarket.map((slot, idx) => (
 									// biome-ignore lint/suspicious/noArrayIndexKey: can't use anything else here
 									<div key={idx} className="bg-gray-600/50 rounded p-2">
 										<select
 											value={slot.type}
 											onChange={(e) => {
-												const newMarket = [...customMarket];
+												const newMarket = copyTuple(customMarket);
 												const newType = e.currentTarget.value as
 													| "gem"
 													| "relic"
-													| "spell";
+													| "spell"
+													| "any";
 												// Préserver la structure existante en changeant juste le type
 												newMarket[idx] = { ...newMarket[idx], type: newType };
 												setCustomMarket(newMarket);
@@ -117,6 +119,7 @@ export const MarketSelector = ({
 											<option value="gem">Gemme</option>
 											<option value="relic">Relique</option>
 											<option value="spell">Sort</option>
+											<option value="any">Tout</option>
 										</select>
 										<div className="text-xs mb-1 text-center font-semibold">
 											Coût en ⚡
@@ -124,7 +127,7 @@ export const MarketSelector = ({
 										<select
 											value={slot.operator}
 											onChange={(e) => {
-												const newMarket = [...customMarket];
+												const newMarket = copyTuple(customMarket);
 												const newOperator = e.currentTarget.value as
 													| "any"
 													| "<="
@@ -162,7 +165,7 @@ export const MarketSelector = ({
 											<option value=">=">≥</option>
 											<option value="=">=</option>
 											<option value="range">Range</option>
-											<option value="any">any</option>
+											<option value="any">Tout</option>
 										</select>
 										{slot.operator === "range" ? (
 											<div className="flex gap-1">
@@ -172,7 +175,7 @@ export const MarketSelector = ({
 													max="9"
 													value={slot.cost}
 													onChange={(e) => {
-														const newMarket = [...customMarket];
+														const newMarket = copyTuple(customMarket);
 														newMarket[idx] = {
 															...slot,
 															cost: parseInt(e.currentTarget.value, 10) || 0,
@@ -188,7 +191,7 @@ export const MarketSelector = ({
 													max="9"
 													value={slot.costMax}
 													onChange={(e) => {
-														const newMarket = [...customMarket];
+														const newMarket = copyTuple(customMarket);
 														newMarket[idx] = {
 															...slot,
 															costMax: parseInt(e.currentTarget.value, 10) || 0,
@@ -206,7 +209,7 @@ export const MarketSelector = ({
 												max="9"
 												value={slot.cost}
 												onChange={(e) => {
-													const newMarket = [...customMarket];
+													const newMarket = copyTuple(customMarket);
 													newMarket[idx] = {
 														...slot,
 														cost: parseInt(e.currentTarget.value, 10) || 0,
@@ -228,31 +231,33 @@ export const MarketSelector = ({
 									size="sm"
 									onClick={() => onLoadTemplate(selectedMarket)}
 								>
-									Modifier (copier vers Marché #8)
+									Modifier (copier vers Marché Personnalisable)
 								</Button>
 							</div>
-							<div className="grid grid-cols-3 md:grid-cols-9 gap-2">
-								{marketTemplates[selectedMarket].config.map((slot, idx) => (
-									<div
-										// biome-ignore lint/suspicious/noArrayIndexKey: can't use anything else here
-										key={idx}
-										className="bg-gray-600/30 rounded p-2 opacity-75"
-									>
-										<div className="text-xs text-center font-semibold mb-1">
-											{slot.type === "gem"
-												? "💎"
-												: slot.type === "relic"
-													? "🔮"
-													: "✨"}
+							<div className="grid grid-cols-3 gap-2">
+								{marketTemplates
+									.get(selectedMarket)
+									?.config.map((slot, idx) => (
+										<div
+											// biome-ignore lint/suspicious/noArrayIndexKey: can't use anything else here
+											key={idx}
+											className="bg-gray-600/30 rounded p-2 opacity-75"
+										>
+											<div className="text-xs text-center font-semibold mb-1">
+												{slot.type === "gem"
+													? "💎"
+													: slot.type === "relic"
+														? "🔮"
+														: "✨"}
+											</div>
+											<div className="text-xs text-center mb-1">
+												{getTypeLabel(slot.type)}
+											</div>
+											<div className="text-xs text-center font-bold">
+												{getCriteriaLabel(slot)}
+											</div>
 										</div>
-										<div className="text-xs text-center mb-1">
-											{getTypeLabel(slot.type)}
-										</div>
-										<div className="text-xs text-center font-bold">
-											{getCriteriaLabel(slot)}
-										</div>
-									</div>
-								))}
+									))}
 							</div>
 						</>
 					)}
