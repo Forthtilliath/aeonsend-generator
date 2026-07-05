@@ -34,7 +34,14 @@ describe("clamp", () => {
 });
 
 describe("matchesCondition", () => {
-	const card = { id: "X", name: "Test", description: "", cost: 5, image: "" };
+	const card = {
+		id: "X",
+		name: "Test",
+		description: "",
+		cost: 5,
+		image: "",
+		expansion: "Aeon's End" as const,
+	};
 
 	test("'any' operator always matches", () => {
 		const condition: MarketCondition = {

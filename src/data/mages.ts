@@ -12,6 +12,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Après qu'une carte Attaque ou Pouvoir a été piochée, mais avant qu'elle soit résolue, vous pouvez la défausser sans appliquer son effet. (La némésis ne pioche pas de nouvelle carte à la place.)",
 		abilityCharge: 5,
+		expansion: "Aeon's End",
 	},
 	{
 		id: "02",
@@ -23,6 +24,7 @@ export const mages: Mage[] = [
 		abilityTitle: "Gardien étherien",
 		abilityDescription: "Un joueur gagne 4 points de vie",
 		abilityCharge: 5,
+		expansion: "Aeon's End",
 	},
 	{
 		id: "06",
@@ -35,6 +37,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Lancez le sort préparé d'un joueur sans le défausser. Puis lancez ce sort à nouveau.",
 		abilityCharge: 4,
+		expansion: "Aeon's End",
 	},
 	{
 		id: "03",
@@ -47,6 +50,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Ce joueur peut reprendre en main jusqu'à trois sorts de sa défausse. Durant ce tour, ce joueur peut préparer jusqu'à deux sorts sur chacune de ses brèches ouvertes.",
 		abilityCharge: 5,
+		expansion: "Aeon's End",
 	},
 	{
 		id: "07",
@@ -59,6 +63,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Mélangez la carte Ordre du tour d'un joueur dans le paquet d'ordre du tour. Ce joueur subit 1 dégât.",
 		abilityCharge: 5,
+		expansion: "Aeon's End",
 	},
 	{
 		id: "05",
@@ -70,6 +75,7 @@ export const mages: Mage[] = [
 		abilityTitle: "Prédiction divine",
 		abilityDescription: "Un allié pioche quatre cartes.",
 		abilityCharge: 5,
+		expansion: "Aeon's End",
 	},
 	{
 		id: "08",
@@ -82,6 +88,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Tous les dégâts que les joueurs ou Gravehold devraient subir ce tour-ci sont annulés.",
 		abilityCharge: 5,
+		expansion: "Aeon's End",
 	},
 	{
 		id: "04",
@@ -94,6 +101,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Les alliés reçoivent collectivement 4 charges. Révélez puis replacez les cartes de la pioche d'ordre du tour dans l'ordre de votre choix.",
 		abilityCharge: 5,
+		expansion: "Aeon's End",
 	},
 	{
 		id: "UEN05",
@@ -106,6 +114,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Révélez les trois premières cartes de votre pioche. Prenez en main un sort révélé de cette façon. Si aucun sort n'est préparé sur votre Brèche céleste, préparez jusqu'à deux sorts en main sur votree Brèche céleste ouverte.",
 		abilityCharge: 4,
+		expansion: "Une Ère Nouvelle",
 	},
 	{
 		id: "UEN06",
@@ -118,6 +127,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Placez un jeton Énergie sur la brèche d'un joueur qui n'en présente pas. OU Défaussez un jeton Énergie présent sur la brèche d'un joueur. Ce joueur gagne 4 points de vie.",
 		abilityCharge: 4,
+		expansion: "Une Ère Nouvelle",
 	},
 	{
 		id: "UEN08",
@@ -130,6 +140,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Stabilisez la brèche d'un joueur. Un joueur gagne 1 point de vie par brèche ouverte que vous possédez.",
 		abilityCharge: 4,
+		expansion: "Une Ère Nouvelle",
 	},
 	{
 		id: "UEN07",
@@ -142,6 +153,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Détruisez deux Étincelles de votre main. Puis, remettre votre carte Ordre du tour dans le paquet d'ordre du tour et mélangez-le.",
 		abilityCharge: 5,
+		expansion: "Une Ère Nouvelle",
 	},
 	{
 		id: "UEN01",
@@ -154,6 +166,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Cet allié gagne 2 Ether. Ce tour, la prochaine fois que cet allié acquiert une carte d'une pile de la réserve, vous acquérez un exemplaire d'une carte de cette même pile. OU Cet allié gagne 5 Ether.",
 		abilityCharge: 5,
+		expansion: "Une Ère Nouvelle",
 	},
 	{
 		id: "TA02",
@@ -166,6 +179,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Un allié choisit deux cartes de sa défausse qu'il reprend en main. OU Gravehold gagne 5 points de vie.",
 		abilityCharge: 5,
+		expansion: "Ténèbres d'Ailleurs",
 	},
 	{
 		id: "TA01",
@@ -178,6 +192,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Lancez autant de sorts que vous le voulez de votre main. Chacun de ces sorts infloge 1 dégât supplémentaire. Vous pouvez détruire une carte de votre défausse.",
 		abilityCharge: 4,
+		expansion: "Ténèbres d'Ailleurs",
 	},
 	{
 		id: "LSN01",
@@ -190,6 +205,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Gagnez un sort de n'importe quelle pile de la réserve. Vous pouvez préparer ce sort sur une brèche ouverte de n'importe quel joueur.",
 		abilityCharge: 6,
+		expansion: "Les Sans-Noms",
 	},
 	{
 		id: "P03",
@@ -202,6 +218,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Lancez le sort préparé d'un joueur. Ce sort inflige 3 dégâts supplémentaires.",
 		abilityCharge: 6,
+		expansion: "Les Parias",
 	},
 	{
 		id: "P05",
@@ -214,6 +231,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Gravehold gagne 5 points de vie. Placez deux jetons Glyphe sur une carte de la réserve.",
 		abilityCharge: 5,
+		expansion: "Les Parias",
 	},
 	{
 		id: "P08",
@@ -226,6 +244,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Reprenez en main jusqu'à deux gemmes ou reliques jouées ce tour-ci. Un allié pioche une carte et peut préparer un sort de sa main sur une brèche ouverte ou fermée.",
 		abilityCharge: 6,
+		expansion: "Les Parias",
 	},
 	{
 		id: "P01",
@@ -238,6 +257,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Lancez tous vos sorts préparés sans les défausser. Un allié reprend en main une carte de sa défausse.",
 		abilityCharge: 5,
+		expansion: "Les Parias",
 	},
 	{
 		id: "P06",
@@ -250,6 +270,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Lancez jusqu'à trois sorts préparés par les joueurs. Si vous possédez trois brèches ouvertes, ces sorts infligent 1 dégât supplémentaire. Si vous possédez quantre brèches ouvertes, vous pouvez lancer jusqu'à quatre sorts. Ceux-ci infligent 2 dégâts supplémentaires à la place.",
 		abilityCharge: 5,
+		expansion: "Les Parias",
 	},
 	{
 		id: "P04",
@@ -262,6 +283,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Si vous n'êtes pas épuisé, gagnez 3 points de vie. Sinon, Gravehold gagne 3 points de vie.",
 		abilityCharge: 5,
+		expansion: "Les Parias",
 	},
 	{
 		id: "P02",
@@ -273,6 +295,7 @@ export const mages: Mage[] = [
 		abilityTitle: "Combustion d'éther",
 		abilityDescription: "Piochez trois cartes",
 		abilityCharge: 5,
+		expansion: "Les Parias",
 	},
 	{
 		id: "P07",
@@ -285,6 +308,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Un allié pioche trois cartes. Puis, placez le nombre de cartes de votre main de votre choix dans sa main. Puis, cet allié place ce même nombre de cartes de sa main dans votre main.",
 		abilityCharge: 5,
+		expansion: "Les Parias",
 	},
 	{
 		id: "GE04",
@@ -297,6 +321,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Vous pouvez acquérir une gemme coûtant 4 Ether ou moins de la réserve. Gravehold gagne 4 points de vie.",
 		abilityCharge: 4,
+		expansion: "Guerre Éternelle",
 	},
 	{
 		id: "GE07",
@@ -309,6 +334,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Gagnez 6 points de vie. Si vous êtes épuisé, n'importe quel allié gagne 5 points de vie à la place.",
 		abilityCharge: 6,
+		expansion: "Guerre Éternelle",
 	},
 	{
 		id: "GE06",
@@ -321,6 +347,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Infligez 2 dégâts pour chaque jeton Trophée en votre possession.",
 		abilityCharge: 5,
+		expansion: "Guerre Éternelle",
 	},
 	{
 		id: "GE05",
@@ -333,6 +360,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Lancez jusqu'à trois sorts différents préparés par n'importe quel nombre de joueurs. Chaque sort ainsi lancé est placé dans la main de n'importe quel allié.",
 		abilityCharge: 6,
+		expansion: "Guerre Éternelle",
 	},
 	{
 		id: "GE03",
@@ -345,6 +373,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Détruisez jusqu'à deux cartes de votre défausse coûtant 0 Ether. N'importe quel allié pioche une carte et gagne 2 points de vie.",
 		abilityCharge: 5,
+		expansion: "Guerre Éternelle",
 	},
 	{
 		id: "GE02",
@@ -357,6 +386,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Défaussez jusqu'à quatre de vos sorts préparés. Infligez 2 dégâts plus 4 dégâts supplémentaires pour chaque sort défaussé, librement répartis entre la némésis et n'importe quel nombre de serviteurs.",
 		abilityCharge: 5,
+		expansion: "Guerre Éternelle",
 	},
 	{
 		id: "GE08",
@@ -369,6 +399,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Acquérez n'importe quelle carte de la réserve. Si vous avez quatre brèches ouvertes, un allié acquiert n'importe quelle carte de la réserve et la place au-dessus de sa pioche.",
 		abilityCharge: 5,
+		expansion: "Guerre Éternelle",
 	},
 	{
 		id: "GE01",
@@ -381,6 +412,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"N'importe quel joueur détruit une brèche ouverte I ou II et reprend en main chaque sort qui y était préparé. Ce joueur gagne une brèche scellée qu'il place à la place de la brèche détruite. Il peut ensuite préparer un sort de sa main sur la brèche scellée.",
 		abilityCharge: 6,
+		expansion: "Guerre Éternelle",
 	},
 	{
 		id: "LV01",
@@ -393,6 +425,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Stabilisez la brèche de n'importe quel joueur. Répétez ceci trois frois. OU Un allié n'ayant aucune brèche fermée pioche trois cartes et prépare jusqu'à trois sorts de sa main.",
 		abilityCharge: 5,
+		expansion: "Le Vide",
 	},
 	{
 		id: "DVS02",
@@ -405,6 +438,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Détruisez une carte de votre main dont le nom finit par « Mazra ». Acquérez une carte du paquet Amélioration de Mazra coûtant 3 Ether de plus que la carte détruite, puis placez la carte acquise dans votre main. OU Reprenez en main toutes les cartes dont le nom finit par « Mazra » qui se trouvent dans votre défausse.",
 		abilityCharge: 4,
+		expansion: "De Vieux Souvenirs",
 	},
 	{
 		id: "LV02",
@@ -417,6 +451,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Un allié gagne 1 charge et défausse au hasard une carte de sa main. Stabilisez une de vos brèches. Gagnez 1 point de vie. Détruisez une carte de votre main ou de votre défausse.",
 		abilityCharge: 4,
+		expansion: "Le Vide",
 	},
 	{
 		id: "DVS01",
@@ -429,6 +464,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Si vous êtes dans la forme Destruction, lancez jusqu'à deux sorts différents préparés par les joueurs, puis retrounez la tuile Forme. Sinon, un joueur prépare jusqu'à deux sorts de sa défausse sur ses brèches ouvertes, puis retrounez la tuile Forme.",
 		abilityCharge: 5,
+		expansion: "De Vieux Souvenirs",
 	},
 	{
 		id: "RB01",
@@ -441,6 +477,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Vous pouvez détruire une carte de votre main ou de votre défausse. Gagnez 4 Ether. Vous pouvez placer le prochain sort que vous acquérez ce tour dans votre main.",
 		abilityCharge: 5,
+		expansion: "Rêves Brisés",
 	},
 	{
 		id: "UEN03",
@@ -453,6 +490,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Reprenez en main jusqu'à quatre cartes de coût 0 Ether présentes dans votre défausse.",
 		abilityCharge: 5,
+		expansion: "Une Ère Nouvelle",
 	},
 	{
 		id: "UEN02",
@@ -465,6 +503,7 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Placez un jeton Vague sur votre Brèche ancienne. OU Lancez un sort préparé sur votre Brèche ancienne. Gagnez 2 charges.",
 		abilityCharge: 5,
+		expansion: "Une Ère Nouvelle",
 	},
 	{
 		id: "UEN04",
@@ -477,5 +516,6 @@ export const mages: Mage[] = [
 		abilityDescription:
 			"Remettez une carte de votre main ou de votre défausse dans la réserve, à sa place. Si c'est une relique, acquérez une carte d'une pile qui coûte 3 Ether de plus que votre ancienne carte. Sinon, acquérez une carte d'une pile qui coûte 2 Ether de plus que votre ancienne carte. Ensuite, prenez la carte acquise en main.",
 		abilityCharge: 4,
+		expansion: "Une Ère Nouvelle",
 	},
 ];

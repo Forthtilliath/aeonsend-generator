@@ -9,6 +9,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 			lore: "Née de la colère pure d'un monde oublié, Rage Incarnée grandit à chaque coup porté contre elle. Sa fureur s'accumule jusqu'à déborder en un déchaînement dévastateur, avant de retomber, éphémère, pour renaître aussitôt.",
 			tier: 1,
 			hp: 70,
+			expansion: "Aeon's End",
 		},
 		{
 			// Nom et HP non confirmés auprès des sources consultées (wiki officiel et fan francophone) — à revérifier.
@@ -18,6 +19,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 			lore: "Reine des brumes empoisonnées, elle enveloppe Gravehold d'un voile toxique qui ronge lentement la résistance des mages, sans jamais laisser deviner sa véritable forme.",
 			tier: 1,
 			hp: 80,
+			expansion: "Inconnue",
 		},
 		{
 			name: "Masque Tordu",
@@ -26,6 +28,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 			lore: "Sous son masque fissuré se cachent mille visages trompeurs. Le Masque Tordu s'infiltre dans l'esprit des mages, glissant des cartes de corruption au cœur de leurs decks et brouillant leurs mains les plus sûres.",
 			tier: 1,
 			hp: 70,
+			expansion: "Aeon's End",
 		},
 	],
 	2: [
@@ -36,6 +39,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 			lore: "Insatiable, le Prince des Gloutons dévore tout ce qui l'entoure — reliques, sorts, gemmes — vidant les étals de Gravehold pour affamer ceux qui oseraient s'opposer à lui.",
 			tier: 2,
 			hp: 70,
+			expansion: "Aeon's End",
 		},
 		{
 			name: "Titan de l'Ombre",
@@ -44,6 +48,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 			lore: "Colosse d'ombre pure, le Titan de l'Ombre ronge les fondations mêmes de Gravehold. Chaque jeton qu'il perd rapproche la cité de l'effondrement total dans les ténèbres.",
 			tier: 2,
 			hp: 70,
+			expansion: "Guerre Éternelle",
 		},
 		{
 			name: "Reine Carapace",
@@ -52,6 +57,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 			lore: "Mère d'un essaim grouillant, la Reine Carapace couvre le champ de bataille de larves chitineuses. Chaque husk détruit n'est qu'un sursis avant la prochaine vague.",
 			tier: 2,
 			hp: 60,
+			expansion: "Aeon's End",
 		},
 	],
 	3: [
@@ -62,6 +68,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 			lore: "Porteur d'une corruption ancienne, le Seigneur de la Désolation infecte les mages de jades corrompus, les rapprochant peu à peu d'une fin funeste s'il n'est pas arrêté à temps.",
 			tier: 3,
 			hp: 70,
+			expansion: "Les Sans-Noms",
 		},
 		{
 			// Nom et HP non confirmés auprès des sources consultées (wiki officiel et fan francophone) — à revérifier.
@@ -71,6 +78,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 			lore: "Une ombre sans forme qui avale toute lumière sur son passage. Certains mages affirment l'avoir déjà affrontée, sans jamais vraiment être capables de la décrire.",
 			tier: 3,
 			hp: 100,
+			expansion: "Inconnue",
 		},
 		{
 			// Nom et HP non confirmés auprès des sources consultées (wiki officiel et fan francophone) — à revérifier.
@@ -80,6 +88,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 			lore: "Un maelström de destruction pure, aspirant tout ce qui s'approche de Gravehold. Son origine reste un mystère que même les archives des mages ne peuvent confirmer.",
 			tier: 3,
 			hp: 95,
+			expansion: "Inconnue",
 		},
 	],
 	4: [
@@ -90,6 +99,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 			lore: "Un hurlement sans fin résonne à travers les brèches lorsqu'approche la fin des temps. The Wailing n'est pas une créature, mais l'écho d'une catastrophe déjà écrite.",
 			tier: 4,
 			hp: 50,
+			expansion: "Rêves Brisés",
 		},
 		{
 			name: "Couronne Creuse",
@@ -98,6 +108,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 			lore: "La Couronne Creuse ne peut être blessée directement : son pouvoir réside dans ses acolytes, dont la magie sacrificielle doit être rompue un par un avant que la couronne elle-même ne s'effondre.",
 			tier: 4,
 			hp: 1,
+			expansion: "Guerre Éternelle",
 		},
 		{
 			name: "Maggoth",
@@ -106,6 +117,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 			lore: "Fléau primordial niché au cœur d'un nid grouillant, Maggoth prolifère en larves et en mouches innombrables, chaque rangée remplie annonçant une horreur nouvelle.",
 			tier: 4,
 			hp: 45,
+			expansion: "Une Ère Nouvelle",
 		},
 	],
 };

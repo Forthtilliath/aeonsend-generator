@@ -1,11 +1,26 @@
 import type { Tuple } from "./helpers";
 
+export type Expansion =
+	| "Aeon's End"
+	| "Les Profondeurs"
+	| "Les Sans-Noms"
+	| "Guerre Éternelle"
+	| "Ténèbres d'Ailleurs"
+	| "Le Vide"
+	| "De Vieux Souvenirs"
+	| "Une Ère Nouvelle"
+	| "Secrets Enfouis"
+	| "Rêves Brisés"
+	| "Les Parias"
+	| "Inconnue";
+
 export interface Card {
 	id: string;
 	name: string;
 	description: string;
 	cost: number;
 	image: string;
+	expansion: Expansion;
 }
 
 export interface Nemesis {
@@ -15,6 +30,7 @@ export interface Nemesis {
 	lore: string;
 	tier: number;
 	hp: number;
+	expansion: Expansion;
 }
 
 type Breach = "none" | "open" | "left" | "bottom" | "right" | "top";
@@ -37,6 +53,7 @@ export interface Mage {
 	abilityTitle: string;
 	abilityDescription: string;
 	abilityCharge: number;
+	expansion: Expansion;
 }
 
 type CardType = "gem" | "relic" | "spell";
