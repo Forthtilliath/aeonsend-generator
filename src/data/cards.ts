@@ -443,7 +443,7 @@ export const cards: Record<string, Card[]> = {
 			name: "Conduit d'éther",
 			cost: 4,
 			description:
-				"Connectez cette relique à la brèche d'un joueur. Lorsqu'un sort est lancé depuis cette brèche, le joueur qui lance ce soir gagne 1 Ether.",
+				"Connectez cette relique à la brèche d'un joueur. Lorsqu'un sort est lancé depuis cette brèche, le joueur qui lance ce sort gagne 1 Ether.",
 			image: "",
 		},
 		{
@@ -786,7 +786,7 @@ export const cards: Record<string, Card[]> = {
 			name: "Équilibre",
 			cost: 7,
 			description:
-				"Lorsque préparé, réduisez de 1 les dégâts que vous subbissez, jusqu'à un minimum de 1. Lancer : Infligez 4 dégâts.",
+				"Lorsque préparé, réduisez de 1 les dégâts que vous subissez, jusqu'à un minimum de 1. Lancer : Infligez 4 dégâts.",
 			image: "",
 		},
 		{
@@ -840,7 +840,7 @@ export const cards: Record<string, Card[]> = {
 		{
 			id: "R19",
 			name: "Vol d'essence",
-			cost: 3,
+			cost: 5,
 			description:
 				"Lancer : Infligez 3 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, un joueur gagne 1 point de vie.",
 			image: "",
@@ -1315,91 +1315,104 @@ export const cards: Record<string, Card[]> = {
 			id: "R44",
 			name: "Fulminer",
 			cost: 5,
-			description: "Lorsque préparé, les autres sorts que vous lancez infligent 1 dégât supplémentaire. LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 3 dégâts.",
+			description:
+				"Lorsque préparé, les autres sorts que vous lancez infligent 1 dégât supplémentaire. LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 3 dégâts.",
 			image: "",
 		},
 		{
 			id: "R46",
 			name: "Fléchette thermique",
 			cost: 4,
-			description: "LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 3 dégâts. Si ce n'est pas la première Fléchette thermique que vous lancez ce tour-ci, gagnez 1 charge.",
+			description:
+				"LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 3 dégâts. Si ce n'est pas la première Fléchette thermique que vous lancez ce tour-ci, gagnez 1 charge.",
 			image: "",
 		},
 		{
 			id: "R43",
 			name: "Embrasement",
 			cost: 3,
-			description: "LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 2 dégâts. Gagnez 1 Ether.",
+			description:
+				"LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 2 dégâts. Gagnez 1 Ether.",
 			image: "",
 		},
 		{
 			id: "R45",
 			name: "Feu intérieur",
 			cost: 2,
-			description: "LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 1 dégât. Si le palier de la Némésis est 2 ou plus, infligez 1 dégât supplémentaire.",
+			description:
+				"LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 1 dégât. Si le palier de la Némésis est 2 ou plus, infligez 1 dégât supplémentaire.",
 			image: "",
 		},
 		{
 			id: "DVS-056",
 			name: "Synapse symbiotique",
-			cost:7,
-			description: "Si une autre Synapse symbiotique se trouve dans la défausse d'un joueur, ce sort gagne Écho. Lancer : Infligez 4 dégâts.",
+			cost: 7,
+			description:
+				"Si une autre Synapse symbiotique se trouve dans la défausse d'un joueur, ce sort gagne Écho. Lancer : Infligez 4 dégâts.",
 			image: "",
 		},
 		{
 			id: "DVS-054",
 			name: "Double détonation",
 			cost: 3,
-			description: "Lancer : Infligez 2 dégâts. S'il s'agit de la première Double détonation que vous lancez ce tour lors de votre phase d'incantation, vous pouvez lancer la Double détonation préparée d'un joueur sans la défausser.",
+			description:
+				"Lancer : Infligez 2 dégâts. S'il s'agit de la première Double détonation que vous lancez ce tour lors de votre phase d'incantation, vous pouvez lancer la Double détonation préparée d'un joueur sans la défausser.",
 			image: "",
 		},
 		{
 			id: "DVS-055",
 			name: "Invoque-débris",
 			cost: 5,
-			description: "Lancer : Infligez 4 dégâts. Un allié reprend en main une carte de sa défausse coûtant 0 Ether.",
+			description:
+				"Lancer : Infligez 4 dégâts. Un allié reprend en main une carte de sa défausse coûtant 0 Ether.",
 			image: "",
 		},
 		{
 			id: "RB-063",
 			name: "Flamme incarnée",
 			cost: 7,
-			description: "Lancer : Infligez 5 dégâts. Vous pouvez détruire une carte de la pile de la réserve de cette carte. Si vous le faites, infligez 3 dégâts supplémentaires.",
+			description:
+				"Lancer : Infligez 5 dégâts. Vous pouvez détruire une carte de la pile de la réserve de cette carte. Si vous le faites, infligez 3 dégâts supplémentaires.",
 			image: "",
 		},
 		{
 			id: "RB-065",
 			name: "Rituel éclair",
 			cost: 6,
-			description: "Lorsque préparé, une fois par tour durant votrre phase principale, vous pouvez défausser une carte de votre main pour infligez 2 dégâts. Lancer : Infligez 3 dégâts.",
+			description:
+				"Lorsque préparé, une fois par tour durant votrre phase principale, vous pouvez défausser une carte de votre main pour infligez 2 dégâts. Lancer : Infligez 3 dégâts.",
 			image: "",
 		},
 		{
 			id: "RB-061",
 			name: "Cherche-brèche",
 			cost: 5,
-			description: "Écho. Lancer : Infligez 1 dégât. Stabilisez la brèche d'un allié.",
+			description:
+				"Écho. Lancer : Infligez 1 dégât. Stabilisez la brèche d'un allié.",
 			image: "",
 		},
 		{
 			id: "RB-064",
 			name: "Rayon crescendo",
 			cost: 4,
-			description: "Lancer : Infligez 3 dégâts. Gagnez 1 Ether par autre sort que vous avez préparé.",
+			description:
+				"Lancer : Infligez 3 dégâts. Gagnez 1 Ether par autre sort que vous avez préparé.",
 			image: "",
 		},
 		{
 			id: "RB-066",
 			name: "Vapeur d'orage",
 			cost: 4,
-			description: "Lancer : Infligez 3 dégâts. Si une autre Vapeur d'orage se trouve dans la défausse d'un joueur, stabilisez la brèche d'un joueur.",
+			description:
+				"Lancer : Infligez 3 dégâts. Si une autre Vapeur d'orage se trouve dans la défausse d'un joueur, stabilisez la brèche d'un joueur.",
 			image: "",
 		},
 		{
 			id: "RB-062",
 			name: "Mantra de force",
 			cost: 3,
-			description: "Lancer : Un joueur stabilise sa brèche fermée ayant le coût le plus élevé. Infligez 1 dégât. Vous pouvez détruire cette carte. Si vous le faites, infligez 2 dégâts supplémentaires.",
+			description:
+				"Lancer : Un joueur stabilise sa brèche fermée ayant le coût le plus élevé. Infligez 1 dégât. Vous pouvez détruire cette carte. Si vous le faites, infligez 2 dégâts supplémentaires.",
 			image: "",
 		},
 	],
