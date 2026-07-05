@@ -10,9 +10,9 @@ interface ModalProps {
 }
 
 export const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
-	if (!isOpen) return null;
-
 	useEffect(() => {
+		if (!isOpen) return;
+
 		const handleKeyDown = (e: KeyboardEvent) => {
 			if (e.key === "Escape") onClose();
 		};
@@ -22,7 +22,9 @@ export const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
 		return () => {
 			document.removeEventListener("keydown", handleKeyDown);
 		};
-	}, [onClose]);
+	}, [isOpen, onClose]);
+
+	if (!isOpen) return null;
 
 	return (
 		<div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
