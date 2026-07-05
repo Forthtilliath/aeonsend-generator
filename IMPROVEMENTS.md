@@ -23,7 +23,5 @@
 ## Fait (2)
 
 - ✅ **Migration Preact → React** — Vite utilise désormais `@vitejs/plugin-react`, `lucide-react` remplace `lucide-preact`, `main.tsx` utilise `createRoot` de `react-dom/client`.
-
-## En cours
-
-- PWA installable sur mobile (`vite-plugin-pwa`)
+- ✅ **Lint/format avec Biome** — `@biomejs/biome` installé, `biome.jsonc` configuré (tabs, guillemets doubles, tri des imports), script `lint`. Aucune violation de règle trouvée sur le code existant.
+- ✅ **PWA installable sur mobile** — `vite-plugin-pwa` (service worker autoUpdate + manifest), icônes générées à partir du symbole Aether existant (`public/icon-192.png`, `icon-512.png`, `apple-touch-icon.png`, `favicon-32.png`).
