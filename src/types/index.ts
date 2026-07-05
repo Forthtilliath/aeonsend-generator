@@ -12,6 +12,7 @@ export interface Nemesis {
 	name: string;
 	difficulty: number;
 	description: string;
+	lore: string;
 	tier: number;
 	hp: number;
 }
