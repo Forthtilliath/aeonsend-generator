@@ -20,7 +20,10 @@
 - **Export PNG** : mentionné comme fonctionnel dans une version antérieure (via `html2canvas` chargé depuis un CDN) mais absent du code actuel — seul l'export `.txt` subsiste. À réintégrer si le besoin est confirmé, en évitant cette fois un chargement CDN dynamique (préférer une dépendance npm installée en dur).
 - **Pas de persistance** : tout l'état est en mémoire, perdu au refresh (pas de `localStorage`). À évaluer selon l'usage réel (session unique vs reprise de campagne).
 
+## Fait (2)
+
+- ✅ **Migration Preact → React** — Vite utilise désormais `@vitejs/plugin-react`, `lucide-react` remplace `lucide-preact`, `main.tsx` utilise `createRoot` de `react-dom/client`.
+
 ## En cours
 
-- Migration Preact → React (Vite + `@vitejs/plugin-react`)
 - PWA installable sur mobile (`vite-plugin-pwa`)
