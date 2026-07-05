@@ -120,9 +120,19 @@ export const hasExcessCards = (
 };
 
 export const generateRandomInteger = (max: number): number => {
-	const bytes = new Uint8Array(1);
-	crypto.getRandomValues(bytes);
-	return bytes[0] % max;
+	if (max <= 0) return 0;
+
+	// Rejects values beyond the last full multiple of `max` so the modulo
+	// below stays uniform, instead of biasing the low end of the range.
+	const MAX_UINT32 = 0xffffffff;
+	const rejectionLimit = MAX_UINT32 - (MAX_UINT32 % max);
+
+	let value: number;
+	do {
+		value = crypto.getRandomValues(new Uint32Array(1))[0];
+	} while (value > rejectionLimit);
+
+	return value % max;
 };
 
 export const getRandomItemFromArray = <T>(arr: T[]): T => {

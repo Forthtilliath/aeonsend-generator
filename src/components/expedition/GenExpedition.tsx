@@ -18,6 +18,7 @@ import type {
 } from "../../types";
 import type { Tuple } from "../../types/helpers";
 import {
+	clamp,
 	generateSupply,
 	getRandomItemFromArray,
 	getTypeLabel,
@@ -63,21 +64,19 @@ const FormExpedition: FC = () => {
 			return getRandomItemFromArray(nemeses[tier]);
 		}) as Tuple<Nemesis, 4>;
 
-		const numMages =
+		const allMages = [...mages];
+		const rawNumMages =
 			playerConfig.mode === "perPlayer"
 				? playerConfig.numPlayers * playerConfig.magesPerPlayer
 				: playerConfig.totalMages;
+		const numMages = clamp(rawNumMages, 0, allMages.length);
 
 		const marketConfig =
 			selectedMarket === "custom" ? customMarket : selectedMarketConfig;
 
-		const allMages = [...mages];
 		const battles = selectedNemeses.map((nemesis, index) => {
 			const shuffledMages = shuffle(allMages);
-			const selectedMages = shuffledMages.slice(
-				0,
-				Math.min(numMages, allMages.length),
-			);
+			const selectedMages = shuffledMages.slice(0, numMages);
 
 			return {
 				number: index + 1,

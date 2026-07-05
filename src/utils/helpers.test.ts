@@ -3,6 +3,7 @@ import type { Battle, MarketCondition } from "../types";
 import {
 	clamp,
 	copyTuple,
+	generateRandomInteger,
 	generateSupply,
 	getCriteriaLabel,
 	getRandomItemFromArray,
@@ -121,6 +122,25 @@ describe("getCriteriaLabel", () => {
 		expect(getCriteriaLabel({ type: "gem", operator: "=", cost: 4 })).toBe(
 			"4⚡",
 		);
+	});
+});
+
+describe("generateRandomInteger", () => {
+	test("returns 0 for a non-positive max", () => {
+		expect(generateRandomInteger(0)).toBe(0);
+		expect(generateRandomInteger(-3)).toBe(0);
+	});
+
+	test("stays within [0, max) across many draws", () => {
+		for (let i = 0; i < 500; i++) {
+			const value = generateRandomInteger(7);
+			expect(value).toBeGreaterThanOrEqual(0);
+			expect(value).toBeLessThan(7);
+		}
+	});
+
+	test("always returns 0 for max = 1", () => {
+		expect(generateRandomInteger(1)).toBe(0);
 	});
 });
 
