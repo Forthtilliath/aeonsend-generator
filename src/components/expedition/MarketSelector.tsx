@@ -2,7 +2,7 @@ import { X } from "lucide-preact";
 import { marketTemplates } from "../../data/marketTemplates";
 import type { MarketCondition } from "../../types";
 import type { Tuple } from "../../types/helpers";
-import { copyTuple, getTypeLabel } from "../../utils/helpers";
+import { clamp, copyTuple, getTypeLabel } from "../../utils/helpers";
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
 import { AetherIcon } from "../ui/Icons";
@@ -191,7 +191,7 @@ export const MarketSelector = ({
 														const newMarket = copyTuple(customMarket);
 														newMarket[idx] = {
 															...slot,
-															cost: parseInt(e.currentTarget.value, 10) || 0,
+															cost: clamp(parseInt(e.currentTarget.value, 10), 0, 9),
 														};
 														setCustomMarket(newMarket);
 													}}
@@ -207,7 +207,7 @@ export const MarketSelector = ({
 														const newMarket = copyTuple(customMarket);
 														newMarket[idx] = {
 															...slot,
-															costMax: parseInt(e.currentTarget.value, 10) || 0,
+															costMax: clamp(parseInt(e.currentTarget.value, 10), 0, 9),
 														};
 														setCustomMarket(newMarket);
 													}}
@@ -225,7 +225,7 @@ export const MarketSelector = ({
 													const newMarket = copyTuple(customMarket);
 													newMarket[idx] = {
 														...slot,
-														cost: parseInt(e.currentTarget.value, 10) || 0,
+														cost: clamp(parseInt(e.currentTarget.value, 10), 0, 9),
 													};
 													setCustomMarket(newMarket);
 												}}

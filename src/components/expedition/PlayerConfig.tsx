@@ -1,5 +1,6 @@
 import { Users } from "lucide-preact";
 import type { PlayerConfig as PlayerConfigType, RerollConfig } from "../../types";
+import { clamp } from "../../utils/helpers";
 import { Card } from "../ui/Card";
 import { Input } from "../ui/Input";
 
@@ -34,7 +35,7 @@ export const PlayerConfig = ({
 					onChange={(e) =>
 						setPlayerConfig({
 							...playerConfig,
-							numPlayers: parseInt(e.currentTarget.value, 10) || 1,
+							numPlayers: clamp(parseInt(e.currentTarget.value, 10), 1, 4),
 						})
 					}
 				/>
@@ -49,7 +50,7 @@ export const PlayerConfig = ({
 					onChange={(e) =>
 						setPlayerConfig({
 							...playerConfig,
-							magesPerPlayer: parseInt(e.currentTarget.value, 10) || 1,
+							magesPerPlayer: clamp(parseInt(e.currentTarget.value, 10), 1, 4),
 						})
 					}
 				/>
@@ -98,7 +99,11 @@ export const PlayerConfig = ({
 							onChange={(e) =>
 								setRerollConfig({
 									...rerollConfig,
-									maxIndividualRerolls: parseInt(e.currentTarget.value, 10) || 0,
+									maxIndividualRerolls: clamp(
+										parseInt(e.currentTarget.value, 10),
+										0,
+										20,
+									),
 								})
 							}
 						/>

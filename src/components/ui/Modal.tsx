@@ -1,6 +1,6 @@
 import { X } from "lucide-preact";
 import type { ComponentChildren } from "preact";
-import { useEffect } from "preact/hooks";
+import { useEffect, useRef } from "preact/hooks";
 
 interface ModalProps {
 	isOpen: boolean;
@@ -9,18 +9,51 @@ interface ModalProps {
 	title?: string;
 }
 
+const FOCUSABLE_SELECTOR =
+	'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
 export const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
+	const dialogRef = useRef<HTMLDivElement>(null);
+	const previouslyFocused = useRef<HTMLElement | null>(null);
+
 	useEffect(() => {
 		if (!isOpen) return;
 
+		previouslyFocused.current = document.activeElement as HTMLElement | null;
+		const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
+			FOCUSABLE_SELECTOR,
+		);
+		focusable?.[0]?.focus();
+
 		const handleKeyDown = (e: KeyboardEvent) => {
-			if (e.key === "Escape") onClose();
+			if (e.key === "Escape") {
+				onClose();
+				return;
+			}
+			if (e.key !== "Tab" || !dialogRef.current) return;
+
+			const focusableEls = Array.from(
+				dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+			);
+			if (focusableEls.length === 0) return;
+
+			const first = focusableEls[0];
+			const last = focusableEls[focusableEls.length - 1];
+
+			if (e.shiftKey && document.activeElement === first) {
+				e.preventDefault();
+				last.focus();
+			} else if (!e.shiftKey && document.activeElement === last) {
+				e.preventDefault();
+				first.focus();
+			}
 		};
 
 		document.addEventListener("keydown", handleKeyDown);
 
 		return () => {
 			document.removeEventListener("keydown", handleKeyDown);
+			previouslyFocused.current?.focus();
 		};
 	}, [isOpen, onClose]);
 
@@ -29,6 +62,7 @@ export const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
 	return (
 		<div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
 			<div
+				ref={dialogRef}
 				className="relative max-w-md w-full"
 				onClick={(e) => e.stopPropagation()}
 				onKeyDown={(e) => e.stopPropagation()}

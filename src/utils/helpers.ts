@@ -16,6 +16,11 @@ export const matchesCondition = (
 	return false;
 };
 
+export const clamp = (value: number, min: number, max: number): number => {
+	if (Number.isNaN(value)) return min;
+	return Math.min(Math.max(value, min), max);
+};
+
 export const getTypeColor = (type: string): string => {
 	if (type === "gem") return "from-purple-500 to-fuchsia-500";
 	if (type === "relic") return "from-blue-500 to-cyan-500";
@@ -121,6 +126,9 @@ export const generateRandomInteger = (max: number): number => {
 };
 
 export const getRandomItemFromArray = <T>(arr: T[]): T => {
+	if (arr.length === 0) {
+		throw new Error("getRandomItemFromArray: cannot pick from an empty array");
+	}
 	const randomIndex = generateRandomInteger(arr.length);
 	return arr[randomIndex];
 };
