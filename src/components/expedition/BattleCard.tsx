@@ -1,4 +1,4 @@
-import { Shuffle } from "lucide-preact";
+import { Shuffle } from "lucide-react";
 import type { Battle, RerollConfig, SupplyCard } from "../../types";
 import { SupplyCard as SupplyCardComponent } from "./SupplyCard";
 

@@ -1,4 +1,4 @@
-import { Users } from "lucide-preact";
+import { Users } from "lucide-react";
 import type { PlayerConfig as PlayerConfigType, RerollConfig } from "../../types";
 import { clamp } from "../../utils/helpers";
 import { Card } from "../ui/Card";

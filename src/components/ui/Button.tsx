@@ -1,9 +1,9 @@
-import type { ComponentChildren, JSX } from "preact";
+import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-interface ButtonProps extends JSX.HTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	variant?: "primary" | "secondary" | "danger" | "ghost";
 	size?: "sm" | "md" | "lg";
-	children: ComponentChildren;
+	children: ReactNode;
 }
 
 export const Button = ({

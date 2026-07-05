@@ -1,6 +1,6 @@
-import type { InputHTMLAttributes } from "preact";
+import type { InputHTMLAttributes } from "react";
 
-interface InputProps extends InputHTMLAttributes {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	label?: string;
 	id: string;
 }

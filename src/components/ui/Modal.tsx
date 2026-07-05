@@ -1,11 +1,10 @@
-import { X } from "lucide-preact";
-import type { ComponentChildren } from "preact";
-import { useEffect, useRef } from "preact/hooks";
+import { X } from "lucide-react";
+import { type ReactNode, useEffect, useRef } from "react";
 
 interface ModalProps {
 	isOpen: boolean;
 	onClose: () => void;
-	children: ComponentChildren;
+	children: ReactNode;
 	title?: string;
 }
 

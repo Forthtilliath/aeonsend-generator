@@ -1,4 +1,4 @@
-import { render } from "preact";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import { App } from "./app.tsx";
 
@@ -7,4 +7,4 @@ if (!appElement) {
 	throw new Error("No app element found");
 }
 
-render(<App />, appElement);
+createRoot(appElement).render(<App />);

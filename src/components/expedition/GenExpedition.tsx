@@ -1,6 +1,5 @@
-import { FileText, Shuffle } from "lucide-preact";
-import { Fragment, type FunctionComponent } from "preact";
-import { useRef, useState } from "preact/hooks";
+import { FileText, Shuffle } from "lucide-react";
+import { type FC, Fragment, useRef, useState } from "react";
 import { cards } from "../../data/cards";
 import { mages } from "../../data/mages";
 import {
@@ -32,7 +31,7 @@ import { CardModal } from "./CardModal";
 import { MarketSelector } from "./MarketSelector";
 import { PlayerConfig as PlayerConfigComponent } from "./PlayerConfig";
 
-const FormExpedition: FunctionComponent = () => {
+const FormExpedition: FC = () => {
 	const [expedition, setExpedition] = useState<Expedition | null>(null);
 	const [selectedCard, setSelectedCard] = useState<SupplyCard | null>(null);
 	const [selectedMarket, setSelectedMarket] = useState<string>("custom");

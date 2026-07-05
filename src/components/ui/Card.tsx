@@ -1,7 +1,7 @@
-import type { ComponentChildren } from "preact";
+import type { ReactNode } from "react";
 
 interface CardProps {
-	children: ComponentChildren;
+	children: ReactNode;
 	className?: string;
 }
 

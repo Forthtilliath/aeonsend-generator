@@ -1,4 +1,4 @@
-import { X } from "lucide-preact";
+import { X } from "lucide-react";
 import { marketTemplates } from "../../data/marketTemplates";
 import type { MarketCondition } from "../../types";
 import type { Tuple } from "../../types/helpers";
