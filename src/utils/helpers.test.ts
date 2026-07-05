@@ -36,7 +36,11 @@ describe("matchesCondition", () => {
 	const card = { id: "X", name: "Test", description: "", cost: 5, image: "" };
 
 	test("'any' operator always matches", () => {
-		const condition: MarketCondition = { type: "gem", operator: "any", cost: null };
+		const condition: MarketCondition = {
+			type: "gem",
+			operator: "any",
+			cost: null,
+		};
 		expect(matchesCondition(card, condition)).toBe(true);
 	});
 
@@ -114,7 +118,9 @@ describe("getCriteriaLabel", () => {
 	});
 
 	test("'=' operator", () => {
-		expect(getCriteriaLabel({ type: "gem", operator: "=", cost: 4 })).toBe("4⚡");
+		expect(getCriteriaLabel({ type: "gem", operator: "=", cost: 4 })).toBe(
+			"4⚡",
+		);
 	});
 });
 
@@ -187,8 +193,26 @@ describe("hasExcessCards", () => {
 		];
 		const battle = {
 			supply: [
-				{ id: "1", name: "A", description: "", cost: 1, image: "", type: "gem", position: 1, criteria: marketConfig[0] },
-				{ id: "2", name: "B", description: "", cost: 2, image: "", type: "gem", position: 2, criteria: marketConfig[0] },
+				{
+					id: "1",
+					name: "A",
+					description: "",
+					cost: 1,
+					image: "",
+					type: "gem",
+					position: 1,
+					criteria: marketConfig[0],
+				},
+				{
+					id: "2",
+					name: "B",
+					description: "",
+					cost: 2,
+					image: "",
+					type: "gem",
+					position: 2,
+					criteria: marketConfig[0],
+				},
 			],
 		} as unknown as Battle;
 

@@ -10,9 +10,9 @@ export const matchesCondition = (
 	if (condition.operator === "<=") return card.cost <= condition.cost;
 	if (condition.operator === ">=") return card.cost >= condition.cost;
 	if (condition.operator === "=") return card.cost === condition.cost;
-  if(condition.operator === "range") {
-    return card.cost >= condition.cost && card.cost <= condition.costMax;
-  }
+	if (condition.operator === "range") {
+		return card.cost >= condition.cost && card.cost <= condition.costMax;
+	}
 	return false;
 };
 

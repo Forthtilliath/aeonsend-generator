@@ -191,7 +191,11 @@ export const MarketSelector = ({
 														const newMarket = copyTuple(customMarket);
 														newMarket[idx] = {
 															...slot,
-															cost: clamp(parseInt(e.currentTarget.value, 10), 0, 9),
+															cost: clamp(
+																parseInt(e.currentTarget.value, 10),
+																0,
+																9,
+															),
 														};
 														setCustomMarket(newMarket);
 													}}
@@ -207,7 +211,11 @@ export const MarketSelector = ({
 														const newMarket = copyTuple(customMarket);
 														newMarket[idx] = {
 															...slot,
-															costMax: clamp(parseInt(e.currentTarget.value, 10), 0, 9),
+															costMax: clamp(
+																parseInt(e.currentTarget.value, 10),
+																0,
+																9,
+															),
 														};
 														setCustomMarket(newMarket);
 													}}
@@ -225,7 +233,11 @@ export const MarketSelector = ({
 													const newMarket = copyTuple(customMarket);
 													newMarket[idx] = {
 														...slot,
-														cost: clamp(parseInt(e.currentTarget.value, 10), 0, 9),
+														cost: clamp(
+															parseInt(e.currentTarget.value, 10),
+															0,
+															9,
+														),
 													};
 													setCustomMarket(newMarket);
 												}}

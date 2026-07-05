@@ -1,8 +1,5 @@
 import type { SupplyCard as SupplyCardType } from "../../types";
-import {
-	getTypeBgColor,
-	getTypeLabel,
-} from "../../utils/helpers";
+import { getTypeBgColor, getTypeLabel } from "../../utils/helpers";
 import { AetherIcon } from "../ui/Icons";
 import { CriteriaLabel } from "./CriteriaLabel";
 

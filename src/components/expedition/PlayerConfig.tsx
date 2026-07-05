@@ -1,5 +1,8 @@
 import { Users } from "lucide-react";
-import type { PlayerConfig as PlayerConfigType, RerollConfig } from "../../types";
+import type {
+	PlayerConfig as PlayerConfigType,
+	RerollConfig,
+} from "../../types";
 import { clamp } from "../../utils/helpers";
 import { Card } from "../ui/Card";
 import { Input } from "../ui/Input";
@@ -57,7 +60,8 @@ export const PlayerConfig = ({
 
 				<div className="flex items-end">
 					<div className="bg-indigo-900/30 rounded p-3 text-sm border border-indigo-700/30 w-full">
-						Total de mages: {playerConfig.numPlayers * playerConfig.magesPerPlayer}
+						Total de mages:{" "}
+						{playerConfig.numPlayers * playerConfig.magesPerPlayer}
 					</div>
 				</div>
 			</div>
@@ -70,7 +74,9 @@ export const PlayerConfig = ({
 							<input
 								type="radio"
 								checked={rerollConfig.type === "global"}
-								onChange={() => setRerollConfig({ ...rerollConfig, type: "global" })}
+								onChange={() =>
+									setRerollConfig({ ...rerollConfig, type: "global" })
+								}
 								className="w-4 h-4"
 							/>
 							<span>Relance globale (toutes les cartes)</span>

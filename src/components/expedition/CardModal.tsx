@@ -23,9 +23,7 @@ export const CardModal = ({ card, onClose }: CardModalProps) => {
 				<div className="text-center text-xl mb-4">
 					{card.type.charAt(0).toUpperCase() + card.type.slice(1)}
 				</div>
-				<div className="text-center text-xl mb-4">
-					{card.description}
-				</div>
+				<div className="text-center text-xl mb-4">{card.description}</div>
 				<div className="text-center text-4xl font-bold">
 					Coût: {card.cost}
 					<AetherIcon />

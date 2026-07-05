@@ -19,9 +19,8 @@ export const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
 		if (!isOpen) return;
 
 		previouslyFocused.current = document.activeElement as HTMLElement | null;
-		const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
-			FOCUSABLE_SELECTOR,
-		);
+		const focusable =
+			dialogRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR);
 		focusable?.[0]?.focus();
 
 		const handleKeyDown = (e: KeyboardEvent) => {
