@@ -1,14 +1,17 @@
 import { FileText, Shuffle } from "lucide-react";
-import { type FC, Fragment, useRef, useState } from "react";
+import { type FC, Fragment, useMemo, useRef, useState } from "react";
 import { cards } from "../../data/cards";
+import { ALL_EXPANSIONS } from "../../data/expansions";
 import { mages } from "../../data/mages";
 import {
 	defaultCustomMarket,
 	marketTemplates,
 } from "../../data/marketTemplates";
 import { nemeses } from "../../data/nemeses";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 import type {
 	Battle,
+	Expansion,
 	Expedition,
 	MarketCondition,
 	Nemesis,
@@ -23,12 +26,14 @@ import {
 	getRandomItemFromArray,
 	getTypeLabel,
 	hasExcessCards,
+	isExpansionOwned,
 	matchesCondition,
 	shuffle,
 } from "../../utils/helpers";
 import { Button } from "../ui/Button";
 import { BattleCard } from "./BattleCard";
 import { CardModal } from "./CardModal";
+import { ExpansionSelector } from "./ExpansionSelector";
 import { MarketSelector } from "./MarketSelector";
 import { PlayerConfig as PlayerConfigComponent } from "./PlayerConfig";
 
@@ -56,15 +61,48 @@ const FormExpedition: FC = () => {
 		removeExcess: false,
 	});
 
+	const [ownedExpansionsList, setOwnedExpansionsList] = useLocalStorage<
+		Expansion[]
+	>("ownedExpansions", ALL_EXPANSIONS);
+	const ownedExpansions = useMemo(
+		() => new Set(ownedExpansionsList),
+		[ownedExpansionsList],
+	);
+	const toggleExpansion = (expansion: Expansion): void => {
+		setOwnedExpansionsList((prev) =>
+			prev.includes(expansion)
+				? prev.filter((e) => e !== expansion)
+				: [...prev, expansion],
+		);
+	};
+
+	const [warning, setWarning] = useState<string | null>(null);
+
 	const selectedMarketConfig =
 		marketTemplates.get(selectedMarket)?.config ?? customMarket;
 
 	const generateExpedition = (): void => {
+		const missingTiers: number[] = [];
 		const selectedNemeses = [1, 2, 3, 4].map((tier) => {
-			return getRandomItemFromArray(nemeses[tier]);
+			const available = nemeses[tier].filter((n) =>
+				isExpansionOwned(n.expansion, ownedExpansions),
+			);
+			if (available.length === 0) {
+				missingTiers.push(tier);
+				return getRandomItemFromArray(nemeses[tier]);
+			}
+			return getRandomItemFromArray(available);
 		}) as Tuple<Nemesis, 4>;
+		setWarning(
+			missingTiers.length > 0
+				? `Aucune nemesis disponible pour le palier ${missingTiers.join(", ")} avec les boîtes sélectionnées — une nemesis d'une autre boîte a été utilisée à la place.`
+				: null,
+		);
 
-		const allMages = [...mages];
+		const ownedMages = mages.filter((m) =>
+			isExpansionOwned(m.expansion, ownedExpansions),
+		);
+		const allMages = ownedMages.length > 0 ? ownedMages : [...mages];
 		const rawNumMages =
 			playerConfig.mode === "perPlayer"
 				? playerConfig.numPlayers * playerConfig.magesPerPlayer
@@ -82,7 +120,12 @@ const FormExpedition: FC = () => {
 				number: index + 1,
 				nemesis,
 				mages: selectedMages,
-				supply: generateSupply(marketConfig, [], rerollConfig.removeExcess),
+				supply: generateSupply(
+					marketConfig,
+					[],
+					rerollConfig.removeExcess,
+					ownedExpansions,
+				),
 				remainingRerolls: rerollConfig.maxIndividualRerolls,
 			};
 		}) as Tuple<Battle, 4>;
@@ -114,6 +157,7 @@ const FormExpedition: FC = () => {
 			marketConfig,
 			[],
 			rerollConfig.removeExcess,
+			ownedExpansions,
 		);
 		setExpedition(newExpedition);
 	};
@@ -150,7 +194,10 @@ const FormExpedition: FC = () => {
 								"spells",
 							]);
 		const availableCards = cards[typeKey].filter(
-			(card) => matchesCondition(card, criteria) && !usedCards.has(card.name),
+			(card) =>
+				matchesCondition(card, criteria) &&
+				!usedCards.has(card.name) &&
+				isExpansionOwned(card.expansion, ownedExpansions),
 		);
 
 		if (availableCards.length > 0) {
@@ -268,6 +315,13 @@ ${battle.supply.map((c) => `  - ${c.name} - ${c.cost} Aether (${getTypeLabel(c.t
 					</h1>
 				</div>
 
+				<ExpansionSelector
+					ownedExpansions={ownedExpansions}
+					onToggle={toggleExpansion}
+				/>
+
+				<div className="mb-4" />
+
 				<PlayerConfigComponent
 					playerConfig={playerConfig}
 					setPlayerConfig={setPlayerConfig}
@@ -297,6 +351,20 @@ ${battle.supply.map((c) => `  - ${c.name} - ${c.cost} Aether (${getTypeLabel(c.t
 					<Shuffle className="w-5 h-5" />
 					Générer une campagne de 4 affrontements
 				</Button>
+
+				{warning && (
+					<div className="bg-red-950/60 border border-red-700/50 rounded-lg p-3 mb-4 text-sm text-red-200 flex items-start justify-between gap-3">
+						<span>{warning}</span>
+						<button
+							type="button"
+							onClick={() => setWarning(null)}
+							className="text-red-300 hover:text-white shrink-0"
+							aria-label="Fermer l'avertissement"
+						>
+							✕
+						</button>
+					</div>
+				)}
 
 				{expedition && (
 					<>

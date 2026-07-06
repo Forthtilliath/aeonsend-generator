@@ -1,5 +1,16 @@
 import { cards } from "../data/cards";
-import type { Battle, Card, MarketCondition, SupplyCard } from "../types";
+import type {
+	Battle,
+	Card,
+	Expansion,
+	MarketCondition,
+	SupplyCard,
+} from "../types";
+
+export const isExpansionOwned = (
+	expansion: Expansion,
+	ownedExpansions: ReadonlySet<Expansion>,
+): boolean => expansion === "Inconnue" || ownedExpansions.has(expansion);
 
 export const matchesCondition = (
 	card: Card,
@@ -58,6 +69,7 @@ export const generateSupply = (
 	marketConfig: MarketCondition[],
 	existingSupply: SupplyCard[] = [],
 	removeExcess: boolean = false,
+	ownedExpansions?: ReadonlySet<Expansion>,
 ): SupplyCard[] => {
 	const supply: SupplyCard[] = [];
 	const usedCards = new Set(existingSupply.map((c) => c.name));
@@ -70,7 +82,10 @@ export const generateSupply = (
 					? "relics"
 					: "spells";
 		const availableCards = cards[typeKey].filter(
-			(card) => matchesCondition(card, condition) && !usedCards.has(card.name),
+			(card) =>
+				matchesCondition(card, condition) &&
+				!usedCards.has(card.name) &&
+				(!ownedExpansions || isExpansionOwned(card.expansion, ownedExpansions)),
 		);
 
 		if (availableCards.length > 0) {
