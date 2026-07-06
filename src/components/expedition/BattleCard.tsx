@@ -1,5 +1,6 @@
 import { Shuffle } from "lucide-react";
 import type { Battle, RerollConfig, SupplyCard } from "../../types";
+import { BreachIcons } from "./BreachIcons";
 import { SupplyCard as SupplyCardComponent } from "./SupplyCard";
 
 interface BattleCardProps {
@@ -66,7 +67,8 @@ export const BattleCard = ({
 							className="bg-linear-to-br from-indigo-800/30 to-purple-800/30 rounded-lg p-2 border border-indigo-500/40 text-center shadow-md"
 						>
 							<div className="font-bold text-sm">{mage.name}</div>
-							<div className="text-xs text-blue-300">{mage.title}</div>
+							<div className="text-xs text-blue-300 mb-2">{mage.title}</div>
+							<BreachIcons breachs={mage.breachs} />
 						</div>
 					))}
 				</div>

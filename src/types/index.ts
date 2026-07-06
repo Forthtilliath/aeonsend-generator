@@ -33,7 +33,7 @@ export interface Nemesis {
 	expansion: Expansion;
 }
 
-type Breach = "none" | "open" | "left" | "bottom" | "right" | "top";
+export type Breach = "none" | "open" | "left" | "bottom" | "right" | "top";
 type PowerPhase =
 	| "nemesesDraw"
 	| "currentPlayerMain"
