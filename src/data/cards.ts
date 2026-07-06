@@ -1335,9 +1335,9 @@ export const cards: Record<string, Card[]> = {
 		},
 		{
 			id: "LP-FIN-077",
-			name: "Lancer : Infligez 3 dégâts. Si la pile de la réserve de cette carte est vide, infligez 1 dégât supplémentaire.",
+			name: "Croc Tordu",
 			cost: 4,
-			description: "",
+			description: "Lancer : Infligez 3 dégâts. Si la pile de la réserve de cette carte est vide, infligez 1 dégât supplémentaire",
 			image: "",
 			expansion: "Les Parias",
 		},
