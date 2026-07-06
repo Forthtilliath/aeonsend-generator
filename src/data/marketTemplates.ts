@@ -166,6 +166,12 @@ export const marketTemplates = new Map<string, MarketTemplate>([
 	],
 ]);
 
+export const findMarketTemplate = (
+	id: string,
+	userPresets: MarketTemplate[],
+): MarketTemplate | undefined =>
+	marketTemplates.get(id) ?? userPresets.find((preset) => preset.id === id);
+
 export const defaultCustomMarket: Tuple<MarketCondition, 9> = [
 	{ type: "gem" as const, operator: "<=" as const, cost: 4 },
 	{ type: "gem" as const, operator: "<=" as const, cost: 4 },

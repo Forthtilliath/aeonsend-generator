@@ -5,7 +5,7 @@ import { ALL_EXPANSIONS } from "../../data/expansions";
 import { mages } from "../../data/mages";
 import {
 	defaultCustomMarket,
-	marketTemplates,
+	findMarketTemplate,
 } from "../../data/marketTemplates";
 import { nemeses } from "../../data/nemeses";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
@@ -14,6 +14,7 @@ import type {
 	Expansion,
 	Expedition,
 	MarketCondition,
+	MarketTemplate,
 	Nemesis,
 	PlayerConfig,
 	RerollConfig,
@@ -78,8 +79,13 @@ const FormExpedition: FC = () => {
 
 	const [warning, setWarning] = useState<string | null>(null);
 
+	const [userPresets, setUserPresets] = useLocalStorage<MarketTemplate[]>(
+		"userMarketPresets",
+		[],
+	);
+
 	const selectedMarketConfig =
-		marketTemplates.get(selectedMarket)?.config ?? customMarket;
+		findMarketTemplate(selectedMarket, userPresets)?.config ?? customMarket;
 
 	const generateExpedition = (): void => {
 		const missingTiers: number[] = [];
@@ -257,7 +263,7 @@ const FormExpedition: FC = () => {
 	};
 
 	const loadMarketTemplate = (templateKey: string): void => {
-		const template = marketTemplates.get(templateKey);
+		const template = findMarketTemplate(templateKey, userPresets);
 		if (!template) return;
 		setCustomMarket([...template.config]);
 		setSelectedMarket("custom");
@@ -265,6 +271,20 @@ const FormExpedition: FC = () => {
 
 	const resetCustomMarket = (): void => {
 		setCustomMarket([...defaultCustomMarket]);
+	};
+
+	const saveCurrentAsPreset = (name: string): void => {
+		const trimmed = name.trim();
+		if (!trimmed) return;
+		setUserPresets((prev) => [
+			...prev,
+			{ id: crypto.randomUUID(), name: trimmed, config: [...customMarket] },
+		]);
+	};
+
+	const deletePreset = (id: string): void => {
+		setUserPresets((prev) => prev.filter((preset) => preset.id !== id));
+		if (selectedMarket === id) setSelectedMarket("custom");
 	};
 
 	const generatePDF = (): void => {
@@ -340,6 +360,9 @@ ${battle.supply.map((c) => `  - ${c.name} - ${c.cost} Aether (${getTypeLabel(c.t
 					setCustomMarket={setCustomMarket}
 					onLoadTemplate={loadMarketTemplate}
 					onResetCustom={resetCustomMarket}
+					userPresets={userPresets}
+					onSaveCurrentAsPreset={saveCurrentAsPreset}
+					onDeletePreset={deletePreset}
 				/>
 
 				<Button

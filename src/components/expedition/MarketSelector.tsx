@@ -1,11 +1,16 @@
 import { X } from "lucide-react";
-import { marketTemplates } from "../../data/marketTemplates";
-import type { MarketCondition } from "../../types";
+import { useState } from "react";
+import {
+	findMarketTemplate,
+	marketTemplates,
+} from "../../data/marketTemplates";
+import type { MarketCondition, MarketTemplate } from "../../types";
 import type { Tuple } from "../../types/helpers";
 import { clamp, copyTuple, getTypeLabel } from "../../utils/helpers";
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
 import { AetherIcon } from "../ui/Icons";
+import { Input } from "../ui/Input";
 import { CriteriaLabel } from "./CriteriaLabel";
 
 interface MarketSelectorProps {
@@ -17,6 +22,9 @@ interface MarketSelectorProps {
 	setCustomMarket: (market: Tuple<MarketCondition, 9>) => void;
 	onLoadTemplate: (key: string) => void;
 	onResetCustom: () => void;
+	userPresets: MarketTemplate[];
+	onSaveCurrentAsPreset: (name: string) => void;
+	onDeletePreset: (id: string) => void;
 }
 
 export const MarketSelector = ({
@@ -28,7 +36,17 @@ export const MarketSelector = ({
 	setCustomMarket,
 	onLoadTemplate,
 	onResetCustom,
+	userPresets,
+	onSaveCurrentAsPreset,
+	onDeletePreset,
 }: MarketSelectorProps) => {
+	const [newPresetName, setNewPresetName] = useState("");
+
+	const handleSavePreset = () => {
+		onSaveCurrentAsPreset(newPresetName);
+		setNewPresetName("");
+	};
+
 	return (
 		<Card>
 			<h2 className="text-lg font-bold mb-3 text-amber-200">Marché</h2>
@@ -57,6 +75,35 @@ export const MarketSelector = ({
 					</button>
 				))}
 
+				{userPresets.map((preset) => (
+					<div key={preset.id} className="relative">
+						<button
+							type="button"
+							onClick={() => {
+								setSelectedMarket(preset.id);
+								setShowMarketConfig(true);
+							}}
+							className={`w-full p-2 rounded-lg border-2 transition-all ${
+								selectedMarket === preset.id
+									? "border-amber-500 bg-amber-900/40 shadow-lg shadow-amber-900/30"
+									: "border-slate-700 bg-slate-800/50 hover:border-amber-700/50"
+							}`}
+						>
+							<div className="text-sm font-semibold">{preset.name}</div>
+							<div className="text-xs text-gray-400">Preset perso</div>
+						</button>
+						<button
+							type="button"
+							onClick={() => onDeletePreset(preset.id)}
+							className="absolute -top-2 -right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold border-2 border-gray-800"
+							title="Supprimer ce preset"
+							aria-label={`Supprimer le preset ${preset.name}`}
+						>
+							✕
+						</button>
+					</div>
+				))}
+
 				<button
 					type="button"
 					onClick={() => {
@@ -81,7 +128,7 @@ export const MarketSelector = ({
 							Configuration:{" "}
 							{selectedMarket === "custom"
 								? "Marché Personnalisable"
-								: marketTemplates.get(selectedMarket)?.name}
+								: findMarketTemplate(selectedMarket, userPresets)?.name}
 						</h3>
 						<button
 							type="button"
@@ -94,7 +141,22 @@ export const MarketSelector = ({
 
 					{selectedMarket === "custom" ? (
 						<>
-							<div className="flex justify-end mb-2">
+							<div className="flex flex-wrap justify-end items-center gap-2 mb-2">
+								<Input
+									id="newPresetName"
+									placeholder="Nom du preset"
+									value={newPresetName}
+									onChange={(e) => setNewPresetName(e.currentTarget.value)}
+									className="w-40"
+								/>
+								<Button
+									variant="secondary"
+									size="sm"
+									onClick={handleSavePreset}
+									disabled={!newPresetName.trim()}
+								>
+									Sauvegarder comme preset
+								</Button>
 								<Button variant="ghost" size="sm" onClick={onResetCustom}>
 									Réinitialiser
 								</Button>
@@ -260,9 +322,8 @@ export const MarketSelector = ({
 								</Button>
 							</div>
 							<div className="grid grid-cols-3 gap-2">
-								{marketTemplates
-									.get(selectedMarket)
-									?.config.map((slot, idx) => (
+								{findMarketTemplate(selectedMarket, userPresets)?.config.map(
+									(slot, idx) => (
 										<div
 											// biome-ignore lint/suspicious/noArrayIndexKey: can't use anything else here
 											key={idx}
@@ -290,7 +351,8 @@ export const MarketSelector = ({
 												<CriteriaLabel criteria={slot} />
 											</div>
 										</div>
-									))}
+									),
+								)}
 							</div>
 						</>
 					)}
