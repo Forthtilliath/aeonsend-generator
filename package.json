@@ -11,6 +11,8 @@
     "lint": "biome check ."
   },
   "dependencies": {
+    "@fontsource/marcellus": "5",
+    "@fontsource/spectral": "5",
     "@tailwindcss/vite": "^4.3.5",
     "lucide-react": "^1.70.0",
     "react": "^19.3.1",
