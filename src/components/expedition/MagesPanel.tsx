@@ -1,6 +1,4 @@
 import type { Mage } from "../../types";
-import { Card } from "../ui/Card";
-import { SectionTitle } from "../ui/SectionTitle";
 import { BreachIcons } from "./BreachIcons";
 
 interface MagesPanelProps {
@@ -8,15 +6,14 @@ interface MagesPanelProps {
 	numPlayers: number;
 }
 
+/** Mages tirés pour un affrontement, affichés dans sa carte. */
 export const MagesPanel = ({ mages, numPlayers }: MagesPanelProps) => (
-	<Card>
-		<SectionTitle className="mb-1">
-			Mages tirés au sort ({mages.length})
-		</SectionTitle>
-		<p className="text-sm text-bone-400 font-lore italic mb-4">
+	<section className="mb-5">
+		<h3 className="rune-title text-base mb-1">Vos mages ({mages.length})</h3>
+		<p className="text-sm text-bone-400 font-lore italic mb-3">
 			{mages.length > numPlayers
 				? "Plus de mages que de joueurs : composez votre équipe parmi ce tirage."
-				: "Votre équipe pour toute la partie."}
+				: "Votre équipe pour cet affrontement."}
 		</p>
 		<div className="grid gap-2 grid-cols-2 md:grid-cols-4">
 			{mages.map((mage) => (
@@ -41,5 +38,5 @@ export const MagesPanel = ({ mages, numPlayers }: MagesPanelProps) => (
 				</div>
 			))}
 		</div>
-	</Card>
+	</section>
 );

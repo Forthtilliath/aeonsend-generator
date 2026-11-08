@@ -100,6 +100,8 @@ export interface Battle {
 	number: number;
 	tier: Tier;
 	nemesis: Nemesis;
+	/** Mages tirés pour cet affrontement (joueurs + mages en trop). */
+	mages: Mage[];
 	supply: SupplyCard[];
 	remainingResets: number;
 	remainingRerolls: number;
@@ -116,7 +118,6 @@ export interface Expedition {
 	battles: Battle[];
 	/** Marché utilisé au tirage, réutilisé par les réinitialisations. */
 	marketConfig: MarketCondition[];
-	mages: Mage[];
 	numPlayers: number;
 	story: Story;
 }
