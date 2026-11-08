@@ -67,18 +67,18 @@ export const ownedExpansionsSchema = z
 
 export const setupConfigSchema = z.object({
 	numPlayers: intBetween(1, 4),
-	extraMages: intBetween(0, 8),
+	extraMages: intBetween(0, 3),
 	battleCount: z.union([z.literal(1), z.literal(4)]),
 	tier: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
-	marketResets: intBetween(0, 10),
-	cardRerolls: intBetween(0, 20),
+	marketResets: intBetween(0, 2),
+	cardRerolls: intBetween(0, 3),
 	removeExcess: z.boolean(),
 }) satisfies z.ZodMiniType<SetupConfig>;
 
 /** Bornes partagées avec les champs du formulaire. */
 export const SETUP_LIMITS = {
 	numPlayers: [1, 4],
-	extraMages: [0, 8],
-	marketResets: [0, 10],
-	cardRerolls: [0, 20],
+	extraMages: [0, 3],
+	marketResets: [0, 2],
+	cardRerolls: [0, 3],
 } as const;
