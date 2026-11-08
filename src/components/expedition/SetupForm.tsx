@@ -5,8 +5,14 @@ import { ALL_TIERS } from "../../utils/expedition";
 import { Card } from "../ui/Card";
 import { SectionTitle } from "../ui/SectionTitle";
 import { Segmented } from "../ui/Segmented";
-import { Stepper } from "../ui/Stepper";
 import { Switch } from "../ui/Switch";
+
+/** Une option par entier de la plage [min, max]. */
+const rangeOptions = ([min, max]: readonly [number, number]) =>
+	Array.from({ length: max - min + 1 }, (_, i) => ({
+		value: min + i,
+		label: String(min + i),
+	}));
 
 interface SetupFormProps {
 	setup: SetupConfig;
@@ -26,20 +32,16 @@ export const SetupForm = ({ setup, onChange }: SetupFormProps) => {
 			</SectionTitle>
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-				<Stepper
-					id="numPlayers"
+				<Segmented
 					label="Nombre de joueurs"
 					value={setup.numPlayers}
-					min={SETUP_LIMITS.numPlayers[0]}
-					max={SETUP_LIMITS.numPlayers[1]}
+					options={rangeOptions(SETUP_LIMITS.numPlayers)}
 					onChange={(numPlayers) => update({ numPlayers })}
 				/>
-				<Stepper
-					id="extraMages"
+				<Segmented
 					label="Mages supplémentaires au tirage"
 					value={setup.extraMages}
-					min={SETUP_LIMITS.extraMages[0]}
-					max={SETUP_LIMITS.extraMages[1]}
+					options={rangeOptions(SETUP_LIMITS.extraMages)}
 					onChange={(extraMages) => update({ extraMages })}
 					hint={`${totalMages} mage${totalMages > 1 ? "s" : ""} tiré${totalMages > 1 ? "s" : ""} au sort`}
 				/>
@@ -69,21 +71,17 @@ export const SetupForm = ({ setup, onChange }: SetupFormProps) => {
 					</p>
 				)}
 
-				<Stepper
-					id="marketResets"
+				<Segmented
 					label="Réinitialisations du marché"
 					value={setup.marketResets}
-					min={SETUP_LIMITS.marketResets[0]}
-					max={SETUP_LIMITS.marketResets[1]}
+					options={rangeOptions(SETUP_LIMITS.marketResets)}
 					onChange={(marketResets) => update({ marketResets })}
 					hint="Par affrontement : retire tout le marché."
 				/>
-				<Stepper
-					id="cardRerolls"
+				<Segmented
 					label="Relances de carte"
 					value={setup.cardRerolls}
-					min={SETUP_LIMITS.cardRerolls[0]}
-					max={SETUP_LIMITS.cardRerolls[1]}
+					options={rangeOptions(SETUP_LIMITS.cardRerolls)}
 					onChange={(cardRerolls) => update({ cardRerolls })}
 					hint="Par affrontement : retire une seule carte."
 				/>
