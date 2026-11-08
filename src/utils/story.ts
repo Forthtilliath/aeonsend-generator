@@ -1,3 +1,4 @@
+import { shuffle } from "@forthtilliath/ts-kit";
 import {
 	ARRIVALS,
 	DEFEATS,
@@ -7,7 +8,7 @@ import {
 	RESPITES,
 } from "../data/story";
 import type { Battle, Mage, Nemesis, Story } from "../types";
-import { getRandomItemFromArray, shuffle } from "./helpers";
+import { pickRandomItem, secureRandom } from "./helpers";
 
 const capitalize = (text: string): string =>
 	text.charAt(0).toUpperCase() + text.slice(1);
@@ -18,10 +19,10 @@ const lowerFirst = (text: string): string =>
 export const nemesisWithArticle = (nemesis: Nemesis): string =>
 	nemesis.article ? `${nemesis.article} ${nemesis.name}` : nemesis.name;
 
-export const joinNames = (names: string[]): string =>
-	names.length <= 1
-		? (names[0] ?? "")
-		: `${names.slice(0, -1).join(", ")} et ${names[names.length - 1]}`;
+const namesList = new Intl.ListFormat("fr", { type: "conjunction" });
+
+/** Liste « A, B et C » à la française. */
+export const joinNames = (names: string[]): string => namesList.format(names);
 
 interface StoryContext {
 	nemesis?: Nemesis;
@@ -33,9 +34,7 @@ interface StoryContext {
 export const fillTemplate = (template: string, ctx: StoryContext): string => {
 	const values: Record<string, string> = {
 		mages: ctx.team ? joinNames(ctx.team.map((m) => m.name)) : "vos mages",
-		mage: ctx.team
-			? getRandomItemFromArray(ctx.team).name
-			: "l'un de vos mages",
+		mage: ctx.team ? pickRandomItem(ctx.team).name : "l'un de vos mages",
 	};
 	if (ctx.nemesis) {
 		values.nemesis = nemesisWithArticle(ctx.nemesis);
@@ -60,7 +59,7 @@ const createPicker = () => {
 	return (templates: string[], ctx: StoryContext): string => {
 		let deck = decks.get(templates);
 		if (!deck || deck.length === 0) {
-			deck = shuffle(templates);
+			deck = shuffle(templates, secureRandom);
 			decks.set(templates, deck);
 		}
 		return fillTemplate(deck.pop() ?? templates[0], ctx);

@@ -5,11 +5,7 @@ import type {
 	MarketCondition,
 	SupplyCard,
 } from "../types";
-import {
-	getRandomItemFromArray,
-	isExpansionOwned,
-	matchesCondition,
-} from "./helpers";
+import { isExpansionOwned, matchesCondition, pickRandomItem } from "./helpers";
 
 const CARD_TYPES: CardType[] = ["gem", "relic", "spell"];
 const CATEGORY: Record<CardType, string> = {
@@ -40,7 +36,7 @@ export const drawCard = (
 			.map((card) => ({ card, type })),
 	);
 	if (candidates.length === 0) return null;
-	const { card, type } = getRandomItemFromArray(candidates);
+	const { card, type } = pickRandomItem(candidates);
 	return { ...card, type, position: 0, criteria: condition };
 };
 

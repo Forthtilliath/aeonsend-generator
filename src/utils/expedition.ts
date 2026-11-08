@@ -1,3 +1,4 @@
+import { shuffle } from "@forthtilliath/ts-kit";
 import { mages as allMages } from "../data/mages";
 import { nemeses } from "../data/nemeses";
 import type {
@@ -10,7 +11,7 @@ import type {
 	SetupConfig,
 	Tier,
 } from "../types";
-import { getRandomItemFromArray, isExpansionOwned, shuffle } from "./helpers";
+import { isExpansionOwned, pickRandomItem, secureRandom } from "./helpers";
 import { generateStory } from "./story";
 import { generateSupply } from "./supply";
 
@@ -33,8 +34,8 @@ export const pickNemesis = (
 		isExpansionOwned(n.expansion, ownedExpansions),
 	);
 	return owned.length > 0
-		? { nemesis: getRandomItemFromArray(owned), fallback: false }
-		: { nemesis: getRandomItemFromArray(pool), fallback: true };
+		? { nemesis: pickRandomItem(owned), fallback: false }
+		: { nemesis: pickRandomItem(pool), fallback: true };
 };
 
 /** Tire `count` mages distincts (limité au nombre disponible). */
@@ -46,7 +47,7 @@ export const drawMages = (
 		isExpansionOwned(m.expansion, ownedExpansions),
 	);
 	const pool = owned.length > 0 ? owned : allMages;
-	return shuffle(pool).slice(0, Math.max(0, count));
+	return shuffle(pool, secureRandom).slice(0, Math.max(0, count));
 };
 
 export const buildExpedition = (
