@@ -1,8 +1,8 @@
+import { usePersistentState } from "@forthtilliath/react-kit/usePersistentState";
 import { Sparkles } from "lucide-react";
 import { type FC, useMemo, useState } from "react";
 import { ALL_EXPANSIONS } from "../../data/expansions";
 import { useExpedition } from "../../hooks/useExpedition";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useMarket } from "../../hooks/useMarket";
 import {
 	ownedExpansionsSchema,
@@ -29,15 +29,16 @@ const DEFAULT_SETUP: SetupConfig = {
 
 const FormExpedition: FC = () => {
 	const [selectedCard, setSelectedCard] = useState<SupplyCard | null>(null);
-	const [setup, setSetup] = useLocalStorage<SetupConfig>(
+	const { value: setup, setValue: setSetup } = usePersistentState<SetupConfig>(
 		"setupConfig",
 		DEFAULT_SETUP,
-		setupConfigSchema,
+		{ schema: setupConfigSchema },
 	);
 
-	const [ownedExpansionsList, setOwnedExpansionsList] = useLocalStorage<
-		Expansion[]
-	>("ownedExpansions", ALL_EXPANSIONS, ownedExpansionsSchema);
+	const { value: ownedExpansionsList, setValue: setOwnedExpansionsList } =
+		usePersistentState<Expansion[]>("ownedExpansions", ALL_EXPANSIONS, {
+			schema: ownedExpansionsSchema,
+		});
 	const ownedExpansions = useMemo(
 		() => new Set(ownedExpansionsList),
 		[ownedExpansionsList],
