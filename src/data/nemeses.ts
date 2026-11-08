@@ -14,6 +14,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 		{
 			// Nom et HP non confirmés auprès des sources consultées (wiki officiel et fan francophone) — à revérifier.
 			name: "Haze Queen",
+			article: "la",
 			difficulty: 6,
 			description: "Maîtresse des brumes toxiques",
 			lore: "Reine des brumes empoisonnées, elle enveloppe Gravehold d'un voile toxique qui ronge lentement la résistance des mages, sans jamais laisser deviner sa véritable forme.",
@@ -23,6 +24,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 		},
 		{
 			name: "Masque Tordu",
+			article: "le",
 			difficulty: 6,
 			description: "Un être d'ombres et de tromperie",
 			lore: "Sous son masque fissuré se cachent mille visages trompeurs. Le Masque Tordu s'infiltre dans l'esprit des mages, glissant des cartes de corruption au cœur de leurs decks et brouillant leurs mains les plus sûres.",
@@ -34,6 +36,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 	2: [
 		{
 			name: "Prince des Gloutons",
+			article: "le",
 			difficulty: 7,
 			description: "Une entité insatiable de destruction",
 			lore: "Insatiable, le Prince des Gloutons dévore tout ce qui l'entoure — reliques, sorts, gemmes — vidant les étals de Gravehold pour affamer ceux qui oseraient s'opposer à lui.",
@@ -43,6 +46,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 		},
 		{
 			name: "Titan de l'Ombre",
+			article: "le",
 			difficulty: 7,
 			description: "Le seigneur des ténèbres éternelles",
 			lore: "Colosse d'ombre pure, le Titan de l'Ombre ronge les fondations mêmes de Gravehold. Chaque jeton qu'il perd rapproche la cité de l'effondrement total dans les ténèbres.",
@@ -52,6 +56,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 		},
 		{
 			name: "Reine Carapace",
+			article: "la",
 			difficulty: 8,
 			description: "La reine des chitines corrompues",
 			lore: "Mère d'un essaim grouillant, la Reine Carapace couvre le champ de bataille de larves chitineuses. Chaque husk détruit n'est qu'un sursis avant la prochaine vague.",
@@ -63,6 +68,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 	3: [
 		{
 			name: "Seigneur de la Désolation",
+			article: "le",
 			difficulty: 9,
 			description: "L'incarnation de la corruption",
 			lore: "Porteur d'une corruption ancienne, le Seigneur de la Désolation infecte les mages de jades corrompus, les rapprochant peu à peu d'une fin funeste s'il n'est pas arrêté à temps.",
@@ -103,6 +109,7 @@ export const nemeses: Record<number, Nemesis[]> = {
 		},
 		{
 			name: "Couronne Creuse",
+			article: "la",
 			difficulty: 10,
 			description: "Le monarque du néant absolu",
 			lore: "La Couronne Creuse ne peut être blessée directement : son pouvoir réside dans ses acolytes, dont la magie sacrificielle doit être rompue un par un avant que la couronne elle-même ne s'effondre.",
