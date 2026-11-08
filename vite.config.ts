@@ -18,7 +18,9 @@ export default defineConfig({
 				short_name: "Aeon's End",
 				description:
 					"Générateur d'expéditions et de marchés pour le jeu de société Aeon's End.",
+				id: "/",
 				start_url: "/",
+				scope: "/",
 				lang: "fr",
 				display: "standalone",
 				background_color: "#06070b",
