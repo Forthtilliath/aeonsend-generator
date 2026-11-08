@@ -1,6 +1,7 @@
 import { RotateCcw } from "lucide-react";
 import type { ReactNode } from "react";
 import type { Battle, SupplyCard } from "../../types";
+import { plural } from "../../utils/helpers";
 import { Card } from "../ui/Card";
 import { MagesPanel } from "./MagesPanel";
 import { SupplyCard as SupplyCardComponent } from "./SupplyCard";
@@ -70,7 +71,8 @@ export const BattleCard = ({
 				<div className="flex flex-wrap gap-2 text-sm">
 					{canReroll && (
 						<span className="px-3 py-1 rounded-full border border-aether-600/60 bg-aether-900/60 text-aether-200">
-							{battle.remainingRerolls} relance(s) de carte
+							{battle.remainingRerolls}{" "}
+							{plural(battle.remainingRerolls, "relance")} de carte
 						</span>
 					)}
 					<button

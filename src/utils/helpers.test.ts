@@ -1,33 +1,14 @@
 import { describe, expect, test } from "bun:test";
 import type { MarketCondition } from "../types";
 import {
-	clamp,
 	copyTuple,
-	generateRandomInteger,
 	getCriteriaLabel,
-	getRandomItemFromArray,
 	getTypeLabel,
 	matchesCondition,
-	shuffle,
+	pickRandomItem,
+	plural,
+	secureRandom,
 } from "./helpers";
-
-describe("clamp", () => {
-	test("returns the value when within range", () => {
-		expect(clamp(2, 1, 4)).toBe(2);
-	});
-
-	test("clamps to min when below range", () => {
-		expect(clamp(-5, 1, 4)).toBe(1);
-	});
-
-	test("clamps to max when above range", () => {
-		expect(clamp(99, 1, 4)).toBe(4);
-	});
-
-	test("returns min for NaN", () => {
-		expect(clamp(Number.NaN, 1, 4)).toBe(1);
-	});
-});
 
 describe("matchesCondition", () => {
 	const card = {
@@ -120,45 +101,38 @@ describe("getCriteriaLabel", () => {
 	});
 });
 
-describe("generateRandomInteger", () => {
-	test("returns 0 for a non-positive max", () => {
-		expect(generateRandomInteger(0)).toBe(0);
-		expect(generateRandomInteger(-3)).toBe(0);
-	});
-
-	test("stays within [0, max) across many draws", () => {
+describe("secureRandom", () => {
+	test("stays within [0, 1) across many draws", () => {
 		for (let i = 0; i < 500; i++) {
-			const value = generateRandomInteger(7);
+			const value = secureRandom();
 			expect(value).toBeGreaterThanOrEqual(0);
-			expect(value).toBeLessThan(7);
+			expect(value).toBeLessThan(1);
 		}
-	});
-
-	test("always returns 0 for max = 1", () => {
-		expect(generateRandomInteger(1)).toBe(0);
 	});
 });
 
-describe("getRandomItemFromArray", () => {
+describe("pickRandomItem", () => {
 	test("returns an item from the array", () => {
 		const arr = [1, 2, 3];
-		expect(arr).toContain(getRandomItemFromArray(arr));
+		expect(arr).toContain(pickRandomItem(arr));
+	});
+
+	test("reaches every item", () => {
+		const seen = new Set<number>();
+		for (let i = 0; i < 200; i++) seen.add(pickRandomItem([1, 2, 3]));
+		expect(seen.size).toBe(3);
 	});
 
 	test("throws on an empty array instead of returning undefined", () => {
-		expect(() => getRandomItemFromArray([])).toThrow();
+		expect(() => pickRandomItem([])).toThrow();
 	});
 });
 
-describe("shuffle", () => {
-	test("preserves length and elements without mutating the input", () => {
-		const original = [1, 2, 3, 4, 5];
-		const shuffled = shuffle(original);
-
-		expect(shuffled).not.toBe(original);
-		expect(shuffled.length).toBe(original.length);
-		expect([...shuffled].sort()).toEqual([...original].sort());
-		expect(original).toEqual([1, 2, 3, 4, 5]);
+describe("plural", () => {
+	test("keeps the singular for 0 and 1, as in French", () => {
+		expect(plural(0, "relance")).toBe("relance");
+		expect(plural(1, "relance")).toBe("relance");
+		expect(plural(2, "relance")).toBe("relances");
 	});
 });
 

@@ -1,3 +1,4 @@
+import { createPluralize, pickRandom } from "@forthtilliath/ts-kit";
 import type { Card, Expansion, MarketCondition } from "../types";
 
 export const isExpansionOwned = (
@@ -18,11 +19,6 @@ export const matchesCondition = (
 		return card.cost >= condition.cost && card.cost <= condition.costMax;
 	}
 	return false;
-};
-
-export const clamp = (value: number, min: number, max: number): number => {
-	if (Number.isNaN(value)) return min;
-	return Math.min(Math.max(value, min), max);
 };
 
 export const getTypeLabel = (type: string): string => {
@@ -47,38 +43,24 @@ export const getCriteriaLabel = (criteria: MarketCondition): string => {
 	return `${criteria.cost}⚡`;
 };
 
-export const generateRandomInteger = (max: number): number => {
-	if (max <= 0) return 0;
+/**
+ * Nombre dans `[0, 1)` tiré par `crypto.getRandomValues`, à passer aux
+ * tirages de ts-kit (`shuffle`, `pickRandom`) à la place de `Math.random`.
+ * L'écart à l'uniforme (au plus n / 2³² pour n éléments) est négligeable.
+ */
+export const secureRandom = (): number =>
+	crypto.getRandomValues(new Uint32Array(1))[0] / 0x1_0000_0000;
 
-	// Rejects values beyond the last full multiple of `max` so the modulo
-	// below stays uniform, instead of biasing the low end of the range.
-	const MAX_UINT32 = 0xffffffff;
-	const rejectionLimit = MAX_UINT32 - (MAX_UINT32 % max);
-
-	let value: number;
-	do {
-		value = crypto.getRandomValues(new Uint32Array(1))[0];
-	} while (value > rejectionLimit);
-
-	return value % max;
+/** Élément tiré au hasard ; lève une erreur sur un tableau vide. */
+export const pickRandomItem = <T>(items: readonly T[]): T => {
+	if (items.length === 0) {
+		throw new Error("pickRandomItem: cannot pick from an empty array");
+	}
+	return pickRandom(items, secureRandom) as T;
 };
 
-export const getRandomItemFromArray = <T>(arr: T[]): T => {
-	if (arr.length === 0) {
-		throw new Error("getRandomItemFromArray: cannot pick from an empty array");
-	}
-	const randomIndex = generateRandomInteger(arr.length);
-	return arr[randomIndex];
-};
-
-export function shuffle<T>(array: T[]): T[] {
-	const shuffledArray = [...array];
-	for (let i = shuffledArray.length - 1; i > 0; i--) {
-		const j = generateRandomInteger(i + 1);
-		[shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-	}
-	return shuffledArray;
-}
+/** Accord en nombre à la française (0 et 1 au singulier). */
+export const plural = createPluralize("fr");
 
 export function copyTuple<T extends unknown[]>(tuple: T): T {
 	return tuple.slice() as T;

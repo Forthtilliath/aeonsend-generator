@@ -1,5 +1,5 @@
+import { clamp, parseIntegerInput } from "@forthtilliath/ts-kit";
 import { Minus, Plus } from "lucide-react";
-import { clamp } from "../../utils/helpers";
 
 interface StepperProps {
 	id: string;
@@ -47,7 +47,11 @@ export const Stepper = ({
 					min={min}
 					max={max}
 					value={value}
-					onChange={(e) => set(Number.parseInt(e.currentTarget.value, 10))}
+					// Champ vidé ou incomplet : la dernière valeur valide est gardée.
+					onChange={(e) => {
+						const next = parseIntegerInput(e.currentTarget.value);
+						if (next !== null) set(next);
+					}}
 					// Flèches natives masquées : les boutons −/+ font déjà ce travail.
 					className="rune-field w-full min-w-0 h-10 text-center text-lg font-semibold tabular-nums [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
 				/>

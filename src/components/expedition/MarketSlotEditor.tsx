@@ -1,5 +1,5 @@
+import { clamp, parseIntegerInput } from "@forthtilliath/ts-kit";
 import type { MarketCondition } from "../../types";
-import { clamp } from "../../utils/helpers";
 import { AetherIcon } from "../ui/Icons";
 
 type Operator = MarketCondition["operator"];
@@ -40,9 +40,10 @@ const CostInput = ({ value, label, onChange }: CostInputProps) => (
 		value={value}
 		aria-label={label}
 		placeholder={label}
-		onChange={(e) =>
-			onChange(clamp(Number.parseInt(e.currentTarget.value, 10), 0, 9))
-		}
+		onChange={(e) => {
+			const cost = parseIntegerInput(e.currentTarget.value);
+			if (cost !== null) onChange(clamp(cost, 0, 9));
+		}}
 		className={`${FIELD} text-center`}
 	/>
 );
