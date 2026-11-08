@@ -1,4 +1,6 @@
-import { z } from "zod";
+// zod/mini : mêmes contrôles que zod classique, mais seuls ceux utilisés
+// finissent dans le bundle (~80 ko de moins).
+import { z } from "zod/mini";
 import { ALL_EXPANSIONS } from "../data/expansions";
 import type { Expansion, MarketTemplate, SetupConfig } from "../types";
 
@@ -7,8 +9,11 @@ import type { Expansion, MarketTemplate, SetupConfig } from "../types";
 // en bloc et remplacée par la valeur par défaut, et les clés inconnues sont
 // supprimées.
 
+const intBetween = (min: number, max: number) =>
+	z.int().check(z.minimum(min), z.maximum(max));
+
 const cardType = z.enum(["gem", "relic", "spell", "any"]);
-const cost = z.number().int().min(0).max(9);
+const cost = intBetween(0, 9);
 
 export const marketConditionSchema = z.discriminatedUnion("operator", [
 	z.object({ type: cardType, operator: z.literal("any"), cost: z.null() }),
@@ -24,7 +29,9 @@ export const marketConditionSchema = z.discriminatedUnion("operator", [
 			cost,
 			costMax: cost,
 		})
-		.refine((c) => c.cost <= c.costMax, "Coût minimum supérieur au maximum"),
+		.check(
+			z.refine((c) => c.cost <= c.costMax, "Coût minimum supérieur au maximum"),
+		),
 ]);
 
 export const marketConfigSchema = z.tuple([
@@ -42,33 +49,31 @@ export const marketConfigSchema = z.tuple([
 export const userPresetsSchema = z
 	.array(
 		z.object({
-			id: z.string().min(1).max(64),
-			name: z.string().trim().min(1).max(40),
+			id: z.string().check(z.minLength(1), z.maxLength(64)),
+			name: z.string().check(z.trim(), z.minLength(1), z.maxLength(40)),
 			config: marketConfigSchema,
 		}),
 	)
-	.max(50) satisfies z.ZodType<MarketTemplate[]>;
+	.check(z.maxLength(50)) satisfies z.ZodMiniType<MarketTemplate[]>;
 
 /** Identifiant du marché choisi : modèle fourni, preset perso ou « custom ». */
 export const selectedMarketSchema = z
 	.string()
-	.min(1)
-	.max(64)
-	.regex(/^[\w-]+$/);
+	.check(z.minLength(1), z.maxLength(64), z.regex(/^[\w-]+$/));
 
 export const ownedExpansionsSchema = z
 	.array(z.enum(ALL_EXPANSIONS as [Expansion, ...Expansion[]]))
-	.max(ALL_EXPANSIONS.length);
+	.check(z.maxLength(ALL_EXPANSIONS.length));
 
 export const setupConfigSchema = z.object({
-	numPlayers: z.number().int().min(1).max(4),
-	extraMages: z.number().int().min(0).max(8),
+	numPlayers: intBetween(1, 4),
+	extraMages: intBetween(0, 8),
 	battleCount: z.union([z.literal(1), z.literal(4)]),
 	tier: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]),
-	marketResets: z.number().int().min(0).max(10),
-	cardRerolls: z.number().int().min(0).max(20),
+	marketResets: intBetween(0, 10),
+	cardRerolls: intBetween(0, 20),
 	removeExcess: z.boolean(),
-}) satisfies z.ZodType<SetupConfig>;
+}) satisfies z.ZodMiniType<SetupConfig>;
 
 /** Bornes partagées avec les champs du formulaire. */
 export const SETUP_LIMITS = {
