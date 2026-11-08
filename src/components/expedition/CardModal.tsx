@@ -1,5 +1,5 @@
 import type { SupplyCard } from "../../types";
-import { getTypeColor } from "../../utils/helpers";
+import { getTypeColor, getTypeLabel } from "../../utils/helpers";
 import { AetherIcon } from "../ui/Icons";
 import { Modal } from "../ui/Modal";
 
@@ -21,7 +21,7 @@ export const CardModal = ({ card, onClose }: CardModalProps) => {
 					{card.name}
 				</h3>
 				<div className="text-center text-xl mb-4">
-					{card.type.charAt(0).toUpperCase() + card.type.slice(1)}
+					{getTypeLabel(card.type)}
 				</div>
 				<div className="text-center text-xl mb-4">{card.description}</div>
 				<div className="text-center text-4xl font-bold">
