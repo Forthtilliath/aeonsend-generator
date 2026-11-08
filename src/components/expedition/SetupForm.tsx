@@ -6,6 +6,7 @@ import { Card } from "../ui/Card";
 import { SectionTitle } from "../ui/SectionTitle";
 import { Segmented } from "../ui/Segmented";
 import { Stepper } from "../ui/Stepper";
+import { Switch } from "../ui/Switch";
 
 interface SetupFormProps {
 	setup: SetupConfig;
@@ -89,21 +90,13 @@ export const SetupForm = ({ setup, onChange }: SetupFormProps) => {
 			</div>
 
 			{setup.cardRerolls > 0 && (
-				<label className="flex items-start gap-2 cursor-pointer mt-4">
-					<input
-						type="checkbox"
-						checked={setup.removeExcess}
-						onChange={(e) => update({ removeExcess: e.currentTarget.checked })}
-						className="w-4 h-4 mt-1"
-					/>
-					<span>
-						La carte relancée remplace l'ancienne
-						<span className="block text-xs text-bone-500">
-							Sinon, la nouvelle carte s'ajoute et vous retirez celle que vous
-							ne gardez pas.
-						</span>
-					</span>
-				</label>
+				<Switch
+					className="mt-4"
+					checked={setup.removeExcess}
+					onChange={(removeExcess) => update({ removeExcess })}
+					label="La carte relancée remplace l'ancienne"
+					hint="Sinon, la nouvelle carte s'ajoute et vous retirez celle que vous ne gardez pas."
+				/>
 			)}
 		</Card>
 	);
