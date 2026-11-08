@@ -1,7 +1,9 @@
 import { describe, expect, test } from "bun:test";
 import { defaultCustomMarket } from "../data/marketTemplates";
 import {
+	marketConfigSchema,
 	ownedExpansionsSchema,
+	selectedMarketSchema,
 	setupConfigSchema,
 	userPresetsSchema,
 } from "./storage";
@@ -39,6 +41,40 @@ describe("userPresetsSchema", () => {
 		expect(
 			userPresetsSchema.safeParse([{ ...preset, name: "x".repeat(41) }])
 				.success,
+		).toBe(false);
+	});
+});
+
+describe("selectedMarketSchema", () => {
+	test("accepts template ids, custom and preset uuids", () => {
+		for (const id of ["balanced", "custom", crypto.randomUUID()]) {
+			expect(selectedMarketSchema.safeParse(id).success).toBe(true);
+		}
+	});
+
+	test("rejects empty, over-long or non-string ids", () => {
+		for (const id of ["", "x".repeat(65), "<script>", 42, null]) {
+			expect(selectedMarketSchema.safeParse(id).success).toBe(false);
+		}
+	});
+});
+
+describe("marketConfigSchema", () => {
+	test("accepts the default custom market", () => {
+		expect(marketConfigSchema.safeParse(defaultCustomMarket).success).toBe(
+			true,
+		);
+	});
+
+	test("rejects a market without exactly 9 slots", () => {
+		expect(
+			marketConfigSchema.safeParse(defaultCustomMarket.slice(0, 8)).success,
+		).toBe(false);
+		expect(
+			marketConfigSchema.safeParse([
+				...defaultCustomMarket,
+				defaultCustomMarket[0],
+			]).success,
 		).toBe(false);
 	});
 });

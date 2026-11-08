@@ -27,7 +27,7 @@ export const marketConditionSchema = z.discriminatedUnion("operator", [
 		.refine((c) => c.cost <= c.costMax, "Coût minimum supérieur au maximum"),
 ]);
 
-const marketConfigSchema = z.tuple([
+export const marketConfigSchema = z.tuple([
 	marketConditionSchema,
 	marketConditionSchema,
 	marketConditionSchema,
@@ -48,6 +48,13 @@ export const userPresetsSchema = z
 		}),
 	)
 	.max(50) satisfies z.ZodType<MarketTemplate[]>;
+
+/** Identifiant du marché choisi : modèle fourni, preset perso ou « custom ». */
+export const selectedMarketSchema = z
+	.string()
+	.min(1)
+	.max(64)
+	.regex(/^[\w-]+$/);
 
 export const ownedExpansionsSchema = z
 	.array(z.enum(ALL_EXPANSIONS as [Expansion, ...Expansion[]]))
