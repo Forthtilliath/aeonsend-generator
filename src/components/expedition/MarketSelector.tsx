@@ -54,7 +54,7 @@ export const MarketSelector = ({ market }: { market: MarketState }) => {
 			<div className="rune-scroll -mx-1 min-h-32 flex-1 overflow-y-auto overscroll-contain px-2 py-2">
 				<div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
 					{Array.from(marketTemplates.values()).map((template) => {
-						const [title, subtitle] = template.name.split(":");
+						const [title = template.name, subtitle] = template.name.split(":");
 						return (
 							<MarketButton
 								key={template.id}

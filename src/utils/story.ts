@@ -32,21 +32,24 @@ interface StoryContext {
 }
 
 export const fillTemplate = (template: string, ctx: StoryContext): string => {
-	const values: Record<string, string> = {
-		mages: ctx.team ? joinNames(ctx.team.map((m) => m.name)) : "vos mages",
-		mage: ctx.team ? pickRandomItem(ctx.team).name : "l'un de vos mages",
-	};
+	const values = new Map<string, string>([
+		["mages", ctx.team ? joinNames(ctx.team.map((m) => m.name)) : "vos mages"],
+		["mage", ctx.team ? pickRandomItem(ctx.team).name : "l'un de vos mages"],
+	]);
 	if (ctx.nemesis) {
-		values.nemesis = nemesisWithArticle(ctx.nemesis);
-		values.Nemesis = capitalize(values.nemesis);
-		values.desc = lowerFirst(ctx.nemesis.description);
+		const nemesis = nemesisWithArticle(ctx.nemesis);
+		values.set("nemesis", nemesis);
+		values.set("Nemesis", capitalize(nemesis));
+		values.set("desc", lowerFirst(ctx.nemesis.description));
 	}
 	if (ctx.previous) {
-		values.previous = nemesisWithArticle(ctx.previous);
-		values.Previous = capitalize(values.previous);
+		const previous = nemesisWithArticle(ctx.previous);
+		values.set("previous", previous);
+		values.set("Previous", capitalize(previous));
 	}
-	return template.replace(/\{(\w+)\}/g, (match, key: string) =>
-		key in values ? values[key] : match,
+	return template.replace(
+		/\{(\w+)\}/g,
+		(match, key: string) => values.get(key) ?? match,
 	);
 };
 
@@ -62,7 +65,11 @@ const createPicker = () => {
 			deck = shuffle(templates, secureRandom);
 			decks.set(templates, deck);
 		}
-		return fillTemplate(deck.pop() ?? templates[0], ctx);
+		const template = deck.pop();
+		if (template === undefined) {
+			throw new Error("createPicker: cannot pick from an empty template group");
+		}
+		return fillTemplate(template, ctx);
 	};
 };
 
@@ -76,29 +83,34 @@ export const generateStory = (battles: Battle[], numPlayers: number): Story => {
 	const pick = createPicker();
 	const teamOf = (battle: Battle): Mage[] | null =>
 		battle.mages.length === numPlayers ? battle.mages : null;
-	const first = battles[0];
-	const last = battles[battles.length - 1];
+	const [first, ...rest] = battles;
+	if (!first) throw new Error("generateStory: no battle to tell");
+	const last = rest.at(-1) ?? first;
 
 	const intro = [
 		pick(INTROS, { team: teamOf(first) }),
 		pick(ARRIVALS, { team: teamOf(first), nemesis: first.nemesis }),
 	].join(" ");
 
-	const transitions = battles.slice(1).map((battle, i) => {
-		const previous = battles[i];
+	const transitions: string[] = [];
+	let previous = first;
+	for (const battle of rest) {
 		const past = {
 			team: teamOf(previous),
 			nemesis: battle.nemesis,
 			previous: previous.nemesis,
 		};
 		const coming = { ...past, team: teamOf(battle) };
-		return [
-			pick(DEFEATS, past),
-			pick(RESPITES, past),
-			pick(ESCALATIONS[battle.tier], coming),
-			pick(ARRIVALS, coming),
-		].join(" ");
-	});
+		transitions.push(
+			[
+				pick(DEFEATS, past),
+				pick(RESPITES, past),
+				pick(ESCALATIONS[battle.tier], coming),
+				pick(ARRIVALS, coming),
+			].join(" "),
+		);
+		previous = battle;
+	}
 
 	const epilogue = pick(EPILOGUES, {
 		team: teamOf(last),

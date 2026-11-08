@@ -21,7 +21,8 @@ export const buildExpeditionText = (expedition: Expedition): string => {
 	];
 
 	battles.forEach((battle, idx) => {
-		if (idx > 0) lines.push("", story.transitions[idx - 1]);
+		const transition = idx > 0 ? story.transitions[idx - 1] : undefined;
+		if (transition) lines.push("", transition);
 		lines.push(
 			"",
 			RULE,

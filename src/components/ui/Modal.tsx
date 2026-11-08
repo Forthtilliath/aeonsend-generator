@@ -50,10 +50,9 @@ export const Modal = ({
 	useKeyListener({ key: "Tab" }, (e) => {
 		if (!isOpen || !dialogRef.current) return;
 		const focusableEls = getFocusable(dialogRef.current);
-		if (focusableEls.length === 0) return;
-
 		const first = focusableEls[0];
-		const last = focusableEls[focusableEls.length - 1];
+		const last = focusableEls.at(-1);
+		if (!first || !last) return;
 
 		if (e.shiftKey && document.activeElement === first) {
 			e.preventDefault();
