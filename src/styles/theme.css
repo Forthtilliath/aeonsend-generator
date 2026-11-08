@@ -1,0 +1,170 @@
+/*
+ * Thème « Registre de Gravehold ».
+ * Une ville creusée dans la roche : l'éther éclaire d'en haut (cyan),
+ * la braise des Sans-Nom remonte d'en bas (orange). Le reste est pierre et os.
+ */
+@theme {
+	--font-display:
+		"Marcellus", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+	--font-lore: "Spectral", "Iowan Old Style", Georgia, serif;
+
+	/* Pierre de la caverne */
+	--color-abyss-950: #06070b;
+	--color-abyss-900: #0b0e16;
+	--color-abyss-850: #10141f;
+	--color-abyss-800: #161b29;
+	--color-abyss-700: #212839;
+	--color-abyss-600: #323b52;
+	--color-abyss-500: #4a556f;
+
+	/* Os et parchemin : le texte */
+	--color-bone-50: #f6f1e6;
+	--color-bone-100: #ebe3d2;
+	--color-bone-300: #c9bea6;
+	--color-bone-400: #a39a86;
+	--color-bone-500: #7d7564;
+
+	/* Éther : l'action, la lumière des brèches */
+	--color-aether-200: #c3fbf0;
+	--color-aether-300: #8ef3e0;
+	--color-aether-400: #4fe3c8;
+	--color-aether-500: #22c3a8;
+	--color-aether-600: #158f7d;
+	--color-aether-700: #0f6458;
+	--color-aether-900: #062a26;
+
+	/* Braise : les némésis, le danger */
+	--color-ember-200: #ffd2b8;
+	--color-ember-300: #ffad80;
+	--color-ember-400: #ff8148;
+	--color-ember-500: #ef5b22;
+	--color-ember-600: #c24114;
+	--color-ember-800: #5c1d09;
+	--color-ember-950: #200a03;
+
+	/* Types de cartes */
+	--color-gem-300: #d4b8ff;
+	--color-gem-400: #b48bff;
+	--color-gem-900: #24164a;
+	--color-relic-300: #a9d0ff;
+	--color-relic-400: #74afff;
+	--color-relic-900: #0f2342;
+	--color-spell-300: #ffe08a;
+	--color-spell-400: #f5c44e;
+	--color-spell-900: #3a2a06;
+
+	--animate-sigil: sigil-turn 160s linear infinite;
+	--animate-sigil-reverse: sigil-turn 90s linear infinite reverse;
+	--animate-rise: rise-in 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+	@keyframes sigil-turn {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+	@keyframes rise-in {
+		from {
+			opacity: 0;
+			transform: translateY(12px);
+		}
+	}
+}
+
+@layer base {
+	html {
+		color-scheme: dark;
+		background: var(--color-abyss-950);
+	}
+
+	body {
+		min-height: 100dvh;
+		background: var(--color-abyss-950);
+		color: var(--color-bone-100);
+		-webkit-font-smoothing: antialiased;
+	}
+
+	::selection {
+		background: var(--color-aether-700);
+		color: var(--color-bone-50);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--color-aether-400);
+		outline-offset: 2px;
+	}
+
+	input[type="checkbox"] {
+		accent-color: var(--color-aether-500);
+	}
+}
+
+/* Décor fixe : lueur d'éther en haut, braise en bas, grain de roche, poussière d'éther. */
+.cavern {
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background:
+		radial-gradient(
+			ellipse 90% 55% at 50% -12%,
+			color-mix(in oklab, var(--color-aether-500) 20%, transparent),
+			transparent 70%
+		),
+		radial-gradient(
+			ellipse 80% 45% at 50% 115%,
+			color-mix(in oklab, var(--color-ember-600) 18%, transparent),
+			transparent 70%
+		),
+		linear-gradient(180deg, var(--color-abyss-900), var(--color-abyss-950) 60%);
+}
+
+.cavern::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	opacity: 0.07;
+	mix-blend-mode: overlay;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.cavern::after {
+	content: "";
+	position: absolute;
+	inset: 0 0 -420px;
+	opacity: 0.5;
+	background-image:
+		radial-gradient(
+			1.5px 1.5px at 12% 22%,
+			var(--color-aether-300),
+			transparent
+		),
+		radial-gradient(1px 1px at 68% 8%, var(--color-aether-200), transparent),
+		radial-gradient(
+			1.5px 1.5px at 38% 64%,
+			var(--color-aether-400),
+			transparent
+		),
+		radial-gradient(1px 1px at 84% 46%, var(--color-aether-300), transparent),
+		radial-gradient(1px 1px at 24% 88%, var(--color-ember-300), transparent),
+		radial-gradient(1.5px 1.5px at 92% 78%, var(--color-ember-400), transparent);
+	background-size: 420px 420px;
+	animation: motes-drift 70s linear infinite;
+}
+
+@keyframes motes-drift {
+	to {
+		transform: translateY(-420px);
+	}
+}
+
+/* biome-ignore-start lint/complexity/noImportantStyles: doit l'emporter sur toute animation pour respecter le réglage d'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+/* biome-ignore-end lint/complexity/noImportantStyles: fin */
