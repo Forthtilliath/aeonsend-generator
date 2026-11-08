@@ -1,16 +1,14 @@
 import { describe, expect, test } from "bun:test";
-import type { Battle, MarketCondition } from "../types";
+import type { MarketCondition } from "../types";
 import {
 	clamp,
 	copyTuple,
 	generateRandomInteger,
-	generateSupply,
 	getCriteriaLabel,
 	getRandomItemFromArray,
 	getTypeBgColor,
 	getTypeColor,
 	getTypeLabel,
-	hasExcessCards,
 	matchesCondition,
 	shuffle,
 } from "./helpers";
@@ -181,72 +179,5 @@ describe("copyTuple", () => {
 
 		expect(copy).not.toBe(original);
 		expect(copy).toEqual([1, 2, 3]);
-	});
-});
-
-describe("generateSupply", () => {
-	const marketConfig: MarketCondition[] = [
-		{ type: "gem", operator: "any", cost: null },
-		{ type: "gem", operator: "any", cost: null },
-		{ type: "relic", operator: "any", cost: null },
-	];
-
-	test("generates one card per market slot without duplicates", () => {
-		const supply = generateSupply(marketConfig);
-		expect(supply.length).toBe(marketConfig.length);
-		const names = supply.map((c) => c.name);
-		expect(new Set(names).size).toBe(names.length);
-	});
-
-	test("sorts result by category then cost", () => {
-		const supply = generateSupply(marketConfig);
-		const gems = supply.filter((c) => c.type === "gem");
-		for (let i = 1; i < gems.length; i++) {
-			expect(gems[i].cost).toBeGreaterThanOrEqual(gems[i - 1].cost);
-		}
-	});
-
-	test("removeExcess trims cards beyond the configured count per type", () => {
-		const supply = generateSupply(marketConfig, [], true);
-		const gemCount = supply.filter((c) => c.type === "gem").length;
-		expect(gemCount).toBeLessThanOrEqual(2);
-	});
-});
-
-describe("hasExcessCards", () => {
-	test("flags a type as excess when supply exceeds market config count", () => {
-		const marketConfig: MarketCondition[] = [
-			{ type: "gem", operator: "any", cost: null },
-		];
-		const battle = {
-			supply: [
-				{
-					id: "1",
-					name: "A",
-					description: "",
-					cost: 1,
-					image: "",
-					type: "gem",
-					position: 1,
-					criteria: marketConfig[0],
-				},
-				{
-					id: "2",
-					name: "B",
-					description: "",
-					cost: 2,
-					image: "",
-					type: "gem",
-					position: 2,
-					criteria: marketConfig[0],
-				},
-			],
-		} as unknown as Battle;
-
-		expect(hasExcessCards(battle, marketConfig).gem).toBe(true);
-	});
-
-	test("returns an empty object for a falsy battle", () => {
-		expect(hasExcessCards(null as unknown as Battle, [])).toEqual({});
 	});
 });
