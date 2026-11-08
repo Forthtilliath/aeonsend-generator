@@ -1,5 +1,6 @@
+import { formatFileTimestamp } from "@forthtilliath/ts-kit";
 import type { Expedition } from "../types";
-import { getTypeLabel } from "./helpers";
+import { getTypeLabel, plural } from "./helpers";
 
 const RULE = "=".repeat(63);
 
@@ -14,7 +15,7 @@ export const buildExpeditionText = (expedition: Expedition): string => {
 		`AEON'S END - ${title}`,
 		RULE,
 		"",
-		`${numPlayers} joueur(s)`,
+		`${numPlayers} ${plural(numPlayers, "joueur")}`,
 		"",
 		story.intro,
 	];
@@ -30,7 +31,7 @@ export const buildExpeditionText = (expedition: Expedition): string => {
 			battle.nemesis.description,
 			`Difficulté : ${battle.nemesis.difficulty} | Vie : ${battle.nemesis.hp}`,
 			"",
-			`MAGES (${battle.mages.length} tiré(s)) :`,
+			`MAGES (${battle.mages.length} ${plural(battle.mages.length, "tiré")}) :`,
 			...battle.mages.map((m) => `  - ${m.name} (${m.title})`),
 			"",
 			"MARCHÉ :",
@@ -44,14 +45,9 @@ export const buildExpeditionText = (expedition: Expedition): string => {
 	return lines.join("\n");
 };
 
-export const downloadText = (filename: string, content: string): void => {
-	const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-	const url = URL.createObjectURL(blob);
-	const link = document.createElement("a");
-	link.href = url;
-	link.download = filename;
-	document.body.appendChild(link);
-	link.click();
-	document.body.removeChild(link);
-	URL.revokeObjectURL(url);
-};
+/** Nom du fichier exporté, horodaté pour ne pas écraser un export précédent. */
+export const expeditionFileName = (
+	expedition: Expedition,
+	date = new Date(),
+): string =>
+	`aeons-end-${expedition.battles.length > 1 ? "campagne" : "affrontement"}-${formatFileTimestamp(date)}.txt`;
