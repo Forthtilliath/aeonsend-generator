@@ -6,7 +6,6 @@ import { buildExpeditionText, downloadText } from "../../utils/exportTxt";
 import { getExcessBySlotType } from "../../utils/supply";
 import { Button } from "../ui/Button";
 import { BattleCard } from "./BattleCard";
-import { MagesPanel } from "./MagesPanel";
 import { StoryBlock } from "./StoryBlock";
 
 type ExpeditionActions = Pick<
@@ -46,8 +45,6 @@ export const ExpeditionResults = ({
 				Télécharger en TXT
 			</Button>
 
-			<MagesPanel mages={expedition.mages} numPlayers={expedition.numPlayers} />
-
 			<StoryBlock title="Prologue" text={story.intro} />
 
 			{battles.map((battle, idx) => (
@@ -60,6 +57,7 @@ export const ExpeditionResults = ({
 					)}
 					<BattleCard
 						battle={battle}
+						numPlayers={expedition.numPlayers}
 						excessBySlotType={getExcessBySlotType(
 							battle.supply,
 							expedition.marketConfig,

@@ -4,7 +4,7 @@ import { getTypeLabel } from "./helpers";
 const RULE = "=".repeat(63);
 
 export const buildExpeditionText = (expedition: Expedition): string => {
-	const { battles, mages, numPlayers, story } = expedition;
+	const { battles, numPlayers, story } = expedition;
 	const title =
 		battles.length > 1
 			? `CAMPAGNE DE ${battles.length} AFFRONTEMENTS`
@@ -14,8 +14,7 @@ export const buildExpeditionText = (expedition: Expedition): string => {
 		`AEON'S END - ${title}`,
 		RULE,
 		"",
-		`${numPlayers} joueur(s) - ${mages.length} mage(s) tiré(s) :`,
-		...mages.map((m) => `  - ${m.name} (${m.title})`),
+		`${numPlayers} joueur(s)`,
 		"",
 		story.intro,
 	];
@@ -30,6 +29,9 @@ export const buildExpeditionText = (expedition: Expedition): string => {
 			"",
 			battle.nemesis.description,
 			`Difficulté : ${battle.nemesis.difficulty} | Vie : ${battle.nemesis.hp}`,
+			"",
+			`MAGES (${battle.mages.length} tiré(s)) :`,
+			...battle.mages.map((m) => `  - ${m.name} (${m.title})`),
 			"",
 			"MARCHÉ :",
 			...battle.supply.map(

@@ -56,6 +56,7 @@ export const buildExpedition = (
 ): { expedition: Expedition; warnings: string[] } => {
 	const warnings: string[] = [];
 	const missingTiers: Tier[] = [];
+	const wanted = setup.numPlayers + setup.extraMages;
 
 	const battles: Battle[] = getTiers(setup).map((tier, index) => {
 		const { nemesis, fallback } = pickNemesis(tier, ownedExpansions);
@@ -64,6 +65,7 @@ export const buildExpedition = (
 			number: index + 1,
 			tier,
 			nemesis,
+			mages: drawMages(wanted, ownedExpansions),
 			supply: generateSupply(marketConfig, ownedExpansions),
 			remainingResets: setup.marketResets,
 			remainingRerolls: setup.cardRerolls,
@@ -76,11 +78,11 @@ export const buildExpedition = (
 		);
 	}
 
-	const wanted = setup.numPlayers + setup.extraMages;
-	const mages = drawMages(wanted, ownedExpansions);
-	if (mages.length < wanted) {
+	// Même vivier pour chaque affrontement : le premier suffit à détecter le manque.
+	const drawn = battles[0]?.mages.length ?? 0;
+	if (drawn < wanted) {
 		warnings.push(
-			`Seulement ${mages.length} mages disponibles (${wanted} demandés).`,
+			`Seulement ${drawn} mages disponibles (${wanted} demandés par affrontement).`,
 		);
 	}
 
@@ -88,9 +90,8 @@ export const buildExpedition = (
 		expedition: {
 			battles,
 			marketConfig: [...marketConfig],
-			mages,
 			numPlayers: setup.numPlayers,
-			story: generateStory(battles, mages, setup.numPlayers),
+			story: generateStory(battles, setup.numPlayers),
 		},
 		warnings,
 	};

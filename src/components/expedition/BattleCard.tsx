@@ -2,12 +2,14 @@ import { RotateCcw } from "lucide-react";
 import type { ReactNode } from "react";
 import type { Battle, SupplyCard } from "../../types";
 import { Card } from "../ui/Card";
+import { MagesPanel } from "./MagesPanel";
 import { SupplyCard as SupplyCardComponent } from "./SupplyCard";
 
 const ROMAN = ["I", "II", "III", "IV"];
 
 interface BattleCardProps {
 	battle: Battle;
+	numPlayers: number;
 	excessBySlotType: Record<string, boolean>;
 	onResetMarket: () => void;
 	onCardClick: (card: SupplyCard) => void;
@@ -23,6 +25,7 @@ const Badge = ({ children }: { children: ReactNode }) => (
 
 export const BattleCard = ({
 	battle,
+	numPlayers,
 	excessBySlotType,
 	onResetMarket,
 	onCardClick,
@@ -59,6 +62,8 @@ export const BattleCard = ({
 			<p className="font-lore text-sm italic text-bone-400 mb-4">
 				{nemesis.lore}
 			</p>
+
+			<MagesPanel mages={battle.mages} numPlayers={numPlayers} />
 
 			<div className="flex flex-wrap items-center justify-between gap-2 mb-3">
 				<h3 className="rune-title text-base">Votre marché</h3>

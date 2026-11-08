@@ -69,34 +69,42 @@ const createPicker = () => {
 
 /**
  * Génère une courte histoire : une introduction menant au premier affrontement,
- * une transition avant chacun des suivants, et un épilogue.
+ * une transition avant chacun des suivants, et un épilogue. Les mages étant
+ * tirés à chaque affrontement, chaque phrase nomme l'équipe de celui qu'elle
+ * évoque (la victoire passée ou le combat à venir).
  */
-export const generateStory = (
-	battles: Battle[],
-	mages: Mage[],
-	numPlayers: number,
-): Story => {
+export const generateStory = (battles: Battle[], numPlayers: number): Story => {
 	const pick = createPicker();
-	const team = mages.length === numPlayers ? mages : null;
+	const teamOf = (battle: Battle): Mage[] | null =>
+		battle.mages.length === numPlayers ? battle.mages : null;
 	const first = battles[0];
 	const last = battles[battles.length - 1];
 
 	const intro = [
-		pick(INTROS, { team }),
-		pick(ARRIVALS, { team, nemesis: first.nemesis }),
+		pick(INTROS, { team: teamOf(first) }),
+		pick(ARRIVALS, { team: teamOf(first), nemesis: first.nemesis }),
 	].join(" ");
 
 	const transitions = battles.slice(1).map((battle, i) => {
-		const ctx = { team, nemesis: battle.nemesis, previous: battles[i].nemesis };
+		const previous = battles[i];
+		const past = {
+			team: teamOf(previous),
+			nemesis: battle.nemesis,
+			previous: previous.nemesis,
+		};
+		const coming = { ...past, team: teamOf(battle) };
 		return [
-			pick(DEFEATS, ctx),
-			pick(RESPITES, ctx),
-			pick(ESCALATIONS[battle.tier], ctx),
-			pick(ARRIVALS, ctx),
+			pick(DEFEATS, past),
+			pick(RESPITES, past),
+			pick(ESCALATIONS[battle.tier], coming),
+			pick(ARRIVALS, coming),
 		].join(" ");
 	});
 
-	const epilogue = pick(EPILOGUES, { team, nemesis: last.nemesis });
+	const epilogue = pick(EPILOGUES, {
+		team: teamOf(last),
+		nemesis: last.nemesis,
+	});
 
 	return { intro, transitions, epilogue };
 };

@@ -15,6 +15,7 @@ const battles = [1, 2, 3, 4].map(
 			number: tier,
 			tier,
 			nemesis: nemeses[tier][0],
+			mages: mages.slice(tier * 2, tier * 2 + 2),
 			supply: [],
 			remainingResets: 0,
 			remainingRerolls: 0,
@@ -63,7 +64,7 @@ describe("fillTemplate", () => {
 
 describe("generateStory", () => {
 	test("has a transition between each battle and no leftover marker", () => {
-		const story = generateStory(battles, mages.slice(0, 4), 2);
+		const story = generateStory(battles, 1);
 		expect(story.transitions.length).toBe(3);
 		for (const text of [story.intro, ...story.transitions, story.epilogue]) {
 			expect(text).not.toMatch(/\{\w+\}/);
@@ -76,8 +77,22 @@ describe("generateStory", () => {
 	});
 
 	test("never repeats a respite within one campaign", () => {
-		const story = generateStory(battles, mages.slice(0, 2), 2);
+		const story = generateStory(battles, 2);
 		const openings = story.transitions.map((t) => t.split(". ")[1]);
 		expect(new Set(openings).size).toBe(openings.length);
+	});
+
+	test("the epilogue names the team of the last battle, not the first", () => {
+		const [first, last] = [battles[0], battles[3]];
+		const epilogues = Array.from(
+			{ length: 30 },
+			() => generateStory(battles, 2).epilogue,
+		);
+		for (const mage of first.mages) {
+			expect(epilogues.some((e) => e.includes(mage.name))).toBe(false);
+		}
+		expect(
+			epilogues.some((e) => last.mages.every((m) => e.includes(m.name))),
+		).toBe(true);
 	});
 });

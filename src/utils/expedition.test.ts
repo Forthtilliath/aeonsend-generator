@@ -42,10 +42,13 @@ describe("buildExpedition", () => {
 		expect(expedition.story.transitions).toEqual([]);
 	});
 
-	test("draws players + extra mages once, without duplicates", () => {
+	test("draws players + extra mages for each battle, without duplicates", () => {
 		const { expedition } = buildExpedition(setup, market, owned);
-		expect(expedition.mages.length).toBe(4);
-		expect(new Set(expedition.mages.map((m) => m.id)).size).toBe(4);
+		expect(expedition.battles.length).toBe(4);
+		for (const battle of expedition.battles) {
+			expect(battle.mages.length).toBe(4);
+			expect(new Set(battle.mages.map((m) => m.id)).size).toBe(4);
+		}
 	});
 
 	test("each battle starts with the configured resets and rerolls", () => {
