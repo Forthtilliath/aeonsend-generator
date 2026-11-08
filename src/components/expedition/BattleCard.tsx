@@ -1,7 +1,10 @@
 import { RotateCcw } from "lucide-react";
 import type { ReactNode } from "react";
 import type { Battle, SupplyCard } from "../../types";
+import { Card } from "../ui/Card";
 import { SupplyCard as SupplyCardComponent } from "./SupplyCard";
+
+const ROMAN = ["I", "II", "III", "IV"];
 
 interface BattleCardProps {
 	battle: Battle;
@@ -13,7 +16,7 @@ interface BattleCardProps {
 }
 
 const Badge = ({ children }: { children: ReactNode }) => (
-	<span className="bg-red-600/30 px-2 py-1 rounded border border-red-500/50">
+	<span className="px-2 py-0.5 rounded-[3px] border border-ember-600/50 bg-ember-950/70 text-ember-200">
 		{children}
 	</span>
 );
@@ -30,27 +33,38 @@ export const BattleCard = ({
 	const canReroll = battle.remainingRerolls > 0;
 
 	return (
-		<div className="bg-slate-900/90 rounded-lg p-4 border border-red-700/40 shadow-lg shadow-red-900/20">
-			<h2 className="text-xl font-bold mb-1">
-				Affrontement {battle.number}
-				<span className="ml-2 text-sm font-normal text-gray-400">
-					Palier {battle.tier}
-				</span>
-			</h2>
-			<div className="text-2xl font-bold text-red-400 mb-1">{nemesis.name}</div>
-			<div className="text-sm text-gray-400 mb-2">{nemesis.description}</div>
+		<Card tone="ember" className="animate-rise">
+			<div className="flex items-start gap-4 mb-3">
+				<div
+					className="shrink-0 w-14 h-14 rounded-full border-2 border-ember-500/70 bg-radial from-ember-800 to-ember-950 flex items-center justify-center font-display text-xl text-ember-200 shadow-[0_0_20px_-6px_var(--color-ember-500)]"
+					aria-hidden="true"
+				>
+					{ROMAN[battle.number - 1] ?? battle.number}
+				</div>
+				<div className="min-w-0">
+					<h2 className="text-xs font-semibold uppercase tracking-[0.25em] text-ember-300/80">
+						Affrontement {battle.number} · Palier {battle.tier}
+					</h2>
+					<div className="font-display text-2xl md:text-3xl text-ember-200 leading-tight">
+						{nemesis.name}
+					</div>
+					<div className="text-sm text-bone-400">{nemesis.description}</div>
+				</div>
+			</div>
 			<div className="flex gap-2 flex-wrap text-sm mb-2">
 				<Badge>Difficulté : {nemesis.difficulty}</Badge>
 				<Badge>Vie : {nemesis.hp}</Badge>
 				<Badge>{nemesis.expansion}</Badge>
 			</div>
-			<p className="text-xs italic text-gray-400 mb-4">{nemesis.lore}</p>
+			<p className="font-lore text-sm italic text-bone-400 mb-4">
+				{nemesis.lore}
+			</p>
 
-			<div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-				<h3 className="font-bold">Votre marché :</h3>
+			<div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+				<h3 className="rune-title text-base">Votre marché</h3>
 				<div className="flex flex-wrap gap-2 text-sm">
 					{canReroll && (
-						<span className="bg-purple-600/30 px-3 py-1 rounded-full border border-purple-500/50">
+						<span className="px-3 py-1 rounded-full border border-aether-600/60 bg-aether-900/60 text-aether-200">
 							{battle.remainingRerolls} relance(s) de carte
 						</span>
 					)}
@@ -58,7 +72,7 @@ export const BattleCard = ({
 						type="button"
 						onClick={onResetMarket}
 						disabled={battle.remainingResets <= 0}
-						className="flex items-center gap-1 bg-purple-600 hover:bg-purple-700 disabled:bg-slate-700 disabled:text-gray-400 px-3 py-1 rounded-full transition-all"
+						className="flex items-center gap-1 px-3 py-1 rounded-full border border-aether-500/70 text-aether-200 hover:bg-aether-900/70 disabled:border-abyss-600 disabled:text-bone-500 disabled:hover:bg-transparent transition-all"
 						title="Retirer entièrement le marché"
 					>
 						<RotateCcw className="w-4 h-4" />
@@ -66,7 +80,7 @@ export const BattleCard = ({
 					</button>
 				</div>
 			</div>
-			<div className="grid gap-2 grid-cols-3">
+			<div className="grid gap-2.5 grid-cols-3">
 				{battle.supply.map((card) => (
 					<SupplyCardComponent
 						key={card.id}
@@ -79,6 +93,6 @@ export const BattleCard = ({
 					/>
 				))}
 			</div>
-		</div>
+		</Card>
 	);
 };

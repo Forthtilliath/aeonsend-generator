@@ -1,6 +1,7 @@
 import { ALL_EXPANSIONS } from "../../data/expansions";
 import type { Expansion } from "../../types";
 import { Card } from "../ui/Card";
+import { SectionTitle } from "../ui/SectionTitle";
 
 interface ExpansionSelectorProps {
 	ownedExpansions: ReadonlySet<Expansion>;
@@ -13,9 +14,7 @@ export const ExpansionSelector = ({
 }: ExpansionSelectorProps) => {
 	return (
 		<Card>
-			<h2 className="text-lg font-bold mb-3 text-amber-200">
-				Boîtes possédées
-			</h2>
+			<SectionTitle>Boîtes possédées</SectionTitle>
 			<div className="grid grid-cols-2 md:grid-cols-4 gap-2">
 				{ALL_EXPANSIONS.map((expansion) => {
 					const isOwned = ownedExpansions.has(expansion);
@@ -25,11 +24,7 @@ export const ExpansionSelector = ({
 							key={expansion}
 							onClick={() => onToggle(expansion)}
 							aria-pressed={isOwned}
-							className={`p-2 rounded-lg border-2 transition-all text-sm font-semibold ${
-								isOwned
-									? "border-amber-500 bg-amber-900/40 shadow-lg shadow-amber-900/30"
-									: "border-slate-700 bg-slate-800/50 opacity-60 hover:border-amber-700/50"
-							}`}
+							className="rune-toggle p-2 text-sm font-semibold"
 						>
 							{expansion}
 						</button>

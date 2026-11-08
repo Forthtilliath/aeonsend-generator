@@ -1,4 +1,4 @@
-import { Shuffle } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { type FC, useMemo, useState } from "react";
 import { ALL_EXPANSIONS } from "../../data/expansions";
 import { useExpedition } from "../../hooks/useExpedition";
@@ -10,6 +10,7 @@ import {
 } from "../../schemas/storage";
 import type { Expansion, SetupConfig, SupplyCard } from "../../types";
 import { Button } from "../ui/Button";
+import { AppHeader } from "./AppHeader";
 import { CardModal } from "./CardModal";
 import { ExpansionSelector } from "./ExpansionSelector";
 import { ExpeditionResults } from "./ExpeditionResults";
@@ -63,11 +64,10 @@ const FormExpedition: FC = () => {
 	};
 
 	return (
-		<div className="min-h-screen bg-linear-to-br from-indigo-950 via-purple-950 to-slate-900 text-white p-3 md:p-6">
-			<div className="max-w-7xl mx-auto space-y-4">
-				<h1 className="text-center text-3xl md:text-4xl font-bold mb-6 text-amber-100 drop-shadow-lg">
-					Aeon's End - Générateur de rencontres
-				</h1>
+		<div className="min-h-dvh text-bone-100 px-4 pb-10 md:px-6">
+			<div className="cavern" aria-hidden="true" />
+			<div className="max-w-5xl mx-auto space-y-5">
+				<AppHeader />
 
 				<ExpansionSelector
 					ownedExpansions={ownedExpansions}
@@ -82,14 +82,17 @@ const FormExpedition: FC = () => {
 					size="lg"
 					className="w-full"
 				>
-					<Shuffle className="w-5 h-5" />
+					<Sparkles className="w-5 h-5" />
 					{setup.battleCount === 4
 						? "Générer une campagne de 4 affrontements"
 						: `Générer un affrontement de palier ${setup.tier}`}
 				</Button>
 
 				{warnings.length > 0 && (
-					<div className="bg-red-950/60 border border-red-700/50 rounded-lg p-3 text-sm text-red-200 flex items-start justify-between gap-3">
+					<div
+						role="alert"
+						className="bg-ember-950/80 border border-ember-600/60 rounded-[3px] p-3 text-sm text-ember-200 flex items-start justify-between gap-3"
+					>
 						<ul className="space-y-1">
 							{warnings.map((w) => (
 								<li key={w}>{w}</li>
@@ -98,7 +101,7 @@ const FormExpedition: FC = () => {
 						<button
 							type="button"
 							onClick={dismissWarnings}
-							className="text-red-300 hover:text-white shrink-0"
+							className="text-ember-300 hover:text-bone-50 shrink-0"
 							aria-label="Fermer l'avertissement"
 						>
 							✕

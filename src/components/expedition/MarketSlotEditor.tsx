@@ -4,14 +4,7 @@ import { AetherIcon } from "../ui/Icons";
 
 type Operator = MarketCondition["operator"];
 
-const SLOT_BG: Record<string, string> = {
-	gem: "bg-purple-400/80",
-	relic: "bg-blue-400/80",
-	spell: "bg-yellow-400/90",
-	any: "bg-gray-400/80",
-};
-
-const FIELD = "w-full bg-gray-300 rounded px-1 py-1 text-xs";
+const FIELD = "rune-field w-full px-1 py-1 text-xs";
 
 /** Change d'opérateur en conservant les coûts déjà saisis quand c'est possible. */
 const withOperator = (
@@ -60,9 +53,7 @@ interface MarketSlotEditorProps {
 }
 
 export const MarketSlotEditor = ({ slot, onChange }: MarketSlotEditorProps) => (
-	<div
-		className={`rounded p-2 opacity-75 border text-gray-800 ${SLOT_BG[slot.type]}`}
-	>
+	<div data-type={slot.type} className="type-tile p-2">
 		<select
 			value={slot.type}
 			aria-label="Type de carte"
@@ -79,7 +70,7 @@ export const MarketSlotEditor = ({ slot, onChange }: MarketSlotEditorProps) => (
 			<option value="spell">Sort</option>
 			<option value="any">Tout</option>
 		</select>
-		<div className="text-xs mb-1 text-center font-semibold">
+		<div className="text-xs mb-1 text-center font-semibold text-(--type-soft)">
 			Coût en <AetherIcon />
 		</div>
 		<select

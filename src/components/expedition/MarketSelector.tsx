@@ -6,6 +6,7 @@ import type { MarketCondition } from "../../types";
 import { getMarketComposition } from "../../utils/supply";
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
+import { SectionTitle } from "../ui/SectionTitle";
 import { CustomMarketEditor } from "./CustomMarketEditor";
 import { MarketPreview } from "./MarketPreview";
 
@@ -30,15 +31,11 @@ const MarketButton = ({
 		type="button"
 		onClick={onSelect}
 		aria-pressed={selected}
-		className={`w-full h-full p-2 rounded-lg border-2 transition-all ${
-			selected
-				? "border-amber-500 bg-amber-900/40 shadow-lg shadow-amber-900/30"
-				: "border-slate-700 bg-slate-800/50 hover:border-amber-700/50"
-		}`}
+		className="rune-toggle w-full h-full p-2"
 	>
 		<div className="text-sm font-semibold">{title}</div>
-		<div className="text-xs text-gray-400">{subtitle}</div>
-		<div className="text-xs mt-1 text-amber-100/80">
+		<div className="text-xs text-bone-500">{subtitle}</div>
+		<div className="text-xs mt-1 text-aether-300/90">
 			{getMarketComposition(config)}
 		</div>
 	</button>
@@ -57,7 +54,7 @@ export const MarketSelector = ({ market }: { market: MarketState }) => {
 
 	return (
 		<Card>
-			<h2 className="text-lg font-bold mb-3 text-amber-200">Type de marché</h2>
+			<SectionTitle>Type de marché</SectionTitle>
 
 			<div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3">
 				{Array.from(marketTemplates.values()).map((template) => {
@@ -86,7 +83,7 @@ export const MarketSelector = ({ market }: { market: MarketState }) => {
 						<button
 							type="button"
 							onClick={() => market.deletePreset(preset.id)}
-							className="absolute -top-2 -right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold border-2 border-gray-800"
+							className="absolute -top-2 -right-2 bg-ember-600 hover:bg-ember-500 text-bone-50 rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold border-2 border-abyss-900"
 							title="Supprimer ce preset"
 							aria-label={`Supprimer le preset ${preset.name}`}
 						>
@@ -110,7 +107,7 @@ export const MarketSelector = ({ market }: { market: MarketState }) => {
 			<button
 				type="button"
 				onClick={() => setShowDetails((v) => !v)}
-				className="text-sm text-amber-200/80 hover:text-amber-100 flex items-center gap-1"
+				className="text-sm text-aether-300/90 hover:text-aether-200 flex items-center gap-1"
 				aria-expanded={showDetails}
 			>
 				{showDetails ? (
@@ -122,7 +119,7 @@ export const MarketSelector = ({ market }: { market: MarketState }) => {
 			</button>
 
 			{showDetails && (
-				<div className="bg-gray-700/50 rounded-lg p-4 mt-3">
+				<div className="rune-panel rune-panel--sunken p-4 mt-3">
 					{isCustom ? (
 						<CustomMarketEditor
 							market={customMarket}

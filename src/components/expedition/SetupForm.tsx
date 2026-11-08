@@ -3,6 +3,7 @@ import { SETUP_LIMITS } from "../../schemas/storage";
 import type { SetupConfig, Tier } from "../../types";
 import { ALL_TIERS } from "../../utils/expedition";
 import { Card } from "../ui/Card";
+import { SectionTitle } from "../ui/SectionTitle";
 import { Segmented } from "../ui/Segmented";
 import { Stepper } from "../ui/Stepper";
 
@@ -18,10 +19,10 @@ export const SetupForm = ({ setup, onChange }: SetupFormProps) => {
 
 	return (
 		<Card>
-			<h2 className="text-lg font-bold mb-3 flex items-center gap-2 text-amber-200">
-				<Users className="w-5 h-5" />
+			<SectionTitle>
 				Configuration
-			</h2>
+				<Users className="w-4 h-4 text-aether-300/70" />
+			</SectionTitle>
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 				<Stepper
@@ -62,7 +63,7 @@ export const SetupForm = ({ setup, onChange }: SetupFormProps) => {
 						onChange={(tier) => update({ tier })}
 					/>
 				) : (
-					<p className="text-sm text-gray-400 self-end pb-2">
+					<p className="text-sm text-bone-400 font-lore italic self-end pb-2">
 						Une némésis de chaque palier, du 1 au 4.
 					</p>
 				)}
@@ -97,7 +98,7 @@ export const SetupForm = ({ setup, onChange }: SetupFormProps) => {
 					/>
 					<span>
 						La carte relancée remplace l'ancienne
-						<span className="block text-xs text-gray-400">
+						<span className="block text-xs text-bone-500">
 							Sinon, la nouvelle carte s'ajoute et vous retirez celle que vous
 							ne gardez pas.
 						</span>

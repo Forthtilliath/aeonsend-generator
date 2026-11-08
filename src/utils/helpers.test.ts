@@ -6,8 +6,6 @@ import {
 	generateRandomInteger,
 	getCriteriaLabel,
 	getRandomItemFromArray,
-	getTypeBgColor,
-	getTypeColor,
 	getTypeLabel,
 	matchesCondition,
 	shuffle,
@@ -82,16 +80,8 @@ describe("matchesCondition", () => {
 	});
 });
 
-describe("getTypeColor / getTypeBgColor / getTypeLabel", () => {
-	test("returns distinct values per type", () => {
-		expect(getTypeColor("gem")).toContain("purple");
-		expect(getTypeColor("relic")).toContain("blue");
-		expect(getTypeColor("spell")).toContain("yellow");
-
-		expect(getTypeBgColor("gem")).toContain("purple");
-		expect(getTypeBgColor("relic")).toContain("blue");
-		expect(getTypeBgColor("spell")).toContain("yellow");
-
+describe("getTypeLabel", () => {
+	test("returns the french label per type", () => {
 		expect(getTypeLabel("gem")).toBe("Gemme");
 		expect(getTypeLabel("relic")).toBe("Relique");
 		expect(getTypeLabel("spell")).toBe("Sort");
