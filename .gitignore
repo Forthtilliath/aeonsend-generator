@@ -28,3 +28,4 @@ dist-ssr
 *.md
 !README.md
 !CHANGELOG.md
+!LICENSE
