@@ -58,7 +58,7 @@ export const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
 	if (!isOpen) return null;
 
 	return (
-		<div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+		<div className="fixed inset-0 bg-abyss-950/85 backdrop-blur-sm flex items-center justify-center z-50 p-4">
 			<div
 				ref={dialogRef}
 				className="relative max-w-md w-full"
@@ -71,7 +71,7 @@ export const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
 				<button
 					type="button"
 					onClick={onClose}
-					className="absolute -top-10 right-0 text-white hover:text-gray-300"
+					className="absolute -top-10 right-0 text-bone-300 hover:text-aether-300 transition-colors"
 					aria-label="Fermer"
 				>
 					<X className="w-8 h-8" />
