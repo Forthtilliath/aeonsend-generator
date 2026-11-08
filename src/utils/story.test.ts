@@ -1,6 +1,7 @@
 import { describe, expect, test } from "bun:test";
 import { mages } from "../data/mages";
 import { nemeses } from "../data/nemeses";
+import { at } from "../testing/at";
 import type { Battle } from "../types";
 import {
 	fillTemplate,
@@ -9,12 +10,12 @@ import {
 	nemesisWithArticle,
 } from "./story";
 
-const battles = [1, 2, 3, 4].map(
+const battles = ([1, 2, 3, 4] as const).map(
 	(tier) =>
 		({
 			number: tier,
 			tier,
-			nemesis: nemeses[tier][0],
+			nemesis: at(nemeses[tier], 0),
 			mages: mages.slice(tier * 2, tier * 2 + 2),
 			supply: [],
 			remainingResets: 0,
@@ -32,7 +33,7 @@ describe("joinNames", () => {
 
 describe("nemesisWithArticle", () => {
 	test("adds the article only when there is one", () => {
-		const nemesis = nemeses[1][0];
+		const nemesis = at(nemeses[1], 0);
 		expect(nemesisWithArticle({ ...nemesis, article: "le", name: "X" })).toBe(
 			"le X",
 		);
@@ -46,7 +47,7 @@ describe("fillTemplate", () => {
 	test("names the team when it is known", () => {
 		const team = mages.slice(0, 2);
 		expect(fillTemplate("{mages}", { team })).toBe(
-			`${team[0].name} et ${team[1].name}`,
+			`${at(team, 0).name} et ${at(team, 1).name}`,
 		);
 	});
 
@@ -57,7 +58,11 @@ describe("fillTemplate", () => {
 	});
 
 	test("capitalizes {Nemesis}", () => {
-		const nemesis = { ...nemeses[1][0], article: "la" as const, name: "Reine" };
+		const nemesis = {
+			...at(nemeses[1], 0),
+			article: "la" as const,
+			name: "Reine",
+		};
 		expect(fillTemplate("{Nemesis}", { team: null, nemesis })).toBe("La Reine");
 	});
 });
@@ -70,9 +75,9 @@ describe("generateStory", () => {
 			expect(text).not.toMatch(/\{\w+\}/);
 			expect(text.length).toBeGreaterThan(20);
 		}
-		expect(story.intro).toContain(nemesisWithArticle(battles[0].nemesis));
-		expect(story.transitions[2]).toContain(
-			nemesisWithArticle(battles[3].nemesis),
+		expect(story.intro).toContain(nemesisWithArticle(at(battles, 0).nemesis));
+		expect(at(story.transitions, 2)).toContain(
+			nemesisWithArticle(at(battles, 3).nemesis),
 		);
 	});
 
@@ -83,7 +88,7 @@ describe("generateStory", () => {
 	});
 
 	test("the epilogue names the team of the last battle, not the first", () => {
-		const [first, last] = [battles[0], battles[3]];
+		const [first, last] = [at(battles, 0), at(battles, 3)];
 		const epilogues = Array.from(
 			{ length: 30 },
 			() => generateStory(battles, 2).epilogue,

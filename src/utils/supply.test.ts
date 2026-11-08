@@ -1,4 +1,5 @@
 import { describe, expect, test } from "bun:test";
+import { at } from "../testing/at";
 import type { MarketCondition } from "../types";
 import {
 	drawCard,
@@ -32,13 +33,13 @@ describe("generateSupply", () => {
 	test("sorted by category then cost, positions 1..n", () => {
 		const supply = generateSupply(config);
 		expect(supply.map((c) => c.type)).toEqual(["gem", "gem", "relic", "spell"]);
-		expect(supply[1].cost).toBeGreaterThanOrEqual(supply[0].cost);
+		expect(at(supply, 1).cost).toBeGreaterThanOrEqual(at(supply, 0).cost);
 		expect(supply.map((c) => c.position)).toEqual([1, 2, 3, 4]);
 	});
 
 	test("respects cost conditions", () => {
 		const supply = generateSupply(config);
-		expect(supply[3].cost).toBeGreaterThanOrEqual(5);
+		expect(at(supply, 3).cost).toBeGreaterThanOrEqual(5);
 	});
 
 	test("an 'any' slot keeps its card with a concrete type", () => {
@@ -68,7 +69,7 @@ describe("drawCard", () => {
 describe("rerollSupplyCard", () => {
 	test("replace keeps the market size and swaps the card", () => {
 		const supply = generateSupply(config);
-		const old = supply[0];
+		const old = at(supply, 0);
 		const next = rerollSupplyCard(supply, old.position, true);
 		expect(next?.length).toBe(supply.length);
 		expect(next?.map((c) => c.name)).not.toContain(old.name);
@@ -76,7 +77,7 @@ describe("rerollSupplyCard", () => {
 
 	test("without replace adds a card and flags the excess", () => {
 		const supply = generateSupply(config);
-		const next = rerollSupplyCard(supply, supply[0].position, false);
+		const next = rerollSupplyCard(supply, at(supply, 0).position, false);
 		expect(next?.length).toBe(supply.length + 1);
 		expect(next && getExcessBySlotType(next, config).gem).toBe(true);
 		expect(next && getExcessBySlotType(next, config).spell).toBe(false);

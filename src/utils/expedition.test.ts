@@ -1,6 +1,7 @@
 import { describe, expect, test } from "bun:test";
 import { ALL_EXPANSIONS } from "../data/expansions";
 import { marketTemplates } from "../data/marketTemplates";
+import { at } from "../testing/at";
 import type { SetupConfig } from "../types";
 import { buildExpedition, drawMages, getTiers } from "./expedition";
 
@@ -38,7 +39,7 @@ describe("buildExpedition", () => {
 			owned,
 		);
 		expect(expedition.battles.length).toBe(1);
-		expect(expedition.battles[0].nemesis.tier).toBe(2);
+		expect(at(expedition.battles, 0).nemesis.tier).toBe(2);
 		expect(expedition.story.transitions).toEqual([]);
 	});
 
