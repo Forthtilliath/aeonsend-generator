@@ -1,3 +1,4 @@
+import { useKeyListener } from "@forthtilliath/react-kit/useKeyListener";
 import { X } from "lucide-react";
 import {
 	type MouseEvent,
@@ -38,40 +39,36 @@ export const Modal = ({
 	const dialogRef = useRef<HTMLDivElement>(null);
 	const previouslyFocused = useRef<HTMLElement | null>(null);
 	const pressedOnBackdrop = useRef(false);
-	// Ref : un `onClose` recréé à chaque rendu du parent ne doit pas relancer
-	// l'effet (sinon le focus repart au début à chaque interaction).
-	const onCloseRef = useRef(onClose);
-	onCloseRef.current = onClose;
+
+	// `useKeyListener` lit toujours le dernier gestionnaire : un `onClose`
+	// recréé à chaque rendu du parent ne réattache pas l'écouteur.
+	useKeyListener({ key: "Escape" }, () => {
+		if (isOpen) onClose();
+	});
+
+	// Piège du focus : Tab / Maj+Tab bouclent dans la modale.
+	useKeyListener({ key: "Tab" }, (e) => {
+		if (!isOpen || !dialogRef.current) return;
+		const focusableEls = getFocusable(dialogRef.current);
+		if (focusableEls.length === 0) return;
+
+		const first = focusableEls[0];
+		const last = focusableEls[focusableEls.length - 1];
+
+		if (e.shiftKey && document.activeElement === first) {
+			e.preventDefault();
+			last.focus();
+		} else if (!e.shiftKey && document.activeElement === last) {
+			e.preventDefault();
+			first.focus();
+		}
+	});
 
 	useEffect(() => {
 		if (!isOpen) return;
 
 		previouslyFocused.current = document.activeElement as HTMLElement | null;
 		if (dialogRef.current) getFocusable(dialogRef.current)[0]?.focus();
-
-		const handleKeyDown = (e: KeyboardEvent) => {
-			if (e.key === "Escape") {
-				onCloseRef.current();
-				return;
-			}
-			if (e.key !== "Tab" || !dialogRef.current) return;
-
-			const focusableEls = getFocusable(dialogRef.current);
-			if (focusableEls.length === 0) return;
-
-			const first = focusableEls[0];
-			const last = focusableEls[focusableEls.length - 1];
-
-			if (e.shiftKey && document.activeElement === first) {
-				e.preventDefault();
-				last.focus();
-			} else if (!e.shiftKey && document.activeElement === last) {
-				e.preventDefault();
-				first.focus();
-			}
-		};
-
-		document.addEventListener("keydown", handleKeyDown);
 
 		// Bloque le défilement de la page derrière la modale. La marge compense
 		// la barre de défilement qui disparaît, pour que la page ne saute pas.
@@ -84,7 +81,6 @@ export const Modal = ({
 		return () => {
 			root.style.overflow = overflow;
 			root.style.paddingRight = paddingRight;
-			document.removeEventListener("keydown", handleKeyDown);
 			previouslyFocused.current?.focus();
 		};
 	}, [isOpen]);
@@ -102,7 +98,9 @@ export const Modal = ({
 	};
 
 	return (
-		// Le clavier a déjà son équivalent : Échap (écouteur sur `document`).
+		// Le clavier a déjà son équivalent : Échap (écouteur sur `window`).
+		// Pas de stopPropagation dans la boîte : il couperait aussi l'événement
+		// natif, et Échap / Tab n'atteindraient plus l'écouteur.
 		// biome-ignore lint/a11y/useKeyWithClickEvents: fermeture au clavier par Échap
 		// biome-ignore lint/a11y/noStaticElementInteractions: fond cliquable de la modale
 		<div
@@ -113,8 +111,6 @@ export const Modal = ({
 			<div
 				ref={dialogRef}
 				className={`relative w-full ${widthClassName}`}
-				onClick={(e) => e.stopPropagation()}
-				onKeyDown={(e) => e.stopPropagation()}
 				role="dialog"
 				aria-modal="true"
 				aria-labelledby={title ? "modal-title" : undefined}
