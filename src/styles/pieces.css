@@ -1,0 +1,118 @@
+/* Pièces de jeu : cartes typées, coût en éther, brèches, chronique. */
+
+/* Carte du marché : un liseré et une teinte selon le type. */
+[data-type="gem"] {
+	--type: var(--color-gem-400);
+	--type-soft: var(--color-gem-300);
+	--type-deep: var(--color-gem-900);
+}
+[data-type="relic"] {
+	--type: var(--color-relic-400);
+	--type-soft: var(--color-relic-300);
+	--type-deep: var(--color-relic-900);
+}
+[data-type="spell"] {
+	--type: var(--color-spell-400);
+	--type-soft: var(--color-spell-300);
+	--type-deep: var(--color-spell-900);
+}
+[data-type="any"] {
+	--type: var(--color-bone-400);
+	--type-soft: var(--color-bone-300);
+	--type-deep: var(--color-abyss-700);
+}
+
+.type-tile {
+	border: 1px solid color-mix(in oklab, var(--type) 45%, transparent);
+	border-top: 3px solid var(--type);
+	border-radius: 3px;
+	background: linear-gradient(
+		180deg,
+		color-mix(in oklab, var(--type-deep) 90%, transparent),
+		var(--color-abyss-850) 85%
+	);
+	transition:
+		transform 0.2s,
+		box-shadow 0.2s,
+		border-color 0.2s;
+}
+
+button.type-tile:hover {
+	transform: translateY(-3px);
+	border-color: var(--type);
+	box-shadow: 0 10px 24px -10px var(--type);
+}
+
+/* Pastille de coût en éther. */
+.aether-coin {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.15rem;
+	padding: 0.05rem 0.45rem;
+	border-radius: 999px;
+	border: 1px solid
+		color-mix(in oklab, var(--color-aether-400) 45%, transparent);
+	background: color-mix(in oklab, var(--color-aether-900) 80%, transparent);
+	color: var(--color-aether-200);
+	font-weight: 700;
+}
+
+/* Brèche d'un mage : un anneau. */
+.breach {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.6rem;
+	height: 1.6rem;
+	border-radius: 999px;
+}
+
+.breach--none {
+	border: 1px dashed var(--color-abyss-500);
+}
+
+.breach--closed {
+	border: 2px solid var(--color-abyss-500);
+	background: radial-gradient(
+		circle,
+		var(--color-abyss-700),
+		var(--color-abyss-850)
+	);
+	color: var(--color-bone-400);
+}
+
+.breach--open {
+	border: 2px solid var(--color-aether-300);
+	background: radial-gradient(
+		circle,
+		var(--color-aether-200),
+		var(--color-aether-500) 55%,
+		var(--color-aether-700)
+	);
+	color: var(--color-abyss-950);
+	box-shadow: 0 0 12px -2px var(--color-aether-400);
+}
+
+/* Chronique : récit en italique, lettrine d'éther. */
+.chronicle {
+	border-left: 1px solid
+		color-mix(in oklab, var(--color-aether-400) 35%, transparent);
+	background: linear-gradient(
+		90deg,
+		color-mix(in oklab, var(--color-aether-500) 7%, transparent),
+		transparent 70%
+	);
+}
+
+.chronicle p::first-letter {
+	float: left;
+	margin: 0.1rem 0.4rem 0 0;
+	font-family: var(--font-display);
+	font-size: 2.4em;
+	line-height: 0.85;
+	font-style: normal;
+	color: var(--color-aether-300);
+	text-shadow: 0 0 14px
+		color-mix(in oklab, var(--color-aether-400) 60%, transparent);
+}
