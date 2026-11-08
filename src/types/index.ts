@@ -25,6 +25,8 @@ export interface Card {
 
 export interface Nemesis {
 	name: string;
+	/** Article utilisé dans l'histoire (« le Masque Tordu »), absent pour un nom propre. */
+	article?: "le" | "la";
 	difficulty: number;
 	description: string;
 	lore: string;
@@ -56,7 +58,7 @@ export interface Mage {
 	expansion: Expansion;
 }
 
-type CardType = "gem" | "relic" | "spell";
+export type CardType = "gem" | "relic" | "spell";
 type CardTypeMarket = CardType | "any";
 
 type MarketConditionAny = {
@@ -86,39 +88,47 @@ export type MarketCondition =
 	| MarketConditionRange;
 
 export interface SupplyCard extends Card {
-	type: CardTypeMarket;
+	/** Type réel de la carte (un emplacement « Tout » reçoit le type tiré). */
+	type: CardType;
 	position: number;
 	criteria: MarketCondition;
 }
 
+export type Tier = 1 | 2 | 3 | 4;
+
 export interface Battle {
 	number: number;
+	tier: Tier;
 	nemesis: Nemesis;
-	mages: Mage[];
 	supply: SupplyCard[];
+	remainingResets: number;
 	remainingRerolls: number;
 }
 
+export interface Story {
+	intro: string;
+	/** Texte affiché avant l'affrontement d'index i + 1. */
+	transitions: string[];
+	epilogue: string;
+}
+
 export interface Expedition {
-	battles: Tuple<Battle, 4>;
-	playerInfo: {
-		mode: "perPlayer" | "total";
-		numPlayers: number;
-		magesPerPlayer: number;
-		totalMages: number;
-	};
-}
-
-export interface PlayerConfig {
-	mode: "perPlayer" | "total";
+	battles: Battle[];
+	/** Marché utilisé au tirage, réutilisé par les réinitialisations. */
+	marketConfig: MarketCondition[];
+	mages: Mage[];
 	numPlayers: number;
-	magesPerPlayer: number;
-	totalMages: number;
+	story: Story;
 }
 
-export interface RerollConfig {
-	type: "individual" | "global";
-	maxIndividualRerolls: number;
+/** Réglages saisis par les joueurs avant le tirage. */
+export interface SetupConfig {
+	numPlayers: number;
+	extraMages: number;
+	battleCount: 1 | 4;
+	tier: Tier;
+	marketResets: number;
+	cardRerolls: number;
 	removeExcess: boolean;
 }
 
