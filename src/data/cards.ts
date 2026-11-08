@@ -1,6 +1,6 @@
 import type { Card } from "../types";
 
-export const cards: Record<string, Card[]> = {
+export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 	gems: [
 		{
 			id: "RB-058",
