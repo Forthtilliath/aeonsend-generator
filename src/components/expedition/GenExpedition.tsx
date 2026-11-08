@@ -12,9 +12,9 @@ import type { Expansion, SetupConfig, SupplyCard } from "../../types";
 import { Button } from "../ui/Button";
 import { AppHeader } from "./AppHeader";
 import { CardModal } from "./CardModal";
-import { ExpansionSelector } from "./ExpansionSelector";
 import { ExpeditionResults } from "./ExpeditionResults";
-import { MarketSelector } from "./MarketSelector";
+import { SettingsModal, type SettingsTab } from "./SettingsModal";
+import { SettingsSummary } from "./SettingsSummary";
 import { SetupForm } from "./SetupForm";
 
 const DEFAULT_SETUP: SetupConfig = {
@@ -49,6 +49,9 @@ const FormExpedition: FC = () => {
 				: [...prev, expansion],
 		);
 	};
+	const setAllExpansions = (owned: boolean): void =>
+		setOwnedExpansionsList(owned ? [...ALL_EXPANSIONS] : []);
+	const [settingsTab, setSettingsTab] = useState<SettingsTab | null>(null);
 
 	const market = useMarket();
 	const { expedition, warnings, dismissWarnings, generate, ...actions } =
@@ -67,14 +70,15 @@ const FormExpedition: FC = () => {
 		<div className="min-h-dvh text-bone-100 px-4 pb-10 md:px-6">
 			<div className="cavern" aria-hidden="true" />
 			<div className="max-w-5xl mx-auto space-y-5">
-				<AppHeader />
+				<AppHeader onOpenSettings={() => setSettingsTab("boxes")} />
 
-				<ExpansionSelector
-					ownedExpansions={ownedExpansions}
-					onToggle={toggleExpansion}
+				<SettingsSummary
+					ownedCount={ownedExpansions.size}
+					marketName={market.selectedMarketName}
+					onOpen={setSettingsTab}
 				/>
+
 				<SetupForm setup={setup} onChange={setSetup} />
-				<MarketSelector market={market} />
 
 				<Button
 					onClick={handleGenerate}
@@ -119,6 +123,15 @@ const FormExpedition: FC = () => {
 				)}
 
 				<CardModal card={selectedCard} onClose={() => setSelectedCard(null)} />
+				<SettingsModal
+					tab={settingsTab}
+					onTabChange={setSettingsTab}
+					onClose={() => setSettingsTab(null)}
+					ownedExpansions={ownedExpansions}
+					onToggleExpansion={toggleExpansion}
+					onSetAllExpansions={setAllExpansions}
+					market={market}
+				/>
 			</div>
 		</div>
 	);
