@@ -96,6 +96,22 @@
 	input[type="checkbox"] {
 		accent-color: var(--color-aether-500);
 	}
+
+	/* Tailwind v4 ne met plus de curseur main sur les boutons : on le rétablit pour tout ce qui est cliquable. */
+	button,
+	[role="button"],
+	select,
+	summary,
+	label:has(input[type="checkbox"]),
+	input[type="checkbox"],
+	input[type="radio"] {
+		cursor: pointer;
+	}
+
+	:disabled,
+	[aria-disabled="true"] {
+		cursor: not-allowed;
+	}
 }
 
 /* Décor fixe : lueur d'éther en haut, braise en bas, grain de roche, poussière d'éther. */
