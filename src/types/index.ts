@@ -1,17 +1,37 @@
 import type { Tuple } from "./helpers";
 
+/** Nom français quand la boîte est sortie en VF (Matagot), sinon nom anglais. */
 export type Expansion =
 	| "Aeon's End"
 	| "Les Profondeurs"
 	| "Les Sans-Noms"
 	| "Guerre Éternelle"
-	| "Ténèbres d'Ailleurs"
 	| "Le Vide"
-	| "De Vieux Souvenirs"
-	| "Une Ère Nouvelle"
+	| "Ténèbres d'Ailleurs"
+	| "Legacy"
 	| "Secrets Enfouis"
+	| "Une Ère Nouvelle"
 	| "Rêves Brisés"
+	| "De Vieux Souvenirs"
+	| "À l'État Sauvage"
 	| "Les Parias"
+	| "Retour à Gravehold"
+	| "Le Village du Sud"
+	| "Legacy of Gravehold"
+	| "The Ruins"
+	| "Past and Future"
+	| "Origins"
+	| "Evolution"
+	| "Le Commencement"
+	| "Les Cavernes"
+	| "Les Abysses"
+	| "Tales of Old Gravehold"
+	| "Beyond the Breach"
+	| "The Surface"
+	| "The Returned"
+	| "System Overload"
+	| "The Cinderkeep"
+	| "The Wastes"
 	| "Inconnue";
 
 export interface Card {
