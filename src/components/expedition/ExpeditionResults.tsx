@@ -48,30 +48,33 @@ export const ExpeditionResults = ({
 
 			<StoryBlock title="Prologue" text={story.intro} />
 
-			{battles.map((battle, idx) => (
-				<Fragment key={battle.number}>
-					{idx > 0 && (
-						<StoryBlock
-							title={`Avant l'affrontement ${battle.number}`}
-							text={story.transitions[idx - 1]}
-						/>
-					)}
-					<BattleCard
-						battle={battle}
-						numPlayers={expedition.numPlayers}
-						excessBySlotType={getExcessBySlotType(
-							battle.supply,
-							expedition.marketConfig,
+			{battles.map((battle, idx) => {
+				const transition = idx > 0 ? story.transitions[idx - 1] : undefined;
+				return (
+					<Fragment key={battle.number}>
+						{transition && (
+							<StoryBlock
+								title={`Avant l'affrontement ${battle.number}`}
+								text={transition}
+							/>
 						)}
-						onResetMarket={() => actions.resetMarket(idx)}
-						onCardClick={onCardClick}
-						onRemoveCard={(position) => actions.removeCard(idx, position)}
-						onRerollCard={(position) =>
-							actions.rerollCard(idx, position, replaceOnReroll)
-						}
-					/>
-				</Fragment>
-			))}
+						<BattleCard
+							battle={battle}
+							numPlayers={expedition.numPlayers}
+							excessBySlotType={getExcessBySlotType(
+								battle.supply,
+								expedition.marketConfig,
+							)}
+							onResetMarket={() => actions.resetMarket(idx)}
+							onCardClick={onCardClick}
+							onRemoveCard={(position) => actions.removeCard(idx, position)}
+							onRerollCard={(position) =>
+								actions.rerollCard(idx, position, replaceOnReroll)
+							}
+						/>
+					</Fragment>
+				);
+			})}
 
 			<StoryBlock
 				title={isCampaign ? "Épilogue" : "Et ensuite ?"}

@@ -23,8 +23,9 @@ export const useExpedition = (ownedExpansions: ReadonlySet<Expansion>) => {
 		update: (battle: Battle, expedition: Expedition) => Battle | null,
 	): void => {
 		setExpedition((prev) => {
-			if (!prev) return prev;
-			const next = update(prev.battles[index], prev);
+			const battle = prev?.battles[index];
+			if (!prev || !battle) return prev;
+			const next = update(battle, prev);
 			if (!next) return prev;
 			const battles = prev.battles.map((b, i) => (i === index ? next : b));
 			return { ...prev, battles };

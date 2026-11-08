@@ -48,8 +48,10 @@ export const getCriteriaLabel = (criteria: MarketCondition): string => {
  * tirages de ts-kit (`shuffle`, `pickRandom`) à la place de `Math.random`.
  * L'écart à l'uniforme (au plus n / 2³² pour n éléments) est négligeable.
  */
-export const secureRandom = (): number =>
-	crypto.getRandomValues(new Uint32Array(1))[0] / 0x1_0000_0000;
+export const secureRandom = (): number => {
+	const [value = 0] = crypto.getRandomValues(new Uint32Array(1));
+	return value / 0x1_0000_0000;
+};
 
 /** Élément tiré au hasard ; lève une erreur sur un tableau vide. */
 export const pickRandomItem = <T>(items: readonly T[]): T => {
