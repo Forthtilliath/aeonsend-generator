@@ -117,6 +117,15 @@ describe("setupConfigSchema", () => {
 			setupConfigSchema.safeParse({ ...setup, numPlayers: 5 }).success,
 		).toBe(false);
 		expect(
+			setupConfigSchema.safeParse({ ...setup, extraMages: 4 }).success,
+		).toBe(false);
+		expect(
+			setupConfigSchema.safeParse({ ...setup, marketResets: 3 }).success,
+		).toBe(false);
+		expect(
+			setupConfigSchema.safeParse({ ...setup, cardRerolls: 4 }).success,
+		).toBe(false);
+		expect(
 			setupConfigSchema.safeParse({ ...setup, battleCount: 2 }).success,
 		).toBe(false);
 		expect(setupConfigSchema.safeParse({ ...setup, tier: 0 }).success).toBe(
