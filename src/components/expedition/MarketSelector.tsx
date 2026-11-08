@@ -1,100 +1,91 @@
-import { X } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
-import {
-	findMarketTemplate,
-	marketTemplates,
-} from "../../data/marketTemplates";
-import type { MarketCondition, MarketTemplate } from "../../types";
-import type { Tuple } from "../../types/helpers";
-import { clamp, copyTuple, getTypeLabel } from "../../utils/helpers";
+import { marketTemplates } from "../../data/marketTemplates";
+import type { useMarket } from "../../hooks/useMarket";
+import type { MarketCondition } from "../../types";
+import { getMarketComposition } from "../../utils/supply";
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
-import { AetherIcon } from "../ui/Icons";
-import { Input } from "../ui/Input";
-import { CriteriaLabel } from "./CriteriaLabel";
+import { CustomMarketEditor } from "./CustomMarketEditor";
+import { MarketPreview } from "./MarketPreview";
 
-interface MarketSelectorProps {
-	selectedMarket: string;
-	setSelectedMarket: (market: string) => void;
-	showMarketConfig: boolean;
-	setShowMarketConfig: (show: boolean) => void;
-	customMarket: Tuple<MarketCondition, 9>;
-	setCustomMarket: (market: Tuple<MarketCondition, 9>) => void;
-	onLoadTemplate: (key: string) => void;
-	onResetCustom: () => void;
-	userPresets: MarketTemplate[];
-	onSaveCurrentAsPreset: (name: string) => void;
-	onDeletePreset: (id: string) => void;
+type MarketState = ReturnType<typeof useMarket>;
+
+interface MarketButtonProps {
+	title: string;
+	subtitle: string;
+	config: MarketCondition[];
+	selected: boolean;
+	onSelect: () => void;
 }
 
-export const MarketSelector = ({
-	selectedMarket,
-	setSelectedMarket,
-	showMarketConfig,
-	setShowMarketConfig,
-	customMarket,
-	setCustomMarket,
-	onLoadTemplate,
-	onResetCustom,
-	userPresets,
-	onSaveCurrentAsPreset,
-	onDeletePreset,
-}: MarketSelectorProps) => {
-	const [newPresetName, setNewPresetName] = useState("");
+const MarketButton = ({
+	title,
+	subtitle,
+	config,
+	selected,
+	onSelect,
+}: MarketButtonProps) => (
+	<button
+		type="button"
+		onClick={onSelect}
+		aria-pressed={selected}
+		className={`w-full h-full p-2 rounded-lg border-2 transition-all ${
+			selected
+				? "border-amber-500 bg-amber-900/40 shadow-lg shadow-amber-900/30"
+				: "border-slate-700 bg-slate-800/50 hover:border-amber-700/50"
+		}`}
+	>
+		<div className="text-sm font-semibold">{title}</div>
+		<div className="text-xs text-gray-400">{subtitle}</div>
+		<div className="text-xs mt-1 text-amber-100/80">
+			{getMarketComposition(config)}
+		</div>
+	</button>
+);
 
-	const handleSavePreset = () => {
-		onSaveCurrentAsPreset(newPresetName);
-		setNewPresetName("");
-	};
+export const MarketSelector = ({ market }: { market: MarketState }) => {
+	const [showDetails, setShowDetails] = useState(false);
+	const {
+		selectedMarket,
+		setSelectedMarket,
+		customMarket,
+		userPresets,
+		marketConfig,
+	} = market;
+	const isCustom = selectedMarket === "custom";
 
 	return (
 		<Card>
-			<h2 className="text-lg font-bold mb-3 text-amber-200">Marché</h2>
+			<h2 className="text-lg font-bold mb-3 text-amber-200">Type de marché</h2>
 
-			<div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
-				{Array.from(marketTemplates.entries()).map(([id, market]) => (
-					<button
-						type="button"
-						key={id}
-						onClick={() => {
-							setSelectedMarket(id);
-							setShowMarketConfig(true);
-						}}
-						className={`p-2 rounded-lg border-2 transition-all ${
-							selectedMarket === id
-								? "border-amber-500 bg-amber-900/40 shadow-lg shadow-amber-900/30"
-								: "border-slate-700 bg-slate-800/50 hover:border-amber-700/50"
-						}`}
-					>
-						<div className="text-sm font-semibold">
-							{market.name.split(":")[0]}
-						</div>
-						<div className="text-xs text-gray-400">
-							{market.name.split(":")[1]}
-						</div>
-					</button>
-				))}
+			<div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3">
+				{Array.from(marketTemplates.values()).map((template) => {
+					const [title, subtitle] = template.name.split(":");
+					return (
+						<MarketButton
+							key={template.id}
+							title={title.trim()}
+							subtitle={subtitle?.trim() ?? ""}
+							config={template.config}
+							selected={selectedMarket === template.id}
+							onSelect={() => setSelectedMarket(template.id)}
+						/>
+					);
+				})}
 
 				{userPresets.map((preset) => (
 					<div key={preset.id} className="relative">
+						<MarketButton
+							title={preset.name}
+							subtitle="Preset perso"
+							config={preset.config}
+							selected={selectedMarket === preset.id}
+							onSelect={() => setSelectedMarket(preset.id)}
+						/>
 						<button
 							type="button"
-							onClick={() => {
-								setSelectedMarket(preset.id);
-								setShowMarketConfig(true);
-							}}
-							className={`w-full p-2 rounded-lg border-2 transition-all ${
-								selectedMarket === preset.id
-									? "border-amber-500 bg-amber-900/40 shadow-lg shadow-amber-900/30"
-									: "border-slate-700 bg-slate-800/50 hover:border-amber-700/50"
-							}`}
-						>
-							<div className="text-sm font-semibold">{preset.name}</div>
-							<div className="text-xs text-gray-400">Preset perso</div>
-						</button>
-						<button
-							type="button"
-							onClick={() => onDeletePreset(preset.id)}
+							onClick={() => market.deletePreset(preset.id)}
 							className="absolute -top-2 -right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold border-2 border-gray-800"
 							title="Supprimer ce preset"
 							aria-label={`Supprimer le preset ${preset.name}`}
@@ -104,256 +95,53 @@ export const MarketSelector = ({
 					</div>
 				))}
 
-				<button
-					type="button"
-					onClick={() => {
+				<MarketButton
+					title="Personnalisable"
+					subtitle="À composer vous-même"
+					config={customMarket}
+					selected={isCustom}
+					onSelect={() => {
 						setSelectedMarket("custom");
-						setShowMarketConfig(true);
+						setShowDetails(true);
 					}}
-					className={`p-2 rounded-lg border-2 transition-all ${
-						selectedMarket === "custom"
-							? "border-amber-500 bg-amber-900/40 shadow-lg shadow-amber-900/30"
-							: "border-slate-700 bg-slate-800/50 hover:border-amber-700/50"
-					}`}
-				>
-					<div className="text-sm font-semibold">Marché Personnalisable</div>
-					<div className="text-xs text-gray-400">Personnalisé</div>
-				</button>
+				/>
 			</div>
 
-			{showMarketConfig && (
-				<div className="bg-gray-700/50 rounded-lg p-4 mb-4">
-					<div className="flex justify-between items-center mb-3">
-						<h3 className="font-bold">
-							Configuration:{" "}
-							{selectedMarket === "custom"
-								? "Marché Personnalisable"
-								: findMarketTemplate(selectedMarket, userPresets)?.name}
-						</h3>
-						<button
-							type="button"
-							onClick={() => setShowMarketConfig(false)}
-							className="text-gray-400 hover:text-white"
-						>
-							<X className="w-5 h-5" />
-						</button>
-					</div>
+			<button
+				type="button"
+				onClick={() => setShowDetails((v) => !v)}
+				className="text-sm text-amber-200/80 hover:text-amber-100 flex items-center gap-1"
+				aria-expanded={showDetails}
+			>
+				{showDetails ? (
+					<ChevronUp className="w-4 h-4" />
+				) : (
+					<ChevronDown className="w-4 h-4" />
+				)}
+				{isCustom ? "Composer le marché" : "Voir le détail des emplacements"}
+			</button>
 
-					{selectedMarket === "custom" ? (
-						<>
-							<div className="flex flex-wrap justify-end items-center gap-2 mb-2">
-								<Input
-									id="newPresetName"
-									placeholder="Nom du preset"
-									value={newPresetName}
-									onChange={(e) => setNewPresetName(e.currentTarget.value)}
-									className="w-40"
-								/>
-								<Button
-									variant="secondary"
-									size="sm"
-									onClick={handleSavePreset}
-									disabled={!newPresetName.trim()}
-								>
-									Sauvegarder comme preset
-								</Button>
-								<Button variant="ghost" size="sm" onClick={onResetCustom}>
-									Réinitialiser
-								</Button>
-							</div>
-							<div className="grid grid-cols-3 gap-2">
-								{customMarket.map((slot, idx) => (
-									<div
-										// biome-ignore lint/suspicious/noArrayIndexKey: can't use anything else here
-										key={idx}
-										className={`rounded p-2 opacity-75 border text-gray-800 ${
-											slot.type === "gem"
-												? "bg-purple-400/80"
-												: slot.type === "relic"
-													? "bg-blue-400/80"
-													: slot.type === "spell"
-														? "bg-yellow-400/90"
-														: "bg-gray-600/30"
-										}`}
-									>
-										<select
-											value={slot.type}
-											onChange={(e) => {
-												const newMarket = copyTuple(customMarket);
-												const newType = e.currentTarget.value as
-													| "gem"
-													| "relic"
-													| "spell"
-													| "any";
-												// Préserver la structure existante en changeant juste le type
-												newMarket[idx] = { ...newMarket[idx], type: newType };
-												setCustomMarket(newMarket);
-											}}
-											className="w-full bg-gray-300 rounded px-1 py-1 text-xs mb-1"
-										>
-											<option value="gem">Gemme</option>
-											<option value="relic">Relique</option>
-											<option value="spell">Sort</option>
-											<option value="any">Tout</option>
-										</select>
-										<div className="text-xs mb-1 text-center font-semibold">
-											Coût en <AetherIcon />
-										</div>
-										<select
-											value={slot.operator}
-											onChange={(e) => {
-												const newMarket = copyTuple(customMarket);
-												const newOperator = e.currentTarget.value as
-													| "any"
-													| "<="
-													| ">="
-													| "="
-													| "range";
-
-												// Créer une nouvelle condition avec le bon type
-												if (newOperator === "any") {
-													newMarket[idx] = {
-														type: slot.type,
-														operator: "any",
-														cost: null,
-													};
-												} else if (newOperator === "range") {
-													newMarket[idx] = {
-														type: slot.type,
-														operator: "range",
-														cost: slot.operator !== "any" ? slot.cost : 4,
-														costMax:
-															slot.operator === "range" ? slot.costMax : 5,
-													};
-												} else {
-													newMarket[idx] = {
-														type: slot.type,
-														operator: newOperator,
-														cost: slot.operator !== "any" ? slot.cost : 4,
-													};
-												}
-												setCustomMarket(newMarket);
-											}}
-											className="w-full bg-gray-300 rounded px-1 py-1 text-xs mb-1"
-										>
-											<option value="<=">≤</option>
-											<option value=">=">≥</option>
-											<option value="=">=</option>
-											<option value="range">Range</option>
-											<option value="any">Tout</option>
-										</select>
-										{slot.operator === "range" ? (
-											<div className="flex gap-1">
-												<input
-													type="number"
-													min="0"
-													max="9"
-													value={slot.cost}
-													onChange={(e) => {
-														const newMarket = copyTuple(customMarket);
-														newMarket[idx] = {
-															...slot,
-															cost: clamp(
-																parseInt(e.currentTarget.value, 10),
-																0,
-																9,
-															),
-														};
-														setCustomMarket(newMarket);
-													}}
-													className="w-full bg-gray-300 rounded px-1 py-1 text-xs text-center"
-													placeholder="Min"
-												/>
-												<input
-													type="number"
-													min="0"
-													max="9"
-													value={slot.costMax}
-													onChange={(e) => {
-														const newMarket = copyTuple(customMarket);
-														newMarket[idx] = {
-															...slot,
-															costMax: clamp(
-																parseInt(e.currentTarget.value, 10),
-																0,
-																9,
-															),
-														};
-														setCustomMarket(newMarket);
-													}}
-													className="w-full bg-gray-300 rounded px-1 py-1 text-xs text-center"
-													placeholder="Max"
-												/>
-											</div>
-										) : slot.operator !== "any" ? (
-											<input
-												type="number"
-												min="0"
-												max="9"
-												value={slot.cost}
-												onChange={(e) => {
-													const newMarket = copyTuple(customMarket);
-													newMarket[idx] = {
-														...slot,
-														cost: clamp(
-															parseInt(e.currentTarget.value, 10),
-															0,
-															9,
-														),
-													};
-													setCustomMarket(newMarket);
-												}}
-												className="w-full bg-gray-300 rounded px-1 py-1 text-xs text-center"
-											/>
-										) : null}
-									</div>
-								))}
-							</div>
-						</>
+			{showDetails && (
+				<div className="bg-gray-700/50 rounded-lg p-4 mt-3">
+					{isCustom ? (
+						<CustomMarketEditor
+							market={customMarket}
+							onChange={market.setCustomMarket}
+							onReset={market.resetCustom}
+							onSavePreset={market.savePreset}
+						/>
 					) : (
 						<>
 							<div className="flex justify-end mb-2">
 								<Button
 									variant="secondary"
 									size="sm"
-									onClick={() => onLoadTemplate(selectedMarket)}
+									onClick={() => market.copyToCustom(selectedMarket)}
 								>
-									Modifier (copier vers Marché Personnalisable)
+									Modifier (copier vers Personnalisable)
 								</Button>
 							</div>
-							<div className="grid grid-cols-3 gap-2">
-								{findMarketTemplate(selectedMarket, userPresets)?.config.map(
-									(slot, idx) => (
-										<div
-											// biome-ignore lint/suspicious/noArrayIndexKey: can't use anything else here
-											key={idx}
-											className={`rounded p-2 opacity-75 border ${
-												slot.type === "gem"
-													? "bg-purple-800/40 border-purple-400/70"
-													: slot.type === "relic"
-														? "bg-blue-800/40 border-blue-400/70"
-														: slot.type === "spell"
-															? "bg-yellow-800/40 border-yellow-400/70"
-															: "bg-gray-600/30 border-gray-500/50"
-											}`}
-										>
-											<div className="text-xs text-center font-semibold mb-1">
-												{slot.type === "gem"
-													? "💎"
-													: slot.type === "relic"
-														? "🔮"
-														: "✨"}
-											</div>
-											<div className="text-xs text-center mb-1">
-												{getTypeLabel(slot.type)}
-											</div>
-											<div className="text-xs text-center font-bold">
-												<CriteriaLabel criteria={slot} />
-											</div>
-										</div>
-									),
-								)}
-							</div>
+							<MarketPreview config={marketConfig} />
 						</>
 					)}
 				</div>
