@@ -11,17 +11,22 @@ export type {
 	MarketCondition,
 	MarketTemplate,
 	Nemesis,
-	PlayerConfig,
-	RerollConfig,
+	SetupConfig,
+	Story,
 	SupplyCard,
+	Tier,
 } from "./types";
-
+export { buildExpedition } from "./utils/expedition";
 export {
-	generateSupply,
 	getCriteriaLabel,
 	getTypeBgColor,
 	getTypeColor,
 	getTypeLabel,
-	hasExcessCards,
 	matchesCondition,
 } from "./utils/helpers";
+export { generateStory } from "./utils/story";
+export {
+	generateSupply,
+	getExcessBySlotType,
+	getMarketComposition,
+} from "./utils/supply";
