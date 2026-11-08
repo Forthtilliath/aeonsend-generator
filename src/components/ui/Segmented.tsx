@@ -3,6 +3,7 @@ interface SegmentedProps<T extends string | number> {
 	options: { value: T; label: string }[];
 	value: T;
 	onChange: (value: T) => void;
+	hint?: string;
 }
 
 /** Choix exclusif parmi quelques options, présenté en boutons accolés. */
@@ -11,6 +12,7 @@ export const Segmented = <T extends string | number>({
 	options,
 	value,
 	onChange,
+	hint,
 }: SegmentedProps<T>) => (
 	<fieldset>
 		<legend className="block text-sm mb-2 text-bone-300">{label}</legend>
@@ -34,5 +36,6 @@ export const Segmented = <T extends string | number>({
 				);
 			})}
 		</div>
+		{hint && <p className="text-xs text-bone-500 mt-1">{hint}</p>}
 	</fieldset>
 );
