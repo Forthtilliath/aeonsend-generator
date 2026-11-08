@@ -23,11 +23,11 @@ export const Stepper = ({
 }: StepperProps) => {
 	const set = (next: number) => onChange(clamp(next, min, max));
 	const buttonClass =
-		"w-10 h-10 shrink-0 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center hover:border-amber-500 disabled:opacity-40 disabled:hover:border-slate-700";
+		"w-10 h-10 shrink-0 rounded-full bg-abyss-800 border border-abyss-600 text-aether-300 flex items-center justify-center hover:border-aether-400 hover:shadow-[0_0_12px_-4px_var(--color-aether-400)] transition-all disabled:opacity-30 disabled:hover:border-abyss-600 disabled:hover:shadow-none";
 
 	return (
 		<div>
-			<label htmlFor={id} className="block text-sm mb-2">
+			<label htmlFor={id} className="block text-sm mb-2 text-bone-300">
 				{label}
 			</label>
 			<div className="flex items-center gap-2">
@@ -48,7 +48,7 @@ export const Stepper = ({
 					max={max}
 					value={value}
 					onChange={(e) => set(Number.parseInt(e.currentTarget.value, 10))}
-					className="w-full min-w-0 h-10 text-center bg-slate-800 rounded-lg border border-slate-700 focus:border-amber-500 focus:outline-none"
+					className="rune-field w-full min-w-0 h-10 text-center text-lg font-semibold tabular-nums"
 				/>
 				<button
 					type="button"
@@ -60,7 +60,7 @@ export const Stepper = ({
 					<Plus className="w-4 h-4" />
 				</button>
 			</div>
-			{hint && <p className="text-xs text-gray-400 mt-1">{hint}</p>}
+			{hint && <p className="text-xs text-bone-500 mt-1">{hint}</p>}
 		</div>
 	);
 };

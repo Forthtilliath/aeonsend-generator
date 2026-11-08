@@ -3,14 +3,18 @@ import type { ReactNode } from "react";
 interface CardProps {
 	children: ReactNode;
 	className?: string;
+	tone?: "aether" | "ember";
 }
 
-export const Card = ({ children, className = "" }: CardProps) => {
-	return (
-		<div
-			className={`bg-slate-900/90 rounded-lg p-4 border border-amber-700/30 shadow-lg shadow-amber-900/20 ${className}`}
-		>
-			{children}
-		</div>
-	);
-};
+/** Tablette de pierre biseautée. `ember` pour ce qui touche aux némésis. */
+export const Card = ({
+	children,
+	className = "",
+	tone = "aether",
+}: CardProps) => (
+	<div
+		className={`rune-panel p-4 md:p-5 ${tone === "ember" ? "rune-panel--ember" : ""} ${className}`}
+	>
+		{children}
+	</div>
+);
