@@ -48,7 +48,8 @@ export const Stepper = ({
 					max={max}
 					value={value}
 					onChange={(e) => set(Number.parseInt(e.currentTarget.value, 10))}
-					className="rune-field w-full min-w-0 h-10 text-center text-lg font-semibold tabular-nums"
+					// Flèches natives masquées : les boutons −/+ font déjà ce travail.
+					className="rune-field w-full min-w-0 h-10 text-center text-lg font-semibold tabular-nums [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
 				/>
 				<button
 					type="button"
