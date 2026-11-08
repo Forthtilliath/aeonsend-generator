@@ -100,6 +100,12 @@
 	background: linear-gradient(90deg, currentColor, transparent);
 }
 
+/* Zone qui défile : barre fine aux couleurs du thème. */
+.rune-scroll {
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-abyss-600) transparent;
+}
+
 /* Bouton-bascule (boîtes possédées, marchés). */
 .rune-toggle {
 	position: relative;
@@ -133,6 +139,61 @@
 		inset 0 0 0 1px
 		color-mix(in oklab, var(--color-aether-400) 25%, transparent),
 		0 0 18px -6px var(--color-aether-500);
+}
+
+/* Pastille de réglage (boîtes, marché) : libellé gravé + valeur + crayon. */
+.summary-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	max-width: 100%;
+	padding: 0.45rem 0.8rem;
+	border: 1px solid var(--color-abyss-600);
+	border-radius: 3px;
+	background: color-mix(in oklab, var(--color-abyss-850) 80%, transparent);
+	color: var(--color-bone-400);
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	transition:
+		border-color 0.2s,
+		color 0.2s,
+		box-shadow 0.2s;
+}
+
+.summary-chip:hover {
+	border-color: var(--color-aether-600);
+	color: var(--color-aether-300);
+	box-shadow: 0 0 16px -8px var(--color-aether-500);
+}
+
+.summary-chip__icon {
+	color: var(--color-aether-400);
+}
+
+.summary-chip__label {
+	font-family: var(--font-display);
+	font-size: 0.7rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--color-bone-500);
+}
+
+.summary-chip__value {
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-weight: 600;
+	color: var(--color-bone-100);
+}
+
+.summary-chip--warn {
+	border-color: color-mix(in oklab, var(--color-ember-500) 55%, transparent);
+}
+
+.summary-chip--warn .summary-chip__icon,
+.summary-chip--warn .summary-chip__value {
+	color: var(--color-ember-300);
 }
 
 /* Champs de saisie. */

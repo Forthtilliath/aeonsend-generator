@@ -1,16 +1,12 @@
-import { ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
 import { marketTemplates } from "../../data/marketTemplates";
 import type { useMarket } from "../../hooks/useMarket";
 import type { MarketCondition } from "../../types";
 import { getMarketComposition } from "../../utils/supply";
 import { Button } from "../ui/Button";
-import { Card } from "../ui/Card";
-import { SectionTitle } from "../ui/SectionTitle";
 import { CustomMarketEditor } from "./CustomMarketEditor";
 import { MarketPreview } from "./MarketPreview";
 
-type MarketState = ReturnType<typeof useMarket>;
+export type MarketState = ReturnType<typeof useMarket>;
 
 interface MarketButtonProps {
 	title: string;
@@ -42,7 +38,6 @@ const MarketButton = ({
 );
 
 export const MarketSelector = ({ market }: { market: MarketState }) => {
-	const [showDetails, setShowDetails] = useState(false);
 	const {
 		selectedMarket,
 		setSelectedMarket,
@@ -53,73 +48,61 @@ export const MarketSelector = ({ market }: { market: MarketState }) => {
 	const isCustom = selectedMarket === "custom";
 
 	return (
-		<Card>
-			<SectionTitle>Type de marché</SectionTitle>
+		// Seule la liste des marchés défile : le détail reste toujours visible
+		// dessous. Si la place manque (petit écran), le panneau entier défile.
+		<section aria-label="Type de marché" className="flex h-full flex-col">
+			<div className="rune-scroll -mx-1 min-h-32 flex-1 overflow-y-auto overscroll-contain px-2 py-2">
+				<div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+					{Array.from(marketTemplates.values()).map((template) => {
+						const [title, subtitle] = template.name.split(":");
+						return (
+							<MarketButton
+								key={template.id}
+								title={title.trim()}
+								subtitle={subtitle?.trim() ?? ""}
+								config={template.config}
+								selected={selectedMarket === template.id}
+								onSelect={() => setSelectedMarket(template.id)}
+							/>
+						);
+					})}
 
-			<div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3">
-				{Array.from(marketTemplates.values()).map((template) => {
-					const [title, subtitle] = template.name.split(":");
-					return (
-						<MarketButton
-							key={template.id}
-							title={title.trim()}
-							subtitle={subtitle?.trim() ?? ""}
-							config={template.config}
-							selected={selectedMarket === template.id}
-							onSelect={() => setSelectedMarket(template.id)}
-						/>
-					);
-				})}
+					{userPresets.map((preset) => (
+						<div key={preset.id} className="relative">
+							<MarketButton
+								title={preset.name}
+								subtitle="Preset perso"
+								config={preset.config}
+								selected={selectedMarket === preset.id}
+								onSelect={() => setSelectedMarket(preset.id)}
+							/>
+							<button
+								type="button"
+								onClick={() => market.deletePreset(preset.id)}
+								className="absolute -top-2 -right-2 bg-ember-600 hover:bg-ember-500 text-bone-50 rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold border-2 border-abyss-900"
+								title="Supprimer ce preset"
+								aria-label={`Supprimer le preset ${preset.name}`}
+							>
+								✕
+							</button>
+						</div>
+					))}
 
-				{userPresets.map((preset) => (
-					<div key={preset.id} className="relative">
-						<MarketButton
-							title={preset.name}
-							subtitle="Preset perso"
-							config={preset.config}
-							selected={selectedMarket === preset.id}
-							onSelect={() => setSelectedMarket(preset.id)}
-						/>
-						<button
-							type="button"
-							onClick={() => market.deletePreset(preset.id)}
-							className="absolute -top-2 -right-2 bg-ember-600 hover:bg-ember-500 text-bone-50 rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold border-2 border-abyss-900"
-							title="Supprimer ce preset"
-							aria-label={`Supprimer le preset ${preset.name}`}
-						>
-							✕
-						</button>
-					</div>
-				))}
-
-				<MarketButton
-					title="Personnalisable"
-					subtitle="À composer vous-même"
-					config={customMarket}
-					selected={isCustom}
-					onSelect={() => {
-						setSelectedMarket("custom");
-						setShowDetails(true);
-					}}
-				/>
+					<MarketButton
+						title="Personnalisable"
+						subtitle="À composer vous-même"
+						config={customMarket}
+						selected={isCustom}
+						onSelect={() => setSelectedMarket("custom")}
+					/>
+				</div>
 			</div>
 
-			<button
-				type="button"
-				onClick={() => setShowDetails((v) => !v)}
-				className="text-sm text-aether-300/90 hover:text-aether-200 flex items-center gap-1"
-				aria-expanded={showDetails}
-			>
-				{showDetails ? (
-					<ChevronUp className="w-4 h-4" />
-				) : (
-					<ChevronDown className="w-4 h-4" />
-				)}
-				{isCustom ? "Composer le marché" : "Voir le détail des emplacements"}
-			</button>
-
-			{showDetails && (
-				<div className="rune-panel rune-panel--sunken p-4 mt-3">
+			<div className="shrink-0 pt-3">
+				<h3 className="rune-title text-sm mb-2">
+					{isCustom ? "Composer le marché" : "Détail des emplacements"}
+				</h3>
+				<div className="rune-panel rune-panel--sunken p-4">
 					{isCustom ? (
 						<CustomMarketEditor
 							market={customMarket}
@@ -142,7 +125,7 @@ export const MarketSelector = ({ market }: { market: MarketState }) => {
 						</>
 					)}
 				</div>
-			)}
-		</Card>
+			</div>
+		</section>
 	);
 };
