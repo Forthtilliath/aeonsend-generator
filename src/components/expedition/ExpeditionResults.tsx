@@ -1,8 +1,9 @@
+import { downloadTextBlob } from "@forthtilliath/ts-kit";
 import { FileText } from "lucide-react";
 import { Fragment } from "react";
 import type { useExpedition } from "../../hooks/useExpedition";
 import type { Expedition, SupplyCard } from "../../types";
-import { buildExpeditionText, downloadText } from "../../utils/exportTxt";
+import { buildExpeditionText, expeditionFileName } from "../../utils/exportTxt";
 import { getExcessBySlotType } from "../../utils/supply";
 import { Button } from "../ui/Button";
 import { BattleCard } from "./BattleCard";
@@ -33,8 +34,8 @@ export const ExpeditionResults = ({
 		<div className="space-y-4" id="expedition-results">
 			<Button
 				onClick={() =>
-					downloadText(
-						"aeons-end-campagne.txt",
+					downloadTextBlob(
+						expeditionFileName(expedition),
 						buildExpeditionText(expedition),
 					)
 				}
