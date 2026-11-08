@@ -25,18 +25,6 @@ export const clamp = (value: number, min: number, max: number): number => {
 	return Math.min(Math.max(value, min), max);
 };
 
-export const getTypeColor = (type: string): string => {
-	if (type === "gem") return "from-purple-500 to-fuchsia-500";
-	if (type === "relic") return "from-blue-500 to-cyan-500";
-	return "from-yellow-500 to-amber-500";
-};
-
-export const getTypeBgColor = (type: string): string => {
-	if (type === "gem") return "bg-purple-800/40 border-purple-400/70";
-	if (type === "relic") return "bg-blue-800/40 border-blue-400/70";
-	return "bg-yellow-800/40 border-yellow-400/70";
-};
-
 export const getTypeLabel = (type: string): string => {
 	if (type === "gem") return "Gemme";
 	if (type === "relic") return "Relique";

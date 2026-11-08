@@ -1,5 +1,5 @@
 import type { MarketCondition } from "../../types";
-import { getTypeBgColor, getTypeLabel } from "../../utils/helpers";
+import { getTypeLabel } from "../../utils/helpers";
 import { TYPE_SYMBOL } from "../../utils/supply";
 import { CriteriaLabel } from "./CriteriaLabel";
 
@@ -10,15 +10,14 @@ export const MarketPreview = ({ config }: { config: MarketCondition[] }) => (
 			<div
 				// biome-ignore lint/suspicious/noArrayIndexKey: les 9 emplacements sont fixes
 				key={idx}
-				className={`rounded p-2 opacity-75 border text-center text-xs ${
-					slot.type === "any"
-						? "bg-gray-600/30 border-gray-500/50"
-						: getTypeBgColor(slot.type)
-				}`}
+				data-type={slot.type}
+				className="type-tile p-2 text-center text-xs"
 			>
 				<div className="font-semibold mb-1">{TYPE_SYMBOL[slot.type]}</div>
-				<div className="mb-1">{getTypeLabel(slot.type)}</div>
-				<div className="font-bold">
+				<div className="mb-1 text-(--type-soft) font-display tracking-wide">
+					{getTypeLabel(slot.type)}
+				</div>
+				<div className="font-bold text-bone-100">
 					<CriteriaLabel criteria={slot} />
 				</div>
 			</div>

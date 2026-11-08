@@ -28,14 +28,14 @@ interface BreachIconsProps {
 
 export const BreachIcons = ({ breachs }: BreachIconsProps) => {
 	return (
-		<div className="flex justify-center gap-1">
+		<div className="flex justify-center gap-1.5">
 			{breachs.map((breach, idx) => {
 				if (breach === "none") {
 					return (
 						<div
 							// biome-ignore lint/suspicious/noArrayIndexKey: fixed 4-slot tuple, never reordered
 							key={idx}
-							className="w-6 h-6 rounded border border-slate-700 bg-slate-800/30"
+							className="breach breach--none"
 							title="Pas de brèche"
 						/>
 					);
@@ -46,10 +46,10 @@ export const BreachIcons = ({ breachs }: BreachIconsProps) => {
 						<div
 							// biome-ignore lint/suspicious/noArrayIndexKey: fixed 4-slot tuple, never reordered
 							key={idx}
-							className="w-6 h-6 rounded bg-amber-500/80 border border-amber-300 flex items-center justify-center"
+							className="breach breach--open"
 							title="Brèche ouverte"
 						>
-							<LockOpen className="w-3.5 h-3.5 text-amber-950" />
+							<LockOpen className="w-3.5 h-3.5" />
 						</div>
 					);
 				}
@@ -59,12 +59,12 @@ export const BreachIcons = ({ breachs }: BreachIconsProps) => {
 					<div
 						// biome-ignore lint/suspicious/noArrayIndexKey: fixed 4-slot tuple, never reordered
 						key={idx}
-						className="w-6 h-6 rounded bg-slate-700/60 border border-slate-500 flex items-center justify-center relative"
+						className="breach breach--closed"
 						title={`Brèche fermée (icône ${DIRECTION_LABELS[breach]})`}
 					>
-						<Lock className="w-3 h-3 text-slate-300" />
+						<Lock className="w-3 h-3" />
 						{Arrow && (
-							<Arrow className="w-2.5 h-2.5 text-slate-300 absolute -bottom-0.5 -right-0.5" />
+							<Arrow className="w-3 h-3 p-px rounded-full bg-abyss-900 text-aether-300 absolute -bottom-1 -right-1" />
 						)}
 					</div>
 				);

@@ -19,8 +19,6 @@ export type {
 export { buildExpedition } from "./utils/expedition";
 export {
 	getCriteriaLabel,
-	getTypeBgColor,
-	getTypeColor,
 	getTypeLabel,
 	matchesCondition,
 } from "./utils/helpers";
