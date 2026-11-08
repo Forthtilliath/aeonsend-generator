@@ -40,7 +40,7 @@ describe("userPresetsSchema", () => {
 
 	test("trims names and rejects blank ones", () => {
 		const [trimmed] = userPresetsSchema.parse([{ ...preset, name: "  A  " }]);
-		expect(trimmed.name).toBe("A");
+		expect(trimmed?.name).toBe("A");
 		expect(
 			userPresetsSchema.safeParse([{ ...preset, name: "   " }]).success,
 		).toBe(false);
