@@ -1,3 +1,5 @@
+import { usePersistentState } from "@forthtilliath/react-kit/usePersistentState";
+import { randomId } from "@forthtilliath/ts-kit";
 import {
 	defaultCustomMarket,
 	findMarketTemplate,
@@ -10,32 +12,29 @@ import {
 } from "../schemas/storage";
 import type { MarketCondition, MarketTemplate } from "../types";
 import type { Tuple } from "../types/helpers";
-import { useLocalStorage } from "./useLocalStorage";
 
 export type MarketConfig = Tuple<MarketCondition, 9>;
 
 const DEFAULT_MARKET = "balanced";
+// Valeurs par défaut stables (constantes de module), exigé par usePersistentState.
+const NO_PRESETS: MarketTemplate[] = [];
 
 /**
  * Choix du marché : modèles fournis, presets perso, marché personnalisable.
  * Le choix et le marché personnalisé sont conservés d'une visite à l'autre.
  */
 export const useMarket = () => {
-	const [storedSelection, setSelectedMarket] = useLocalStorage<string>(
-		"selectedMarket",
-		DEFAULT_MARKET,
-		selectedMarketSchema,
-	);
-	const [customMarket, setCustomMarket] = useLocalStorage<MarketConfig>(
-		"customMarket",
-		[...defaultCustomMarket],
-		marketConfigSchema,
-	);
-	const [userPresets, setUserPresets] = useLocalStorage<MarketTemplate[]>(
-		"userMarketPresets",
-		[],
-		userPresetsSchema,
-	);
+	const { value: storedSelection, setValue: setSelectedMarket } =
+		usePersistentState<string>("selectedMarket", DEFAULT_MARKET, {
+			schema: selectedMarketSchema,
+		});
+	const { value: customMarket, setValue: setCustomMarket } =
+		usePersistentState<MarketConfig>("customMarket", defaultCustomMarket, {
+			schema: marketConfigSchema,
+		});
+	const { value: userPresets, setValue: setUserPresets } = usePersistentState<
+		MarketTemplate[]
+	>("userMarketPresets", NO_PRESETS, { schema: userPresetsSchema });
 
 	// Un identifiant enregistré qui ne correspond plus à rien (preset supprimé,
 	// modèle renommé) retombe sur le marché par défaut.
@@ -72,7 +71,8 @@ export const useMarket = () => {
 		if (!trimmed) return;
 		setUserPresets((prev) => [
 			...prev,
-			{ id: crypto.randomUUID(), name: trimmed, config: [...customMarket] },
+			// randomId : crypto.randomUUID n'existe qu'en HTTPS (pas sur le réseau local).
+			{ id: randomId(), name: trimmed, config: [...customMarket] },
 		]);
 	};
 
