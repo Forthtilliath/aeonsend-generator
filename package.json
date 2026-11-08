@@ -1,5 +1,8 @@
 {
-  "name": "react-aeonsend-randomizer",
+  "name": "aeonsend-generator",
+  "description": "Générateur d'expéditions et de marchés pour le jeu de société Aeon's End.",
+  "license": "MIT",
+  "repository": "github:Forthtilliath/aeonsend-generator",
   "private": true,
   "version": "0.0.0",
   "type": "module",
