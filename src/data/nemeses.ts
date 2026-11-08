@@ -1,6 +1,6 @@
-import type { Nemesis } from "../types";
+import type { Nemesis, Tier } from "../types";
 
-export const nemeses: Record<number, Nemesis[]> = {
+export const nemeses: Record<Tier, Nemesis[]> = {
 	1: [
 		{
 			name: "Rage Incarnée",

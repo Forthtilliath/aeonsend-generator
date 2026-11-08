@@ -79,7 +79,7 @@ export interface Mage {
 }
 
 export type CardType = "gem" | "relic" | "spell";
-type CardTypeMarket = CardType | "any";
+export type CardTypeMarket = CardType | "any";
 
 type MarketConditionAny = {
 	type: CardTypeMarket;

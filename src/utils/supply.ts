@@ -1,6 +1,7 @@
 import { cards } from "../data/cards";
 import type {
 	CardType,
+	CardTypeMarket,
 	Expansion,
 	MarketCondition,
 	SupplyCard,
@@ -8,7 +9,8 @@ import type {
 import { isExpansionOwned, matchesCondition, pickRandomItem } from "./helpers";
 
 const CARD_TYPES: CardType[] = ["gem", "relic", "spell"];
-const CATEGORY: Record<CardType, string> = {
+const SLOT_TYPES: CardTypeMarket[] = [...CARD_TYPES, "any"];
+const CATEGORY: Record<CardType, keyof typeof cards> = {
 	gem: "gems",
 	relic: "relics",
 	spell: "spells",
@@ -97,7 +99,7 @@ export const getExcessBySlotType = (
 	marketConfig: MarketCondition[],
 ): Record<string, boolean> => {
 	const result: Record<string, boolean> = {};
-	for (const type of [...CARD_TYPES, "any"]) {
+	for (const type of SLOT_TYPES) {
 		const cardCount = supply.filter((c) => c.criteria.type === type).length;
 		const slotCount = marketConfig.filter((c) => c.type === type).length;
 		result[type] = cardCount > slotCount;
@@ -105,7 +107,7 @@ export const getExcessBySlotType = (
 	return result;
 };
 
-export const TYPE_SYMBOL: Record<string, string> = {
+export const TYPE_SYMBOL: Record<CardTypeMarket, string> = {
 	gem: "💎",
 	relic: "🔮",
 	spell: "✨",
@@ -114,8 +116,10 @@ export const TYPE_SYMBOL: Record<string, string> = {
 
 /** Composition d'un marché, ex. « 3 💎 · 2 🔮 · 4 ✨ ». */
 export const getMarketComposition = (marketConfig: MarketCondition[]): string =>
-	[...CARD_TYPES, "any"]
-		.map((type) => [type, marketConfig.filter((c) => c.type === type).length])
-		.filter(([, count]) => count !== 0)
-		.map(([type, count]) => `${count} ${TYPE_SYMBOL[type]}`)
+	SLOT_TYPES.map((type) => ({
+		type,
+		count: marketConfig.filter((c) => c.type === type).length,
+	}))
+		.filter(({ count }) => count !== 0)
+		.map(({ type, count }) => `${count} ${TYPE_SYMBOL[type]}`)
 		.join(" · ");
