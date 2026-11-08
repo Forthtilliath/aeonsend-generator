@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 .claude/settings.json
+
+# Markdown : seuls README et CHANGELOG sont suivis
+*.md
+!README.md
+!CHANGELOG.md
