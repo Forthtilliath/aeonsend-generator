@@ -11,6 +11,8 @@ export default defineConfig({
 		VitePWA({
 			registerType: "autoUpdate",
 			includeAssets: ["apple-touch-icon.png", "favicon-32.png"],
+			// Polices du thème mises en cache pour l'usage hors ligne.
+			workbox: { globPatterns: ["**/*.{js,css,html,woff2}"] },
 			manifest: {
 				name: "Aeon's End - Générateur de rencontres",
 				short_name: "Aeon's End",
@@ -19,8 +21,8 @@ export default defineConfig({
 				start_url: "/",
 				lang: "fr",
 				display: "standalone",
-				background_color: "#1e1b4b",
-				theme_color: "#1e1b4b",
+				background_color: "#06070b",
+				theme_color: "#06070b",
 				icons: [
 					{
 						src: "icon-192.png",
