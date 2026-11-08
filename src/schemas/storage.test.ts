@@ -1,4 +1,5 @@
 import { describe, expect, test } from "bun:test";
+import { randomId } from "@forthtilliath/ts-kit";
 import { defaultCustomMarket } from "../data/marketTemplates";
 import {
 	marketConfigSchema,
@@ -37,6 +38,14 @@ describe("userPresetsSchema", () => {
 		).toBe(false);
 	});
 
+	test("trims names and rejects blank ones", () => {
+		const [trimmed] = userPresetsSchema.parse([{ ...preset, name: "  A  " }]);
+		expect(trimmed.name).toBe("A");
+		expect(
+			userPresetsSchema.safeParse([{ ...preset, name: "   " }]).success,
+		).toBe(false);
+	});
+
 	test("rejects over-long names", () => {
 		expect(
 			userPresetsSchema.safeParse([{ ...preset, name: "x".repeat(41) }])
@@ -46,8 +55,10 @@ describe("userPresetsSchema", () => {
 });
 
 describe("selectedMarketSchema", () => {
-	test("accepts template ids, custom and preset uuids", () => {
-		for (const id of ["balanced", "custom", crypto.randomUUID()]) {
+	test("accepts template ids, custom and preset ids", () => {
+		// randomId() sans crypto.randomUUID (hors HTTPS) : « id-<hex>-<hex> ».
+		const fallbackId = "id-19a5f3c2e10-8f3a2b1c";
+		for (const id of ["balanced", "custom", randomId(), fallbackId]) {
 			expect(selectedMarketSchema.safeParse(id).success).toBe(true);
 		}
 	});
