@@ -20,9 +20,6 @@ export const CardModal = ({ card, onClose }: CardModalProps) => {
 				<div className="font-display text-sm uppercase tracking-[0.3em] text-(--type-soft) mb-4">
 					{getTypeLabel(card.type)}
 				</div>
-				<div className="text-6xl mb-4 drop-shadow-[0_0_16px_var(--type)]">
-					{card.image}
-				</div>
 				<h3
 					id="modal-title"
 					className="font-display text-3xl text-bone-50 mb-4"

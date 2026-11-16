@@ -37,9 +37,6 @@ export const SupplyCard = ({
 			<div className="text-[0.65rem] text-bone-500 mb-1">
 				<CriteriaLabel criteria={card.criteria} />
 			</div>
-			<div className="text-2xl my-1 drop-shadow-[0_0_8px_var(--type)]">
-				{card.image}
-			</div>
 			<div className="text-xs font-bold text-bone-50 leading-tight mb-1.5">
 				{card.name}
 			</div>

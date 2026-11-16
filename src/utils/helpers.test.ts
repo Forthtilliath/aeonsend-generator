@@ -16,7 +16,6 @@ describe("matchesCondition", () => {
 		name: "Test",
 		description: "",
 		cost: 5,
-		image: "",
 		expansion: "Aeon's End" as const,
 	};
 

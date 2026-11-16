@@ -39,7 +39,6 @@ export interface Card {
 	name: string;
 	description: string;
 	cost: number;
-	image: string;
 	expansion: Expansion;
 }
 

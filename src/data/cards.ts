@@ -8,7 +8,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. Si un Verre à facettes se trouve dans votre défausse, vous pouvez détruire une carte de votre défausse.",
-			image: "",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -16,7 +15,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Olivinite",
 			cost: 3,
 			description: "Gagnez 2 Ether. OU Infligez 1 dégât à un serviteur.",
-			image: "",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -25,7 +23,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Gagnez 2 Ether. Vous pouvez détruire deux cartes de cette piles de cartes. Si vous le faites, gagnez 1 Ether supplémentaire.",
-			image: "",
 			expansion: "Les Profondeurs",
 		},
 		{
@@ -33,7 +30,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Scarabée fossilisé",
 			cost: 3,
 			description: "Gagnez 2 Ether OU Détruisez une carte de votre main.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -42,7 +38,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Gagnez 3 Ether. Placez le prochain sort que vous acquérez ce tour dans votre main.",
-			image: "",
 			expansion: "De Vieux Souvenirs",
 		},
 		{
@@ -51,7 +46,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. Un allié peut défauser une Perle résonnante de sa main pour pioche une carte. S'il le fait, gagnez 1 Ether supplémentaire.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -59,7 +53,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Exogranite",
 			cost: 3,
 			description: "Gagnez 2 Ether. OU Détruisez cette carte. Gagnez 3 Ether.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -68,7 +61,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. Si une Sionite de l'ombre se trouve dans la défausse d'un allié, gagnez 1 Ether supplémentaire.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -77,7 +69,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Gagnez 2 Ether. Si la première carte de vote défausse est un sort, vous pouvez placer cette gemme sur votre pioche.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -86,7 +77,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Gagnez 3 Ether. Un allié peut défausse une carte de sa main. S'il le fait, ce joueur gagne 1 charge.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -95,7 +85,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Gagnez 3 Ether. OU Détruisez une carte présente dans la pile de la réserve de cette carte. Si vous le faites, infigez 3 dégâts.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -104,7 +93,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lorsque vous acquérez cette carte, s'il s'agit de la seconde carte que vous acquérez ce tour, prenez-la en main. Gagnez 3 Ether.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -113,7 +101,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Gagnez 4 Ether qui ne peuvent être utilisés que pour acquérir des cartes.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -121,7 +108,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Jade",
 			cost: 2,
 			description: "Gagnez 2 Ether.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -130,7 +116,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Lorsque vous gagnez cette carte, gagnez 1 charge. Gagnez 2 Ether.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -139,7 +124,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. Chaque joueur révèle la première carte de sa pioche et peut soit la défausser soit la remettre sur le dessus de sa pioche.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -147,7 +131,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Pierre de douleur",
 			cost: 6,
 			description: "Gangez 3 Ether. OU Gagnez 2 Ether et infligez 1 dégât.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -156,7 +139,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Gagnez 3 Ether. S'il s'agit du premier Saphir nuageux que vous jouez ce tour, un allié gagne 1 charge.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -165,7 +147,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. S'il s'agit du second Péridot en Fusion que vous jouez ce tour, vous pouvez détruire cette carte pour acquérir une carte d'un pile de la réserve coûtant 4 Ether ou moins.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -174,7 +155,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Gagnez 3 Ether. La prochaine fois que vous acquérez une carte ce tour, vous pouvez défausser une sort préparé coûtant 1 Ether ou plus pour qu'un allié acquière une carte de la réserve coûtant aussi cher ou moins cher que la carte que vous avez acquise.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -183,7 +163,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 2,
 			description:
 				"Gagnez 1 ETher. Vous pouvez détruire cette carte pour gagner 2 Ether supplémentaire.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -192,7 +171,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Lorsque vous acquérez cette carte, vous pouvez la placer au-dessus de votre pioche. Gagnez 2 Ether.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -201,7 +179,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Gagnez 2 Ether. Si c'est le second Agrégat de diamants que vous jouez ce tour, gagnez 2 Ether de plus.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -210,7 +187,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lorsque vous acquérez une Pierre de Sang pour la première fois de votre tour, gagnez 3 Ether. Gagnez 3 Ether.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -219,7 +195,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Gagnez 2 Ether. OU Stabilisez votre brèche fermée ayant le coût de stabilisation le plus faible.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -228,7 +203,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Gagnez 3 Ether. Vous pouvez défausser une carte de votre main pour qu'un allié pioche une carte.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -237,7 +211,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Gagnez 2 Ether. Gagnez 1 Ether supplémentaire qui ne peut être utilisé que pour acquérir un sort.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -246,7 +219,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. OU Défaussez une carte de votre main. Si vous le faites, gagnez 2 charges.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -255,7 +227,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Gagnez 1 Ether. Gagnez 1 Ether supplémentaire pour chacune de vos brèches ayant un sort préparé.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -264,7 +235,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Gagnez 2 Ether. Gagnez 2 Ether supplémentaire s'il y a au moins une carte Ordre du tour de la némésis dans la défausse des cartes Ordre du tour.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -273,7 +243,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. Vous pouvez défausser une sort préparé. Si vous le faites, gagnez 1 Ether supplémentaire.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -282,7 +251,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. Vous pouvez placer la prochainre carte que vous acquérez lors de ce tour au somment de votre pioche.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -291,7 +259,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Gagnez 2 Ether. Si le plaier de la némésis est supérieur ou égal à 2, gagnez 1 Ether supplémentaire.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -300,7 +267,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Lorsque vous acquérez cette carte lors de votre tour, vous pouvez dépenser 2 Ether. Si vous le faites, un allié acquiert lui aussi un Verre pyroclastique et le place au somment de sa pioche. Gagnez 2 Ether.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -309,7 +275,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Gagnez 2 Ether. Si vous avez trois cartes ou plus coûtant 0 Ether en main, gagnez 2 Ether supplémentaire.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -318,7 +283,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. OU Acquérez une Invoquine de la réserve et placez-la sur la défausse d'un allié.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -327,7 +291,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lorsque vous acquérez cette carte, réduisez un serviteur au silence. Gagnez 3 Ether.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -336,7 +299,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Gagnez 2 Ether. La prochaine fois que vous ouvrez ou stabilisez une brèche ce tour, gagnez 1 charge.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -345,7 +307,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Gagnez 2 Ether. La prochaine fois que vous acquérez une carte ce tour, vous pouvez lancer le sort préparé d'un joueur.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -353,7 +314,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Saphir Galvanisé",
 			cost: 4,
 			description: "Gagnez 2 Ether. Xaxos : Paria gagne 1 charge.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -362,7 +322,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. Vous pouvez subir 1 dégâts pour détruire une carte de votre main coûtant 0 Ether.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -371,7 +330,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. Chaque allié peut défausser une carte de samain pour gagner 1 charge.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -380,7 +338,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Gagnez 3 Ether qui ne peuvent être utilisés que pour acquérir des cartes.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -389,7 +346,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 2 Ether. Gagnez 1 jeton Pulsation. OU Gagnez 2 Ether. Perdez 1 jeton Pulsation. Si vous le faites, gagnez 1 charge.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -398,7 +354,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Gagnez 3 Ether. Si sept cartes ou plus se trouve dans votre défausse, gagnez 1 Ether supplémentaire.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 	],
@@ -409,7 +364,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Un allié peut préparer un sort de sa défausse en le plaçant sur l'une de ses brèches ouvertes ou fermées.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -418,7 +372,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 1 charge. Si la pile de cette carte est vide dans la réserve, vous pouvez détruire la première carte de la défausse d'un allié.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -427,7 +380,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Vous pouvez détruire une carte de votre main ou de votre défausse. Révélez la première carte du paquet d'ordre de tour. Si vous révélez une carte Ordre du tour de la némésis, vous pouvez cette en dessous du paquet d'ordre de tour.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -436,7 +388,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 2,
 			description:
 				"Détruisez une gemme ou une relique que vous avez jouée lors de ce tour. OU Détruisez cette carte. Gravehold gagne 1 point de vie.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -445,7 +396,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Stabilisez une brècge de n'importe quel joueur. OU Détruisez cette carte. Gagnez 3 points de vie.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -454,7 +404,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lancez un sort préparé de n'importe quel joueur. Renvoyez ce sort dans la main de ce joueur.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -463,7 +412,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Un allié peut défausser une Galaxie de poche de sa main pour pioche une carte. Gagnez 1 charge ou stabilisez votre brèche fermée qui présente le coût de stabilisation le plus faible. Si un allié a défaussé une Galaxie de poche. résolvez ces deux effets.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -472,7 +420,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Stabilisez la brèche d'un allié. OU Lancez le sort préparé d'un joueur. Vous pouvez détruire ce sort.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -481,7 +428,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Détruisez la prmeière carte de la défausse d'un joueur. OU Détruisez cette carte. Gagnez 2 points de vie.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -490,7 +436,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Connectez cette relique à la brèche d'un joueur. Lorsqu'un sort est lancé depuis cette brèche, il inflige 2 dégâts supplémentaires. Cette relique est ensuite défaussée.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -499,7 +444,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Connectez cette relique à la brèche d'un joueur. Lorsqu'un sort est lancé depuis cette brèche, le joueur qui lance ce sort gagne 1 Ether.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -508,7 +452,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Connectez cette relique à la brèche d'un joueur. Deux sorts peuvent être préparés sur cette brèche.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -517,7 +460,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Gravehold gagne 2 points de vie. OU Une joueur gagne 2 points de vie.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -526,7 +468,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Un joueur gagne un jeton Pulsation. Chaque joueur qui possède au moins 2 jetons Pulsations gagne 1 charge.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -535,7 +476,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Gagnez 1 charge. Vous pouvez détruire une carte de votre main ou du dessus de la défausse de n'importe quel joueur.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -544,7 +484,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Détruisez cette carte. Détruisez jusqu'à deux cartes de votre main ou de votre défausse. Pioche une carte.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -553,7 +492,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Vous pouvez lancer un sort que vous avez préparé ce tour-ci et infliger 2 dégâts supplémentaires avec ce sort.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -562,7 +500,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 1 charge. OU Vous pouvez perdre 2 charges. Si vous le faites, gagnez 5 Ether.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -571,7 +508,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Xaxos : Paria gagne 1 charge. Vous pouvez détruire 1 carte de votre main.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -580,7 +516,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Stabilisez la brèche d'un allié. OU Reprenez en main une carte de votre défausse coûtant 6 Ether ou moins.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -589,7 +524,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Détruisez cette carte. Vous pouvez détruire une carte de votre main ou de votre défausse. Acquez une carte d'une pile de la réservé coûtant jusqu'à 6 Ether.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -598,7 +532,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Appliquez deux fois l'effet d'une gemme de votre main, puis détruisez-là. OU Gagnez 2 Ether.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -606,7 +539,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Étoile miniature",
 			cost: 7,
 			description: "Gagnez 3 charges",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -614,7 +546,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Soleil en Bouteille",
 			cost: 6,
 			description: "Xaxos : Paria gagne 3 charges.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -622,7 +553,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Talisman de mage",
 			cost: 5,
 			description: "Gagnez 1 charge. Un allié gagne 1 charge.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -631,7 +561,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Un allié pioche trois carte. Puis, il défausse une carte de sa main. OU Vous pouvez stabiliser la brèche d'un allié. Un allié peut reprendre en main une carte de sa défausse.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -640,7 +569,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 1 charge. Si sept cartes ou plus se trouvent dans votre défausse, gagnez 1 charge supplémentaire.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -649,7 +577,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Un allié peut détruire une carte de sa main. Ce joueur peut acquérir une carte coûtant jusqu'à 2 Ether de plus que la carte détruite et la prendre en main. OU Détruiez cette carte pour gagner 2 charges.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -658,7 +585,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 2,
 			description:
 				"La prochaine brèche que vous stabilisez ou que vous ouvrez lors de ce tour vous coûte 3 Ether de moins. OU Détruisez cette carte. Infligez 1 dégât.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -667,7 +593,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Lancez un sort préparé de n'importe quel joueur sans le défausser.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -676,7 +601,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Gagnez 1 Ether. Vous pouvez détruire une carte de votre main pour gagner d'autant d'Ether que son coût. OU Détruisez cette carte pour stabiliser deux fois votre brèche fermée ayant le coût de stabilisation le plus faible.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -685,7 +609,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Reprenez en main une gemme que vous avez jouée ce tour-ci. Révélez la première carte du paquet d'ordre du tour. S'il s'agit d'un joueur, ce dernier gagne 1 point de vie.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -694,7 +617,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 2,
 			description:
 				"Stabilisez votre brèche fermées ayant le coût de stabilisation le plus faible. OU Détruisez cette carte. Gagnez 1 charge.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -703,7 +625,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Acquérez une carte d'une autre pile de la réserve dont les cartes coûtent 3 Ether ou moins. Vous pouvez détruire cette relique pour acquérir une carte coûtant jusqu'à 4 Ether à la place. Vous pouvez dépenser 1 Ether pour prendre la carte acquise en main.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -712,7 +633,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Révélez la première carte de votre pioche. Vous pouvez la détruire ou la défausser. Chaque allié peut piocher une carte. Dans ce cas, il défausse ensuite une carte de sa main.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -721,7 +641,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Stabilisez la brèche d'un joueur. OU Détruisez cette carte pour faire gagner 3 points de vie à Gravehold.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -730,7 +649,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Gagnez 1 Ether. Ce tour, lors de votre prochaine acquisition de carte, vous pouvez acquérir gratuitement une seconde carte qui coûte moins cher que la première carte acquise.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -739,7 +657,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Vous pouvez lancer le sort préparé d'un allié. Un allié pioche une carte.",
-			image: "",
 			expansion: "Les Profondeurs",
 		},
 		{
@@ -748,7 +665,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Défaussez ou détruisez une carte de votre main. Si vous le faites, infligez un nombre de dégâts égal à son coût.",
-			image: "",
 			expansion: "Les Profondeurs",
 		},
 		{
@@ -757,7 +673,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Connectez cette relique à la brèche d'un joueur. À la fin de la phase d'incantation de ce joueur, stabilisez cette brèche. Lorsque cette brèche est ouverte, détruisez cette carte.",
-			image: "",
 			expansion: "De Vieux Souvenirs",
 		},
 		{
@@ -766,7 +681,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"S'il s'agit de la première Turbine polyphasée que vous jouez ce tour, gagnez 2 Ether. Sinon, gagnez 1 charge et 1 Ether.",
-			image: "",
 			expansion: "De Vieux Souvenirs",
 		},
 		{
@@ -775,7 +689,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Un joueur détruit jusqu'à deux cartes de sa main. OU Détruisez cette carte pour gagner 3 points de vie à Gravehold.",
-			image: "",
 			expansion: "De Vieux Souvenirs",
 		},
 		{
@@ -784,7 +697,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 8,
 			description:
 				"Un allié pioche deux cartes. OU Détruisez cette carte. Subissez 1 dégât. Placez une carte Némésis actuellement en jeu sur le paquet Némésis.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -793,7 +705,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Stabilisez votre brèche fermée ayant le coût de stabilisation le plus faible. Révélez les trois premières cartes de votre pioche. Vous pouvez préparer un des sorts révélés.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -802,7 +713,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Connectez cette relique à la brèche d'un joueur. Lorssqu'un sort est lancé depuis cette brèche, le joueur qui a lancé ce sort peut reprendre celui-ci en main au lieu de le défausser. S'il le fait, défaussez cette carte.",
-			image: "",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -811,7 +721,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Gagnez 2 charges. Après la prochaine fois que vous avez appliqué votre capacité ce tour, infligez 3 dégâts.",
-			image: "",
 			expansion: "Rêves Brisés",
 		},
 	],
@@ -822,7 +731,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Lancer : Infligez 2 dégâts. Infligez 1 dégât supplémentaire pour chacun de vos autres sorts préparés.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -831,7 +739,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Lorsque préparé, au début de votre phase d'incantation, révélez la carte du sommet de votre pioche. Vous pouvez détruire la carte révélée. Lancer : Infligez 4 dégâts.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -840,7 +747,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Ce sort doit être préparé sur deux brèches adjacentes (la carte doit toucher les deux brèches). Les deux brèches sont occupées. Lancer : Infligez 4 dégâts. Vous pouvez détruire une carte de votre défausse.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -849,7 +755,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lorsque préparé, une fois par tour pendant votre phase principale, vous pouvez gagner 2 Ether qui ne peuvent être utilisés que pour acquérir un sort. Lancer : Infligez 4 dégâts.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -858,7 +763,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Lorsque préparé, pendant votre phase principale, vous pouvez aussi préparer une Étincelle sur la brèche où ce sort est préparé. (Vous ne pouvez pas utiliser cet effet si une Étincelle est préparée sur cette brèche). Lancer : Infligez 3 dégâts.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -867,7 +771,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Lancer : Infligez 3 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, un joueurs stabilise sa brèche fermée ayant le coût de stabilisation le plus faible.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -876,7 +779,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Infligez 2 dégâts. Infligez 2 dégâts supplémentaires pour chaque autre Torrent Ardent préparé par n'importe quel joueur.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -885,7 +787,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Lorsque préparé, réduisez de 1 les dégâts que vous subissez, jusqu'à un minimum de 1. Lancer : Infligez 4 dégâts.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -894,7 +795,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 8,
 			description:
 				"Ce sort doit être préparé sur deux brèches adjacentes (la carte doit toucher les deux brèches). Les deux brèches sont occupées. Lancer : Un allié révèle sa main. Infligez 2 dégâts pour chaque gemme ainsi révélée.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -903,7 +803,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Infligez 4 dégâts. OU Lancer : Infligez 2 dégâts. Un allié peut détruire une carte de sa main.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -912,7 +811,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Infligez 3 dégâts. Si la pile de cette carte est vide dans la réserve, un allié pioche une carte.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -921,7 +819,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lancer : Infligez 5 dégâts. Vous pouvez détruire cette carte. Si vous le faites, Gravehold gagne 4 points de vie.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -930,7 +827,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Lancer : Infligez 3 dégâts. Révélez la première carte du paquet d'ordre de tour. Vous pouvez placer cette carte en dessous du paquet d'ordre du tour.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -939,7 +835,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lorsque préparé, une fois par tour, pendant votre phase principale, vous pouvez gagner 1 charge. Lancer : Infligez 3 dégâts.",
-			image: "",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -948,7 +843,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Infligez 3 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, un joueur gagne 1 point de vie.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -957,7 +851,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Infligez 3 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, Gravehold gagne 1 point de vie.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -966,7 +859,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lorsque préparé, si vous acquérez une carte, vous pouvez la placer sur votre pioche. Lancer : Infligez 4 dégâts.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -975,7 +867,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 8,
 			description:
 				"Lancer : Un allié pioche une carte, puis révèle sa main. Infligez 4 dégâts. Infligez 1 dégâts supplémentaire par carte de sa main coûtant 1 Ether ou plus.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -984,7 +875,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lorsque vous acquerez cette carte, si sept autres cartes ou plus se trouvent dans votre défausse, gagnez 2 points de vie. Lancer : Infligez 5 dégâts.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -993,7 +883,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Lancer : Infligez 1 dégât. Infligez 1 dégât. (Les effets modifiant les dégâts concernent les deux sources de dégâts.)",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -1002,7 +891,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Lorsque préparé, lors de votre phase d'incantation, vous pouvez perdre 2 jetons Pulsation. Si vous le faites, les sorts que vous lancez ce tour infligent 1 dégât supplémentaire. Lancer : Infligez 1 dégâts. Gagnez 1 jeton Pulsation.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -1011,7 +899,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Infligez 4 dégâts à la némésis. Réduisez une serviteur au silence.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -1020,7 +907,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lorsque préparé, vous pouvez dépenser 2 Ether durant votre phase principale, pour lancer un sort préparé chez n'importe quel joueur. Lancer : Infligez 4 dégâts.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1029,7 +915,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Lien (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 2 dégâts. Si six autres cartes ou plus se trouvent dans votre défausse, infligez 2 dégâts supplémentaires.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -1038,7 +923,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 2,
 			description:
 				"Lancer : Infligez 1 dégât. Réduisez un serviteur au silence.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -1047,7 +931,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Lancer : Stabilisez votre brèche ayant le coût le plus faible. Infligez 2 dégâts. Si toutes vos brèches sont ouvertes, infligez 1 dégât de plus.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1056,7 +939,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Ce sort doit être préparé sur deux brèches adjacentes, de manière à ce qu'il touche les deux brèches. Les deux brèches sont occupées par ce sort. Lorsque préparé, piochez une carte de plus lors de votre phase de pioche. Lancer : Infligez 6 dégâts.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1065,7 +947,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 8,
 			description:
 				"Lorsque préparé, une fois par tour, si vous gagnez une charge lors de votre tour, un allié gagne 2 charges. Lancer : Infligez 5 dégâts.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -1074,7 +955,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lorsque préparé, à la fin de votre phase d'incantation, infligez 1 dégât et gagnez 1 Ether. Lancer : Infligez 4 dégâts.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -1083,7 +963,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lorsque préparé, une fois par tour, durant votre phase principale, gagnez 1 Ether. Lancer : Infligez 2 dégâts. Vous pouvez défausser une gemme pour infliger autant de dégâts supplémentaire que son coût.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1092,7 +971,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Lorsque préparé, à la fin de votre phase d'incantation, infligez 1 dégât. Lancer : Infligez 3 dégâts.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1101,7 +979,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Infligez 2 dégâts. Vous pouvez acquérir un sort d'une pile de la réserve coûtant 4 Ether ou moins et le placer sur votre pioche.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -1110,7 +987,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 2 dégâts. S'il s'agit du second Orage jumelé que vous lancez ce tour, infligez 2 dégâts supplémentaires.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -1119,7 +995,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 8,
 			description:
 				"Lancer : Infligez 6 dégâts. Révélez puis replacez les cartes du paquet d'ordre du tour dans l'ordre de votre choix.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -1127,7 +1002,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Toucher vampirique",
 			cost: 2,
 			description: "Lancer : Infligez 1 dégât. Gagnez 1 charge.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -1135,7 +1009,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Radiance",
 			cost: 8,
 			description: "Lancer : Infligez 5 dégâts. Chaque allié pioche une carte.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1144,7 +1017,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Lancer : Infligez 1 dégât. Les alliés peuvent collectivement défausser jusqu'à deux cartes. Pour chaque carte ainsi défaussée, infligez 3 dégâts supplémentaires.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1153,7 +1025,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lancer : Infligez 2 dégâts. Infligez 1 dégât supplémentaire pour chacune de vos brèches ouvertes.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1162,7 +1033,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lancer : Infligez 3 dégâts. Infligez 2 dégâts supplémentaires par sort préparé sur une brèche adjacente.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1171,7 +1041,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Lancer : Infligez 2 dégâts. Vous pouvez perdre 1 charge pour infliger 2 dégâts supplémentaires.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1180,7 +1049,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lancer : Infligez 5 dégâts. Vous pouvez lancer le sort préparé d'un joueur coûtant 5 Ether ou moins.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -1189,7 +1057,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 8,
 			description:
 				"Lancer : Infligez autant de dégâts que le nombre de cartes présentes dans la défausse d'un joueur.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -1198,7 +1065,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Lancer : Infligez 2 dégâts. Vous pouvez détruire une carte de votre main.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1206,7 +1072,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Mise à feu",
 			cost: 4,
 			description: "Lancer : Infligez 2 dégâts. Un allié gagne 1 charge.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1214,7 +1079,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Rebonds explosifs",
 			cost: 6,
 			description: "Écho. Lancer : Infligez 2 dégâts.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -1222,7 +1086,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			name: "Esprit voleur",
 			cost: 5,
 			description: "Lancer : Infligez 4 dégâts. Gagnez 1 Ether.",
-			image: "",
 			expansion: "Les Profondeurs",
 		},
 		{
@@ -1231,7 +1094,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 3 dégâts. Si six autres cartes ou plus se trouvent dans votre défausse, vous pouvez acquérir un Éclair de génie de la réserve et le placer sur votre pioche.",
-			image: "",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -1240,7 +1102,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez reprendre une gemme jouée ce tour-ci en main. Lancer : Infligez 4 dégâts.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1249,7 +1110,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lancer : Infligez 5 dégâts. Si ce sort a été lancé depuis une brèche III ou IV ouverte, vous pouvez le détruire. Si vous le faites, gagnez 3 charges.",
-			image: "",
 			expansion: "Les Profondeurs",
 		},
 		{
@@ -1258,7 +1118,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Ce sort doit être préparé sur deux brèches adjacentes (la carte doit toucher les deux brèches). Les deux brèches sont occupées. Lancer : Infligez 4 dégâts. Vous pouvez placer cette carte dans votre main.",
-			image: "",
 			expansion: "Les Profondeurs",
 		},
 		{
@@ -1267,7 +1126,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Lancer : Infligez 2 dégâts. Vous pouvez détruire une carte de votre main. OU Lancer : Défaussez une gemme de votre main. Si vous le faites, infligez 4 dégâts.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -1276,7 +1134,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Lorsque vous gagnez cette carte, vous pouvez la placer sur la défausse de n'importe quel joueur. Lancer : Infligez 2 dégâts. Infligez 1 dégât supplémentaire par Flamber que vous avez lancé ce tour et par autre Flamber préparé sur vos brèches.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1285,7 +1142,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Lancer : Révélez une carte de votre main coûtant 2 Ether ou plus. Si vous le faites, infligez autant de dégâts que le nombre de cartes manquantes dans la pile de cette carte dans la réserve. Puis un allié gagne une carte de cette pile. (Au départ, les piles de gemmes contiennent 7 cartes, et les piles de sorts et de reliques 5 cartes.)",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1294,7 +1150,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Infligez 4 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, infligez 2 dégâts à la némésis. (Les effets modifiant les dégâts concernent les deux sources de dégâts.)",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -1303,7 +1158,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lancer : Infligez 4 dégâts. Un allié peut défausser jusqu'à deux cartes de sa main et pioche ensuite une carte pour chaque carte ainsi défaussée.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -1312,7 +1166,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Infligez 4 dégâts. Un allié peut défausser une Symbiose léthale de sa main pour pioche une carte. S'il le fait, infligez 3 dégâts. (Les effets modifiants les dégâts concernent les deux sources de dégâts.)",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -1321,7 +1174,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lancer : Infligez 5 dégâts. Vous pouvez perdre 1 charge. Si vous le faites, révélez les deux premières cartes de la pioche de la némésis et replacez-les dans l'ordre de votre choix.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1330,7 +1182,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 2,
 			description:
 				"Lancer : Infligez 2 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, infligez 1 dégât supplémentaire.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -1339,7 +1190,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Lancer : Infligez 3 dégâts. Si la pile de la réserve de cette carte est vide, infligez 1 dégât supplémentaire",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -1348,7 +1198,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lancer : Infligez 5 dégâts. Si vous ne possédez aucune brèche fermée, gagnez 1 charge.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -1357,7 +1206,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Infligez 3 dégâts. Un allié peut piocher une carte, puis défausser une carte de sa main.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -1366,7 +1214,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Lancer : Infligez 3 dégâts. Si Xaxos : Paria a 4 charges ou moins, il gagne 1 charge.",
-			image: "",
 			expansion: "Les Parias",
 		},
 		{
@@ -1375,7 +1222,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Écho. Lancer : Infligez 1 dégât. Gagnez 1 Ether qui ne peut être utilisé que pour acquérir des cartes.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -1384,7 +1230,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Infligez 3 dégâts. Si vous possédez 4 charges ou plus, vous infligez 3 dégâts supplémentaires.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1393,7 +1238,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lancer : Infligez 2 dégâts. Si vous avez 2 points de vie ou moins, infligez 5 dégâts supplémentaires.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1402,7 +1246,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Ce sort peut être préparé sur une brèche fermée sans qu'elle doive être stabilisée. Lancer : Infligez 3 dégâts.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1411,7 +1254,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Infligez 4 dégâts. Si ces dégâts permettent de défausser un serviteur du paquet Némésis, un allié gagne 2 charges.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1420,7 +1262,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Lancer : Détruisez jusqu'à deux cartes de votre main. Infligez 3 dégâts par carte détruite de cette manière.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1429,7 +1270,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Lancer : Infligez 4 dégâts. Vous pouvez reprendre en main jusqu'à deux cartes de votre défausse coûtant 0 Ether.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -1438,7 +1278,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Lancer : Infligez 3 dégâts. Si ce sort a été lancé depuis une brèche III ou IV ouverte, infligez 1 dégât supplémentaire.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -1447,7 +1286,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Lancer : Infligez 2 dégâts. Si ce sort a été lancé depuis une brèche III ou IV ouverte, vous pouvez le placer dans la main d'un allié.",
-			image: "",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -1456,7 +1294,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lancer : Infligez 4 dégâts. S'il y a six cartes ou plus dans votre défausse, infligez 3 dégâts supplémentaires.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1465,7 +1302,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Défaussez jusqu'à deux cartes de votre main. Infligez 3 dégâts par carte que vous avez dfaussée de cette manière.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1474,7 +1310,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 8,
 			description:
 				"Lancer : Infligez 6 dégâts. Si ces dégâts permettent de défausser un serviteur, un joueur gagne 2 points de vie.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1483,7 +1318,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lorsque préparé, les autres sorts que vous lancez infligent 1 dégât supplémentaire. LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 3 dégâts.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1492,7 +1326,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 3 dégâts. Si ce n'est pas la première Fléchette thermique que vous lancez ce tour-ci, gagnez 1 charge.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1501,7 +1334,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 2 dégâts. Gagnez 1 Ether.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1510,7 +1342,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 2,
 			description:
 				"LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 1 dégât. Si le palier de la Némésis est 2 ou plus, infligez 1 dégât supplémentaire.",
-			image: "",
 			expansion: "Aeon's End",
 		},
 		{
@@ -1519,7 +1350,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Si une autre Synapse symbiotique se trouve dans la défausse d'un joueur, ce sort gagne Écho. Lancer : Infligez 4 dégâts.",
-			image: "",
 			expansion: "De Vieux Souvenirs",
 		},
 		{
@@ -1528,7 +1358,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Lancer : Infligez 2 dégâts. S'il s'agit de la première Double détonation que vous lancez ce tour lors de votre phase d'incantation, vous pouvez lancer la Double détonation préparée d'un joueur sans la défausser.",
-			image: "",
 			expansion: "De Vieux Souvenirs",
 		},
 		{
@@ -1537,7 +1366,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Lancer : Infligez 4 dégâts. Un allié reprend en main une carte de sa défausse coûtant 0 Ether.",
-			image: "",
 			expansion: "De Vieux Souvenirs",
 		},
 		{
@@ -1546,7 +1374,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 7,
 			description:
 				"Lancer : Infligez 5 dégâts. Vous pouvez détruire une carte de la pile de la réserve de cette carte. Si vous le faites, infligez 3 dégâts supplémentaires.",
-			image: "",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -1555,7 +1382,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 6,
 			description:
 				"Lorsque préparé, une fois par tour durant votrre phase principale, vous pouvez défausser une carte de votre main pour infligez 2 dégâts. Lancer : Infligez 3 dégâts.",
-			image: "",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -1564,7 +1390,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 5,
 			description:
 				"Écho. Lancer : Infligez 1 dégât. Stabilisez la brèche d'un allié.",
-			image: "",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -1573,7 +1398,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Lancer : Infligez 3 dégâts. Gagnez 1 Ether par autre sort que vous avez préparé.",
-			image: "",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -1582,7 +1406,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 4,
 			description:
 				"Lancer : Infligez 3 dégâts. Si une autre Vapeur d'orage se trouve dans la défausse d'un joueur, stabilisez la brèche d'un joueur.",
-			image: "",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -1591,7 +1414,6 @@ export const cards: Record<"gems" | "relics" | "spells", Card[]> = {
 			cost: 3,
 			description:
 				"Lancer : Un joueur stabilise sa brèche fermée ayant le coût le plus élevé. Infligez 1 dégât. Vous pouvez détruire cette carte. Si vous le faites, infligez 2 dégâts supplémentaires.",
-			image: "",
 			expansion: "Rêves Brisés",
 		},
 	],
