@@ -1,0 +1,284 @@
+/*
+ * Carte du marché au visuel des cartes du jeu, sans l'illustration.
+ * En haut, zone sombre : l'emplacement qui a tiré la carte, le coût (cf.
+ * cost-banner.css) et les boutons. Dessous, le cadre de texte clair teinté
+ * selon le type (bord en arc), avec le nom, puis la plaque du type.
+ */
+[data-type="gem"] {
+	--panel-a: #efe6fb;
+	--panel-b: #cdb8ea;
+}
+[data-type="relic"] {
+	--panel-a: #e6f1fb;
+	--panel-b: #b5d0ec;
+}
+[data-type="spell"] {
+	--panel-a: #fbf3d6;
+	--panel-b: #edd389;
+}
+
+.game-card {
+	--pad: 0.5rem;
+	/* Largeur du fanion du coût, et des marges de l'en-tête. */
+	--banner: 2.1rem;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	/*
+	 * Même hauteur pour toutes les cartes. Sur mobile, la carte est étroite :
+	 * plus haute pour que le texte tienne. Sur grand écran, plus basse qu'une
+	 * vraie carte (63 × 88) : il n'y a pas d'illustration.
+	 */
+	aspect-ratio: 63 / 100;
+	padding: var(--pad) var(--pad) 1.1rem;
+	border-radius: 10px;
+	border: 1px solid color-mix(in oklab, var(--type) 55%, transparent);
+	background:
+		radial-gradient(
+			120% 60% at 50% 0%,
+			color-mix(in oklab, var(--type) 22%, transparent),
+			transparent 70%
+		),
+		linear-gradient(180deg, #1d1813, #0f0c0a);
+	box-shadow:
+		inset 0 0 0 2px #0a0807,
+		inset 0 0 0 3px color-mix(in oklab, var(--type) 30%, transparent);
+	text-align: center;
+	transition:
+		transform 0.2s,
+		box-shadow 0.2s,
+		border-color 0.2s;
+}
+
+button.game-card:hover {
+	transform: translateY(-3px);
+	border-color: var(--type);
+	box-shadow:
+		inset 0 0 0 2px #0a0807,
+		inset 0 0 0 3px color-mix(in oklab, var(--type) 45%, transparent),
+		0 12px 28px -12px var(--type);
+}
+
+/* En-tête : l'emplacement du tirage, centré entre les boutons et le fanion. */
+.game-card__head {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3.6rem;
+	padding: 0 calc(var(--banner) + 0.2rem) 0.5rem;
+}
+
+/* Emplacement du marché qui a tiré la carte : type, puis condition de coût. */
+.game-card__slot {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.2rem 0.6rem;
+	border-radius: 6px;
+	border: 1px solid var(--type);
+	background: color-mix(in oklab, var(--type) 20%, var(--color-abyss-900));
+	box-shadow: 0 0 14px -5px var(--type);
+	color: var(--color-bone-50);
+	line-height: 1.15;
+	white-space: nowrap;
+}
+
+.game-card__slot-type {
+	font-family: var(--font-display);
+	font-size: 0.6rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--type-soft);
+}
+
+.game-card__slot-cost {
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+
+/* Cadre de texte : arc en haut, teinte du type, nom puis texte sombre. */
+.game-card__panel {
+	position: relative;
+	flex: 1;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
+	padding: 0.6rem 0.45rem 1rem;
+	border-radius: 50% 50% 6px 6px / 0.9rem 0.9rem 6px 6px;
+	border-top: 2px solid color-mix(in oklab, var(--type-soft) 70%, white);
+	background: linear-gradient(180deg, var(--panel-a), var(--panel-b));
+	color: #241c14;
+	box-shadow: inset 0 2px 6px rgb(0 0 0 / 0.25);
+}
+
+[data-type="spell"] .game-card__panel {
+	background:
+		repeating-conic-gradient(
+			from 0deg at 50% 110%,
+			rgb(255 255 255 / 0.18) 0deg 2deg,
+			transparent 2deg 6deg
+		),
+		linear-gradient(180deg, var(--panel-a), var(--panel-b));
+}
+
+/* Nom, en tête du cadre comme sur les vraies cartes. */
+.game-card__name {
+	margin: 0.15rem 0 0.5rem;
+	letter-spacing: 0.03em;
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-variant: small-caps;
+	font-size: 1rem;
+	line-height: 1.1;
+	color: #1d1610;
+	text-wrap: balance;
+}
+
+.game-card__text {
+	flex: 1;
+	min-height: 0;
+	display: flex;
+	/* « safe » : un texte trop long déborde vers le bas, jamais au-dessus. */
+	align-items: safe center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+/* Texte trop long même réduit : il défile dans le cadre. */
+.game-card__text[data-overflow] {
+	overflow-y: auto;
+	scrollbar-width: thin;
+}
+
+.game-card__note {
+	margin-top: 0.3rem;
+	font-size: 0.8rem;
+	font-style: italic;
+	opacity: 0.75;
+}
+
+/* Plaque du type, à cheval sur le bas du cadre. */
+.game-card__type {
+	position: absolute;
+	left: 50%;
+	bottom: 0.45rem;
+	translate: -50% 0;
+	padding: 0 0.6rem;
+	border-radius: 4px;
+	border: 1px solid #6f6150;
+	background: linear-gradient(180deg, #f3ece0, #d8ccb8);
+	color: #2b2219;
+	font-family: var(--font-display);
+	font-size: 0.6rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	line-height: 1rem;
+	white-space: nowrap;
+}
+
+/* Fiche agrandie. */
+.game-card--large {
+	--pad: 1rem;
+	--banner: 3.2rem;
+	padding-bottom: 2rem;
+	/* Toute la carte reste visible, même sur un écran peu haut. */
+	aspect-ratio: 63 / 76;
+	max-width: calc(85dvh * 63 / 76);
+	margin-inline: auto;
+}
+
+.game-card--large .game-card__head {
+	min-height: 5.5rem;
+}
+
+.game-card--large .game-card__slot {
+	padding: 0.35rem 1rem;
+}
+
+.game-card--large .game-card__slot-type {
+	font-size: 0.8rem;
+}
+
+.game-card--large .game-card__slot-cost {
+	font-size: 1.1rem;
+}
+
+.game-card--large .game-card__panel {
+	padding: 1.25rem 1.25rem 1.75rem;
+	border-radius: 50% 50% 10px 10px / 1.6rem 1.6rem 10px 10px;
+}
+
+.game-card--large .game-card__name {
+	margin: 0.25rem 0 1rem;
+	font-size: 2rem;
+}
+
+.game-card--large .game-card__type {
+	bottom: 0.8rem;
+	font-size: 0.8rem;
+	line-height: 1.4rem;
+	padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+	.game-card:not(.game-card--large) {
+		aspect-ratio: 63 / 70;
+	}
+	.game-card__name {
+		margin: 0.35rem 0 0.75rem;
+		font-size: 1.45rem;
+	}
+}
+
+/* Boutons d'une carte du marché (relancer, retirer), en haut à gauche. */
+.card-actions {
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+}
+
+.card-action {
+	--tone: var(--color-aether-400);
+	display: grid;
+	place-items: center;
+	width: 1.75rem;
+	height: 1.75rem;
+	border-radius: 999px;
+	border: 1px solid var(--tone);
+	background: color-mix(in oklab, var(--tone) 14%, var(--color-abyss-900));
+	color: var(--tone);
+	box-shadow: 0 0 10px -4px var(--tone);
+	transition:
+		background-color 0.2s,
+		color 0.2s,
+		box-shadow 0.2s,
+		scale 0.2s;
+}
+
+.card-action:hover,
+.card-action:focus-visible {
+	background: var(--tone);
+	color: var(--color-abyss-950);
+	box-shadow: 0 0 16px -2px var(--tone);
+	scale: 1.08;
+}
+
+.card-action svg {
+	width: 0.9rem;
+	height: 0.9rem;
+	transition: rotate 0.4s ease;
+}
+
+.card-action--reroll:hover svg,
+.card-action--reroll:focus-visible svg {
+	rotate: 180deg;
+}
+
+.card-action--remove {
+	--tone: var(--color-ember-400);
+}

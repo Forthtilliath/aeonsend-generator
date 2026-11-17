@@ -1,0 +1,78 @@
+/*
+ * Coût d'une carte du marché, comme sur les cartes : un fanion argenté qui
+ * pend du bord haut, le prix dans un hexagone sombre. Une carte à développer
+ * allonge le fanion avec son coût de développement en dessous.
+ */
+.cost-banner {
+	position: absolute;
+	top: 0;
+	right: 0.45rem;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: var(--banner, 2.1rem);
+	padding: 0.25rem 0 0.55rem;
+	background: linear-gradient(90deg, #8f8a83, #e4e0d8 45%, #b9b4ab);
+	clip-path: polygon(
+		0 0,
+		100% 0,
+		100% calc(100% - 0.45rem),
+		50% 100%,
+		0 calc(100% - 0.45rem)
+	);
+	filter: drop-shadow(0 2px 3px rgb(0 0 0 / 0.6));
+}
+
+.cost-banner__hex {
+	display: grid;
+	place-items: center;
+	width: 1.7rem;
+	height: 1.9rem;
+	background: #ece8e0;
+	clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+}
+
+.cost-banner__hex > span:last-child {
+	display: grid;
+	place-items: center;
+	width: calc(100% - 3px);
+	height: calc(100% - 3px);
+	background: radial-gradient(circle at 50% 35%, #4b3f66, #1f1a2c 75%);
+	clip-path: inherit;
+	color: #fff;
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-size: 0.95rem;
+}
+
+.cost-banner__develop {
+	margin-top: 0.2rem;
+	padding-top: 0.15rem;
+	width: 70%;
+	border-top: 1px solid rgb(0 0 0 / 0.35);
+	color: #fff;
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-size: 0.95rem;
+	line-height: 1.1;
+	text-align: center;
+	-webkit-text-stroke: 2px #2b2722;
+	paint-order: stroke fill;
+}
+
+/* Fiche agrandie. */
+.game-card--large .cost-banner {
+	right: 0.9rem;
+	padding: 0.4rem 0 0.8rem;
+}
+
+.game-card--large .cost-banner__hex {
+	width: 2.6rem;
+	height: 2.9rem;
+}
+
+.game-card--large .cost-banner__hex > span:last-child,
+.game-card--large .cost-banner__develop {
+	font-size: 1.4rem;
+}
