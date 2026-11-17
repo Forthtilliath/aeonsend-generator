@@ -126,7 +126,7 @@ button.game-card:hover {
 .game-card__name {
 	margin: 0.15rem 0 0.5rem;
 	letter-spacing: 0.03em;
-	font-family: var(--font-display);
+	font-family: var(--font-card-title);
 	font-weight: 700;
 	font-variant: small-caps;
 	font-size: 1rem;

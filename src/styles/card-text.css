@@ -3,7 +3,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 0.2rem;
-	font-family: var(--font-lore);
+	font-family: var(--font-card);
 	/* --fit : réduit par useFitText quand le texte ne tient pas dans le cadre. */
 	font-size: calc(0.66rem * var(--fit, 1));
 	line-height: 1.3;

@@ -1,3 +1,4 @@
+import "@fontsource/bitter/latin-700.css";
 import "@fontsource/marcellus/latin-400.css";
 import "@fontsource/spectral/latin-400.css";
 import "@fontsource/spectral/latin-400-italic.css";
