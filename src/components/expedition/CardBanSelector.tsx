@@ -9,6 +9,8 @@ interface CardBanSelectorProps {
 	ownedExpansions: ReadonlySet<Expansion>;
 	bans: CardBans;
 	onToggle: (card: Card) => void;
+	/** Bannit (`true`) ou réautorise (`false`) toutes les cartes données. */
+	onSetBanned: (cards: Card[], banned: boolean) => void;
 	/** Réautorise toutes les cartes. */
 	onReset: () => void;
 }
@@ -44,6 +46,7 @@ export const CardBanSelector = ({
 	ownedExpansions,
 	bans,
 	onToggle,
+	onSetBanned,
 	onReset,
 }: CardBanSelectorProps) => {
 	const groups = ALL_EXPANSIONS.filter((e) => ownedExpansions.has(e))
@@ -73,7 +76,8 @@ export const CardBanSelector = ({
 			)}
 			<div className="divide-y divide-abyss-700/70">
 				{groups.map(({ expansion, cards }) => {
-					const banned = cards.filter(({ card }) => isCardBanned(card, bans));
+					const boxCards = cards.map(({ card }) => card);
+					const banned = boxCards.filter((card) => isCardBanned(card, bans));
 					return (
 						<details key={expansion} className="py-2">
 							<summary className="cursor-pointer text-sm font-semibold text-bone-100">
@@ -84,6 +88,24 @@ export const CardBanSelector = ({
 										: `${banned.length} / ${cards.length} bannie${banned.length > 1 ? "s" : ""}`}
 								</span>
 							</summary>
+							<div className="mt-2 flex gap-3 text-xs">
+								<button
+									type="button"
+									className={LINK}
+									onClick={() => onSetBanned(boxCards, false)}
+									disabled={banned.length === 0}
+								>
+									Tout autoriser
+								</button>
+								<button
+									type="button"
+									className={LINK}
+									onClick={() => onSetBanned(boxCards, true)}
+									disabled={banned.length === cards.length}
+								>
+									Tout bannir
+								</button>
+							</div>
 							<div className="mt-2 flex flex-wrap gap-1.5">
 								{cards.map(({ card, type }) => (
 									<button

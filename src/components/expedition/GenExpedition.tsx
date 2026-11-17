@@ -15,6 +15,7 @@ import {
 	type CardBans,
 	getBannedNames,
 	NO_CARD_BANS,
+	setCardsBanned,
 	toggleCardBan,
 } from "../../utils/cardBans";
 import { Button } from "../ui/Button";
@@ -158,6 +159,9 @@ const FormExpedition: FC = () => {
 					cardBans={cardBans}
 					onToggleCardBan={(card) =>
 						setCardBans((prev) => toggleCardBan(prev, card))
+					}
+					onSetCardsBanned={(cards, banned) =>
+						setCardBans((prev) => setCardsBanned(prev, cards, banned))
 					}
 					onResetCardBans={() => setCardBans(NO_CARD_BANS)}
 					market={market}

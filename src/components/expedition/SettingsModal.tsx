@@ -21,6 +21,7 @@ interface SettingsModalProps {
 	onSetAllExpansions: (owned: boolean) => void;
 	cardBans: CardBans;
 	onToggleCardBan: (card: CardData) => void;
+	onSetCardsBanned: (cards: CardData[], banned: boolean) => void;
 	onResetCardBans: () => void;
 	market: MarketState;
 }
@@ -35,6 +36,7 @@ export const SettingsModal = ({
 	onSetAllExpansions,
 	cardBans,
 	onToggleCardBan,
+	onSetCardsBanned,
 	onResetCardBans,
 	market,
 }: SettingsModalProps) => (
@@ -90,6 +92,7 @@ export const SettingsModal = ({
 								ownedExpansions={ownedExpansions}
 								bans={cardBans}
 								onToggle={onToggleCardBan}
+								onSetBanned={onSetCardsBanned}
 								onReset={onResetCardBans}
 							/>
 						),

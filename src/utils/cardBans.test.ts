@@ -5,6 +5,7 @@ import {
 	getBannedNames,
 	isCardBanned,
 	NO_CARD_BANS,
+	setCardsBanned,
 	toggleCardBan,
 } from "./cardBans";
 
@@ -30,6 +31,20 @@ describe("toggleCardBan", () => {
 		const names = getBannedNames(toggleCardBan(NO_CARD_BANS, card));
 		expect(names.has(card.name)).toBe(true);
 		expect(names.has(other.name)).toBe(false);
+	});
+});
+
+describe("setCardsBanned", () => {
+	test("bans a whole set of cards without duplicates, then re-allows it", () => {
+		const one = toggleCardBan(NO_CARD_BANS, card);
+		const all = setCardsBanned(one, [card, other], true);
+		expect([...all.banned].sort()).toEqual([card.name, other.name].sort());
+		expect(setCardsBanned(all, [card, other], false)).toEqual(NO_CARD_BANS);
+	});
+
+	test("leaves the other bans untouched", () => {
+		const one = toggleCardBan(NO_CARD_BANS, card);
+		expect(setCardsBanned(one, [other], false)).toEqual(one);
 	});
 });
 

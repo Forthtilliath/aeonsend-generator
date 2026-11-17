@@ -20,6 +20,17 @@ export const isCardBanned = (card: Card, bans: CardBans): boolean =>
 export const getBannedNames = (bans: CardBans): Set<string> =>
 	new Set(bans.banned);
 
+/** Bannit ou réautorise d'un coup des cartes (par exemple toute une boîte). */
+export const setCardsBanned = (
+	bans: CardBans,
+	cards: readonly Card[],
+	banned: boolean,
+): CardBans => {
+	const names = new Set(cards.map((card) => card.name));
+	const others = bans.banned.filter((name) => !names.has(name));
+	return { banned: banned ? [...others, ...names] : others };
+};
+
 /** Bannit ou réautorise une carte. */
 export const toggleCardBan = (bans: CardBans, card: Card): CardBans => ({
 	banned: isCardBanned(card, bans)
