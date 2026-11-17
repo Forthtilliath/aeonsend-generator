@@ -86,6 +86,8 @@ export const setupConfigSchema = z.object({
 	marketResets: intBetween(0, 2),
 	cardRerolls: intBetween(0, 3),
 	removeExcess: z.boolean(),
+	// Absent des réglages enregistrés avant son ajout : Gravehold par défaut.
+	xaxosOutcast: z._default(z.boolean(), false),
 }) satisfies z.ZodMiniType<SetupConfig>;
 
 /** Bornes partagées avec les champs du formulaire. */

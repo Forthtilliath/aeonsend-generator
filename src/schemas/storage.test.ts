@@ -121,6 +121,16 @@ describe("setupConfigSchema", () => {
 		expect(setupConfigSchema.safeParse(setup).success).toBe(true);
 	});
 
+	test("defaults xaxosOutcast to false for settings saved before it existed", () => {
+		expect(setupConfigSchema.parse(setup).xaxosOutcast).toBe(false);
+		expect(
+			setupConfigSchema.parse({ ...setup, xaxosOutcast: true }).xaxosOutcast,
+		).toBe(true);
+		expect(
+			setupConfigSchema.safeParse({ ...setup, xaxosOutcast: "oui" }).success,
+		).toBe(false);
+	});
+
 	test("rejects out-of-bounds values", () => {
 		expect(
 			setupConfigSchema.safeParse({ ...setup, numPlayers: 5 }).success,

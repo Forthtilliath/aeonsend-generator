@@ -39,25 +39,26 @@ export const useExpedition = (ownedExpansions: ReadonlySet<Expansion>) => {
 	};
 
 	const resetMarket = (index: number) =>
-		updateBattle(index, (battle, { marketConfig }) =>
+		updateBattle(index, (battle, { marketConfig, xaxosOutcast }) =>
 			battle.remainingResets > 0
 				? {
 						...battle,
-						supply: generateSupply(marketConfig, ownedExpansions),
+						supply: generateSupply(marketConfig, {
+							ownedExpansions,
+							xaxosOutcast,
+						}),
 						remainingResets: battle.remainingResets - 1,
 					}
 				: null,
 		);
 
 	const rerollCard = (index: number, position: number, replace: boolean) =>
-		updateBattle(index, (battle) => {
+		updateBattle(index, (battle, { xaxosOutcast }) => {
 			if (battle.remainingRerolls <= 0) return null;
-			const supply = rerollSupplyCard(
-				battle.supply,
-				position,
-				replace,
+			const supply = rerollSupplyCard(battle.supply, position, replace, {
 				ownedExpansions,
-			);
+				xaxosOutcast,
+			});
 			return supply
 				? { ...battle, supply, remainingRerolls: battle.remainingRerolls - 1 }
 				: null;

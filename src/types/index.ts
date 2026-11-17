@@ -49,6 +49,11 @@ export interface Card {
 	 * le texte de la carte, le réduit de 1 Ether. S'applique aux deux coûts.
 	 */
 	conditionalCost?: true;
+	/**
+	 * Carte qui ne sert qu'avec Xaxos : Paria à la place de Gravehold (Les
+	 * Parias) : elle n'est pas tirée quand on joue avec Gravehold.
+	 */
+	requiresXaxos?: true;
 	expansion: Expansion;
 }
 
@@ -154,6 +159,8 @@ export interface Expedition {
 	battles: Battle[];
 	/** Marché utilisé au tirage, réutilisé par les réinitialisations. */
 	marketConfig: MarketCondition[];
+	/** Choix fait au tirage, réutilisé par les relances et réinitialisations. */
+	xaxosOutcast: boolean;
 	numPlayers: number;
 	story: Story;
 }
@@ -167,6 +174,8 @@ export interface SetupConfig {
 	marketResets: number;
 	cardRerolls: number;
 	removeExcess: boolean;
+	/** Xaxos : Paria défend à la place de Gravehold (cartes `requiresXaxos` permises). */
+	xaxosOutcast: boolean;
 }
 
 export interface MarketTemplate {

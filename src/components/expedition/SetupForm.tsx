@@ -87,6 +87,14 @@ export const SetupForm = ({ setup, onChange }: SetupFormProps) => {
 				/>
 			</div>
 
+			<Switch
+				className="mt-4"
+				checked={setup.xaxosOutcast}
+				onChange={(xaxosOutcast) => update({ xaxosOutcast })}
+				label="Xaxos : Paria remplace Gravehold"
+				hint="Les Parias : autorise au marché les cartes qui ne servent qu'avec Xaxos : Paria."
+			/>
+
 			{setup.cardRerolls > 0 && (
 				<Switch
 					className="mt-4"

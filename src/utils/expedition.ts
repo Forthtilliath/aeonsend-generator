@@ -66,7 +66,10 @@ export const buildExpedition = (
 			tier,
 			nemesis,
 			mages: drawMages(wanted, ownedExpansions),
-			supply: generateSupply(marketConfig, ownedExpansions),
+			supply: generateSupply(marketConfig, {
+				ownedExpansions,
+				xaxosOutcast: setup.xaxosOutcast,
+			}),
 			remainingResets: setup.marketResets,
 			remainingRerolls: setup.cardRerolls,
 		};
@@ -90,6 +93,7 @@ export const buildExpedition = (
 		expedition: {
 			battles,
 			marketConfig: [...marketConfig],
+			xaxosOutcast: setup.xaxosOutcast,
 			numPlayers: setup.numPlayers,
 			story: generateStory(battles, setup.numPlayers),
 		},

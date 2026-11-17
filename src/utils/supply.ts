@@ -1,5 +1,6 @@
 import { allCards as cards } from "../data/catalog";
 import type {
+	Card,
 	CardType,
 	CardTypeMarket,
 	Expansion,
@@ -16,6 +17,20 @@ const CATEGORY: Record<CardType, keyof typeof cards> = {
 	spell: "spells",
 };
 
+/** Contraintes communes à tout un marché. */
+export interface DrawOptions {
+	/** Boîtes possédées ; sans elles, toutes les boîtes sont permises. */
+	ownedExpansions?: ReadonlySet<Expansion>;
+	/** Xaxos : Paria remplace Gravehold : les cartes `requiresXaxos` sont permises. */
+	xaxosOutcast?: boolean;
+}
+
+/** La carte peut-elle être tirée avec ces contraintes ? */
+export const isCardAllowed = (card: Card, options: DrawOptions): boolean =>
+	(!card.requiresXaxos || options.xaxosOutcast === true) &&
+	(!options.ownedExpansions ||
+		isExpansionOwned(card.expansion, options.ownedExpansions));
+
 /**
  * Tire une carte répondant à `condition`, absente de `usedNames`. Un emplacement
  * « Tout » pioche dans les trois catégories et reçoit le type réel de la carte.
@@ -23,7 +38,7 @@ const CATEGORY: Record<CardType, keyof typeof cards> = {
 export const drawCard = (
 	condition: MarketCondition,
 	usedNames: ReadonlySet<string>,
-	ownedExpansions?: ReadonlySet<Expansion>,
+	options: DrawOptions = {},
 ): SupplyCard | null => {
 	const types = condition.type === "any" ? CARD_TYPES : [condition.type];
 	const candidates = types.flatMap((type) =>
@@ -32,8 +47,7 @@ export const drawCard = (
 				(card) =>
 					matchesCondition(card, condition) &&
 					!usedNames.has(card.name) &&
-					(!ownedExpansions ||
-						isExpansionOwned(card.expansion, ownedExpansions)),
+					isCardAllowed(card, options),
 			)
 			.map((card) => ({ card, type })),
 	);
@@ -50,12 +64,12 @@ export const sortSupply = (supply: SupplyCard[]): SupplyCard[] =>
 
 export const generateSupply = (
 	marketConfig: MarketCondition[],
-	ownedExpansions?: ReadonlySet<Expansion>,
+	options: DrawOptions = {},
 ): SupplyCard[] => {
 	const supply: SupplyCard[] = [];
 	const usedNames = new Set<string>();
 	for (const condition of marketConfig) {
-		const card = drawCard(condition, usedNames, ownedExpansions);
+		const card = drawCard(condition, usedNames, options);
 		if (card) {
 			supply.push(card);
 			usedNames.add(card.name);
@@ -74,12 +88,12 @@ export const rerollSupplyCard = (
 	supply: SupplyCard[],
 	position: number,
 	replace: boolean,
-	ownedExpansions?: ReadonlySet<Expansion>,
+	options: DrawOptions = {},
 ): SupplyCard[] | null => {
 	const oldCard = supply.find((c) => c.position === position);
 	if (!oldCard) return null;
 	const usedNames = new Set(supply.map((c) => c.name));
-	const newCard = drawCard(oldCard.criteria, usedNames, ownedExpansions);
+	const newCard = drawCard(oldCard.criteria, usedNames, options);
 	if (!newCard) return null;
 	const kept = replace ? supply.filter((c) => c !== oldCard) : supply;
 	return sortSupply([...kept, newCard]);

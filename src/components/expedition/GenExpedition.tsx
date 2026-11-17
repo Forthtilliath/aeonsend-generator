@@ -25,6 +25,7 @@ const DEFAULT_SETUP: SetupConfig = {
 	marketResets: 1,
 	cardRerolls: 2,
 	removeExcess: true,
+	xaxosOutcast: false,
 };
 
 const FormExpedition: FC = () => {
