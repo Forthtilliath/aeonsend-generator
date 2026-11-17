@@ -61,6 +61,23 @@
 	paint-order: stroke fill;
 }
 
+/* Liste des bans des réglages : fanion réduit, grisé quand la carte est bannie. */
+.ban-card .cost-banner {
+	--banner: 1.55rem;
+	right: 0.35rem;
+	padding: 0.2rem 0 0.45rem;
+}
+
+.ban-card .cost-banner__hex {
+	width: 1.25rem;
+	height: 1.4rem;
+}
+
+.ban-card .cost-banner__hex > span:last-child,
+.ban-card .cost-banner__develop {
+	font-size: 0.75rem;
+}
+
 /* Fiche agrandie. */
 .game-card--large .cost-banner {
 	right: 0.9rem;
@@ -75,4 +92,8 @@
 .game-card--large .cost-banner__hex > span:last-child,
 .game-card--large .cost-banner__develop {
 	font-size: 1.4rem;
+}
+
+.ban-card[aria-pressed="false"] .cost-banner {
+	opacity: 0.45;
 }

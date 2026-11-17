@@ -3,7 +3,10 @@ import { allCards } from "../../data/catalog";
 import { ALL_EXPANSIONS } from "../../data/expansions";
 import type { Card, CardType, Expansion } from "../../types";
 import { type CardBans, isCardBanned } from "../../utils/cardBans";
+import { getTypeLabel } from "../../utils/helpers";
 import { TYPE_SYMBOL } from "../../utils/supply";
+import { CardText } from "./CardText";
+import { CostBanner } from "./CostBanner";
 
 interface CardBanSelectorProps {
 	ownedExpansions: ReadonlySet<Expansion>;
@@ -106,20 +109,38 @@ export const CardBanSelector = ({
 									Tout bannir
 								</button>
 							</div>
-							<div className="mt-2 flex flex-wrap gap-1.5">
-								{cards.map(({ card, type }) => (
-									<button
-										type="button"
-										key={card.name}
-										onClick={() => onToggle(card)}
-										aria-pressed={!isCardBanned(card, bans)}
-										className="rune-toggle min-h-8 px-2 py-1 text-xs font-semibold"
-									>
-										<span aria-hidden="true">{TYPE_SYMBOL[type]} </span>
-										{card.name}
-										<span className="text-bone-500"> {card.cost}</span>
-									</button>
-								))}
+							<div className="mt-2 grid gap-1.5 sm:grid-cols-2">
+								{cards.map(({ card, type }) => {
+									const isBanned = isCardBanned(card, bans);
+									return (
+										<button
+											type="button"
+											key={card.name}
+											onClick={() => onToggle(card)}
+											aria-pressed={!isBanned}
+											data-type={type}
+											className="rune-toggle ban-card flex flex-col gap-1 px-8 pt-2 pb-3 text-center"
+										>
+											<span className="flex items-baseline gap-1.5 text-xs font-semibold">
+												<span className="ban-card__name min-w-0 flex-1">
+													{card.name}
+												</span>
+												{isBanned && (
+													<span className="text-ember-300">Bannie</span>
+												)}
+											</span>
+											<span
+												className="ban-card__type"
+												title={getTypeLabel(type)}
+											>
+												<span aria-hidden="true">{TYPE_SYMBOL[type]}</span>
+												<span className="sr-only">{getTypeLabel(type)}</span>
+											</span>
+											<CostBanner card={card} />
+											<CardText description={card.description} />
+										</button>
+									);
+								})}
 							</div>
 						</details>
 					);
