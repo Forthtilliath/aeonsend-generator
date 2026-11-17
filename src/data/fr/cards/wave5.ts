@@ -42,8 +42,8 @@ export const cards: CardsByType = {
     {
       id: "LP-FIN-062",
       name: "Saphir Galvanisé",
-			nameEn: "Galvanized Sapphire",
-			requiresXaxos: true,
+      nameEn: "Galvanized Sapphire",
+      requiresXaxos: true,
       cost: 4,
       description: "Gagnez 2 Ether.\nXaxos : Paria gagne 1 charge.",
       expansion: "Les Parias",
@@ -97,8 +97,8 @@ export const cards: CardsByType = {
   relics: [
     {
       id: "LP-FIN-066",
-			name: "Orbe des Profondeurs",
-			nameEn:"Orb of the Deep",
+      name: "Orbe des Profondeurs",
+      nameEn: "Orb of the Deep",
       cost: 2,
       description:
         "Stabilisez votre brèche fermées ayant le coût de stabilisation le plus faible.(ou)Détruisez cette carte. Gagnez 1 charge.",
@@ -106,8 +106,8 @@ export const cards: CardsByType = {
     },
     {
       id: "LP-FIN-067",
-			name: "Racive Carnivore",
-			nameEn:"Carnivorous Roox",
+      name: "Racive Carnivore",
+      nameEn: "Carnivorous Roox",
       cost: 3,
       description:
         "Gagnez 1 Ether. Vous pouvez détruire une carte de votre main pour gagner d'autant d'Ether que son coût.(ou)Détruisez cette carte pour stabiliser deux fois votre brèche fermée ayant le coût de stabilisation le plus faible.",
@@ -115,8 +115,8 @@ export const cards: CardsByType = {
     },
     {
       id: "LP-FIN-068",
-			name: "Dague de Faille",
-			nameEn:"Rift Dagger",
+      name: "Dague de Faille",
+      nameEn: "Rift Dagger",
       cost: 3,
       description:
         "Acquérez une carte d'une autre pile de la réserve dont les cartes coûtent 3 Ether ou moins. Vous pouvez détruire cette relique pour acquérir une carte coûtant jusqu'à 4 Ether à la place.\nVous pouvez dépenser 1 Ether pour prendre la carte acquise en main.",
@@ -124,18 +124,18 @@ export const cards: CardsByType = {
     },
     {
       id: "LP-FIN-069",
-			name: "Circuit de Reconstitution",
-			nameEn: "Reconstituting Circuit",
-			requiresXaxos: true,
-			cost: 3,
+      name: "Circuit de Reconstitution",
+      nameEn: "Reconstituting Circuit",
+      requiresXaxos: true,
+      cost: 3,
       description:
         "Xaxos : Paria gagne 1 charge.\nVous pouvez détruire 1 carte de votre main.",
       expansion: "Les Parias",
     },
     {
       id: "LP-FIN-070",
-			name: "Altérateur de Destin",
-			nameEn:"Destiny Forger",
+      name: "Altérateur de Destin",
+      nameEn: "Destiny Forger",
       cost: 4,
       description:
         "Un allié peut détruire une carte de sa main. Ce joueur peut acquérir une carte coûtant jusqu'à 2 Ether de plus que la carte détruite et la prendre en main.(ou)Détruiez cette carte pour gagner 2 charges.",
@@ -143,8 +143,8 @@ export const cards: CardsByType = {
     },
     {
       id: "LP-FIN-071",
-			name: "Chaîne de Restitution",
-			nameEn:"Chain of Retrieval",
+      name: "Chaîne de Restitution",
+      nameEn: "Chain of Retrieval",
       cost: 4,
       description:
         "Stabilisez la brèche d'un allié.(ou)Reprenez en main une carte de votre défausse coûtant 6 Ether ou moins.",
@@ -152,17 +152,17 @@ export const cards: CardsByType = {
     },
     {
       id: "LP-FIN-072",
-			name: "Soleil en Bouteille",
-			nameEn: "Bottled Sun",
-			requiresXaxos: true,
+      name: "Soleil en Bouteille",
+      nameEn: "Bottled Sun",
+      requiresXaxos: true,
       cost: 6,
       description: "Xaxos : Paria gagne 3 charges.",
       expansion: "Les Parias",
     },
     {
       id: "LP-FIN-073",
-			name: "Réflecteur de Transmutation",
-			nameEn:"Transmutter's Lens",
+      name: "Réflecteur de Transmutation",
+      nameEn: "Transmutter's Lens",
       cost: 5,
       description:
         "Détruisez cette carte.\nVous pouvez détruire une carte de votre main ou de votre défausse.\nAcquerez une carte d'une pile de la réservé coûtant jusqu'à 6 Ether.",
@@ -170,8 +170,8 @@ export const cards: CardsByType = {
     },
     {
       id: "LP-1a-074",
-			name: "Vortex Déséquilibré",
-			nameEn:"Unhinged Vortex",
+      name: "Vortex Déséquilibré",
+      nameEn: "Unhinged Vortex",
       cost: 7,
       description:
         "Un allié pioche trois carte. Puis, il défausse une carte de sa main.(ou)Vous pouvez stabiliser la brèche d'un allié. Un allié peut reprendre en main une carte de sa défausse.",
@@ -218,6 +218,7 @@ export const cards: CardsByType = {
     {
       id: "LP-FIN-075",
       name: "Givre Renforcé",
+      nameEn: "Fortified Frost",
       cost: 2,
       description:
         "Lancer : Infligez 2 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, infligez 1 dégât supplémentaire.",
@@ -226,14 +227,16 @@ export const cards: CardsByType = {
     {
       id: "LP-FIN-076",
       name: "Orage Jumelé",
+      nameEn: "Paired Storm",
       cost: 3,
       description:
-        "LIEN (Deux sorts ayant Lien peuvent être préparés sur la même brèche.) Lancer : Infligez 2 dégâts. S'il s'agit du second Orage jumelé que vous lancez ce tour, infligez 2 dégâts supplémentaires.",
+        "(lien)Lancer : Infligez 2 dégâts. S'il s'agit du second Orage jumelé que vous lancez ce tour, infligez 2 dégâts supplémentaires.",
       expansion: "Les Parias",
     },
     {
       id: "LP-FIN-077",
-      name: "Croc Tordu",
+      name: "Morsure Ingénieuse",
+      nameEn: "Twisted Fang",
       cost: 4,
       description:
         "Lancer : Infligez 3 dégâts. Si la pile de la réserve de cette carte est vide, infligez 1 dégât supplémentaire",
@@ -242,15 +245,17 @@ export const cards: CardsByType = {
     {
       id: "LP-FIN-078",
       name: "Éclair Destructeur",
+      nameEn: "Shattering Bolt",
       cost: 4,
       description:
-        "Lancer : Infligez 2 dégâts. Vous pouvez détruire une carte de votre main. OU Lancer : Défaussez une gemme de votre main. Si vous le faites, infligez 4 dégâts.",
+        "Lancer : Infligez 2 dégâts. Vous pouvez détruire une carte de votre main.(ou)Lancer : Défaussez une gemme de votre main. Si vous le faites, infligez 4 dégâts.",
       expansion: "Les Parias",
     },
     {
       id: "LP-FIN-079",
-			name: "Combustion Enrichie",
-			requiresXaxos: true,
+      name: "Combustion Enrichie",
+      nameEn: "Infused Ignition",
+      requiresXaxos: true,
       cost: 4,
       description:
         "Lancer : Infligez 3 dégâts. Si Xaxos : Paria a 4 charges ou moins, il gagne 1 charge.",
@@ -259,6 +264,7 @@ export const cards: CardsByType = {
     {
       id: "LP-FIN-080",
       name: "Flèche Éclair",
+      nameEn: "Lightning Arrow",
       cost: 5,
       description:
         "Lancer : Infligez 3 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, Gravehold gagne 1 point de vie.",
@@ -267,6 +273,7 @@ export const cards: CardsByType = {
     {
       id: "LP-FIN-081",
       name: "Confluence de Radiance",
+      nameEn: "Radiant Conflux",
       cost: 5,
       description:
         "Lancer : Infligez 3 dégâts. Un allié peut piocher une carte, puis défausser une carte de sa main.",
@@ -275,6 +282,7 @@ export const cards: CardsByType = {
     {
       id: "LP-FIN-082",
       name: "Faille Instable",
+      nameEn: "Unstable Rift",
       cost: 5,
       description:
         "Lorsque préparé, à la fin de votre phase d'incantation, infligez 1 dégât et gagnez 1 Ether. Lancer : Infligez 4 dégâts.",
@@ -283,6 +291,7 @@ export const cards: CardsByType = {
     {
       id: "LP-FIN-083",
       name: "Afflux de Volonté",
+      nameEn: "Gathered Will",
       cost: 5,
       description:
         "Lancer : Infligez 2 dégâts. Vous pouvez acquérir un sort d'une pile de la réserve coûtant 4 Ether ou moins et le placer sur votre pioche.",
@@ -291,6 +300,7 @@ export const cards: CardsByType = {
     {
       id: "LP-FIN-084",
       name: "Tornade de Lucidité",
+      nameEn: "Tornado of Insight",
       cost: 6,
       description:
         "Lancer : Infligez 5 dégâts. Si vous ne possédez aucune brèche fermée, gagnez 1 charge.",
@@ -299,6 +309,7 @@ export const cards: CardsByType = {
     {
       id: "LP-FIN-085",
       name: "Vivacité d'Esprit",
+      nameEn: "Hasted Intellect",
       cost: 6,
       description:
         "Lorsque préparé, si vous acquérez une carte, vous pouvez la placer sur votre pioche. Lancer : Infligez 4 dégâts.",
@@ -307,6 +318,7 @@ export const cards: CardsByType = {
     {
       id: "LP-FIN-086",
       name: "Effusion de Flammes",
+      nameEn: "Swarm of Flame",
       cost: 6,
       description:
         "Lancer : Infligez 5 dégâts. Vous pouvez lancer le sort préparé d'un joueur coûtant 5 Ether ou moins.",
@@ -315,6 +327,7 @@ export const cards: CardsByType = {
     {
       id: "LP-FIN-087",
       name: "Relais Arcanique",
+      nameEn: "Arcane Relay",
       cost: 8,
       description:
         "Lancer : Un allié pioche une carte, puis révèle sa main. Infligez 4 dégâts. Infligez 1 dégâts supplémentaire par carte de sa main coûtant 1 Ether ou plus.",
@@ -323,10 +336,74 @@ export const cards: CardsByType = {
     {
       id: "LP-FIN-088",
       name: "Explosion Étourdissante",
+      nameEn: "Dizzying Burst",
       cost: 8,
       description:
         "Lancer : Infligez 6 dégâts. Révélez puis replacez les cartes du paquet d'ordre du tour dans l'ordre de votre choix.",
       expansion: "Les Parias",
+    },
+    {
+      id: "RG-89",
+      name: "Purge",
+      nameEn: "Cleanse",
+      cost: 4,
+      description:
+        "Lancer : Infligez 3 dégâts. Si vous avez 3 points de vie ou moins, gagnez 1 point de vie.",
+      expansion: "Retour à Gravehold",
+    },
+    {
+      id: "RG-90",
+      name: "Brise-Mémoire",
+      nameEn: "Memory Break",
+      cost: 6,
+      description:
+        "Lancer : Infligez 3 dégâts. Vous pouvez détruire une carte de votre main. Si vous le faites, infligez autant de dégâts supplémentaires que le coût de la carte détruite.",
+      expansion: "Retour à Gravehold",
+    },
+    {
+      id: "LVS-85",
+      name: "Poing Enflammé",
+      nameEn: "Flame Jab",
+      cost: 1,
+      description:
+        "Lancer : Infligez 2 dégâts à un serviteur. Vous pouvez détruire cette carte pour gagner 1 Ether.",
+      expansion: "Le Village du Sud",
+    },
+    {
+      id: "LVS-86",
+      name: "Vents Rassembleurs",
+      nameEn: "Gathering Winds",
+      cost: 3,
+      description:
+        "Lancer : Infligez 2 dégâts. Si vous avez six autres cartes ou plus dans votre défausse, stabilisez la brèche d'un joueur.",
+      expansion: "Le Village du Sud",
+    },
+    {
+      id: "LVS-87",
+      name: "Pluie de Braises",
+      nameEn: "Cinder Shower",
+      cost: 5,
+      description:
+        "Lorsque préparé, si vous acquérez une carte, infligez 1 dégât. Lancer : Infligez 3 dégâts.",
+      expansion: "Le Village du Sud",
+    },
+    {
+      id: "LVS-88",
+      name: "Effacement de l'Esprit",
+      nameEn: "Erasure of Mind",
+      cost: 7,
+      description:
+        "Lancer : Détruisez une carte de votre main coûtant 3 Ether ou plus. Si vous le faites, infligez 10 dégâts.(ou)Lancer : Infligez 5 dégâts. Révélez les deux premières cartes de votre pioche. Vous pouvez en placer une ou placer les deux cartes dans votre défausse.",
+      expansion: "Le Village du Sud",
+    },
+    {
+      id: "LVS-89",
+      name: "Feu Faucheur",
+      nameEn: "Reaper's Flame",
+      cost: 7,
+      description:
+        "Lorsque préparé, une fois par tour, si vous lancez un autre sort, vous pouvez acquérir une carte d'une pile de la réserve coûtant 5 Ether ou moins. Lancer : Infligez 5 dégâts à un serviteur.",
+      expansion: "Le Village du Sud",
     },
   ],
 };
