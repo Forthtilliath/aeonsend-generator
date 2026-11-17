@@ -8,7 +8,7 @@ export const cards: CardsByType = {
       name: "Brûlite",
       nameEn: "Flamium",
       cost: 3,
-      description: "Gagnez 2 Ether.\nPlacez un jeton Feu sur un adversaire.",
+      description: "Gagnez 2 Ether.(ou)Placez un jeton Feu sur un adversaire.",
       expansion: "Le Commencement",
     },
     {
@@ -26,7 +26,7 @@ export const cards: CardsByType = {
       nameEn: "Washium",
       cost: 4,
       description:
-        "Gagnez 2 Ether.\nVous pouvez stabiliser votre brèche fermée ayant le coût de stabilisation le plus faible.",
+        "Gagnez 2 Ether.\nVous pouvez dépenser 1 Ether pour stabiliser votre brèche fermée ayant le coût de stabilisation le plus faible.",
       expansion: "Le Commencement",
     },
     {
@@ -94,7 +94,7 @@ export const cards: CardsByType = {
       id: "LC-FIN-11",
       name: "Piqûre Furtive",
       nameEn: "Silent Sting",
-      cost: 4,
+      cost: 3,
       developCost: 2,
       description:
         "Lancer : Placez un jeton Poison sur un adversaire et infligez-lui 1 dégât.",
@@ -115,7 +115,7 @@ export const cards: CardsByType = {
       nameEn: "Endless Weave",
       cost: 5,
       description:
-        "Lorsque préparé, si vous appliquez votre capacité, un allié peut piocher une carte et peut préparer une sort de sa main sur une brèche ouverte ou fermée. Lancer : Infligez 4 dégâts.",
+        "Lorsque préparé, si vous appliquez votre capacité, un allié peut piocher une carte et peut préparer un sort de sa main sur une brèche ouverte ou fermée. Lancer : Infligez 4 dégâts.",
       expansion: "Le Commencement",
     },
     {
@@ -134,7 +134,7 @@ export const cards: CardsByType = {
       nameEn: "Time Rift",
       cost: 5,
       description:
-        "Lancer : Infligez 5 dégâts. Chaque joueur peut révéler la première carte de sa pioche et peut soit la défausser soit la remettre sur le dessus de sa pioche.",
+        "Lancer : Infligez 4 dégâts. Chaque joueur peut révéler la première carte de sa pioche et peut soit la défausser soit la remettre sur le dessus de sa pioche.",
       expansion: "Le Commencement",
     },
     {
@@ -171,7 +171,7 @@ export const cards: CardsByType = {
       nameEn: "Alchemical Ignition",
       cost: 8,
       description:
-        "Lorsque préparé, une fois par tour, lorsqu'un joueur place un jeton Élément, il place un jeton Élément supplémentaire du même type sur le même adversaire. Lancer : Placez 2 jetons Poison sur un adversaire et infligez-lui 2 dégâts..",
+        "Lorsque préparé, une fois par tour, lorsqu'un joueur place un jeton Élément, il place un jeton Élément supplémentaire du même type sur le même adversaire. Lancer : Placez 2 jetons Poison sur un adversaire et infligez-lui 2 dégâts.",
       expansion: "Le Commencement",
     },
   ],
