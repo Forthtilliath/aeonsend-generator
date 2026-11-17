@@ -37,6 +37,8 @@ export type Expansion =
 export interface Card {
 	id: string;
 	name: string;
+	/** Nom anglais, pour retrouver la carte sur le wiki (traductions maison). */
+	nameEn?: string;
 	description: string;
 	/** Coût d'achat, sans développer la carte : c'est lui qui sert au tirage du marché. */
 	cost: number;
@@ -50,8 +52,12 @@ export interface Card {
 	expansion: Expansion;
 }
 
+export type CardsByType = Record<"gems" | "relics" | "spells", Card[]>;
+
 export interface Nemesis {
 	name: string;
+	/** Nom anglais, pour retrouver la némésis sur le wiki (traductions maison). */
+	nameEn?: string;
 	/** Article utilisé dans l'histoire (« le Masque Tordu »), absent pour un nom propre. */
 	article?: "le" | "la";
 	difficulty: number;
@@ -70,11 +76,14 @@ type PowerPhase =
 	| "turnOrderDraw"
 	| "currentPlayerMainOrIncantation"
 	| "allyPlayerMain"
+	| "allyPlayerCasting"
 	| "currentPlayerEndDraw";
 
 export interface Mage {
 	id: string;
 	name: string;
+	/** Nom de la page du mage sur le wiki anglais (traductions maison). */
+	nameEn?: string;
 	title: string;
 	breachs: [Breach, Breach, Breach, Breach];
 	complexity: number;
