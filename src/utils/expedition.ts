@@ -1,6 +1,5 @@
 import { shuffle } from "@forthtilliath/ts-kit";
-import { mages as allMages } from "../data/mages";
-import { nemeses } from "../data/nemeses";
+import { allMages, allNemeses as nemeses } from "../data/catalog";
 import type {
 	Battle,
 	Expansion,

@@ -1,4 +1,4 @@
-import { cards } from "../data/cards";
+import { allCards as cards } from "../data/catalog";
 import type {
 	CardType,
 	CardTypeMarket,

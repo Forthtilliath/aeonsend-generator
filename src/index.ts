@@ -1,11 +1,14 @@
 export { default as FormExpedition } from "./components/expedition/GenExpedition";
-export { cards } from "./data/cards";
-export { mages } from "./data/mages";
+export {
+	allCards as cards,
+	allMages as mages,
+	allNemeses as nemeses,
+} from "./data/catalog";
 export { defaultCustomMarket, marketTemplates } from "./data/marketTemplates";
-export { nemeses } from "./data/nemeses";
 export type {
 	Battle,
 	Card,
+	CardsByType,
 	Expedition,
 	Mage,
 	MarketCondition,
