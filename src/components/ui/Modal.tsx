@@ -109,7 +109,7 @@ export const Modal = ({
 		>
 			<div
 				ref={dialogRef}
-				className={`relative w-full ${widthClassName}`}
+				className={`relative w-full modal-enter ${widthClassName}`}
 				role="dialog"
 				aria-modal="true"
 				aria-labelledby={title ? "modal-title" : undefined}
