@@ -47,16 +47,16 @@ export const cards: CardsByType = {
 			nameEn: "Fool's Gold",
 			cost: 5,
 			description:
-				"Gagnez 3 Ether. Vous pouvez échanger cette carte contre Châtiment (Smite).",
+				"Gagnez 3 Ether. Vous pouvez échanger cette carte contre Frapper (Smite).",
 			expansion: "Past and Future",
 		},
 		{
 			id: "PAS-2b-16",
-			name: "Fossile enchâssé",
+			name: "Fossile encapsulé",
 			nameEn: "Encased Fossil",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether. Vous pouvez dépenser 6 Ether pour échanger cette carte contre Diamine (Diamin).",
+				"Gagnez 2 Ether. Vous pouvez dépenser 6 Ether pour échanger cette carte contre Diamin.",
 			expansion: "Past and Future",
 		},
 		{
@@ -70,7 +70,7 @@ export const cards: CardsByType = {
 		},
 		{
 			id: "EVO-02",
-			name: "Lichen vorace",
+			name: "Lichen nourricier",
 			nameEn: "Feeding Lichen",
 			cost: 5,
 			developCost: 3,
@@ -101,7 +101,7 @@ export const cards: CardsByType = {
 		},
 		{
 			id: "PAS-1b-02",
-			name: "Artefact insondable",
+			name: "Artefact inscrutable",
 			nameEn: "Inscrutable Artifact",
 			cost: 6,
 			description:
@@ -110,12 +110,12 @@ export const cards: CardsByType = {
 		},
 		{
 			id: "FUT-2b-09",
-			name: "Montre à gousset imprégnée",
+			name: "Montre de gousset imprégnée",
 			nameEn: "Imbued Pocketwatch",
 			cost: 2,
 			developCost: 3,
 			description:
-				"Un joueur gagne 1 charge. S'il y a au moins deux Montres à gousset imprégnées dans la zone de développement, un joueur gagne 1 point de vie.",
+				"Un joueur gagne 1 charge. S'il y a au moins deux Montres de gousset imprégnées dans la zone de développement, un joueur gagne 1 point de vie.",
 			expansion: "Past and Future",
 		},
 		{
@@ -130,7 +130,7 @@ export const cards: CardsByType = {
 		},
 		{
 			id: "EVO-14",
-			name: "Jambière en croissant",
+			name: "Grève croissante",
 			nameEn: "Crescent Greave",
 			cost: 8,
 			developCost: 5,
@@ -231,7 +231,7 @@ export const cards: CardsByType = {
 			nameEn: "Propel",
 			cost: 5,
 			description:
-				"Lancer : Infligez 4 dégâts. Si vous avez placé cette carte dans votre défausse, échangez-la contre Rassembler la force (Gather Force).",
+				"Lancer : Infligez 4 dégâts. Si vous avez placé cette carte dans votre défausse, échangez-la contre Rassembler les forces (Gather Force).",
 			expansion: "Origins",
 		},
 		{
