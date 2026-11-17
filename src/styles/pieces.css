@@ -68,6 +68,17 @@ button.type-tile:hover {
 	border-radius: 999px;
 }
 
+/* Brèches agrandies (fiche du mage). */
+.breach--lg {
+	width: 2.6rem;
+	height: 2.6rem;
+}
+
+.breach--lg > svg {
+	width: 1.1rem;
+	height: 1.1rem;
+}
+
 .breach--none {
 	border: 1px dashed var(--color-abyss-500);
 }
@@ -92,6 +103,50 @@ button.type-tile:hover {
 	);
 	color: var(--color-abyss-950);
 	box-shadow: 0 0 12px -2px var(--color-aether-400);
+}
+
+/*
+ * Illustration de la Némésis en haut de sa carte d'affrontement, sous le
+ * texte : fondue vers le bas, et plus discrète à gauche où se trouve le titre.
+ */
+.nemesis-art {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	z-index: -1;
+	width: calc(100% - 2px);
+	height: 19rem;
+	object-fit: cover;
+	object-position: 50% 30%;
+	opacity: 0.6;
+	pointer-events: none;
+	mask-image:
+		linear-gradient(180deg, #000 25%, transparent 100%),
+		linear-gradient(90deg, rgb(0 0 0 / 0.45), #000 55%);
+	mask-composite: intersect;
+}
+
+@media (min-width: 768px) {
+	.nemesis-art {
+		height: 24rem;
+	}
+}
+
+/* Texte posé sur l'illustration : une ombre pour rester lisible. */
+.nemesis-header {
+	text-shadow:
+		0 1px 2px rgb(0 0 0 / 0.95),
+		0 0 12px rgb(0 0 0 / 0.8);
+}
+
+/* Charges du pouvoir d'un mage. */
+.charge-pip {
+	width: 0.7rem;
+	height: 0.7rem;
+	rotate: 45deg;
+	border: 1px solid var(--color-aether-300);
+	background: color-mix(in oklab, var(--color-aether-500) 35%, transparent);
+	box-shadow: 0 0 6px -1px var(--color-aether-400);
 }
 
 /* Chronique : récit en italique, lettrine d'éther. */

@@ -9,7 +9,7 @@ import {
 	ownedExpansionsSchema,
 	setupConfigSchema,
 } from "../../schemas/storage";
-import type { Expansion, SetupConfig, SupplyCard } from "../../types";
+import type { Expansion, Mage, SetupConfig, SupplyCard } from "../../types";
 import {
 	ALL_CARDS,
 	type CardBans,
@@ -22,6 +22,7 @@ import { Button } from "../ui/Button";
 import { AppHeader } from "./AppHeader";
 import { CardModal } from "./CardModal";
 import { ExpeditionResults } from "./ExpeditionResults";
+import { MageModal } from "./MageModal";
 import { SettingsModal, type SettingsTab } from "./SettingsModal";
 import { SettingsSummary } from "./SettingsSummary";
 import { SetupForm } from "./SetupForm";
@@ -39,6 +40,7 @@ const DEFAULT_SETUP: SetupConfig = {
 
 const FormExpedition: FC = () => {
 	const [selectedCard, setSelectedCard] = useState<SupplyCard | null>(null);
+	const [selectedMage, setSelectedMage] = useState<Mage | null>(null);
 	const { value: setup, setValue: setSetup } = usePersistentState<SetupConfig>(
 		"setupConfig",
 		DEFAULT_SETUP,
@@ -145,10 +147,12 @@ const FormExpedition: FC = () => {
 						actions={actions}
 						replaceOnReroll={setup.removeExcess}
 						onCardClick={setSelectedCard}
+						onMageClick={setSelectedMage}
 					/>
 				)}
 
 				<CardModal card={selectedCard} onClose={() => setSelectedCard(null)} />
+				<MageModal mage={selectedMage} onClose={() => setSelectedMage(null)} />
 				<SettingsModal
 					tab={settingsTab}
 					onTabChange={setSettingsTab}

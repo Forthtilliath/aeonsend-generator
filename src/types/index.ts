@@ -74,7 +74,7 @@ export interface Nemesis {
 }
 
 export type Breach = "none" | "open" | "left" | "bottom" | "right" | "top";
-type PowerPhase =
+export type PowerPhase =
 	| "nemesesDraw"
 	| "currentPlayerMain"
 	| "anyPlayerMain"
