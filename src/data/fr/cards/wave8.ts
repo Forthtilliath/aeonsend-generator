@@ -89,5 +89,90 @@ export const cards: CardsByType = {
       expansion: "Le Commencement",
     },
   ],
-  spells: [],
+  spells: [
+    {
+      id: "LC-FIN-11",
+      name: "Piqûre Furtive",
+      nameEn: "Silent Sting",
+      cost: 4,
+      developCost: 2,
+      description:
+        "Lancer : Placez un jeton Poison sur un adversaire et infligez-lui 1 dégât.",
+      expansion: "Le Commencement",
+    },
+    {
+      id: "LC-FIN-12",
+      name: "Absorbe-Héritage",
+      nameEn: "Legacy Slayer",
+      cost: 4,
+      description:
+        "Lorsque préparé, si un joueur acquiert une relique, gagnez 1 charge. Lancer : Infligez 3 dégâts.",
+      expansion: "Le Commencement",
+    },
+    {
+      id: "LC-FIN-13",
+      name: "Chorégraphie Perpétuelle",
+      nameEn: "Endless Weave",
+      cost: 5,
+      description:
+        "Lorsque préparé, si vous appliquez votre capacité, un allié peut piocher une carte et peut préparer une sort de sa main sur une brèche ouverte ou fermée. Lancer : Infligez 4 dégâts.",
+      expansion: "Le Commencement",
+    },
+    {
+      id: "LC-FIN-14",
+      name: "Geyser de Flammes",
+      nameEn: "Flame Geyser",
+      cost: 5,
+      developCost: 3,
+      description:
+        "Lorsque vous développez cette carte, placez un jeton Feu sur un adversaire.(hr)Lancer : Placez un jeton Poison sur un adversaire et infligez-lui 2 dégâts.",
+      expansion: "Le Commencement",
+    },
+    {
+      id: "LC-FIN-15",
+      name: "Faille Temporelle",
+      nameEn: "Time Rift",
+      cost: 5,
+      description:
+        "Lancer : Infligez 5 dégâts. Chaque joueur peut révéler la première carte de sa pioche et peut soit la défausser soit la remettre sur le dessus de sa pioche.",
+      expansion: "Le Commencement",
+    },
+    {
+      id: "LC-FIN-16",
+      name: "Déferlement Illimité",
+      nameEn: "Boundless Engulf",
+      cost: 6,
+      description:
+        "Lancer : Infligez 4 dégâts. Si vous avez huit cartes ou plus, y compris cette carte, dans votre défausse, vous pouvez reprendre cette carte en main.",
+      expansion: "Le Commencement",
+    },
+    {
+      id: "LC-FIN-17",
+      name: "Fontaine des Éléments",
+      nameEn: "Fountain of Elements",
+      cost: 6,
+      developCost: 4,
+      description:
+        "Lorsque préparé, une fois par tour, lorsqu'un joueur développe une carte, il place un jeton Élément sur un adversaire. Lancer : Infligez 4 dégâts.",
+      expansion: "Le Commencement",
+    },
+    {
+      id: "LC-FIN-18",
+      name: "Siphon de Rétablissement",
+      nameEn: "Restoration Siphon",
+      cost: 7,
+      description:
+        "Lancer : Infligez 6 dégâts.(ou)Lancer : Infligez 1 dégât. Gravehold gagne 3 points de vie.",
+      expansion: "Le Commencement",
+    },
+    {
+      id: "LC-FIN-19",
+      name: "Combustion Alchimique",
+      nameEn: "Alchemical Ignition",
+      cost: 8,
+      description:
+        "Lorsque préparé, une fois par tour, lorsqu'un joueur place un jeton Élément, il place un jeton Élément supplémentaire du même type sur le même adversaire. Lancer : Placez 2 jetons Poison sur un adversaire et infligez-lui 2 dégâts..",
+      expansion: "Le Commencement",
+    },
+  ],
 };
