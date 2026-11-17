@@ -98,7 +98,7 @@ export const cards: CardsByType = {
       cost: 3,
       description:
         "Gagnez 2 Ether.(ou)Gagnez 1 Ether. Reprenez en main une carte de votre défausse coûtant 0 Ether.",
-      expansion: "De Vieux Souvenirs",
+      expansion: "À l'État Sauvage",
     },
   ],
   relics: [
@@ -166,6 +166,24 @@ export const cards: CardsByType = {
       expansion: "Une Ère Nouvelle",
     },
     {
+      id: "P085",
+      name: "Bouclier de combustion",
+      nameEn: "Abacus of Ignition",
+      cost: 4,
+      description:
+        "Vous pouvez lancer le sort préparé d'un allié. Un allié pioche une carte.",
+      expansion: "Une Ère Nouvelle",
+    },
+    {
+      id: "P087",
+      name: "Lance-pierres précieuses",
+      nameEn: "Rock Launcher",
+      cost: 3,
+      description:
+        "Défaussez ou détruisez une carte de votre main. Si vous le faites, infligez un nombre de dégâts égal à son coût.",
+      expansion: "Une Ère Nouvelle",
+    },
+    {
       id: "RB-059",
       name: "Conduit de réflexion",
       nameEn: "Reflective Conduit",
@@ -218,24 +236,6 @@ export const cards: CardsByType = {
       description:
         "Lancez le sort préparé d'un joueur trois fois sans le défausser, puis détruisez-le.",
       expansion: "À l'État Sauvage",
-    },
-    {
-      id: "P085",
-      name: "Bouclier de combustion",
-      nameEn: "Abacus of Ignition",
-      cost: 4,
-      description:
-        "Vous pouvez lancer le sort préparé d'un allié. Un allié pioche une carte.",
-      expansion: "Les Profondeurs",
-    },
-    {
-      id: "P087",
-      name: "Lance-pierres précieuses",
-      nameEn: "Rock Launcher",
-      cost: 3,
-      description:
-        "Défaussez ou détruisez une carte de votre main. Si vous le faites, infligez un nombre de dégâts égal à son coût.",
-      expansion: "Les Profondeurs",
     },
   ],
   spells: [

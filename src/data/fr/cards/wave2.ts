@@ -335,7 +335,7 @@ export const cards: CardsByType = {
       nameEn: "Conflagration",
       cost: 3,
       description: "(lien)Lancer : Infligez 2 dégâts. Gagnez 1 Ether.",
-      expansion: "Aeon's End",
+      expansion: "Le Vide",
     },
     {
       id: "LV44",
@@ -344,7 +344,7 @@ export const cards: CardsByType = {
       cost: 5,
       description:
         "Lorsque préparé, les autres sorts que vous lancez infligent 1 dégât supplémentaire.(lien)Lancer : Infligez 3 dégâts.",
-      expansion: "Aeon's End",
+      expansion: "Le Vide",
     },
     {
       id: "LV45",
@@ -353,7 +353,7 @@ export const cards: CardsByType = {
       cost: 2,
       description:
         "(lien) Lancer : Infligez 1 dégât. Si le palier de la Némésis est 2 ou plus, infligez 1 dégât supplémentaire.",
-      expansion: "Aeon's End",
+      expansion: "Le Vide",
     },
     {
       id: "LV46",
@@ -362,7 +362,7 @@ export const cards: CardsByType = {
       cost: 4,
       description:
         "(lien)Lancer : Infligez 3 dégâts. Si ce n'est pas la première Fléchette thermique que vous lancez ce tour-ci, gagnez 1 charge.",
-      expansion: "Aeon's End",
+      expansion: "Le Vide",
     },
     {
       id: "TA33",
@@ -398,7 +398,7 @@ export const cards: CardsByType = {
       cost: 7,
       description:
         "Lancer : Révélez une carte de votre main coûtant 2 Ether ou plus. Si vous le faites, infligez autant de dégâts que le nombre de cartes manquantes dans la pile de cette carte dans la réserve. Puis un allié gagne une carte de cette pile.",
-      expansion: "Aeon's End",
+      expansion: "Ténèbres d'Ailleurs",
     },
     {
       id: "TA37",
