@@ -11,7 +11,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test": "bun test",
-    "sort:cards": "bun scripts/sort-cards.ts && biome format --write src/data/fr/cards src/data/us/cards",
+    "sort:cards": "biome format --write src/data/fr/cards src/data/us/cards && bun scripts/sort-cards.ts && biome format --write src/data/fr/cards src/data/us/cards",
     "lint": "biome check ."
   },
   "dependencies": {

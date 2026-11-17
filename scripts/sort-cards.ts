@@ -1,7 +1,8 @@
 /**
  * Range les cartes de chaque fichier de cartes (src/data/fr/cards/*.ts et
  * src/data/us/cards/*.ts) par vague, boîte puis id, sans toucher au texte de
- * chaque carte. Lancer avec `bun run sort:cards`.
+ * chaque carte. Lancer avec `bun run sort:cards`, qui formate d'abord les
+ * fichiers avec Biome : le découpage s'appuie sur l'indentation par tabulations.
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { compareCards } from "../src/data/cardOrder";
