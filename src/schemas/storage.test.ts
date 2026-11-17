@@ -95,6 +95,15 @@ describe("ownedExpansionsSchema", () => {
 		expect(ownedExpansionsSchema.safeParse(["Aeon's End"]).success).toBe(true);
 		expect(ownedExpansionsSchema.safeParse(["Inventée"]).success).toBe(false);
 	});
+
+	test("renames boxes saved under their former name", () => {
+		expect(
+			ownedExpansionsSchema.parse(["Les Cavernes", "Les Abysses", "Origins"]),
+		).toEqual(["The Caverns", "The Abyss", "Origins"]);
+		expect(ownedExpansionsSchema.safeParse(["constructor"]).success).toBe(
+			false,
+		);
+	});
 });
 
 describe("setupConfigSchema", () => {

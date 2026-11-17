@@ -1,7 +1,7 @@
 // zod/mini : mêmes contrôles que zod classique, mais seuls ceux utilisés
 // finissent dans le bundle (~80 ko de moins).
 import { z } from "zod/mini";
-import { ALL_EXPANSIONS } from "../data/expansions";
+import { ALL_EXPANSIONS, RENAMED_EXPANSIONS } from "../data/expansions";
 import type { Expansion, MarketTemplate, SetupConfig } from "../types";
 
 // Tout ce qui est relu depuis le localStorage passe par ces schémas : une
@@ -61,9 +61,22 @@ export const selectedMarketSchema = z
 	.string()
 	.check(z.minLength(1), z.maxLength(64), z.regex(/^[\w-]+$/));
 
-export const ownedExpansionsSchema = z
-	.array(z.enum(ALL_EXPANSIONS as [Expansion, ...Expansion[]]))
-	.check(z.maxLength(ALL_EXPANSIONS.length));
+/** Remplace les anciens noms de boîtes avant validation (le reste est inchangé). */
+const renameExpansions = (value: unknown): unknown =>
+	Array.isArray(value)
+		? value.map((item) =>
+				typeof item === "string"
+					? (RENAMED_EXPANSIONS.get(item) ?? item)
+					: item,
+			)
+		: value;
+
+export const ownedExpansionsSchema = z.pipe(
+	z.transform(renameExpansions),
+	z
+		.array(z.enum(ALL_EXPANSIONS as [Expansion, ...Expansion[]]))
+		.check(z.maxLength(ALL_EXPANSIONS.length)),
+);
 
 export const setupConfigSchema = z.object({
 	numPlayers: intBetween(1, 4),
