@@ -86,6 +86,11 @@ describe("isCardAllowed", () => {
 		const options = { xaxosOutcast: true, ownedExpansions: new Set<never>() };
 		expect(isCardAllowed(xaxosCard, options)).toBe(false);
 	});
+
+	test("rejects banned cards", () => {
+		expect(isCardAllowed(card, { bannedCards: new Set(["Test"]) })).toBe(false);
+		expect(isCardAllowed(card, { bannedCards: new Set(["Autre"]) })).toBe(true);
+	});
 });
 
 describe("drawCard", () => {

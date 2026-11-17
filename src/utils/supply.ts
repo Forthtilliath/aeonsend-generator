@@ -23,11 +23,14 @@ export interface DrawOptions {
 	ownedExpansions?: ReadonlySet<Expansion>;
 	/** Xaxos : Paria remplace Gravehold : les cartes `requiresXaxos` sont permises. */
 	xaxosOutcast?: boolean;
+	/** Noms des cartes bannies par le joueur. */
+	bannedCards?: ReadonlySet<string>;
 }
 
 /** La carte peut-elle être tirée avec ces contraintes ? */
 export const isCardAllowed = (card: Card, options: DrawOptions): boolean =>
 	(!card.requiresXaxos || options.xaxosOutcast === true) &&
+	!options.bannedCards?.has(card.name) &&
 	(!options.ownedExpansions ||
 		isExpansionOwned(card.expansion, options.ownedExpansions));
 

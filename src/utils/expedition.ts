@@ -53,6 +53,7 @@ export const buildExpedition = (
 	setup: SetupConfig,
 	marketConfig: MarketCondition[],
 	ownedExpansions: ReadonlySet<Expansion>,
+	bannedCards: ReadonlySet<string> = new Set(),
 ): { expedition: Expedition; warnings: string[] } => {
 	const warnings: string[] = [];
 	const missingTiers: Tier[] = [];
@@ -69,6 +70,7 @@ export const buildExpedition = (
 			supply: generateSupply(marketConfig, {
 				ownedExpansions,
 				xaxosOutcast: setup.xaxosOutcast,
+				bannedCards,
 			}),
 			remainingResets: setup.marketResets,
 			remainingRerolls: setup.cardRerolls,

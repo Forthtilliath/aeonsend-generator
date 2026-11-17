@@ -14,7 +14,10 @@ import {
 } from "../utils/supply";
 
 /** Campagne tirée et actions sur les marchés de chaque affrontement. */
-export const useExpedition = (ownedExpansions: ReadonlySet<Expansion>) => {
+export const useExpedition = (
+	ownedExpansions: ReadonlySet<Expansion>,
+	bannedCards: ReadonlySet<string>,
+) => {
 	const [expedition, setExpedition] = useState<Expedition | null>(null);
 	const [warnings, setWarnings] = useState<string[]>([]);
 
@@ -33,7 +36,12 @@ export const useExpedition = (ownedExpansions: ReadonlySet<Expansion>) => {
 	};
 
 	const generate = (setup: SetupConfig, marketConfig: MarketCondition[]) => {
-		const result = buildExpedition(setup, marketConfig, ownedExpansions);
+		const result = buildExpedition(
+			setup,
+			marketConfig,
+			ownedExpansions,
+			bannedCards,
+		);
 		setExpedition(result.expedition);
 		setWarnings(result.warnings);
 	};
@@ -46,6 +54,7 @@ export const useExpedition = (ownedExpansions: ReadonlySet<Expansion>) => {
 						supply: generateSupply(marketConfig, {
 							ownedExpansions,
 							xaxosOutcast,
+							bannedCards,
 						}),
 						remainingResets: battle.remainingResets - 1,
 					}
@@ -58,6 +67,7 @@ export const useExpedition = (ownedExpansions: ReadonlySet<Expansion>) => {
 			const supply = rerollSupplyCard(battle.supply, position, replace, {
 				ownedExpansions,
 				xaxosOutcast,
+				bannedCards,
 			});
 			return supply
 				? { ...battle, supply, remainingRerolls: battle.remainingRerolls - 1 }
