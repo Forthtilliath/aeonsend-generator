@@ -7,7 +7,8 @@ Générateur d'expéditions et de marchés pour le jeu de société coopératif 
 ## Fonctionnalités
 
 - **Campagne ou affrontement unique** : tirage d'une expédition en quatre paliers de Némésis, ou d'un seul combat.
-- **Mages tirés pour chaque affrontement**, selon le nombre de joueurs.
+- **Mages tirés pour chaque affrontement**, selon le nombre de joueurs, avec une fiche par mage (brèches, pouvoir, complexité).
+- **Cartes du marché au visuel du jeu**, avec leur texte et l'emplacement qui les a tirées ; illustration de chaque Némésis et animations de tirage.
 - **Marchés** : 9 modèles prédéfinis (Équilibré, Premium, Précision…) ou un marché personnalisé emplacement par emplacement (type de carte, coût). Chaque carte peut être retirée ou tirée à nouveau.
 - **Histoire générée** entre les Némésis de la campagne.
 - **Toutes les boîtes**, de la vague 1 à la vague 10, avec leur nom français et regroupées par vague : seules les cartes de vos boîtes sont tirées.
@@ -27,6 +28,11 @@ bun run lint       # lint et format (Biome)
 bun run build      # vérification des types + build de production (dist/)
 ```
 
+### Images
+
+- **Némésis** : `.\scripts\nemesis-art.ps1` (PowerShell, Windows) télécharge le plateau de chaque Némésis sur le wiki ([aeonsend.wiki.gg](https://aeonsend.wiki.gg), sinon fandom), en garde l'illustration et l'enregistre dans `src/assets/nemeses/<slug du nom>.jpg`. Pour une nouvelle Némésis, ajouter son nom anglais dans le tableau du script et le relancer.
+- **Plateaux des mages** : déposer un scan dans `src/assets/mages/<slug du nom>.jpg` (ex. `moineau.jpg`, `qu-de-vieux-souvenirs.jpg`) ; il s'affiche dans la fiche du mage.
+
 **Stack** : React 19, TypeScript, Vite, Tailwind CSS 4, zod, vite-plugin-pwa.
 
 ## Sécurité et vie privée
@@ -39,4 +45,4 @@ bun run build      # vérification des types + build de production (dist/)
 
 Le code est publié sous licence [MIT](LICENSE).
 
-Projet de fan, non officiel, sans lien avec les éditeurs du jeu. _Aeon's End_, ainsi que les noms de cartes, de mages et de Némésis, sont la propriété de leurs ayants droit (Action Phase Games, Indie Boards & Cards). Les données du jeu servent uniquement à faciliter la préparation des parties.
+Projet de fan, non officiel, sans lien avec les éditeurs du jeu. _Aeon's End_, ainsi que les noms de cartes, de mages et de Némésis, sont la propriété de leurs ayants droit (Action Phase Games, Indie Boards & Cards). Les données du jeu servent uniquement à faciliter la préparation des parties. Les illustrations des Némésis proviennent des wikis communautaires du jeu et restent la propriété de leurs ayants droit.
