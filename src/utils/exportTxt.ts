@@ -1,6 +1,6 @@
 import { formatFileTimestamp } from "@forthtilliath/ts-kit";
 import type { Expedition } from "../types";
-import { getTypeLabel, plural } from "./helpers";
+import { formatCardCost, getTypeLabel, plural } from "./helpers";
 
 const RULE = "=".repeat(63);
 
@@ -37,7 +37,8 @@ export const buildExpeditionText = (expedition: Expedition): string => {
 			"",
 			"MARCHÉ :",
 			...battle.supply.map(
-				(c) => `  - ${c.name} - ${c.cost} Éther (${getTypeLabel(c.type)})`,
+				(c) =>
+					`  - ${c.name} - ${formatCardCost(c)} Éther (${getTypeLabel(c.type)})`,
 			),
 		);
 	});

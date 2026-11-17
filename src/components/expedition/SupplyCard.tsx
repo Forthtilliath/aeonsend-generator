@@ -1,6 +1,6 @@
 import { RefreshCw, X } from "lucide-react";
 import type { SupplyCard as SupplyCardType } from "../../types";
-import { getTypeLabel } from "../../utils/helpers";
+import { formatCost, getTypeLabel } from "../../utils/helpers";
 import { AetherIcon } from "../ui/Icons";
 import { CriteriaLabel } from "./CriteriaLabel";
 
@@ -41,9 +41,14 @@ export const SupplyCard = ({
 				{card.name}
 			</div>
 			<div className="aether-coin text-xs mt-auto">
-				{card.cost}
+				{formatCost(card, card.cost)}
 				<AetherIcon />
 			</div>
+			{card.developCost !== undefined && (
+				<div className="text-[0.65rem] text-bone-400 mt-1">
+					Développer : {formatCost(card, card.developCost)}
+				</div>
+			)}
 		</button>
 
 		{showRemove && (

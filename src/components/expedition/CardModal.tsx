@@ -1,5 +1,5 @@
 import type { SupplyCard } from "../../types";
-import { getTypeLabel } from "../../utils/helpers";
+import { formatCost, getTypeLabel } from "../../utils/helpers";
 import { AetherIcon } from "../ui/Icons";
 import { Modal } from "../ui/Modal";
 
@@ -30,9 +30,20 @@ export const CardModal = ({ card, onClose }: CardModalProps) => {
 					{card.description}
 				</p>
 				<div className="aether-coin text-2xl px-4 py-1">
-					Coût : {card.cost}
+					Coût : {formatCost(card, card.cost)}
 					<AetherIcon />
 				</div>
+				{card.developCost !== undefined && (
+					<div className="text-lg text-bone-200 mt-3">
+						Développer : {formatCost(card, card.developCost)}
+						<AetherIcon />
+					</div>
+				)}
+				{card.conditionalCost && (
+					<p className="text-sm text-bone-400 mt-3">
+						* 1 Ether de moins si la condition de la carte est remplie.
+					</p>
+				)}
 			</div>
 		</Modal>
 	);

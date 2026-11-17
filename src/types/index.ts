@@ -38,7 +38,15 @@ export interface Card {
 	id: string;
 	name: string;
 	description: string;
+	/** Coût d'achat, sans développer la carte : c'est lui qui sert au tirage du marché. */
 	cost: number;
+	/** Coût pour développer la carte (mécanique apparue avec Past and Future). */
+	developCost?: number;
+	/**
+	 * Coût marqué d'un astérisque (« 6* », « 4* ») : une condition, décrite dans
+	 * le texte de la carte, le réduit de 1 Ether. S'applique aux deux coûts.
+	 */
+	conditionalCost?: true;
 	expansion: Expansion;
 }
 
