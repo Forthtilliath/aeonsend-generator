@@ -3,6 +3,7 @@
 import { z } from "zod/mini";
 import { ALL_EXPANSIONS, RENAMED_EXPANSIONS } from "../data/expansions";
 import type { Expansion, MarketTemplate, SetupConfig } from "../types";
+import { ALL_CARDS, type CardBans } from "../utils/cardBans";
 
 // Tout ce qui est relu depuis le localStorage passe par ces schémas : une
 // valeur invalide (modifiée à la main, ancienne version de l'app…) est rejetée
@@ -89,6 +90,19 @@ export const setupConfigSchema = z.object({
 	// Absent des réglages enregistrés avant son ajout : Gravehold par défaut.
 	xaxosOutcast: z._default(z.boolean(), false),
 }) satisfies z.ZodMiniType<SetupConfig>;
+
+const cardNames = z
+	.array(z.string().check(z.minLength(1), z.maxLength(80)))
+	.check(z.maxLength(ALL_CARDS.length));
+const knownCardNames = new Set(ALL_CARDS.map((card) => card.name));
+/** Noms connus, sans doublon : une carte renommée ou retirée depuis est oubliée. */
+const keepKnownNames = (names: string[]): string[] =>
+	[...new Set(names)].filter((name) => knownCardNames.has(name));
+
+export const cardBansSchema = z.pipe(
+	z.object({ banned: cardNames }),
+	z.transform((bans): CardBans => ({ banned: keepKnownNames(bans.banned) })),
+);
 
 /** Bornes partagées avec les champs du formulaire. */
 export const SETUP_LIMITS = {
