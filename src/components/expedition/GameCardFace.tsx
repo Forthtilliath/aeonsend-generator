@@ -1,7 +1,8 @@
 import { useFitText } from "../../hooks/useFitText";
 import type { SupplyCard } from "../../types";
-import { formatCost, getTypeLabel } from "../../utils/helpers";
+import { getTypeLabel } from "../../utils/helpers";
 import { CardText } from "./CardText";
+import { CostBanner } from "./CostBanner";
 import { CriteriaLabel } from "./CriteriaLabel";
 
 interface GameCardFaceProps {
@@ -11,32 +12,6 @@ interface GameCardFaceProps {
 	/** Fiche agrandie : explique aussi l'astérisque d'un coût conditionnel. */
 	detailed?: boolean;
 }
-
-/** Coût dans son fanion, et coût pour développer en dessous s'il existe. */
-const CostBanner = ({ card }: { card: SupplyCard }) => (
-	<span
-		className="cost-banner"
-		title={
-			card.developCost === undefined
-				? "Coût"
-				: "Coût, puis coût pour développer la carte"
-		}
-	>
-		<span className="sr-only">
-			Coût : {formatCost(card, card.cost)}
-			{card.developCost !== undefined &&
-				`, développer : ${formatCost(card, card.developCost)}`}
-		</span>
-		<span className="cost-banner__hex" aria-hidden="true">
-			<span>{formatCost(card, card.cost)}</span>
-		</span>
-		{card.developCost !== undefined && (
-			<span className="cost-banner__develop" aria-hidden="true">
-				{formatCost(card, card.developCost)}
-			</span>
-		)}
-	</span>
-);
 
 /**
  * Contenu d'une carte du marché (à placer dans un élément `.game-card`).
