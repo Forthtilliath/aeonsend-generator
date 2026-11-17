@@ -5,10 +5,18 @@ import { ALL_EXPANSIONS } from "../../data/expansions";
 import { useExpedition } from "../../hooks/useExpedition";
 import { useMarket } from "../../hooks/useMarket";
 import {
+	cardBansSchema,
 	ownedExpansionsSchema,
 	setupConfigSchema,
 } from "../../schemas/storage";
 import type { Expansion, SetupConfig, SupplyCard } from "../../types";
+import {
+	ALL_CARDS,
+	type CardBans,
+	getBannedNames,
+	NO_CARD_BANS,
+	toggleCardBan,
+} from "../../utils/cardBans";
 import { Button } from "../ui/Button";
 import { AppHeader } from "./AppHeader";
 import { CardModal } from "./CardModal";
@@ -55,9 +63,23 @@ const FormExpedition: FC = () => {
 		setOwnedExpansionsList(owned ? [...ALL_EXPANSIONS] : []);
 	const [settingsTab, setSettingsTab] = useState<SettingsTab | null>(null);
 
+	const { value: cardBans, setValue: setCardBans } =
+		usePersistentState<CardBans>("cardBans", NO_CARD_BANS, {
+			schema: cardBansSchema,
+		});
+	const bannedCards = useMemo(() => getBannedNames(cardBans), [cardBans]);
+	const bannedOwnedCount = useMemo(
+		() =>
+			ALL_CARDS.filter(
+				(card) =>
+					bannedCards.has(card.name) && ownedExpansions.has(card.expansion),
+			).length,
+		[bannedCards, ownedExpansions],
+	);
+
 	const market = useMarket();
 	const { expedition, warnings, dismissWarnings, generate, ...actions } =
-		useExpedition(ownedExpansions);
+		useExpedition(ownedExpansions, bannedCards);
 
 	const handleGenerate = (): void => {
 		generate(setup, market.marketConfig);
@@ -76,6 +98,7 @@ const FormExpedition: FC = () => {
 
 				<SettingsSummary
 					ownedCount={ownedExpansions.size}
+					bannedCount={bannedOwnedCount}
 					marketName={market.selectedMarketName}
 					onOpen={setSettingsTab}
 				/>
@@ -132,6 +155,11 @@ const FormExpedition: FC = () => {
 					ownedExpansions={ownedExpansions}
 					onToggleExpansion={toggleExpansion}
 					onSetAllExpansions={setAllExpansions}
+					cardBans={cardBans}
+					onToggleCardBan={(card) =>
+						setCardBans((prev) => toggleCardBan(prev, card))
+					}
+					onResetCardBans={() => setCardBans(NO_CARD_BANS)}
 					market={market}
 				/>
 			</div>

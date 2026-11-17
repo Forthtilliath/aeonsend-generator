@@ -1,13 +1,15 @@
 import { X } from "lucide-react";
-import type { Expansion } from "../../types";
+import type { Card as CardData, Expansion } from "../../types";
+import type { CardBans } from "../../utils/cardBans";
 import { Button } from "../ui/Button";
 import { Card } from "../ui/Card";
 import { Modal } from "../ui/Modal";
 import { Tabs } from "../ui/Tabs";
+import { CardBanSelector } from "./CardBanSelector";
 import { ExpansionSelector } from "./ExpansionSelector";
 import { MarketSelector, type MarketState } from "./MarketSelector";
 
-export type SettingsTab = "boxes" | "market";
+export type SettingsTab = "boxes" | "cards" | "market";
 
 interface SettingsModalProps {
 	/** Onglet affiché ; `null` quand la modale est fermée. */
@@ -17,6 +19,9 @@ interface SettingsModalProps {
 	ownedExpansions: ReadonlySet<Expansion>;
 	onToggleExpansion: (expansion: Expansion) => void;
 	onSetAllExpansions: (owned: boolean) => void;
+	cardBans: CardBans;
+	onToggleCardBan: (card: CardData) => void;
+	onResetCardBans: () => void;
 	market: MarketState;
 }
 
@@ -28,6 +33,9 @@ export const SettingsModal = ({
 	ownedExpansions,
 	onToggleExpansion,
 	onSetAllExpansions,
+	cardBans,
+	onToggleCardBan,
+	onResetCardBans,
 	market,
 }: SettingsModalProps) => (
 	<Modal
@@ -71,6 +79,18 @@ export const SettingsModal = ({
 								ownedExpansions={ownedExpansions}
 								onToggle={onToggleExpansion}
 								onSetAll={onSetAllExpansions}
+							/>
+						),
+					},
+					{
+						value: "cards",
+						label: "Cartes",
+						content: (
+							<CardBanSelector
+								ownedExpansions={ownedExpansions}
+								bans={cardBans}
+								onToggle={onToggleCardBan}
+								onReset={onResetCardBans}
 							/>
 						),
 					},
