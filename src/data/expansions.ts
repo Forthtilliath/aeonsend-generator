@@ -59,11 +59,11 @@ export const EXPANSION_WAVES: ExpansionWave[] = [
 		standalone: "Beyond the Breach",
 		expansions: ["The Surface", "The Returned"],
 	},
-	{
-		label: "Vague 10",
-		standalone: "System Overload",
-		expansions: ["The Cinderkeep", "The Wastes"],
-	},
+	// {
+	// 	label: "Vague 10",
+	// 	standalone: "System Overload",
+	// 	expansions: ["The Cinderkeep", "The Wastes"],
+	// },
 ];
 
 export const waveBoxes = (wave: ExpansionWave): Expansion[] => [
@@ -101,4 +101,14 @@ export const RENAMED_EXPANSIONS: ReadonlyMap<string, Expansion> = new Map<
 >([
 	["Les Cavernes", "The Caverns"],
 	["Les Abysses", "The Abyss"],
+]);
+
+/**
+ * Boîtes masquées (vague 10, sans contenu tant qu'elle n'est pas sur le wiki),
+ * encore présentes dans les réglages enregistrés : retirées à la relecture.
+ */
+export const HIDDEN_EXPANSIONS: ReadonlySet<string> = new Set<Expansion>([
+	"System Overload",
+	"The Cinderkeep",
+	"The Wastes",
 ]);

@@ -1,7 +1,11 @@
 // zod/mini : mêmes contrôles que zod classique, mais seuls ceux utilisés
 // finissent dans le bundle (~80 ko de moins).
 import { z } from "zod/mini";
-import { ALL_EXPANSIONS, RENAMED_EXPANSIONS } from "../data/expansions";
+import {
+	ALL_EXPANSIONS,
+	HIDDEN_EXPANSIONS,
+	RENAMED_EXPANSIONS,
+} from "../data/expansions";
 import type { Expansion, MarketTemplate, SetupConfig } from "../types";
 import { ALL_CARDS, type CardBans } from "../utils/cardBans";
 
@@ -62,18 +66,25 @@ export const selectedMarketSchema = z
 	.string()
 	.check(z.minLength(1), z.maxLength(64), z.regex(/^[\w-]+$/));
 
-/** Remplace les anciens noms de boîtes avant validation (le reste est inchangé). */
-const renameExpansions = (value: unknown): unknown =>
+/**
+ * Avant validation : retire les boîtes masquées et remplace les anciens noms.
+ * Toute autre valeur est laissée telle quelle, donc rejetée si elle est inconnue.
+ */
+const normalizeExpansions = (value: unknown): unknown =>
 	Array.isArray(value)
-		? value.map((item) =>
-				typeof item === "string"
-					? (RENAMED_EXPANSIONS.get(item) ?? item)
-					: item,
-			)
+		? value
+				.filter(
+					(item) => !(typeof item === "string" && HIDDEN_EXPANSIONS.has(item)),
+				)
+				.map((item) =>
+					typeof item === "string"
+						? (RENAMED_EXPANSIONS.get(item) ?? item)
+						: item,
+				)
 		: value;
 
 export const ownedExpansionsSchema = z.pipe(
-	z.transform(renameExpansions),
+	z.transform(normalizeExpansions),
 	z
 		.array(z.enum(ALL_EXPANSIONS as [Expansion, ...Expansion[]]))
 		.check(z.maxLength(ALL_EXPANSIONS.length)),

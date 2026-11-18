@@ -104,6 +104,16 @@ describe("ownedExpansionsSchema", () => {
 			false,
 		);
 	});
+
+	test("drops hidden boxes instead of rejecting the selection", () => {
+		expect(
+			ownedExpansionsSchema.parse([
+				"Aeon's End",
+				"System Overload",
+				"The Wastes",
+			]),
+		).toEqual(["Aeon's End"]);
+	});
 });
 
 describe("setupConfigSchema", () => {
