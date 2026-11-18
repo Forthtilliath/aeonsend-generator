@@ -24,8 +24,8 @@ export const cards: CardsByType = {
 		},
 		{
 			id: "AE03",
-			name: "Agréagat de diamants",
-			nameEn: "Diamand Clustur",
+			name: "Agrégat de diamants",
+			nameEn: "Diamond Cluster",
 			cost: 4,
 			description:
 				"Gagnez 2 Ether.\nSi c'est le second Agrégat de diamants que vous jouez ce tour, gagnez 2 Ether de plus.",
@@ -198,7 +198,7 @@ export const cards: CardsByType = {
 		{
 			id: "AE16",
 			name: "Arc chaotique",
-			nameEn: "Choas Arc",
+			nameEn: "Chaos Arc",
 			cost: 6,
 			description:
 				"Lancer : Infligez 3 dégâts. Infligez 2 dégâts supplémentaires par sort préparé sur une brèche adjacente.",
@@ -376,7 +376,7 @@ export const cards: CardsByType = {
 		{
 			id: "LSN42",
 			name: "Éclair de prophétie",
-			nameEn: "Scrying Bold",
+			nameEn: "Scrying Bolt",
 			cost: 6,
 			description:
 				"Lancer : Infligez 5 dégâts. Vous pouvez perdre 1 charge. Si vous le faites, révélez les deux premières cartes de la pioche de la némésis et replacez-les dans l'ordre de votre choix.",

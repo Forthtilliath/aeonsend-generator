@@ -24,7 +24,7 @@ export const cards: CardsByType = {
 		{
 			id: "GE03",
 			name: "Diamant Inquiétant",
-			nameEn: "Dread Diamand",
+			nameEn: "Dread Diamond",
 			cost: 3,
 			description:
 				"Gagnez 2 Ether.\nVous pouvez défausser un sort préparé. Si vous le faites, gagnez 1 Ether supplémentaire.",

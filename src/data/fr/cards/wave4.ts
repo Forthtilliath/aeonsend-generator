@@ -77,7 +77,7 @@ export const cards: CardsByType = {
 			id: "RB-058",
 			name: "Verre à facettes",
 			nameEn: "Cache Glass",
-			cost: 3,
+			cost: 4,
 			description:
 				"Gagnez 2 Ether.\nSi un Verre à facettes se trouve dans votre défausse, vous pouvez détruire une carte de votre défausse.",
 			expansion: "Rêves Brisés",
@@ -106,7 +106,7 @@ export const cards: CardsByType = {
 			id: "EN-FIN-041",
 			name: "Galaxie de poche",
 			nameEn: "Marble Galaxy",
-			cost: 3,
+			cost: 2,
 			description:
 				"Un allié peut défausser une Galaxie de poche de sa main pour pioche une carte. Gagnez 1 charge ou stabilisez votre brèche fermée qui présente le coût de stabilisation le plus faible. Si un allié a défaussé une Galaxie de poche. résolvez ces deux effets.",
 			expansion: "Une Ère Nouvelle",
