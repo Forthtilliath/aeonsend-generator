@@ -88,8 +88,8 @@ describe("isCardAllowed", () => {
 	});
 
 	test("rejects banned cards", () => {
-		expect(isCardAllowed(card, { bannedCards: new Set(["Test"]) })).toBe(false);
-		expect(isCardAllowed(card, { bannedCards: new Set(["Autre"]) })).toBe(true);
+		expect(isCardAllowed(card, { bannedCards: new Set(["X"]) })).toBe(false);
+		expect(isCardAllowed(card, { bannedCards: new Set(["Y"]) })).toBe(true);
 	});
 });
 

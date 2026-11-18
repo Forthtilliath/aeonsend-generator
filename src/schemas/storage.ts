@@ -102,17 +102,30 @@ export const setupConfigSchema = z.object({
 	xaxosOutcast: z._default(z.boolean(), false),
 }) satisfies z.ZodMiniType<SetupConfig>;
 
-const cardNames = z
+const cardKeys = z
 	.array(z.string().check(z.minLength(1), z.maxLength(80)))
 	.check(z.maxLength(ALL_CARDS.length));
-const knownCardNames = new Set(ALL_CARDS.map((card) => card.name));
-/** Noms connus, sans doublon : une carte renommée ou retirée depuis est oubliée. */
-const keepKnownNames = (names: string[]): string[] =>
-	[...new Set(names)].filter((name) => knownCardNames.has(name));
+const knownCardIds = new Set(ALL_CARDS.map((card) => card.id));
+/**
+ * Bans enregistrés par nom avant le passage aux id (2026-11-18), y compris
+ * sous un nom corrigé depuis.
+ */
+const idByLegacyName = new Map<string, string>([
+	...ALL_CARDS.map((card): [string, string] => [card.name, card.id]),
+	["Agréagat de diamants", "AE03"],
+]);
+/** Id connus, sans doublon : une carte retirée depuis est oubliée. */
+const toKnownIds = (keys: string[]): string[] => [
+	...new Set(
+		keys
+			.map((key) => (knownCardIds.has(key) ? key : idByLegacyName.get(key)))
+			.filter((id): id is string => id !== undefined),
+	),
+];
 
 export const cardBansSchema = z.pipe(
-	z.object({ banned: cardNames }),
-	z.transform((bans): CardBans => ({ banned: keepKnownNames(bans.banned) })),
+	z.object({ banned: cardKeys }),
+	z.transform((bans): CardBans => ({ banned: toKnownIds(bans.banned) })),
 );
 
 /** Bornes partagées avec les champs du formulaire. */

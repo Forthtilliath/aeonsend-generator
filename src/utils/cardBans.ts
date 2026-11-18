@@ -3,7 +3,8 @@ import type { Card } from "../types";
 
 /**
  * Cartes que le joueur exclut du tirage (cartes qu'il n'a pas, qu'il n'aime
- * pas…), enregistrées par nom. Aucune carte n'est bannie par défaut.
+ * pas…), enregistrées par id : un nom peut changer (faute corrigée, traduction
+ * maison remplacée par la VF), pas l'id. Aucune carte n'est bannie par défaut.
  */
 export interface CardBans {
 	banned: string[];
@@ -14,10 +15,10 @@ export const NO_CARD_BANS: CardBans = { banned: [] };
 export const ALL_CARDS: Card[] = Object.values(allCards).flat();
 
 export const isCardBanned = (card: Card, bans: CardBans): boolean =>
-	bans.banned.includes(card.name);
+	bans.banned.includes(card.id);
 
-/** Noms des cartes exclues du tirage. */
-export const getBannedNames = (bans: CardBans): Set<string> =>
+/** Id des cartes exclues du tirage. */
+export const getBannedIds = (bans: CardBans): Set<string> =>
 	new Set(bans.banned);
 
 /** Bannit ou réautorise d'un coup des cartes (par exemple toute une boîte). */
@@ -26,14 +27,14 @@ export const setCardsBanned = (
 	cards: readonly Card[],
 	banned: boolean,
 ): CardBans => {
-	const names = new Set(cards.map((card) => card.name));
-	const others = bans.banned.filter((name) => !names.has(name));
-	return { banned: banned ? [...others, ...names] : others };
+	const ids = new Set(cards.map((card) => card.id));
+	const others = bans.banned.filter((id) => !ids.has(id));
+	return { banned: banned ? [...others, ...ids] : others };
 };
 
 /** Bannit ou réautorise une carte. */
 export const toggleCardBan = (bans: CardBans, card: Card): CardBans => ({
 	banned: isCardBanned(card, bans)
-		? bans.banned.filter((name) => name !== card.name)
-		: [...bans.banned, card.name],
+		? bans.banned.filter((id) => id !== card.id)
+		: [...bans.banned, card.id],
 });

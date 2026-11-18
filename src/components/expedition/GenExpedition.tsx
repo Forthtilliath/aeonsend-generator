@@ -13,7 +13,7 @@ import type { Expansion, Mage, SetupConfig, SupplyCard } from "../../types";
 import {
 	ALL_CARDS,
 	type CardBans,
-	getBannedNames,
+	getBannedIds,
 	NO_CARD_BANS,
 	setCardsBanned,
 	toggleCardBan,
@@ -70,12 +70,12 @@ const FormExpedition: FC = () => {
 		usePersistentState<CardBans>("cardBans", NO_CARD_BANS, {
 			schema: cardBansSchema,
 		});
-	const bannedCards = useMemo(() => getBannedNames(cardBans), [cardBans]);
+	const bannedCards = useMemo(() => getBannedIds(cardBans), [cardBans]);
 	const bannedOwnedCount = useMemo(
 		() =>
 			ALL_CARDS.filter(
 				(card) =>
-					bannedCards.has(card.name) && ownedExpansions.has(card.expansion),
+					bannedCards.has(card.id) && ownedExpansions.has(card.expansion),
 			).length,
 		[bannedCards, ownedExpansions],
 	);

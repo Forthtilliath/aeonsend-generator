@@ -2,7 +2,7 @@ import { describe, expect, test } from "bun:test";
 import { cardBansSchema } from "../schemas/storage";
 import {
 	ALL_CARDS,
-	getBannedNames,
+	getBannedIds,
 	isCardBanned,
 	NO_CARD_BANS,
 	setCardsBanned,
@@ -16,21 +16,21 @@ describe("toggleCardBan", () => {
 	test("no card is banned by default", () => {
 		for (const c of ALL_CARDS)
 			expect(isCardBanned(c, NO_CARD_BANS)).toBe(false);
-		expect(getBannedNames(NO_CARD_BANS).size).toBe(0);
+		expect(getBannedIds(NO_CARD_BANS).size).toBe(0);
 	});
 
 	test("bans then re-allows a card", () => {
 		const banned = toggleCardBan(NO_CARD_BANS, card);
-		expect(banned).toEqual({ banned: [card.name] });
+		expect(banned).toEqual({ banned: [card.id] });
 		expect(isCardBanned(card, banned)).toBe(true);
 		expect(isCardBanned(other, banned)).toBe(false);
 		expect(toggleCardBan(banned, card)).toEqual(NO_CARD_BANS);
 	});
 
-	test("getBannedNames lists the banned cards", () => {
-		const names = getBannedNames(toggleCardBan(NO_CARD_BANS, card));
-		expect(names.has(card.name)).toBe(true);
-		expect(names.has(other.name)).toBe(false);
+	test("getBannedIds lists the banned cards", () => {
+		const ids = getBannedIds(toggleCardBan(NO_CARD_BANS, card));
+		expect(ids.has(card.id)).toBe(true);
+		expect(ids.has(other.id)).toBe(false);
 	});
 });
 
@@ -38,7 +38,7 @@ describe("setCardsBanned", () => {
 	test("bans a whole set of cards without duplicates, then re-allows it", () => {
 		const one = toggleCardBan(NO_CARD_BANS, card);
 		const all = setCardsBanned(one, [card, other], true);
-		expect([...all.banned].sort()).toEqual([card.name, other.name].sort());
+		expect([...all.banned].sort()).toEqual([card.id, other.id].sort());
 		expect(setCardsBanned(all, [card, other], false)).toEqual(NO_CARD_BANS);
 	});
 
@@ -49,12 +49,19 @@ describe("setCardsBanned", () => {
 });
 
 describe("cardBansSchema", () => {
-	test("drops unknown names, duplicates and keys", () => {
+	test("drops unknown ids, duplicates and keys", () => {
 		const result = cardBansSchema.parse({
-			banned: [card.name, card.name, "Carte disparue"],
-			allowed: [other.name],
+			banned: [card.id, card.id, "Carte disparue"],
+			allowed: [other.id],
 		});
-		expect(result).toEqual({ banned: [card.name] });
+		expect(result).toEqual({ banned: [card.id] });
+	});
+
+	test("converts bans saved by name, including former names", () => {
+		const result = cardBansSchema.parse({
+			banned: [card.name, other.id, other.name, "Agréagat de diamants"],
+		});
+		expect(result).toEqual({ banned: [card.id, other.id, "AE03"] });
 	});
 
 	test("rejects a malformed value as a whole", () => {
