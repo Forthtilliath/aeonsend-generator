@@ -282,7 +282,7 @@ export const cards: CardsByType = {
 			nameEn: "Fatal Harmony",
 			cost: 5,
 			description:
-				"Lancer : Infligez 4 dégâts. Un allié peut défausser une Symbiose léthale de sa main pour pioche une carte. S'il le fait, infligez 3 dégâts. (Les effets modifiants les dégâts concernent les deux sources de dégâts.)",
+				"Lancer : Infligez 4 dégâts. Un allié peut défausser une Symbiose léthale de sa main pour piocher une carte. S'il le fait, infligez 3 dégâts.<br><small><i>(Les effets modifiant les dégâts concernent les deux sources de dégâts.)</i></small>",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -318,7 +318,7 @@ export const cards: CardsByType = {
 			nameEn: "Imbued Smash",
 			cost: 5,
 			description:
-				"Lancer : Infligez 4 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, infligez 2 dégâts à la némésis. (Les effets modifiant les dégâts concernent les deux sources de dégâts.)",
+				"Lancer : Infligez 4 dégâts. Vous pouvez défausser une carte de votre main. Si vous le faites, infligez 2 dégâts à la némésis.<br><small><i>(Les effets modifiant les dégâts concernent les deux sources de dégâts.)</i></small>",
 			expansion: "Une Ère Nouvelle",
 		},
 		{

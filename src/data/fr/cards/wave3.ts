@@ -500,7 +500,7 @@ export const cards: CardsByType = {
 			nameEn: "Double Tap",
 			cost: 3,
 			description:
-				"Lancer : Infligez 1 dégât. Infligez 1 dégât. (Les effets modifiant les dégâts concernent les deux sources de dégâts.)",
+				"Lancer : Infligez 1 dégât. Infligez 1 dégât.<br><small><i>(Les effets modifiant les dégâts concernent les deux sources de dégâts.)</i></small>",
 			expansion: "Secrets Enfouis",
 		},
 		{

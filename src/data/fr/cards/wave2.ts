@@ -291,7 +291,7 @@ export const cards: CardsByType = {
 			nameEn: "Kindle",
 			cost: 4,
 			description:
-				"Lorsque préparé, pendant votre phase principale, vous pouvez aussi préparer une Étincelle sur la brèche où ce sort est préparé. (Vous ne pouvez pas utiliser cet effet si une Étincelle est préparée sur cette brèche).<br>Lancer : Infligez 3 dégâts.",
+				"Lorsque préparé, pendant votre phase principale, vous pouvez aussi préparer une Étincelle sur la brèche où ce sort est préparé.<br><small><i>(Vous ne pouvez pas utiliser cet effet si une Étincelle est préparée sur cette brèche.)</i></small><br>Lancer : Infligez 3 dégâts.",
 			expansion: "Guerre Éternelle",
 		},
 		{
