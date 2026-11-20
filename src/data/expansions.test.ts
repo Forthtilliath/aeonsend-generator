@@ -1,8 +1,6 @@
 import { describe, expect, test } from "bun:test";
-import { cards } from "./cards";
+import { allCards, allMages, allNemeses } from "./catalog";
 import { ALL_EXPANSIONS } from "./expansions";
-import { mages } from "./mages";
-import { nemeses } from "./nemeses";
 
 describe("EXPANSION_WAVES", () => {
 	test("chaque boîte n'apparaît que dans une seule vague", () => {
@@ -12,9 +10,9 @@ describe("EXPANSION_WAVES", () => {
 	test("toute boîte utilisée par les données est rangée dans une vague", () => {
 		const used = new Set(
 			[
-				...Object.values(cards).flat(),
-				...mages,
-				...Object.values(nemeses).flat(),
+				...Object.values(allCards).flat(),
+				...allMages,
+				...Object.values(allNemeses).flat(),
 			]
 				.map((item) => item.expansion)
 				.filter((expansion) => expansion !== "Inconnue"),

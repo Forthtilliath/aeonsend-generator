@@ -1,8 +1,13 @@
 // zod/mini : mêmes contrôles que zod classique, mais seuls ceux utilisés
 // finissent dans le bundle (~80 ko de moins).
 import { z } from "zod/mini";
-import { ALL_EXPANSIONS } from "../data/expansions";
+import {
+	ALL_EXPANSIONS,
+	HIDDEN_EXPANSIONS,
+	RENAMED_EXPANSIONS,
+} from "../data/expansions";
 import type { Expansion, MarketTemplate, SetupConfig } from "../types";
+import { ALL_CARDS, type CardBans } from "../utils/cardBans";
 
 // Tout ce qui est relu depuis le localStorage passe par ces schémas : une
 // valeur invalide (modifiée à la main, ancienne version de l'app…) est rejetée
@@ -61,9 +66,29 @@ export const selectedMarketSchema = z
 	.string()
 	.check(z.minLength(1), z.maxLength(64), z.regex(/^[\w-]+$/));
 
-export const ownedExpansionsSchema = z
-	.array(z.enum(ALL_EXPANSIONS as [Expansion, ...Expansion[]]))
-	.check(z.maxLength(ALL_EXPANSIONS.length));
+/**
+ * Avant validation : retire les boîtes masquées et remplace les anciens noms.
+ * Toute autre valeur est laissée telle quelle, donc rejetée si elle est inconnue.
+ */
+const normalizeExpansions = (value: unknown): unknown =>
+	Array.isArray(value)
+		? value
+				.filter(
+					(item) => !(typeof item === "string" && HIDDEN_EXPANSIONS.has(item)),
+				)
+				.map((item) =>
+					typeof item === "string"
+						? (RENAMED_EXPANSIONS.get(item) ?? item)
+						: item,
+				)
+		: value;
+
+export const ownedExpansionsSchema = z.pipe(
+	z.transform(normalizeExpansions),
+	z
+		.array(z.enum(ALL_EXPANSIONS as [Expansion, ...Expansion[]]))
+		.check(z.maxLength(ALL_EXPANSIONS.length)),
+);
 
 export const setupConfigSchema = z.object({
 	numPlayers: intBetween(1, 4),
@@ -73,7 +98,35 @@ export const setupConfigSchema = z.object({
 	marketResets: intBetween(0, 2),
 	cardRerolls: intBetween(0, 3),
 	removeExcess: z.boolean(),
+	// Absent des réglages enregistrés avant son ajout : Gravehold par défaut.
+	xaxosOutcast: z._default(z.boolean(), false),
 }) satisfies z.ZodMiniType<SetupConfig>;
+
+const cardKeys = z
+	.array(z.string().check(z.minLength(1), z.maxLength(80)))
+	.check(z.maxLength(ALL_CARDS.length));
+const knownCardIds = new Set(ALL_CARDS.map((card) => card.id));
+/**
+ * Bans enregistrés par nom avant le passage aux id (2026-11-18), y compris
+ * sous un nom corrigé depuis.
+ */
+const idByLegacyName = new Map<string, string>([
+	...ALL_CARDS.map((card): [string, string] => [card.name, card.id]),
+	["Agréagat de diamants", "AE03"],
+]);
+/** Id connus, sans doublon : une carte retirée depuis est oubliée. */
+const toKnownIds = (keys: string[]): string[] => [
+	...new Set(
+		keys
+			.map((key) => (knownCardIds.has(key) ? key : idByLegacyName.get(key)))
+			.filter((id): id is string => id !== undefined),
+	),
+];
+
+export const cardBansSchema = z.pipe(
+	z.object({ banned: cardKeys }),
+	z.transform((bans): CardBans => ({ banned: toKnownIds(bans.banned) })),
+);
 
 /** Bornes partagées avec les champs du formulaire. */
 export const SETUP_LIMITS = {

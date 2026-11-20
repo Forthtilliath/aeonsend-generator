@@ -12,7 +12,7 @@ export default defineConfig({
 			registerType: "autoUpdate",
 			includeAssets: ["apple-touch-icon.png", "favicon-32.png"],
 			// Polices du thème mises en cache pour l'usage hors ligne.
-			workbox: { globPatterns: ["**/*.{js,css,html,woff2}"] },
+			workbox: { globPatterns: ["**/*.{js,css,html,woff2,ttf}"] },
 			manifest: {
 				name: "Aeon's End - Générateur de rencontres",
 				short_name: "Aeon's End",

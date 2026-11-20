@@ -5,14 +5,24 @@ import { ALL_EXPANSIONS } from "../../data/expansions";
 import { useExpedition } from "../../hooks/useExpedition";
 import { useMarket } from "../../hooks/useMarket";
 import {
+	cardBansSchema,
 	ownedExpansionsSchema,
 	setupConfigSchema,
 } from "../../schemas/storage";
-import type { Expansion, SetupConfig, SupplyCard } from "../../types";
+import type { Expansion, Mage, SetupConfig, SupplyCard } from "../../types";
+import {
+	ALL_CARDS,
+	type CardBans,
+	getBannedIds,
+	NO_CARD_BANS,
+	setCardsBanned,
+	toggleCardBan,
+} from "../../utils/cardBans";
 import { Button } from "../ui/Button";
 import { AppHeader } from "./AppHeader";
 import { CardModal } from "./CardModal";
 import { ExpeditionResults } from "./ExpeditionResults";
+import { MageModal } from "./MageModal";
 import { SettingsModal, type SettingsTab } from "./SettingsModal";
 import { SettingsSummary } from "./SettingsSummary";
 import { SetupForm } from "./SetupForm";
@@ -25,10 +35,12 @@ const DEFAULT_SETUP: SetupConfig = {
 	marketResets: 1,
 	cardRerolls: 2,
 	removeExcess: true,
+	xaxosOutcast: false,
 };
 
 const FormExpedition: FC = () => {
 	const [selectedCard, setSelectedCard] = useState<SupplyCard | null>(null);
+	const [selectedMage, setSelectedMage] = useState<Mage | null>(null);
 	const { value: setup, setValue: setSetup } = usePersistentState<SetupConfig>(
 		"setupConfig",
 		DEFAULT_SETUP,
@@ -54,9 +66,23 @@ const FormExpedition: FC = () => {
 		setOwnedExpansionsList(owned ? [...ALL_EXPANSIONS] : []);
 	const [settingsTab, setSettingsTab] = useState<SettingsTab | null>(null);
 
+	const { value: cardBans, setValue: setCardBans } =
+		usePersistentState<CardBans>("cardBans", NO_CARD_BANS, {
+			schema: cardBansSchema,
+		});
+	const bannedCards = useMemo(() => getBannedIds(cardBans), [cardBans]);
+	const bannedOwnedCount = useMemo(
+		() =>
+			ALL_CARDS.filter(
+				(card) =>
+					bannedCards.has(card.id) && ownedExpansions.has(card.expansion),
+			).length,
+		[bannedCards, ownedExpansions],
+	);
+
 	const market = useMarket();
 	const { expedition, warnings, dismissWarnings, generate, ...actions } =
-		useExpedition(ownedExpansions);
+		useExpedition(ownedExpansions, bannedCards);
 
 	const handleGenerate = (): void => {
 		generate(setup, market.marketConfig);
@@ -75,6 +101,7 @@ const FormExpedition: FC = () => {
 
 				<SettingsSummary
 					ownedCount={ownedExpansions.size}
+					bannedCount={bannedOwnedCount}
 					marketName={market.selectedMarketName}
 					onOpen={setSettingsTab}
 				/>
@@ -120,10 +147,12 @@ const FormExpedition: FC = () => {
 						actions={actions}
 						replaceOnReroll={setup.removeExcess}
 						onCardClick={setSelectedCard}
+						onMageClick={setSelectedMage}
 					/>
 				)}
 
 				<CardModal card={selectedCard} onClose={() => setSelectedCard(null)} />
+				<MageModal mage={selectedMage} onClose={() => setSelectedMage(null)} />
 				<SettingsModal
 					tab={settingsTab}
 					onTabChange={setSettingsTab}
@@ -131,6 +160,14 @@ const FormExpedition: FC = () => {
 					ownedExpansions={ownedExpansions}
 					onToggleExpansion={toggleExpansion}
 					onSetAllExpansions={setAllExpansions}
+					cardBans={cardBans}
+					onToggleCardBan={(card) =>
+						setCardBans((prev) => toggleCardBan(prev, card))
+					}
+					onSetCardsBanned={(cards, banned) =>
+						setCardBans((prev) => setCardsBanned(prev, cards, banned))
+					}
+					onResetCardBans={() => setCardBans(NO_CARD_BANS)}
 					market={market}
 				/>
 			</div>

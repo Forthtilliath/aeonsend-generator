@@ -14,7 +14,10 @@ import {
 } from "../utils/supply";
 
 /** Campagne tirée et actions sur les marchés de chaque affrontement. */
-export const useExpedition = (ownedExpansions: ReadonlySet<Expansion>) => {
+export const useExpedition = (
+	ownedExpansions: ReadonlySet<Expansion>,
+	bannedCards: ReadonlySet<string>,
+) => {
 	const [expedition, setExpedition] = useState<Expedition | null>(null);
 	const [warnings, setWarnings] = useState<string[]>([]);
 
@@ -33,31 +36,39 @@ export const useExpedition = (ownedExpansions: ReadonlySet<Expansion>) => {
 	};
 
 	const generate = (setup: SetupConfig, marketConfig: MarketCondition[]) => {
-		const result = buildExpedition(setup, marketConfig, ownedExpansions);
+		const result = buildExpedition(
+			setup,
+			marketConfig,
+			ownedExpansions,
+			bannedCards,
+		);
 		setExpedition(result.expedition);
 		setWarnings(result.warnings);
 	};
 
 	const resetMarket = (index: number) =>
-		updateBattle(index, (battle, { marketConfig }) =>
+		updateBattle(index, (battle, { marketConfig, xaxosOutcast }) =>
 			battle.remainingResets > 0
 				? {
 						...battle,
-						supply: generateSupply(marketConfig, ownedExpansions),
+						supply: generateSupply(marketConfig, {
+							ownedExpansions,
+							xaxosOutcast,
+							bannedCards,
+						}),
 						remainingResets: battle.remainingResets - 1,
 					}
 				: null,
 		);
 
 	const rerollCard = (index: number, position: number, replace: boolean) =>
-		updateBattle(index, (battle) => {
+		updateBattle(index, (battle, { xaxosOutcast }) => {
 			if (battle.remainingRerolls <= 0) return null;
-			const supply = rerollSupplyCard(
-				battle.supply,
-				position,
-				replace,
+			const supply = rerollSupplyCard(battle.supply, position, replace, {
 				ownedExpansions,
-			);
+				xaxosOutcast,
+				bannedCards,
+			});
 			return supply
 				? { ...battle, supply, remainingRerolls: battle.remainingRerolls - 1 }
 				: null;

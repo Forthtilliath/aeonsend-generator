@@ -24,18 +24,23 @@ const DIRECTION_LABELS: Partial<Record<Breach, string>> = {
 
 interface BreachIconsProps {
 	breachs: [Breach, Breach, Breach, Breach];
+	/** `lg` : brèches agrandies (fiche du mage). */
+	size?: "md" | "lg";
 }
 
-export const BreachIcons = ({ breachs }: BreachIconsProps) => {
+export const BreachIcons = ({ breachs, size = "md" }: BreachIconsProps) => {
+	const sized = size === "lg" ? " breach--lg" : "";
 	return (
-		<div className="flex justify-center gap-1.5">
+		<span
+			className={`flex justify-center ${size === "lg" ? "gap-3" : "gap-1.5"}`}
+		>
 			{breachs.map((breach, idx) => {
 				if (breach === "none") {
 					return (
-						<div
+						<span
 							// biome-ignore lint/suspicious/noArrayIndexKey: fixed 4-slot tuple, never reordered
 							key={idx}
-							className="breach breach--none"
+							className={`breach breach--none${sized}`}
 							title="Pas de brèche"
 						/>
 					);
@@ -43,32 +48,32 @@ export const BreachIcons = ({ breachs }: BreachIconsProps) => {
 
 				if (breach === "open") {
 					return (
-						<div
+						<span
 							// biome-ignore lint/suspicious/noArrayIndexKey: fixed 4-slot tuple, never reordered
 							key={idx}
-							className="breach breach--open"
+							className={`breach breach--open${sized}`}
 							title="Brèche ouverte"
 						>
 							<LockOpen className="w-3.5 h-3.5" />
-						</div>
+						</span>
 					);
 				}
 
 				const Arrow = DIRECTION_ARROWS[breach];
 				return (
-					<div
+					<span
 						// biome-ignore lint/suspicious/noArrayIndexKey: fixed 4-slot tuple, never reordered
 						key={idx}
-						className="breach breach--closed"
+						className={`breach breach--closed${sized}`}
 						title={`Brèche fermée (icône ${DIRECTION_LABELS[breach]})`}
 					>
 						<Lock className="w-3 h-3" />
 						{Arrow && (
 							<Arrow className="w-3 h-3 p-px rounded-full bg-abyss-900 text-aether-300 absolute -bottom-1 -right-1" />
 						)}
-					</div>
+					</span>
 				);
 			})}
-		</div>
+		</span>
 	);
 };

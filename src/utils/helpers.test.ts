@@ -2,6 +2,8 @@ import { describe, expect, test } from "bun:test";
 import type { MarketCondition } from "../types";
 import {
 	copyTuple,
+	formatCardCost,
+	formatCost,
 	getCriteriaLabel,
 	getTypeLabel,
 	matchesCondition,
@@ -10,13 +12,38 @@ import {
 	secureRandom,
 } from "./helpers";
 
+describe("formatCost / formatCardCost", () => {
+	const base = {
+		id: "X",
+		name: "Test",
+		description: "",
+		cost: 6,
+		expansion: "Le Commencement" as const,
+	};
+
+	test("shows the purchase cost alone without a develop cost", () => {
+		expect(formatCardCost(base)).toBe("6");
+	});
+
+	test("adds the develop cost when there is one", () => {
+		expect(formatCardCost({ ...base, developCost: 4 })).toBe(
+			"6 (développer : 4)",
+		);
+	});
+
+	test("marks both costs with an asterisk when a condition can lower them", () => {
+		const card = { ...base, developCost: 4, conditionalCost: true as const };
+		expect(formatCost(card, 6)).toBe("6*");
+		expect(formatCardCost(card)).toBe("6* (développer : 4*)");
+	});
+});
+
 describe("matchesCondition", () => {
 	const card = {
 		id: "X",
 		name: "Test",
 		description: "",
 		cost: 5,
-		image: "",
 		expansion: "Aeon's End" as const,
 	};
 

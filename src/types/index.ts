@@ -23,8 +23,8 @@ export type Expansion =
 	| "Origins"
 	| "Evolution"
 	| "Le Commencement"
-	| "Les Cavernes"
-	| "Les Abysses"
+	| "The Caverns"
+	| "The Abyss"
 	| "Tales of Old Gravehold"
 	| "Beyond the Breach"
 	| "The Surface"
@@ -34,17 +34,48 @@ export type Expansion =
 	| "The Wastes"
 	| "Inconnue";
 
+export type CardKeywordId = "duo" | "echo" | "link";
+
 export interface Card {
 	id: string;
 	name: string;
+	/** Nom anglais, pour retrouver la carte sur le wiki (traductions maison). */
+	nameEn?: string;
+	/**
+	 * Texte de la carte, dans la syntaxe des CSV nanDECK : `<br>` retour à la
+	 * ligne, `(ou)`, `(hr)`, « 2 éthers » pour l'icône d'éther, `<b>`, et
+	 * `<small><i>…</i></small>` pour un rappel de règle (cf. utils/cardText.ts).
+	 */
 	description: string;
+	/**
+	 * Mot-clé de sort affiché en tête du texte, avec son rappel de règle : le
+	 * texte de la carte ne le répète pas (colonnes `adjacent` et `lien` des CSV).
+	 * Duo : préparé sur deux brèches adjacentes. Aucune carte n'en a deux.
+	 */
+	keyword?: CardKeywordId;
+	/** Coût d'achat, sans développer la carte : c'est lui qui sert au tirage du marché. */
 	cost: number;
-	image: string;
+	/** Coût pour développer la carte (mécanique apparue avec Past and Future). */
+	developCost?: number;
+	/**
+	 * Coût marqué d'un astérisque (« 6* », « 4* ») : une condition, décrite dans
+	 * le texte de la carte, le réduit de 1 Ether. S'applique aux deux coûts.
+	 */
+	conditionalCost?: true;
+	/**
+	 * Carte qui ne sert qu'avec Xaxos : Paria à la place de Gravehold (Les
+	 * Parias) : elle n'est pas tirée quand on joue avec Gravehold.
+	 */
+	requiresXaxos?: true;
 	expansion: Expansion;
 }
 
+export type CardsByType = Record<"gems" | "relics" | "spells", Card[]>;
+
 export interface Nemesis {
 	name: string;
+	/** Nom anglais, pour retrouver la némésis sur le wiki (traductions maison). */
+	nameEn?: string;
 	/** Article utilisé dans l'histoire (« le Masque Tordu »), absent pour un nom propre. */
 	article?: "le" | "la";
 	difficulty: number;
@@ -56,18 +87,21 @@ export interface Nemesis {
 }
 
 export type Breach = "none" | "open" | "left" | "bottom" | "right" | "top";
-type PowerPhase =
+export type PowerPhase =
 	| "nemesesDraw"
 	| "currentPlayerMain"
 	| "anyPlayerMain"
 	| "turnOrderDraw"
 	| "currentPlayerMainOrIncantation"
 	| "allyPlayerMain"
+	| "allyPlayerCasting"
 	| "currentPlayerEndDraw";
 
 export interface Mage {
 	id: string;
 	name: string;
+	/** Nom de la page du mage sur le wiki anglais (traductions maison). */
+	nameEn?: string;
 	title: string;
 	breachs: [Breach, Breach, Breach, Breach];
 	complexity: number;
@@ -138,6 +172,8 @@ export interface Expedition {
 	battles: Battle[];
 	/** Marché utilisé au tirage, réutilisé par les réinitialisations. */
 	marketConfig: MarketCondition[];
+	/** Choix fait au tirage, réutilisé par les relances et réinitialisations. */
+	xaxosOutcast: boolean;
 	numPlayers: number;
 	story: Story;
 }
@@ -151,6 +187,8 @@ export interface SetupConfig {
 	marketResets: number;
 	cardRerolls: number;
 	removeExcess: boolean;
+	/** Xaxos : Paria défend à la place de Gravehold (cartes `requiresXaxos` permises). */
+	xaxosOutcast: boolean;
 }
 
 export interface MarketTemplate {

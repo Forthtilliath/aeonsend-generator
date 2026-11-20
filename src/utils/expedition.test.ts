@@ -16,6 +16,7 @@ const setup: SetupConfig = {
 	marketResets: 1,
 	cardRerolls: 3,
 	removeExcess: true,
+	xaxosOutcast: false,
 };
 
 describe("getTiers", () => {

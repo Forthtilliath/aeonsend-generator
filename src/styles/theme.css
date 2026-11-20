@@ -7,6 +7,10 @@
 	--font-display:
 		"Marcellus", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
 	--font-lore: "Spectral", "Iowan Old Style", Georgia, serif;
+	/* Texte de règle des cartes, comme sur les cartes imprimées. */
+	--font-card: "Charter", "Spectral", Georgia, serif;
+	/* Nom des cartes : Bitter, proche de la police des cartes imprimées. */
+	--font-card-title: "Bitter", "Marcellus", Georgia, serif;
 
 	/* Pierre de la caverne */
 	--color-abyss-950: #06070b;
@@ -179,6 +183,7 @@
 	*::before,
 	*::after {
 		animation-duration: 0.01ms !important;
+		animation-delay: 0s !important;
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;
 	}

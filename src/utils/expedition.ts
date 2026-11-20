@@ -1,6 +1,5 @@
 import { shuffle } from "@forthtilliath/ts-kit";
-import { mages as allMages } from "../data/mages";
-import { nemeses } from "../data/nemeses";
+import { allMages, allNemeses as nemeses } from "../data/catalog";
 import type {
 	Battle,
 	Expansion,
@@ -54,6 +53,7 @@ export const buildExpedition = (
 	setup: SetupConfig,
 	marketConfig: MarketCondition[],
 	ownedExpansions: ReadonlySet<Expansion>,
+	bannedCards: ReadonlySet<string> = new Set(),
 ): { expedition: Expedition; warnings: string[] } => {
 	const warnings: string[] = [];
 	const missingTiers: Tier[] = [];
@@ -67,7 +67,11 @@ export const buildExpedition = (
 			tier,
 			nemesis,
 			mages: drawMages(wanted, ownedExpansions),
-			supply: generateSupply(marketConfig, ownedExpansions),
+			supply: generateSupply(marketConfig, {
+				ownedExpansions,
+				xaxosOutcast: setup.xaxosOutcast,
+				bannedCards,
+			}),
 			remainingResets: setup.marketResets,
 			remainingRerolls: setup.cardRerolls,
 		};
@@ -91,6 +95,7 @@ export const buildExpedition = (
 		expedition: {
 			battles,
 			marketConfig: [...marketConfig],
+			xaxosOutcast: setup.xaxosOutcast,
 			numPlayers: setup.numPlayers,
 			story: generateStory(battles, setup.numPlayers),
 		},

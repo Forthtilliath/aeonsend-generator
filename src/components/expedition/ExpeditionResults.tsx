@@ -2,7 +2,7 @@ import { downloadTextBlob } from "@forthtilliath/ts-kit";
 import { FileText } from "lucide-react";
 import { Fragment } from "react";
 import type { useExpedition } from "../../hooks/useExpedition";
-import type { Expedition, SupplyCard } from "../../types";
+import type { Expedition, Mage, SupplyCard } from "../../types";
 import { buildExpeditionText, expeditionFileName } from "../../utils/exportTxt";
 import { getExcessBySlotType } from "../../utils/supply";
 import { Button } from "../ui/Button";
@@ -19,6 +19,7 @@ interface ExpeditionResultsProps {
 	actions: ExpeditionActions;
 	replaceOnReroll: boolean;
 	onCardClick: (card: SupplyCard) => void;
+	onMageClick: (mage: Mage) => void;
 }
 
 export const ExpeditionResults = ({
@@ -26,6 +27,7 @@ export const ExpeditionResults = ({
 	actions,
 	replaceOnReroll,
 	onCardClick,
+	onMageClick,
 }: ExpeditionResultsProps) => {
 	const { battles, story } = expedition;
 	const isCampaign = battles.length > 1;
@@ -51,7 +53,8 @@ export const ExpeditionResults = ({
 			{battles.map((battle, idx) => {
 				const transition = idx > 0 ? story.transitions[idx - 1] : undefined;
 				return (
-					<Fragment key={battle.number}>
+					// Clé liée à la Némésis : un nouveau tirage remonte la carte et rejoue ses animations.
+					<Fragment key={`-${battle.nemesis.name}`}>
 						{transition && (
 							<StoryBlock
 								title={`Avant l'affrontement ${battle.number}`}
@@ -67,6 +70,7 @@ export const ExpeditionResults = ({
 							)}
 							onResetMarket={() => actions.resetMarket(idx)}
 							onCardClick={onCardClick}
+							onMageClick={onMageClick}
 							onRemoveCard={(position) => actions.removeCard(idx, position)}
 							onRerollCard={(position) =>
 								actions.rerollCard(idx, position, replaceOnReroll)

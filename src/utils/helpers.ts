@@ -21,6 +21,18 @@ export const matchesCondition = (
 	return false;
 };
 
+/** Coût affiché : « 6 », ou « 6* » quand une condition peut le réduire. */
+export const formatCost = (
+	card: Pick<Card, "conditionalCost">,
+	cost: number,
+): string => `${cost}${card.conditionalCost ? "*" : ""}`;
+
+/** Coût d'achat et, s'il existe, coût de développement : « 6* (développer : 4*) ». */
+export const formatCardCost = (card: Card): string =>
+	card.developCost === undefined
+		? formatCost(card, card.cost)
+		: `${formatCost(card, card.cost)} (développer : ${formatCost(card, card.developCost)})`;
+
 export const getTypeLabel = (type: string): string => {
 	if (type === "gem") return "Gemme";
 	if (type === "relic") return "Relique";

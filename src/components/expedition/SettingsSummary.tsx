@@ -1,10 +1,12 @@
-import { type LucideIcon, Package, Pencil, Store } from "lucide-react";
+import { Ban, type LucideIcon, Package, Pencil, Store } from "lucide-react";
 import type { ReactNode } from "react";
 import { ALL_EXPANSIONS } from "../../data/expansions";
 import type { SettingsTab } from "./SettingsModal";
 
 interface SettingsSummaryProps {
 	ownedCount: number;
+	/** Cartes bannies parmi celles des boîtes possédées. */
+	bannedCount: number;
 	marketName: string;
 	onOpen: (tab: SettingsTab) => void;
 }
@@ -46,6 +48,7 @@ const SummaryChip = ({
 /** Rappel des réglages en cours, chacun avec un accès direct à son onglet. */
 export const SettingsSummary = ({
 	ownedCount,
+	bannedCount,
 	marketName,
 	onOpen,
 }: SettingsSummaryProps) => (
@@ -65,6 +68,14 @@ export const SettingsSummary = ({
 					<span className="text-bone-500"> / {ALL_EXPANSIONS.length}</span>
 				</>
 			)}
+		</SummaryChip>
+		<SummaryChip
+			icon={Ban}
+			label="Bannies"
+			ariaLabel={`Cartes bannies : ${bannedCount}. Modifier`}
+			onClick={() => onOpen("cards")}
+		>
+			{bannedCount === 0 ? "Aucune" : bannedCount}
 		</SummaryChip>
 		<SummaryChip
 			icon={Store}

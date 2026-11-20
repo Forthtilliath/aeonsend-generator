@@ -52,18 +52,18 @@ export const EXPANSION_WAVES: ExpansionWave[] = [
 	{
 		label: "Vague 8",
 		standalone: "Le Commencement",
-		expansions: ["Les Cavernes", "Les Abysses", "Tales of Old Gravehold"],
+		expansions: ["The Caverns", "The Abyss", "Tales of Old Gravehold"],
 	},
 	{
 		label: "Vague 9",
 		standalone: "Beyond the Breach",
 		expansions: ["The Surface", "The Returned"],
 	},
-	{
-		label: "Vague 10",
-		standalone: "System Overload",
-		expansions: ["The Cinderkeep", "The Wastes"],
-	},
+	// {
+	// 	label: "Vague 10",
+	// 	standalone: "System Overload",
+	// 	expansions: ["The Cinderkeep", "The Wastes"],
+	// },
 ];
 
 export const waveBoxes = (wave: ExpansionWave): Expansion[] => [
@@ -72,3 +72,43 @@ export const waveBoxes = (wave: ExpansionWave): Expansion[] => [
 ];
 
 export const ALL_EXPANSIONS: Expansion[] = EXPANSION_WAVES.flatMap(waveBoxes);
+
+/**
+ * Boîtes encore inédites en français : leur contenu est une traduction maison,
+ * avec le nom anglais de chaque élément (`nameEn`) pour le retrouver sur le wiki.
+ */
+export const US_ONLY_EXPANSIONS: ReadonlySet<Expansion> = new Set<Expansion>([
+	"Legacy of Gravehold",
+	"The Ruins",
+	"Past and Future",
+	"Origins",
+	"Evolution",
+	"The Caverns",
+	"The Abyss",
+	"Tales of Old Gravehold",
+	"Beyond the Breach",
+	"The Surface",
+	"The Returned",
+	"System Overload",
+	"The Cinderkeep",
+	"The Wastes",
+]);
+
+/** Anciens noms de boîtes, encore présents dans les réglages enregistrés. */
+export const RENAMED_EXPANSIONS: ReadonlyMap<string, Expansion> = new Map<
+	string,
+	Expansion
+>([
+	["Les Cavernes", "The Caverns"],
+	["Les Abysses", "The Abyss"],
+]);
+
+/**
+ * Boîtes masquées (vague 10, sans contenu tant qu'elle n'est pas sur le wiki),
+ * encore présentes dans les réglages enregistrés : retirées à la relecture.
+ */
+export const HIDDEN_EXPANSIONS: ReadonlySet<string> = new Set<Expansion>([
+	"System Overload",
+	"The Cinderkeep",
+	"The Wastes",
+]);

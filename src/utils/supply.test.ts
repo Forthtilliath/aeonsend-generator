@@ -6,6 +6,7 @@ import {
 	generateSupply,
 	getExcessBySlotType,
 	getMarketComposition,
+	isCardAllowed,
 	removeSupplyCard,
 	rerollSupplyCard,
 } from "./supply";
@@ -52,10 +53,43 @@ describe("generateSupply", () => {
 	});
 
 	test("skips expansions not owned", () => {
-		const supply = generateSupply(config, new Set(["Aeon's End"]));
+		const supply = generateSupply(config, {
+			ownedExpansions: new Set(["Aeon's End"]),
+		});
 		for (const card of supply) {
 			expect(["Aeon's End", "Inconnue"]).toContain(card.expansion);
 		}
+	});
+});
+
+describe("isCardAllowed", () => {
+	const card = {
+		id: "X",
+		name: "Test",
+		description: "",
+		cost: 4,
+		expansion: "Les Parias" as const,
+	};
+	const xaxosCard = { ...card, requiresXaxos: true as const };
+
+	test("keeps Xaxos-only cards out when Gravehold defends", () => {
+		expect(isCardAllowed(xaxosCard, {})).toBe(false);
+		expect(isCardAllowed(xaxosCard, { xaxosOutcast: false })).toBe(false);
+		expect(isCardAllowed(card, { xaxosOutcast: false })).toBe(true);
+	});
+
+	test("allows them when Xaxos: Outcast replaces Gravehold", () => {
+		expect(isCardAllowed(xaxosCard, { xaxosOutcast: true })).toBe(true);
+	});
+
+	test("still requires the box to be owned", () => {
+		const options = { xaxosOutcast: true, ownedExpansions: new Set<never>() };
+		expect(isCardAllowed(xaxosCard, options)).toBe(false);
+	});
+
+	test("rejects banned cards", () => {
+		expect(isCardAllowed(card, { bannedCards: new Set(["X"]) })).toBe(false);
+		expect(isCardAllowed(card, { bannedCards: new Set(["Y"]) })).toBe(true);
 	});
 });
 

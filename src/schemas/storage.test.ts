@@ -95,6 +95,25 @@ describe("ownedExpansionsSchema", () => {
 		expect(ownedExpansionsSchema.safeParse(["Aeon's End"]).success).toBe(true);
 		expect(ownedExpansionsSchema.safeParse(["Inventée"]).success).toBe(false);
 	});
+
+	test("renames boxes saved under their former name", () => {
+		expect(
+			ownedExpansionsSchema.parse(["Les Cavernes", "Les Abysses", "Origins"]),
+		).toEqual(["The Caverns", "The Abyss", "Origins"]);
+		expect(ownedExpansionsSchema.safeParse(["constructor"]).success).toBe(
+			false,
+		);
+	});
+
+	test("drops hidden boxes instead of rejecting the selection", () => {
+		expect(
+			ownedExpansionsSchema.parse([
+				"Aeon's End",
+				"System Overload",
+				"The Wastes",
+			]),
+		).toEqual(["Aeon's End"]);
+	});
 });
 
 describe("setupConfigSchema", () => {
@@ -110,6 +129,16 @@ describe("setupConfigSchema", () => {
 
 	test("accepts a valid setup", () => {
 		expect(setupConfigSchema.safeParse(setup).success).toBe(true);
+	});
+
+	test("defaults xaxosOutcast to false for settings saved before it existed", () => {
+		expect(setupConfigSchema.parse(setup).xaxosOutcast).toBe(false);
+		expect(
+			setupConfigSchema.parse({ ...setup, xaxosOutcast: true }).xaxosOutcast,
+		).toBe(true);
+		expect(
+			setupConfigSchema.safeParse({ ...setup, xaxosOutcast: "oui" }).success,
+		).toBe(false);
 	});
 
 	test("rejects out-of-bounds values", () => {
