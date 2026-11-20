@@ -9,7 +9,7 @@ export const cards: CardsByType = {
 			nameEn: "Bloodstone Jewel",
 			cost: 6,
 			description:
-				"Lorsque vous acquérez une Pierre de Sang pour la première fois de votre tour, gagnez 3 Ether.\nGagnez 3 Ether.",
+				"Lorsque vous acquérez une Pierre de Sang pour la première fois de votre tour, gagnez 3 éthers.<br>Gagnez 3 éthers.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -18,7 +18,7 @@ export const cards: CardsByType = {
 			nameEn: "Breach Ore",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.(ou)Stabilisez votre brèche fermée ayant le coût de stabilisation le plus faible.",
+				"Gagnez 2 éthers.(ou)Stabilisez votre brèche fermée ayant le coût de stabilisation le plus faible.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -27,7 +27,7 @@ export const cards: CardsByType = {
 			nameEn: "Dread Diamond",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.\nVous pouvez défausser un sort préparé. Si vous le faites, gagnez 1 Ether supplémentaire.",
+				"Gagnez 2 éthers.<br>Vous pouvez défausser un sort préparé. Si vous le faites, gagnez 1 éther supplémentaire.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -36,7 +36,7 @@ export const cards: CardsByType = {
 			nameEn: "Erratic Ingot",
 			cost: 5,
 			description:
-				"Gagnez 2 Ether.\nGagnez 2 Ether supplémentaires s'il y a au moins carte Ordre du tour de la némésis dans la défausse des cartes Ordre du tour.",
+				"Gagnez 2 éthers.<br>Gagnez 2 éthers supplémentaires s'il y a au moins carte Ordre du tour de la némésis dans la défausse des cartes Ordre du tour.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -45,7 +45,7 @@ export const cards: CardsByType = {
 			nameEn: "Frozen Magnite",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.\nVous pouvez placer la prochaine carte que vous acquérez lors de ce tour au sommet de votre pioche.",
+				"Gagnez 2 éthers.<br>Vous pouvez placer la prochaine carte que vous acquérez lors de ce tour au sommet de votre pioche.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -54,7 +54,7 @@ export const cards: CardsByType = {
 			nameEn: "Scoria Slag",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nSi le palier de la némésis est supérieur ou égal à 2, gagnez 1 Ether supplémentaire.",
+				"Gagnez 2 éthers.<br>Si le palier de la némésis est supérieur ou égal à 2, gagnez 1 éther supplémentaire.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -63,7 +63,7 @@ export const cards: CardsByType = {
 			nameEn: "Volcanic Glass",
 			cost: 3,
 			description:
-				"Lorsque vous acquérez cette carte lors de votre tour, vous pouvez dépenser 2 Ether. Si vous le faites, un allié acquiert lui aussi un Verre Pyroclastique et le place au sommet de sa pioche.\nGagnez 2 Ether.",
+				"Lorsque vous acquérez cette carte lors de votre tour, vous pouvez dépenser 2 éthers. Si vous le faites, un allié acquiert lui aussi un Verre Pyroclastique et le place au sommet de sa pioche.<br>Gagnez 2 éthers.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -71,7 +71,7 @@ export const cards: CardsByType = {
 			name: "Scarabée Fossilisé",
 			nameEn: "Fossilized Scarab",
 			cost: 3,
-			description: "Gagnez 2 Ether.(ou)Détruisez une carte de votre main.",
+			description: "Gagnez 2 éthers.(ou)Détruisez une carte de votre main.",
 			expansion: "Le Vide",
 		},
 		{
@@ -80,7 +80,7 @@ export const cards: CardsByType = {
 			nameEn: "Alien Element",
 			cost: 4,
 			description:
-				"Gagnez 1 Ether.\nGagnez 1 Ether supplémentaire pour chacune de vos brèches ayant un sort préparé.",
+				"Gagnez 1 éther.<br>Gagnez 1 éther supplémentaire pour chacune de vos brèches ayant un sort préparé.",
 			expansion: "Ténèbres d'Ailleurs",
 		},
 		{
@@ -89,7 +89,7 @@ export const cards: CardsByType = {
 			nameEn: "Haunted Berylite",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.(ou)Défaussez une carte de votre main. Si vous le faites, gagnez 2 charges.",
+				"Gagnez 2 éthers.(ou)Défaussez une carte de votre main. Si vous le faites, gagnez 2 charges.",
 			expansion: "Ténèbres d'Ailleurs",
 		},
 		{
@@ -97,7 +97,7 @@ export const cards: CardsByType = {
 			name: "Pierre de Douleur",
 			nameEn: "Pain Stone",
 			cost: 6,
-			description: "Gagnez 3 Ether.(ou)Gagnez 2 Ether et infligez 1 dégât.",
+			description: "Gagnez 3 éthers.(ou)Gagnez 2 éthers et infligez 1 dégât.",
 			expansion: "Ténèbres d'Ailleurs",
 		},
 	],
@@ -117,7 +117,7 @@ export const cards: CardsByType = {
 			nameEn: "Conclave Scroll",
 			cost: 3,
 			description:
-				"Gagnez 1 charge.\nSi la pile de cette carte est vide dans la réserve, vous pouvez détruire la première carte de la défausse d'un allié.",
+				"Gagnez 1 charge.<br>Si la pile de cette carte est vide dans la réserve, vous pouvez détruire la première carte de la défausse d'un allié.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -144,7 +144,7 @@ export const cards: CardsByType = {
 			nameEn: "Primordial Fetish",
 			cost: 4,
 			description:
-				"Stabilisez une brècge de n'importe quel joueur.(ou)Détruisez cette carte.\nGagnez 3 points de vie.",
+				"Stabilisez une brècge de n'importe quel joueur.(ou)Détruisez cette carte.<br>Gagnez 3 points de vie.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -153,7 +153,7 @@ export const cards: CardsByType = {
 			nameEn: "Vortex Gauntlet",
 			cost: 6,
 			description:
-				"Lancez un sort préparé de n'importe quel joueur.\nRenvoyez ce sort dans la main de ce joueur.",
+				"Lancez un sort préparé de n'importe quel joueur.<br>Renvoyez ce sort dans la main de ce joueur.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -189,7 +189,7 @@ export const cards: CardsByType = {
 			nameEn: "Riddlesphere",
 			cost: 3,
 			description:
-				"Gagnez 1 charge.(ou)Vous pouvez perdre 2 charges. Si vous le faites, gagnez 5 Ether.",
+				"Gagnez 1 charge.(ou)Vous pouvez perdre 2 charges. Si vous le faites, gagnez 5 éthers.",
 			expansion: "Ténèbres d'Ailleurs",
 		},
 	],
@@ -200,7 +200,7 @@ export const cards: CardsByType = {
 			nameEn: "Drown in Flames",
 			cost: 6,
 			description:
-				"Lancer : Infligez 4 dégâts à un serviteur ou à la némésis.\nVous pouvez perdre 2 charges. Si vous le faites, répétez cet effet.\n(Les effets qui modifient les dégâts s'appliquent à chaque fois que ce sort inflige des dégâts.)",
+				"Lancer : Infligez 4 dégâts à un serviteur ou à la némésis.<br>Vous pouvez perdre 2 charges. Si vous le faites, répétez cet effet.<br>(Les effets qui modifient les dégâts s'appliquent à chaque fois que ce sort inflige des dégâts.)",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -209,7 +209,7 @@ export const cards: CardsByType = {
 			nameEn: "Aurora",
 			cost: 5,
 			description:
-				"Lorsque préparé, une fois par tour, pendant votre phase principale, vous pouvez gagner 1 charge. Lancer : Infligez 3 dégâts.",
+				"Lorsque préparé, une fois par tour, pendant votre phase principale, vous pouvez gagner 1 charge.<br>Lancer : Infligez 3 dégâts.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -254,7 +254,8 @@ export const cards: CardsByType = {
 			nameEn: "Crystallize",
 			cost: 8,
 			description:
-				"(duo)Lancer : Un allié révèle sa main. Infligez 2 dégâts pour chaque gemme ainsi révélée.",
+				"Lancer : Un allié révèle sa main. Infligez 2 dégâts pour chaque gemme ainsi révélée.",
+			keyword: "duo",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -263,7 +264,7 @@ export const cards: CardsByType = {
 			nameEn: "Equilibrium",
 			cost: 7,
 			description:
-				"Lorsque préparé, réduisez de 1 les dégâts que vous subissez, jusqu'à un minimum de 1. Lancer : Infligez 4 dégâts.",
+				"Lorsque préparé, réduisez de 1 les dégâts que vous subissez, jusqu'à un minimum de 1.<br>Lancer : Infligez 4 dégâts.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -290,7 +291,7 @@ export const cards: CardsByType = {
 			nameEn: "Kindle",
 			cost: 4,
 			description:
-				"Lorsque préparé, pendant votre phase principale, vous pouvez aussi préparer une Étincelle sur la brèche où ce sort est préparé. (Vous ne pouvez pas utiliser cet effet si une Étincelle est préparée sur cette brèche). Lancer : Infligez 3 dégâts.",
+				"Lorsque préparé, pendant votre phase principale, vous pouvez aussi préparer une Étincelle sur la brèche où ce sort est préparé. (Vous ne pouvez pas utiliser cet effet si une Étincelle est préparée sur cette brèche).<br>Lancer : Infligez 3 dégâts.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -299,7 +300,7 @@ export const cards: CardsByType = {
 			nameEn: "Nova Forge",
 			cost: 6,
 			description:
-				"Lorsque préparé, une fois par tour pendant votre phase principale, vous pouvez gagner 2 Ether qui ne peuvent être utilisés que pour acquérir un sort. Lancer : Infligez 4 dégâts.",
+				"Lorsque préparé, une fois par tour pendant votre phase principale, vous pouvez gagner 2 éthers qui ne peuvent être utilisés que pour acquérir un sort.<br>Lancer : Infligez 4 dégâts.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -308,7 +309,8 @@ export const cards: CardsByType = {
 			nameEn: "Pyrotechnic Surge",
 			cost: 4,
 			description:
-				"(duo)Lancer : Infligez 4 dégâts. Vous pouvez détruire une carte de votre défausse.",
+				"Lancer : Infligez 4 dégâts. Vous pouvez détruire une carte de votre défausse.",
+			keyword: "duo",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -317,7 +319,7 @@ export const cards: CardsByType = {
 			nameEn: "Reduce to Ash",
 			cost: 7,
 			description:
-				"Lorsque préparé, au début de votre phase d'incantation, révélez la carte du sommet de votre pioche. Vous pouvez détruire la carte révélée. Lancer : Infligez 4 dégâts.",
+				"Lorsque préparé, au début de votre phase d'incantation, révélez la carte du sommet de votre pioche. Vous pouvez détruire la carte révélée.<br>Lancer : Infligez 4 dégâts.",
 			expansion: "Guerre Éternelle",
 		},
 		{
@@ -343,7 +345,8 @@ export const cards: CardsByType = {
 			name: "Embrasement",
 			nameEn: "Conflagration",
 			cost: 3,
-			description: "(lien)Lancer : Infligez 2 dégâts. Gagnez 1 Ether.",
+			description: "Lancer : Infligez 2 dégâts. Gagnez 1 éther.",
+			keyword: "link",
 			expansion: "Le Vide",
 		},
 		{
@@ -352,7 +355,8 @@ export const cards: CardsByType = {
 			nameEn: "Fulminate",
 			cost: 5,
 			description:
-				"Lorsque préparé, les autres sorts que vous lancez infligent 1 dégât supplémentaire.(lien)Lancer : Infligez 3 dégâts.",
+				"Lorsque préparé, les autres sorts que vous lancez infligent 1 dégât supplémentaire.Lancer : Infligez 3 dégâts.",
+			keyword: "link",
 			expansion: "Le Vide",
 		},
 		{
@@ -361,7 +365,8 @@ export const cards: CardsByType = {
 			nameEn: "Inner Fire",
 			cost: 2,
 			description:
-				"(lien) Lancer : Infligez 1 dégât. Si le palier de la Némésis est 2 ou plus, infligez 1 dégât supplémentaire.",
+				"<br>Lancer : Infligez 1 dégât. Si le palier de la Némésis est 2 ou plus, infligez 1 dégât supplémentaire.",
+			keyword: "link",
 			expansion: "Le Vide",
 		},
 		{
@@ -370,7 +375,8 @@ export const cards: CardsByType = {
 			nameEn: "Thermal Dart",
 			cost: 4,
 			description:
-				"(lien)Lancer : Infligez 3 dégâts. Si ce n'est pas la première Fléchette thermique que vous lancez ce tour-ci, gagnez 1 charge.",
+				"Lancer : Infligez 3 dégâts. Si ce n'est pas la première Fléchette thermique que vous lancez ce tour-ci, gagnez 1 charge.",
+			keyword: "link",
 			expansion: "Le Vide",
 		},
 		{
@@ -406,7 +412,7 @@ export const cards: CardsByType = {
 			nameEn: "Nether Conduit",
 			cost: 7,
 			description:
-				"Lancer : Révélez une carte de votre main coûtant 2 Ether ou plus. Si vous le faites, infligez autant de dégâts que le nombre de cartes manquantes dans la pile de cette carte dans la réserve. Puis un allié gagne une carte de cette pile.",
+				"Lancer : Révélez une carte de votre main coûtant 2 éthers ou plus. Si vous le faites, infligez autant de dégâts que le nombre de cartes manquantes dans la pile de cette carte dans la réserve. Puis un allié gagne une carte de cette pile.",
 			expansion: "Ténèbres d'Ailleurs",
 		},
 		{

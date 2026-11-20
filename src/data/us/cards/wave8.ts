@@ -11,7 +11,7 @@ export const cards: CardsByType = {
 			cost: 3,
 			developCost: 2,
 			description:
-				"Lorsque vous acquérez cette carte, placez un jeton Électrisation sur un ennemi. Gagnez 2 Ether.",
+				"Lorsque vous acquérez cette carte, placez un jeton Électrisation sur un ennemi. Gagnez 2 éthers.",
 			expansion: "The Caverns",
 		},
 		{
@@ -20,7 +20,7 @@ export const cards: CardsByType = {
 			nameEn: "Spirit Jewel",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether. Vous pouvez faire subir 1 dégât à Gravehold. Si vous le faites, gagnez 1 Ether supplémentaire.",
+				"Gagnez 2 éthers. Vous pouvez faire subir 1 dégât à Gravehold. Si vous le faites, gagnez 1 éther supplémentaire.",
 			expansion: "The Abyss",
 		},
 		{
@@ -29,7 +29,7 @@ export const cards: CardsByType = {
 			nameEn: "Pulsing Garnet",
 			cost: 5,
 			description:
-				"Gagnez 3 Ether. Vous pouvez faire gagner 2 points de vie à un ennemi. Si vous le faites, un allié pioche une carte.",
+				"Gagnez 3 éthers. Vous pouvez faire gagner 2 points de vie à un ennemi. Si vous le faites, un allié pioche une carte.",
 			expansion: "The Abyss",
 		},
 		{
@@ -38,7 +38,7 @@ export const cards: CardsByType = {
 			nameEn: "Whisper of Amethyst",
 			cost: 6,
 			description:
-				"Gagnez 3 Ether. Vous pouvez défausser la première carte du paquet Némésis. Si vous le faites, un allié gagne 2 jetons Éther.",
+				"Gagnez 3 éthers. Vous pouvez défausser la première carte du paquet Némésis. Si vous le faites, un allié gagne 2 jetons éther.",
 			expansion: "The Abyss",
 		},
 	],
@@ -78,7 +78,7 @@ export const cards: CardsByType = {
 			nameEn: "Fate's Edge",
 			cost: 6,
 			description:
-				"Un joueur et Gravehold gagnent chacun 1 point de vie. OU Détruisez cette carte. Placez les deux dernières cartes du paquet Némésis sur le dessus de ce paquet. Puis mélangez la carte Ordre du tour d'un joueur dans le paquet d'ordre du tour.",
+				"Un joueur et Gravehold gagnent chacun 1 point de vie.(ou)Détruisez cette carte. Placez les deux dernières cartes du paquet Némésis sur le dessus de ce paquet. Puis mélangez la carte Ordre du tour d'un joueur dans le paquet d'ordre du tour.",
 			expansion: "The Abyss",
 		},
 		{
@@ -87,7 +87,7 @@ export const cards: CardsByType = {
 			nameEn: "Blackened Orb",
 			cost: 4,
 			description:
-				"Lancez le sort préparé d'un joueur sans le défausser : ce sort inflige 2 dégâts de moins (minimum 0). OU Lancez le sort préparé d'un joueur et détruisez-le : ce sort inflige 1 dégât supplémentaire.",
+				"Lancez le sort préparé d'un joueur sans le défausser : ce sort inflige 2 dégâts de moins (minimum 0).(ou)Lancez le sort préparé d'un joueur et détruisez-le : ce sort inflige 1 dégât supplémentaire.",
 			expansion: "Tales of Old Gravehold",
 		},
 	],
@@ -98,7 +98,7 @@ export const cards: CardsByType = {
 			nameEn: "Expunge Essence",
 			cost: 5,
 			description:
-				"Lancer : Retirez un jeton Élémentaire d'un ennemi. Si vous le faites, infligez-lui 6 dégâts. OU Lancer : Placez un jeton Immolation sur un ennemi et infligez-lui 2 dégâts.",
+				"Lancer : Retirez un jeton Élémentaire d'un ennemi. Si vous le faites, infligez-lui 6 dégâts.(ou)Lancer : Placez un jeton Immolation sur un ennemi et infligez-lui 2 dégâts.",
 			expansion: "The Caverns",
 		},
 		{
@@ -107,7 +107,7 @@ export const cards: CardsByType = {
 			nameEn: "Combust Legend",
 			cost: 4,
 			description:
-				"Lorsque préparé, après qu'un joueur a joué une relique, placez un jeton Éther sur cette carte. Lancer : Infligez 3 dégâts. Gagnez tous les jetons Éther présents sur cette carte.",
+				"Lorsque préparé, après qu'un joueur a joué une relique, placez un jeton éther sur cette carte.<br>Lancer : Infligez 3 dégâts. Gagnez tous les jetons éther présents sur cette carte.",
 			expansion: "The Caverns",
 		},
 		{
@@ -116,7 +116,7 @@ export const cards: CardsByType = {
 			nameEn: "Archaic Discharge",
 			cost: 6,
 			description:
-				"Lorsque préparé, après que vous avez joué une relique, placez un jeton Charge sur cette carte. Lancer : Infligez 4 dégâts, plus 2 dégâts supplémentaires par jeton Charge sur cette carte. Puis défaussez tous les jetons placés sur cette carte.",
+				"Lorsque préparé, après que vous avez joué une relique, placez un jeton Charge sur cette carte.<br>Lancer : Infligez 4 dégâts, plus 2 dégâts supplémentaires par jeton Charge sur cette carte. Puis défaussez tous les jetons placés sur cette carte.",
 			expansion: "The Caverns",
 		},
 		{
@@ -143,7 +143,7 @@ export const cards: CardsByType = {
 			nameEn: "Void Grasp",
 			cost: 4,
 			description:
-				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez donner un jeton Bouclier à un serviteur du paquet Némésis. Si vous le faites, gagnez 3 Ether. Lancer : Infligez 3 dégâts.",
+				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez donner un jeton Bouclier à un serviteur du paquet Némésis. Si vous le faites, gagnez 3 éthers.<br>Lancer : Infligez 3 dégâts.",
 			expansion: "The Abyss",
 		},
 		{

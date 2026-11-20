@@ -12,7 +12,7 @@ export const cards: CardsByType = {
 			cost: 5,
 			developCost: 4,
 			description:
-				"Lorsque vous développez cette carte, détruisez une gemme que vous avez jouée ce tour. Gagnez 3 Ether.",
+				"Lorsque vous développez cette carte, détruisez une gemme que vous avez jouée ce tour. Gagnez 3 éthers.",
 			expansion: "Past and Future",
 		},
 		{
@@ -21,7 +21,7 @@ export const cards: CardsByType = {
 			nameEn: "Amplifying Calcite",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether. OU Gagnez 3 Ether utilisables uniquement pour développer des cartes.",
+				"Gagnez 2 éthers.(ou)Gagnez 3 éthers utilisables uniquement pour développer des cartes.",
 			expansion: "Past and Future",
 		},
 		{
@@ -30,7 +30,7 @@ export const cards: CardsByType = {
 			nameEn: "Mica Shard",
 			cost: 4,
 			description:
-				"Lorsque vous acquérez cette carte, vous pouvez conjurer sur l'une de vos brèches ouvertes ou fermées. Gagnez 2 Ether.",
+				"Lorsque vous acquérez cette carte, vous pouvez conjurer sur l'une de vos brèches ouvertes ou fermées. Gagnez 2 éthers.",
 			expansion: "Past and Future",
 		},
 		{
@@ -38,7 +38,7 @@ export const cards: CardsByType = {
 			name: "Pierre luisante",
 			nameEn: "Glowstone",
 			cost: 3,
-			description: "Gagnez 2 Ether. Échangez cette carte contre Illuminite.",
+			description: "Gagnez 2 éthers. Échangez cette carte contre Illuminite.",
 			expansion: "Past and Future",
 		},
 		{
@@ -47,7 +47,7 @@ export const cards: CardsByType = {
 			nameEn: "Fool's Gold",
 			cost: 5,
 			description:
-				"Gagnez 3 Ether. Vous pouvez échanger cette carte contre Frapper (Smite).",
+				"Gagnez 3 éthers. Vous pouvez échanger cette carte contre Frapper (Smite).",
 			expansion: "Past and Future",
 		},
 		{
@@ -56,7 +56,7 @@ export const cards: CardsByType = {
 			nameEn: "Encased Fossil",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether. Vous pouvez dépenser 6 Ether pour échanger cette carte contre Diamin.",
+				"Gagnez 2 éthers. Vous pouvez dépenser 6 éthers pour échanger cette carte contre Diamin.",
 			expansion: "Past and Future",
 		},
 		{
@@ -65,7 +65,7 @@ export const cards: CardsByType = {
 			nameEn: "Citrine Shrapnel",
 			cost: 3,
 			description:
-				"Gagnez 1 Ether par exemplaire de cette carte dans la zone de développement.(ou)Développez un Éclat de citrine.",
+				"Gagnez 1 éther par exemplaire de cette carte dans la zone de développement.(ou)Développez un Éclat de citrine.",
 			expansion: "Past and Future",
 		},
 		{
@@ -74,7 +74,7 @@ export const cards: CardsByType = {
 			nameEn: "Rhodonix",
 			cost: 6,
 			description:
-				"Gagnez 3 Ether. S'il s'agit de la première Rhodonix que vous jouez ce tour, piochez une carte supplémentaire à la fin de ce tour.",
+				"Gagnez 3 éthers. S'il s'agit de la première Rhodonix que vous jouez ce tour, piochez une carte supplémentaire à la fin de ce tour.",
 			expansion: "Origins",
 		},
 		{
@@ -84,7 +84,7 @@ export const cards: CardsByType = {
 			cost: 5,
 			developCost: 3,
 			description:
-				"Gagnez 2 Ether. Si la némésis est au palier 2 ou plus, piochez une carte supplémentaire à la fin de ce tour.",
+				"Gagnez 2 éthers. Si la némésis est au palier 2 ou plus, piochez une carte supplémentaire à la fin de ce tour.",
 			expansion: "Evolution",
 		},
 	],
@@ -96,7 +96,7 @@ export const cards: CardsByType = {
 			cost: 6,
 			developCost: 4,
 			description:
-				"Lorsque vous développez cette carte, un allié gagne 1 jeton Éther. Stabilisez la brèche d'un joueur. Un joueur peut détruire une carte de sa main ou de sa défausse.",
+				"Lorsque vous développez cette carte, un allié gagne 1 jeton éther. Stabilisez la brèche d'un joueur. Un joueur peut détruire une carte de sa main ou de sa défausse.",
 			expansion: "Past and Future",
 		},
 		{
@@ -114,7 +114,7 @@ export const cards: CardsByType = {
 			nameEn: "Inscrutable Artifact",
 			cost: 6,
 			description:
-				"Lancez le sort préparé d'un joueur coûtant 5 Ether ou moins sans le défausser. Si vous avez 3 points de vie ou moins, échangez cette carte contre Rune d'éther (Aetherrune).",
+				"Lancez le sort préparé d'un joueur coûtant 5 éthers ou moins sans le défausser. Si vous avez 3 points de vie ou moins, échangez cette carte contre Rune d'éther (Aetherrune).",
 			expansion: "Past and Future",
 		},
 		{
@@ -184,7 +184,7 @@ export const cards: CardsByType = {
 			cost: 5,
 			developCost: 3,
 			description:
-				"Lorsque vous développez cette carte, regardez la première carte du paquet d'ordre du tour. Vous pouvez la replacer au-dessus ou en dessous de ce paquet. Lancer : Infligez 3 dégâts.",
+				"Lorsque vous développez cette carte, regardez la première carte du paquet d'ordre du tour. Vous pouvez la replacer au-dessus ou en dessous de ce paquet.<br>Lancer : Infligez 3 dégâts.",
 			expansion: "Past and Future",
 		},
 		{
@@ -203,7 +203,7 @@ export const cards: CardsByType = {
 			nameEn: "Cavernous Maw",
 			cost: 3,
 			description:
-				"Lancer : Infligez 2 dégâts. Vous pouvez détruire une carte de votre défausse coûtant 4 Ether ou plus. Si vous le faites, échangez cette carte contre Flamme de dragon (Dragonflare) et placez-la sur le dessus de votre pioche.",
+				"Lancer : Infligez 2 dégâts. Vous pouvez détruire une carte de votre défausse coûtant 4 éthers ou plus. Si vous le faites, échangez cette carte contre Flamme de dragon (Dragonflare) et placez-la sur le dessus de votre pioche.",
 			expansion: "Past and Future",
 		},
 		{
@@ -231,7 +231,7 @@ export const cards: CardsByType = {
 			nameEn: "Prismatic Flare",
 			cost: 5,
 			description:
-				"Lorsque vous préparez cette carte, stabilisez votre brèche III. Lancer : Infligez 3 dégâts.",
+				"Lorsque vous préparez cette carte, stabilisez votre brèche III.<br>Lancer : Infligez 3 dégâts.",
 			expansion: "Past and Future",
 		},
 		{
@@ -240,7 +240,7 @@ export const cards: CardsByType = {
 			nameEn: "Lashing Sinew",
 			cost: 5,
 			description:
-				"Lorsque vous préparez cette carte, piochez une carte supplémentaire à la fin de ce tour. Lancer : Infligez 2 dégâts.",
+				"Lorsque vous préparez cette carte, piochez une carte supplémentaire à la fin de ce tour.<br>Lancer : Infligez 2 dégâts.",
 			expansion: "Origins",
 		},
 		{
@@ -267,7 +267,7 @@ export const cards: CardsByType = {
 			nameEn: "Reflecting Current",
 			cost: 6,
 			description:
-				"Lorsque préparé, quand vous préparez un autre sort, gagnez 1 Ether. Lancer : Infligez 4 dégâts.",
+				"Lorsque préparé, quand vous préparez un autre sort, gagnez 1 éther.<br>Lancer : Infligez 4 dégâts.",
 			expansion: "Evolution",
 		},
 	],

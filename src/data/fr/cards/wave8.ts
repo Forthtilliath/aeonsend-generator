@@ -8,7 +8,7 @@ export const cards: CardsByType = {
 			name: "Brûlite",
 			nameEn: "Flamium",
 			cost: 3,
-			description: "Gagnez 2 Ether.(ou)Placez un jeton Feu sur un adversaire.",
+			description: "Gagnez 2 éthers.(ou)Placez un jeton Feu sur un adversaire.",
 			expansion: "Le Commencement",
 		},
 		{
@@ -17,7 +17,7 @@ export const cards: CardsByType = {
 			nameEn: "Infused Galvite",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.(ou)Gagnez 1 Ether. Placez un jeton Électricité sur un adversaire.",
+				"Gagnez 2 éthers.(ou)Gagnez 1 éther. Placez un jeton Électricité sur un adversaire.",
 			expansion: "Le Commencement",
 		},
 		{
@@ -26,7 +26,7 @@ export const cards: CardsByType = {
 			nameEn: "Washium",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nVous pouvez dépenser 1 Ether pour stabiliser votre brèche fermée ayant le coût de stabilisation le plus faible.",
+				"Gagnez 2 éthers.<br>Vous pouvez dépenser 1 éther pour stabiliser votre brèche fermée ayant le coût de stabilisation le plus faible.",
 			expansion: "Le Commencement",
 		},
 		{
@@ -35,7 +35,7 @@ export const cards: CardsByType = {
 			nameEn: "Acidic Flomite",
 			cost: 5,
 			description:
-				"Gagnez 3 Ether.\nVous pouvez perdre 1 charge. Si vous le faites, placez un jeton Feu sur un adversaire.",
+				"Gagnez 3 éthers.<br>Vous pouvez perdre 1 charge. Si vous le faites, placez un jeton Feu sur un adversaire.",
 			expansion: "Le Commencement",
 		},
 		{
@@ -46,7 +46,7 @@ export const cards: CardsByType = {
 			developCost: 4,
 			conditionalCost: true,
 			description:
-				"Si vous avez 2 charges ou plus, vous pouvez acquérir ou développer cette carte pour 1 Ether de moins.(hr)Lorsque vous développez cette carte, stabilisez une brèche.(hr)Gagnez 3 Ether.",
+				"Si vous avez 2 charges ou plus, vous pouvez acquérir ou développer cette carte pour 1 éther de moins.(hr)Lorsque vous développez cette carte, stabilisez une brèche.(hr)Gagnez 3 éthers.",
 			expansion: "Le Commencement",
 		},
 		{
@@ -55,7 +55,7 @@ export const cards: CardsByType = {
 			nameEn: "Glutton's Jewel",
 			cost: 6,
 			description:
-				"Gagnez 3 Ether.\nSi votre pioche et votre défausse contiennent ensemble au moins 15 cartes, placez autant de cartes que vous voulez d'une pile de la réserve autre que Joyau du glouton sur le dessus de votre pioche.",
+				"Gagnez 3 éthers.<br>Si votre pioche et votre défausse contiennent ensemble au moins 15 cartes, placez autant de cartes que vous voulez d'une pile de la réserve autre que Joyau du glouton sur le dessus de votre pioche.",
 			expansion: "Le Commencement",
 		},
 	],
@@ -66,7 +66,7 @@ export const cards: CardsByType = {
 			nameEn: "Coruscating Mirror",
 			cost: 3,
 			description:
-				"Lorsqu'un serviteur est révélé depuis la pioche Némésis, vous pouvez révéler cette carte pour placer un jeton Électricité sur ce serviteur.(hr)Un allié pioche une carte et gagne un jeton Ether.",
+				"Lorsqu'un serviteur est révélé depuis la pioche Némésis, vous pouvez révéler cette carte pour placer un jeton Électricité sur ce serviteur.(hr)Un allié pioche une carte et gagne un jeton éther.",
 			expansion: "Le Commencement",
 		},
 		{
@@ -75,7 +75,7 @@ export const cards: CardsByType = {
 			nameEn: "Redistributor",
 			cost: 4,
 			description:
-				"Gagnez 1 charge.\nUn allié gagne un jeton Ether. Si vous avez 3 charges ou plus, cet allié gagne 1 jeton Ether supplémentaire.",
+				"Gagnez 1 charge.<br>Un allié gagne un jeton éther. Si vous avez 3 charges ou plus, cet allié gagne 1 jeton éther supplémentaire.",
 			expansion: "Le Commencement",
 		},
 		{
@@ -84,7 +84,7 @@ export const cards: CardsByType = {
 			nameEn: "Tuned Reconstructor",
 			cost: 4,
 			description:
-				"Un allié révèle la première carte de sa pioche. S'il s'agit d'un sort, vous pouvez le lancer. S'il ne s'agit pas d'un sort, cet allié peut la détruire, acquérir une carte coûtant jusqu'à 3 Ether de plus que la carte détruite et la placer sur sa pioche.",
+				"Un allié révèle la première carte de sa pioche. S'il s'agit d'un sort, vous pouvez le lancer. S'il ne s'agit pas d'un sort, cet allié peut la détruire, acquérir une carte coûtant jusqu'à 3 éthers de plus que la carte détruite et la placer sur sa pioche.",
 			expansion: "Le Commencement",
 		},
 		{
@@ -124,7 +124,7 @@ export const cards: CardsByType = {
 			nameEn: "Legacy Slayer",
 			cost: 4,
 			description:
-				"Lorsque préparé, si un joueur acquiert une relique, gagnez 1 charge. Lancer : Infligez 3 dégâts.",
+				"Lorsque préparé, si un joueur acquiert une relique, gagnez 1 charge.<br>Lancer : Infligez 3 dégâts.",
 			expansion: "Le Commencement",
 		},
 		{
@@ -133,7 +133,7 @@ export const cards: CardsByType = {
 			nameEn: "Endless Weave",
 			cost: 5,
 			description:
-				"Lorsque préparé, si vous appliquez votre capacité, un allié peut piocher une carte et peut préparer un sort de sa main sur une brèche ouverte ou fermée. Lancer : Infligez 4 dégâts.",
+				"Lorsque préparé, si vous appliquez votre capacité, un allié peut piocher une carte et peut préparer un sort de sa main sur une brèche ouverte ou fermée.<br>Lancer : Infligez 4 dégâts.",
 			expansion: "Le Commencement",
 		},
 		{
@@ -171,7 +171,7 @@ export const cards: CardsByType = {
 			cost: 6,
 			developCost: 4,
 			description:
-				"Lorsque préparé, une fois par tour, lorsqu'un joueur développe une carte, il place un jeton Élément sur un adversaire. Lancer : Infligez 4 dégâts.",
+				"Lorsque préparé, une fois par tour, lorsqu'un joueur développe une carte, il place un jeton Élément sur un adversaire.<br>Lancer : Infligez 4 dégâts.",
 			expansion: "Le Commencement",
 		},
 		{
@@ -189,7 +189,7 @@ export const cards: CardsByType = {
 			nameEn: "Alchemical Ignition",
 			cost: 8,
 			description:
-				"Lorsque préparé, une fois par tour, lorsqu'un joueur place un jeton Élément, il place un jeton Élément supplémentaire du même type sur le même adversaire. Lancer : Placez 2 jetons Poison sur un adversaire et infligez-lui 2 dégâts.",
+				"Lorsque préparé, une fois par tour, lorsqu'un joueur place un jeton Élément, il place un jeton Élément supplémentaire du même type sur le même adversaire.<br>Lancer : Placez 2 jetons Poison sur un adversaire et infligez-lui 2 dégâts.",
 			expansion: "Le Commencement",
 		},
 		{
@@ -198,7 +198,7 @@ export const cards: CardsByType = {
 			nameEn: "Unveil Potential",
 			cost: 7,
 			description:
-				"Lorsque préparé, vos autres sorts gagnent le texte « OU Lancer\u00a0: Infligez autant de dégâts que le coût de cette carte. » Lancer : Infligez 5 dégâts.",
+				"Lorsque préparé, vos autres sorts gagnent le texte « OU Lancer\u00a0: Infligez autant de dégâts que le coût de cette carte. »<br>Lancer : Infligez 5 dégâts.",
 			expansion: "Le Commencement",
 		},
 	],

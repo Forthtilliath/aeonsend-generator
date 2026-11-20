@@ -25,6 +25,10 @@
 	opacity: 0.8;
 }
 
+.card-text__small {
+	font-size: 0.85em;
+}
+
 .card-text__or {
 	font-weight: 800;
 }

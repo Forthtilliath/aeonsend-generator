@@ -137,7 +137,7 @@ export const CardBanSelector = ({
 												<span className="sr-only">{getTypeLabel(type)}</span>
 											</span>
 											<CostBanner card={card} />
-											<CardText description={card.description} />
+											<CardText card={card} />
 										</button>
 									);
 								})}

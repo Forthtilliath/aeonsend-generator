@@ -1,10 +1,22 @@
-import { parseCardText, type TextToken } from "../../utils/cardText";
+import type { Card } from "../../types";
+import {
+	CARD_KEYWORDS,
+	type CardKeyword,
+	parseCardText,
+	type TextToken,
+} from "../../utils/cardText";
 import { AetherSvg } from "../ui/Icons";
 
 const Token = ({ token }: { token: TextToken }) => {
 	// Espace insécable : « Rappel » et ses deux-points restent sur la même ligne.
 	if (token.kind === "bold") {
 		return <strong>{token.value.replace(" :", " :")}</strong>;
+	}
+	if (token.kind === "note") {
+		return <span className="card-text__reminder">{token.value}</span>;
+	}
+	if (token.kind === "small") {
+		return <span className="card-text__small">{token.value}</span>;
 	}
 	if (token.kind === "aether") {
 		return (
@@ -17,10 +29,22 @@ const Token = ({ token }: { token: TextToken }) => {
 	return token.value;
 };
 
+const Keyword = ({ label, reminder }: CardKeyword) => (
+	<span>
+		{label && <span className="card-text__keyword">{label}</span>}
+		{reminder && <span className="card-text__reminder">({reminder})</span>}
+	</span>
+);
+
+type CardTextProps = {
+	card: Pick<Card, "description" | "keyword">;
+};
+
 /** Texte de règle d'une carte, mis en forme comme sur la carte imprimée. */
-export const CardText = ({ description }: { description: string }) => (
+export const CardText = ({ card }: CardTextProps) => (
 	<span className="card-text">
-		{parseCardText(description).map((block, idx) => {
+		{card.keyword && <Keyword {...CARD_KEYWORDS[card.keyword]} />}
+		{parseCardText(card.description).map((block, idx) => {
 			// biome-ignore-start lint/suspicious/noArrayIndexKey: blocs fixes d'un texte qui ne change pas
 			if (block.kind === "rule") {
 				return <span key={idx} className="card-text__rule" />;
@@ -29,18 +53,6 @@ export const CardText = ({ description }: { description: string }) => (
 				return (
 					<span key={idx} className="card-text__or">
 						OU
-					</span>
-				);
-			}
-			if (block.kind === "keyword") {
-				return (
-					<span key={idx}>
-						{block.label && (
-							<span className="card-text__keyword">{block.label}</span>
-						)}
-						{block.reminder && (
-							<span className="card-text__reminder">({block.reminder})</span>
-						)}
 					</span>
 				);
 			}

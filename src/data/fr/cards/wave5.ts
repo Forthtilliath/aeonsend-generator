@@ -9,7 +9,7 @@ export const cards: CardsByType = {
 			nameEn: "Unstable Pyrite",
 			cost: 2,
 			description:
-				"Gagnez 1 Ether.\nVous pouvez détruire cette carte pour gagner 2 Ether supplémentaires.",
+				"Gagnez 1 éther.<br>Vous pouvez détruire cette carte pour gagner 2 éthers supplémentaires.",
 			expansion: "Les Parias",
 		},
 		{
@@ -18,7 +18,7 @@ export const cards: CardsByType = {
 			nameEn: "Molten Peridot",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.\nS'il s'agit du second Péridot en Fusion que vous jouez ce tour, vous pouvez détruire cette carte pour acquérir une carte d'une pile de la réserve coûtant 4 Ether ou moins.",
+				"Gagnez 2 éthers.<br>S'il s'agit du second Péridot en Fusion que vous jouez ce tour, vous pouvez détruire cette carte pour acquérir une carte d'une pile de la réserve coûtant 4 éthers ou moins.",
 			expansion: "Les Parias",
 		},
 		{
@@ -27,7 +27,7 @@ export const cards: CardsByType = {
 			nameEn: "Helix of Amber",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.\nVous pouvez subir 1 dégât pour détruire une carte de votre main coûtant 0 Ether.",
+				"Gagnez 2 éthers.<br>Vous pouvez subir 1 dégât pour détruire une carte de votre main coûtant 0 éther.",
 			expansion: "Les Parias",
 		},
 		{
@@ -36,7 +36,7 @@ export const cards: CardsByType = {
 			nameEn: "Petrified Phoenixium",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nLa prochaine fois que vous acquérez une carte ce tour, vous pouvez lancer le sort préparé d'un joueur.",
+				"Gagnez 2 éthers.<br>La prochaine fois que vous acquérez une carte ce tour, vous pouvez lancer le sort préparé d'un joueur.",
 			expansion: "Les Parias",
 		},
 		{
@@ -45,7 +45,7 @@ export const cards: CardsByType = {
 			nameEn: "Galvanized Sapphire",
 			requiresXaxos: true,
 			cost: 4,
-			description: "Gagnez 2 Ether.\nXaxos : Paria gagne 1 charge.",
+			description: "Gagnez 2 éthers.<br>Xaxos : Paria gagne 1 charge.",
 			expansion: "Les Parias",
 		},
 		{
@@ -54,7 +54,7 @@ export const cards: CardsByType = {
 			nameEn: "Elongated Looq",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nLa prochaine fois que vous ouvrez ou stabilisez une brèche ce tour, gagnez 1 charge.",
+				"Gagnez 2 éthers.<br>La prochaine fois que vous ouvrez ou stabilisez une brèche ce tour, gagnez 1 charge.",
 			expansion: "Les Parias",
 		},
 		{
@@ -63,7 +63,7 @@ export const cards: CardsByType = {
 			nameEn: "Vigorous Sunstone",
 			cost: 5,
 			description:
-				"Lorsque vous acquérez cette carte, s'il s'agit de la seconde carte que vous acquérez ce tour, prenez-la en main.\nGagnez 3 Ether.",
+				"Lorsque vous acquérez cette carte, s'il s'agit de la seconde carte que vous acquérez ce tour, prenez-la en main.<br>Gagnez 3 éthers.",
 			expansion: "Les Parias",
 		},
 		{
@@ -72,7 +72,7 @@ export const cards: CardsByType = {
 			nameEn: "Duplicating Sazite",
 			cost: 6,
 			description:
-				"Gagnez 3 Ether.\nLa prochaine fois que vous acquérez une carte ce tour, vous pouvez défausser un sort préparé coûtant 1 Ether ou plus pour qu'un allié acquière une carte de la réserve coûtant aussi cher ou moins cher que la carte que vous avez acquise.",
+				"Gagnez 3 éthers.<br>La prochaine fois que vous acquérez une carte ce tour, vous pouvez défausser un sort préparé coûtant 1 éther ou plus pour qu'un allié acquière une carte de la réserve coûtant aussi cher ou moins cher que la carte que vous avez acquise.",
 			expansion: "Les Parias",
 		},
 		{
@@ -81,7 +81,7 @@ export const cards: CardsByType = {
 			nameEn: "Coruscating Sapal",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nVous pouvez perdre 1 charge. Si vous le faites, gagnez 2 Ether supplémentaires.",
+				"Gagnez 2 éthers.<br>Vous pouvez perdre 1 charge. Si vous le faites, gagnez 2 éthers supplémentaires.",
 			expansion: "Les Parias",
 		},
 		{
@@ -90,7 +90,7 @@ export const cards: CardsByType = {
 			nameEn: "Quickening Qitite",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.\nVous pouvez défausser une carte de votre main pour stabiliser la brèche II d'un joueur.",
+				"Gagnez 2 éthers.<br>Vous pouvez défausser une carte de votre main pour stabiliser la brèche II d'un joueur.",
 			expansion: "Le Village du Sud",
 		},
 		{
@@ -99,7 +99,7 @@ export const cards: CardsByType = {
 			nameEn: "Jeweled Urup",
 			cost: 5,
 			description:
-				"Gagnez 3 Ether.\nS'il s'agit du second Urupe Enrichi que vous jouez ce tour, vous pouvez détruire cette carte pour acquérir une carte d'une pile de la réserve coûtant 7 Ether ou moins.",
+				"Gagnez 3 éthers.<br>S'il s'agit du second Urupe Enrichi que vous jouez ce tour, vous pouvez détruire cette carte pour acquérir une carte d'une pile de la réserve coûtant 7 éthers ou moins.",
 			expansion: "Le Village du Sud",
 		},
 	],
@@ -119,7 +119,7 @@ export const cards: CardsByType = {
 			nameEn: "Carnivorous Roox",
 			cost: 3,
 			description:
-				"Gagnez 1 Ether. Vous pouvez détruire une carte de votre main pour gagner autant d'Ether que son coût.(ou)Détruisez cette carte pour stabiliser deux fois votre brèche fermée ayant le coût de stabilisation le plus faible.",
+				"Gagnez 1 éther. Vous pouvez détruire une carte de votre main pour gagner autant d'éther que son coût.(ou)Détruisez cette carte pour stabiliser deux fois votre brèche fermée ayant le coût de stabilisation le plus faible.",
 			expansion: "Les Parias",
 		},
 		{
@@ -128,7 +128,7 @@ export const cards: CardsByType = {
 			nameEn: "Rift Dagger",
 			cost: 3,
 			description:
-				"Acquérez une carte d'une autre pile de la réserve dont les cartes coûtent 3 Ether ou moins. Vous pouvez détruire cette relique pour acquérir une carte coûtant jusqu'à 4 Ether à la place.\nVous pouvez dépenser 1 Ether pour prendre la carte acquise en main.",
+				"Acquérez une carte d'une autre pile de la réserve dont les cartes coûtent 3 éthers ou moins. Vous pouvez détruire cette relique pour acquérir une carte coûtant jusqu'à 4 éthers à la place.<br>Vous pouvez dépenser 1 éther pour prendre la carte acquise en main.",
 			expansion: "Les Parias",
 		},
 		{
@@ -138,7 +138,7 @@ export const cards: CardsByType = {
 			requiresXaxos: true,
 			cost: 3,
 			description:
-				"Xaxos : Paria gagne 1 charge.\nVous pouvez détruire 1 carte de votre main.",
+				"Xaxos : Paria gagne 1 charge.<br>Vous pouvez détruire 1 carte de votre main.",
 			expansion: "Les Parias",
 		},
 		{
@@ -147,7 +147,7 @@ export const cards: CardsByType = {
 			nameEn: "Destiny Forger",
 			cost: 4,
 			description:
-				"Un allié peut détruire une carte de sa main. Ce joueur peut acquérir une carte coûtant jusqu'à 2 Ether de plus que la carte détruite et la prendre en main.(ou)Détruisez cette carte pour gagner 2 charges.",
+				"Un allié peut détruire une carte de sa main. Ce joueur peut acquérir une carte coûtant jusqu'à 2 éthers de plus que la carte détruite et la prendre en main.(ou)Détruisez cette carte pour gagner 2 charges.",
 			expansion: "Les Parias",
 		},
 		{
@@ -156,7 +156,7 @@ export const cards: CardsByType = {
 			nameEn: "Chain of Retrieval",
 			cost: 4,
 			description:
-				"Stabilisez la brèche d'un allié.(ou)Reprenez en main une carte de votre défausse coûtant 6 Ether ou moins.",
+				"Stabilisez la brèche d'un allié.(ou)Reprenez en main une carte de votre défausse coûtant 6 éthers ou moins.",
 			expansion: "Les Parias",
 		},
 		{
@@ -174,7 +174,7 @@ export const cards: CardsByType = {
 			nameEn: "Transmuter's Lens",
 			cost: 5,
 			description:
-				"Détruisez cette carte.\nVous pouvez détruire une carte de votre main ou de votre défausse.\nAcquérez une carte d'une pile de la réserve coûtant jusqu'à 6 Ether.",
+				"Détruisez cette carte.<br>Vous pouvez détruire une carte de votre main ou de votre défausse.<br>Acquérez une carte d'une pile de la réserve coûtant jusqu'à 6 éthers.",
 			expansion: "Les Parias",
 		},
 		{
@@ -201,7 +201,7 @@ export const cards: CardsByType = {
 			nameEn: "Glass-Eyed Oracle",
 			cost: 1,
 			description:
-				"Gagnez 1 Ether.(ou)Détruisez cette carte et le nombre d'exemplaires de cette carte de votre choix que vous avez en main. Vous pouvez acquérir une carte coûtant jusqu'à trois fois le nombre d'exemplaires détruits.",
+				"Gagnez 1 éther.(ou)Détruisez cette carte et le nombre d'exemplaires de cette carte de votre choix que vous avez en main. Vous pouvez acquérir une carte coûtant jusqu'à trois fois le nombre d'exemplaires détruits.",
 			expansion: "Retour à Gravehold",
 		},
 		{
@@ -210,7 +210,7 @@ export const cards: CardsByType = {
 			nameEn: "Cat's Eye",
 			cost: 1,
 			description:
-				"[small]Vous ne pouvez pas acquérir cette carte si vous avez acquis une autre carte ce tour. Vous ne pouvez pas acquérir d'autres cartes si vous avez acquis cette carte ce tour.[/small]\nGagnez 1 charge. Vous pouvez détruire cette carte pour gagner 1 Ether.",
+				"[small]Vous ne pouvez pas acquérir cette carte si vous avez acquis une autre carte ce tour. Vous ne pouvez pas acquérir d'autres cartes si vous avez acquis cette carte ce tour.[/small]<br>Gagnez 1 charge. Vous pouvez détruire cette carte pour gagner 1 éther.",
 			expansion: "Le Village du Sud",
 		},
 		{
@@ -219,7 +219,7 @@ export const cards: CardsByType = {
 			nameEn: "Volt Replicator",
 			cost: 4,
 			description:
-				"Un allié acquiert une carte coûtant 5 Ether ou moins. S'il y a deux Réplicateurs Voltaïques ou moins dans la réserve, vous pouvez détruire cette carte. Si vous le faites, cet allié prend en main la carte acquise.",
+				"Un allié acquiert une carte coûtant 5 éthers ou moins. S'il y a deux Réplicateurs Voltaïques ou moins dans la réserve, vous pouvez détruire cette carte. Si vous le faites, cet allié prend en main la carte acquise.",
 			expansion: "Le Village du Sud",
 		},
 		{
@@ -228,7 +228,7 @@ export const cards: CardsByType = {
 			nameEn: "Energized Conduit",
 			cost: 7,
 			description:
-				"Connectez cette relique à la brèche d'un joueur.\nLorsqu'un sort est lancé depuis cette brèche, le joueur qui lance ce sort gagne 1 charge.",
+				"Connectez cette relique à la brèche d'un joueur.<br>Lorsqu'un sort est lancé depuis cette brèche, le joueur qui lance ce sort gagne 1 charge.",
 			expansion: "Le Village du Sud",
 		},
 	],
@@ -248,7 +248,8 @@ export const cards: CardsByType = {
 			nameEn: "Paired Storm",
 			cost: 3,
 			description:
-				"(lien)Lancer : Infligez 2 dégâts. S'il s'agit du second Orage Jumelé que vous lancez ce tour, infligez 2 dégâts supplémentaires.",
+				"Lancer : Infligez 2 dégâts. S'il s'agit du second Orage Jumelé que vous lancez ce tour, infligez 2 dégâts supplémentaires.",
+			keyword: "link",
 			expansion: "Les Parias",
 		},
 		{
@@ -303,7 +304,7 @@ export const cards: CardsByType = {
 			nameEn: "Unstable Rift",
 			cost: 5,
 			description:
-				"Lorsque préparé, à la fin de votre phase d'incantation, infligez 1 dégât et gagnez 1 Ether. Lancer : Infligez 4 dégâts.",
+				"Lorsque préparé, à la fin de votre phase d'incantation, infligez 1 dégât et gagnez 1 éther.<br>Lancer : Infligez 4 dégâts.",
 			expansion: "Les Parias",
 		},
 		{
@@ -312,7 +313,7 @@ export const cards: CardsByType = {
 			nameEn: "Gathered Will",
 			cost: 5,
 			description:
-				"Lancer : Infligez 2 dégâts. Vous pouvez acquérir un sort d'une pile de la réserve coûtant 4 Ether ou moins et le placer sur votre pioche.",
+				"Lancer : Infligez 2 dégâts. Vous pouvez acquérir un sort d'une pile de la réserve coûtant 4 éthers ou moins et le placer sur votre pioche.",
 			expansion: "Les Parias",
 		},
 		{
@@ -330,7 +331,7 @@ export const cards: CardsByType = {
 			nameEn: "Hasted Intellect",
 			cost: 6,
 			description:
-				"Lorsque préparé, si vous acquérez une carte, vous pouvez la placer sur votre pioche. Lancer : Infligez 4 dégâts.",
+				"Lorsque préparé, si vous acquérez une carte, vous pouvez la placer sur votre pioche.<br>Lancer : Infligez 4 dégâts.",
 			expansion: "Les Parias",
 		},
 		{
@@ -339,7 +340,7 @@ export const cards: CardsByType = {
 			nameEn: "Swarm of Flame",
 			cost: 6,
 			description:
-				"Lancer : Infligez 5 dégâts. Vous pouvez lancer le sort préparé d'un joueur coûtant 5 Ether ou moins.",
+				"Lancer : Infligez 5 dégâts. Vous pouvez lancer le sort préparé d'un joueur coûtant 5 éthers ou moins.",
 			expansion: "Les Parias",
 		},
 		{
@@ -348,7 +349,7 @@ export const cards: CardsByType = {
 			nameEn: "Arcane Relay",
 			cost: 8,
 			description:
-				"Lancer : Un allié pioche une carte, puis révèle sa main. Infligez 4 dégâts. Infligez 1 dégât supplémentaire par carte de sa main coûtant 1 Ether ou plus.",
+				"Lancer : Un allié pioche une carte, puis révèle sa main. Infligez 4 dégâts. Infligez 1 dégât supplémentaire par carte de sa main coûtant 1 éther ou plus.",
 			expansion: "Les Parias",
 		},
 		{
@@ -366,7 +367,7 @@ export const cards: CardsByType = {
 			nameEn: "Force Catalyst",
 			cost: 4,
 			description:
-				"Lorsque préparé, durant votre phase principale, vous pouvez dépenser 3 Ether pour lancer le sort préparé de n'importe quel joueur. Lancer : Infligez 3 dégâts.",
+				"Lorsque préparé, durant votre phase principale, vous pouvez dépenser 3 éthers pour lancer le sort préparé de n'importe quel joueur.<br>Lancer : Infligez 3 dégâts.",
 			expansion: "Les Parias",
 		},
 		{
@@ -393,7 +394,7 @@ export const cards: CardsByType = {
 			nameEn: "Flame Jab",
 			cost: 1,
 			description:
-				"Lancer : Infligez 2 dégâts à un serviteur. Vous pouvez détruire cette carte pour gagner 1 Ether.",
+				"Lancer : Infligez 2 dégâts à un serviteur. Vous pouvez détruire cette carte pour gagner 1 éther.",
 			expansion: "Le Village du Sud",
 		},
 		{
@@ -411,7 +412,7 @@ export const cards: CardsByType = {
 			nameEn: "Cinder Shower",
 			cost: 5,
 			description:
-				"Lorsque préparé, si vous acquérez une carte, infligez 1 dégât. Lancer : Infligez 3 dégâts.",
+				"Lorsque préparé, si vous acquérez une carte, infligez 1 dégât.<br>Lancer : Infligez 3 dégâts.",
 			expansion: "Le Village du Sud",
 		},
 		{
@@ -420,7 +421,7 @@ export const cards: CardsByType = {
 			nameEn: "Erasure of Mind",
 			cost: 7,
 			description:
-				"Lancer : Détruisez une carte de votre main coûtant 3 Ether ou plus. Si vous le faites, infligez 10 dégâts.(ou)Lancer : Infligez 5 dégâts. Révélez les deux premières cartes de votre pioche. Vous pouvez en placer une ou placer les deux cartes dans votre défausse.",
+				"Lancer : Détruisez une carte de votre main coûtant 3 éthers ou plus. Si vous le faites, infligez 10 dégâts.(ou)Lancer : Infligez 5 dégâts. Révélez les deux premières cartes de votre pioche. Vous pouvez en placer une ou placer les deux cartes dans votre défausse.",
 			expansion: "Le Village du Sud",
 		},
 		{
@@ -429,7 +430,7 @@ export const cards: CardsByType = {
 			nameEn: "Reaper's Flame",
 			cost: 7,
 			description:
-				"Lorsque préparé, une fois par tour, si vous lancez un autre sort, vous pouvez acquérir une carte d'une pile de la réserve coûtant 5 Ether ou moins. Lancer : Infligez 5 dégâts.",
+				"Lorsque préparé, une fois par tour, si vous lancez un autre sort, vous pouvez acquérir une carte d'une pile de la réserve coûtant 5 éthers ou moins.<br>Lancer : Infligez 5 dégâts.",
 			expansion: "Le Village du Sud",
 		},
 	],

@@ -9,7 +9,7 @@ export const cards: CardsByType = {
 			name: "Cyanolithe ancienne",
 			nameEn: "Ancient Cyanolith",
 			cost: 3,
-			description: "Gagnez 2 Ether.",
+			description: "Gagnez 2 éthers.",
 			expansion: "Legacy",
 		},
 		{
@@ -18,7 +18,7 @@ export const cards: CardsByType = {
 			nameEn: "Crumbling Compound",
 			cost: 5,
 			description:
-				"Gagnez 2 Ether.\nVous pouvez défausser une gemme de votre main. Si vous le faites, gagnez 2 Ether supplémentaires.",
+				"Gagnez 2 éthers.<br>Vous pouvez défausser une gemme de votre main. Si vous le faites, gagnez 2 éthers supplémentaires.",
 			expansion: "Legacy",
 		},
 		{
@@ -27,7 +27,7 @@ export const cards: CardsByType = {
 			nameEn: "Entangled Shard",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nSi vous avez au moins 3 charges, gagnez 1 Ether supplémentaire.",
+				"Gagnez 2 éthers.<br>Si vous avez au moins 3 charges, gagnez 1 éther supplémentaire.",
 			expansion: "Legacy",
 		},
 		{
@@ -36,7 +36,7 @@ export const cards: CardsByType = {
 			nameEn: "Arcing Silicate",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether. Gagnez 1 jeton Pulsation. Vous pouvez perdre autant de jetons Pulsation que vous le souhaitez. Infligez autant de dégâts que de jetons Pulsation perdus de cette manière.",
+				"Gagnez 2 éthers. Gagnez 1 jeton Pulsation. Vous pouvez perdre autant de jetons Pulsation que vous le souhaitez. Infligez autant de dégâts que de jetons Pulsation perdus de cette manière.",
 			expansion: "Legacy",
 		},
 		{
@@ -45,7 +45,7 @@ export const cards: CardsByType = {
 			nameEn: "Branching Radite",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nSi vous avez au moins deux sorts préparés, gagnez 1 Ether supplémentaire.",
+				"Gagnez 2 éthers.<br>Si vous avez au moins deux sorts préparés, gagnez 1 éther supplémentaire.",
 			expansion: "Legacy",
 		},
 		{
@@ -54,7 +54,7 @@ export const cards: CardsByType = {
 			nameEn: "Phased Portalite",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nSi votre brèche III est ouverte, gagnez 1 Ether supplémentaire.",
+				"Gagnez 2 éthers.<br>Si votre brèche III est ouverte, gagnez 1 éther supplémentaire.",
 			expansion: "Legacy",
 		},
 		{
@@ -63,7 +63,7 @@ export const cards: CardsByType = {
 			nameEn: "Conductive Grit",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether. Gagnez 1 jeton Pulsation.(ou)Vous pouvez perdre 1 jeton Pulsation. Si vous le faites, gagnez 3 Ether.",
+				"Gagnez 2 éthers. Gagnez 1 jeton Pulsation.(ou)Vous pouvez perdre 1 jeton Pulsation. Si vous le faites, gagnez 3 éthers.",
 			expansion: "Legacy",
 		},
 		{
@@ -72,7 +72,7 @@ export const cards: CardsByType = {
 			nameEn: "Fulmite Slab",
 			cost: 6,
 			description:
-				"Gagnez 1 Ether. Gagnez 2 jetons Pulsation. Jusqu'à la fin du tour, vous pouvez perdre 1 jeton Pulsation pour gagner 1 Ether, autant de fois que vous le souhaitez.",
+				"Gagnez 1 éther. Gagnez 2 jetons Pulsation. Jusqu'à la fin du tour, vous pouvez perdre 1 jeton Pulsation pour gagner 1 éther, autant de fois que vous le souhaitez.",
 			expansion: "Legacy",
 		},
 		{
@@ -80,7 +80,7 @@ export const cards: CardsByType = {
 			name: "Bille dorée",
 			nameEn: "Gilded Marble",
 			cost: 6,
-			description: "Gagnez 3 Ether.",
+			description: "Gagnez 3 éthers.",
 			expansion: "Legacy",
 		},
 		{
@@ -88,7 +88,7 @@ export const cards: CardsByType = {
 			name: "Luminium raffiné",
 			nameEn: "Refined Lumenium",
 			cost: 5,
-			description: "Gagnez 2 Ether.\nUn allié pioche une carte.",
+			description: "Gagnez 2 éthers.<br>Un allié pioche une carte.",
 			expansion: "Legacy",
 		},
 		{
@@ -96,7 +96,7 @@ export const cards: CardsByType = {
 			name: "Torporène apaisante",
 			nameEn: "Soothing Torporene",
 			cost: 3,
-			description: "Gagnez 2 Ether.(ou)Réduisez un serviteur au silence.",
+			description: "Gagnez 2 éthers.(ou)Réduisez un serviteur au silence.",
 			expansion: "Legacy",
 		},
 		{
@@ -105,7 +105,7 @@ export const cards: CardsByType = {
 			nameEn: "Echo Stone",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nSi vous avez joué une autre Pierre d'écho ce tour, gagnez 1 Ether supplémentaire.",
+				"Gagnez 2 éthers.<br>Si vous avez joué une autre Pierre d'écho ce tour, gagnez 1 éther supplémentaire.",
 			expansion: "Legacy",
 		},
 		{
@@ -114,7 +114,7 @@ export const cards: CardsByType = {
 			nameEn: "Jolting Crust",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether. Gagnez 1 jeton Pulsation.(ou)Gagnez 2 Ether. Perdez 1 jeton Pulsation. Si vous le faites, gagnez 1 charge.",
+				"Gagnez 2 éthers. Gagnez 1 jeton Pulsation.(ou)Gagnez 2 éthers. Perdez 1 jeton Pulsation. Si vous le faites, gagnez 1 charge.",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -123,7 +123,7 @@ export const cards: CardsByType = {
 			nameEn: "Mentite Chunk",
 			cost: 5,
 			description:
-				"Gagnez 3 Ether.\nSi sept cartes ou plus se trouve dans votre défausse, gagnez 1 Ether supplémentaire.",
+				"Gagnez 3 éthers.<br>Si sept cartes ou plus se trouve dans votre défausse, gagnez 1 éther supplémentaire.",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -132,7 +132,7 @@ export const cards: CardsByType = {
 			nameEn: "Muted Lacosite",
 			cost: 5,
 			description:
-				"Lorsque vous acquérez cette carte, réduisez un serviteur au silence.\nGagnez 3 Ether.",
+				"Lorsque vous acquérez cette carte, réduisez un serviteur au silence.<br>Gagnez 3 éthers.",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -141,7 +141,7 @@ export const cards: CardsByType = {
 			nameEn: "Oblivium Resin",
 			cost: 5,
 			description:
-				"Gagnez 2 Ether.\nSi vous avez trois cartes ou plus coûtant 0 Ether en main, gagnez 2 Ether supplémentaire.",
+				"Gagnez 2 éthers.<br>Si vous avez trois cartes ou plus coûtant 0 éther en main, gagnez 2 éthers supplémentaire.",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -150,7 +150,7 @@ export const cards: CardsByType = {
 			nameEn: "Shining Tetrite",
 			cost: 6,
 			description:
-				"Gagnez 4 Ether qui ne peuvent être utilisés que pour acquérir des cartes.",
+				"Gagnez 4 éthers qui ne peuvent être utilisés que pour acquérir des cartes.",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -159,7 +159,7 @@ export const cards: CardsByType = {
 			nameEn: "Summonite",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.(ou)Acquérez une Invoquine de la réserve et placez-la sur la défausse d'un allié.",
+				"Gagnez 2 éthers.(ou)Acquérez une Invoquine de la réserve et placez-la sur la défausse d'un allié.",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -168,7 +168,7 @@ export const cards: CardsByType = {
 			nameEn: "Triplite Core",
 			cost: 4,
 			description:
-				"Gagnez 3 Ether qui ne peuvent être utilisés que pour acquérir des cartes.",
+				"Gagnez 3 éthers qui ne peuvent être utilisés que pour acquérir des cartes.",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -177,7 +177,7 @@ export const cards: CardsByType = {
 			nameEn: "Voidium Spike",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.\nChaque allié peut défausser une carte de samain pour gagner 1 charge.",
+				"Gagnez 2 éthers.<br>Chaque allié peut défausser une carte de samain pour gagner 1 charge.",
 			expansion: "Secrets Enfouis",
 		},
 	],
@@ -188,7 +188,7 @@ export const cards: CardsByType = {
 			nameEn: "Geophage",
 			cost: 3,
 			description:
-				"Gagnez 1 Ether.\nVous pouvez détruire une gemme de votre main.",
+				"Gagnez 1 éther.<br>Vous pouvez détruire une gemme de votre main.",
 			expansion: "Legacy",
 		},
 		{
@@ -197,7 +197,7 @@ export const cards: CardsByType = {
 			nameEn: "Adrenal Batteries",
 			cost: 7,
 			description:
-				"Gagnez 2 jetons Pulsation. Vous pouvez perdre 4 jetons Pulsation. Si vous le faites, ouvrez la brèche fermée d'un joueur. Ensuite, acquérez un sort coûtant 5 Ether ou moins dans la réserve et préparez-le sur la brèche ouverte d'un joueur.",
+				"Gagnez 2 jetons Pulsation. Vous pouvez perdre 4 jetons Pulsation. Si vous le faites, ouvrez la brèche fermée d'un joueur. Ensuite, acquérez un sort coûtant 5 éthers ou moins dans la réserve et préparez-le sur la brèche ouverte d'un joueur.",
 			expansion: "Legacy",
 		},
 		{
@@ -206,7 +206,7 @@ export const cards: CardsByType = {
 			nameEn: "Brane Knife",
 			cost: 3,
 			description:
-				"Gagnez 1 charge.\nUn allié stabilise sa brèche fermée ayant le coût de stabilisation le plus faible.",
+				"Gagnez 1 charge.<br>Un allié stabilise sa brèche fermée ayant le coût de stabilisation le plus faible.",
 			expansion: "Legacy",
 		},
 		{
@@ -224,7 +224,7 @@ export const cards: CardsByType = {
 			nameEn: "Prophetic Lens",
 			cost: 4,
 			description:
-				"Gagnez 1 charge. Révélez la première carte de votre pioche. Vous pouvez la détruire. Si vous ne le faites pas, gagnez 1 Ether.",
+				"Gagnez 1 charge. Révélez la première carte de votre pioche. Vous pouvez la détruire. Si vous ne le faites pas, gagnez 1 éther.",
 			expansion: "Legacy",
 		},
 		{
@@ -267,7 +267,7 @@ export const cards: CardsByType = {
 			nameEn: "Void Mill",
 			cost: 5,
 			description:
-				"Stabilisez la brèche d'un joueur.\nDeux joueurs différents peuvent détruire la carte du dessus de leur défausse.",
+				"Stabilisez la brèche d'un joueur.<br>Deux joueurs différents peuvent détruire la carte du dessus de leur défausse.",
 			expansion: "Legacy",
 		},
 		{
@@ -293,7 +293,7 @@ export const cards: CardsByType = {
 			nameEn: "Manifold Container",
 			cost: 4,
 			description:
-				"Gagnez 1 Ether.\nCe tour, lors de votre prochaine acquisition de carte, vous pouvez acquérir gratuitement une seconde carte qui coûte moins cher que la première carte acquise.",
+				"Gagnez 1 éther.<br>Ce tour, lors de votre prochaine acquisition de carte, vous pouvez acquérir gratuitement une seconde carte qui coûte moins cher que la première carte acquise.",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -302,7 +302,7 @@ export const cards: CardsByType = {
 			nameEn: "Scholar's Opus",
 			cost: 3,
 			description:
-				"Gagnez 1 charge.\nSi sept cartes ou plus se trouvent dans votre défausse, gagnez 1 charge supplémentaire.",
+				"Gagnez 1 charge.<br>Si sept cartes ou plus se trouvent dans votre défausse, gagnez 1 charge supplémentaire.",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -376,7 +376,7 @@ export const cards: CardsByType = {
 			nameEn: "Sparking Siphon",
 			cost: 3,
 			description:
-				"Lorsque vous acquérez cette carte, gagnez 2 jetons Pulsation.\nLancer : Infligez 2 dégâts. Vous pouvez perdre 1 jeton Pulsation. Si vous le faites, un joueur gagne 1 point de vie.",
+				"Lorsque vous acquérez cette carte, gagnez 2 jetons Pulsation.<br>Lancer : Infligez 2 dégâts. Vous pouvez perdre 1 jeton Pulsation. Si vous le faites, un joueur gagne 1 point de vie.",
 			expansion: "Legacy",
 		},
 		{
@@ -385,7 +385,7 @@ export const cards: CardsByType = {
 			nameEn: "Breach Communion",
 			cost: 4,
 			description:
-				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez gagner 1 jeton Pulsation.\nLancer : Infligez 2 dégâts. Vous pouvez perdre 2 jetons Pulsation. Si vous le faites, infligez 3 dégâts supplémentaires.",
+				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez gagner 1 jeton Pulsation.<br>Lancer : Infligez 2 dégâts. Vous pouvez perdre 2 jetons Pulsation. Si vous le faites, infligez 3 dégâts supplémentaires.",
 			expansion: "Legacy",
 		},
 		{
@@ -394,7 +394,7 @@ export const cards: CardsByType = {
 			nameEn: "Fleeting Vision",
 			cost: 3,
 			description:
-				"Lancer : Infligez 2 dégâts.\nChaque joueur peut révéler les deux premières cartes de sa pioche et défausser autant de ces cartes qu'il le souhaite.",
+				"Lancer : Infligez 2 dégâts.<br>Chaque joueur peut révéler les deux premières cartes de sa pioche et défausser autant de ces cartes qu'il le souhaite.",
 			expansion: "Legacy",
 		},
 		{
@@ -412,7 +412,7 @@ export const cards: CardsByType = {
 			nameEn: "Pyro Geist",
 			cost: 6,
 			description:
-				"Lorsque vous préparez ce sort, infligez 1 dégât.\nLancer : Infligez 1 dégât. Infligez 2 dégâts. (Les effets modifiant les dégâts concernent les deux sources de dégâts.)",
+				"Lorsque vous préparez ce sort, infligez 1 dégât.<br>Lancer : Infligez 1 dégât. Infligez 2 dégâts. (Les effets modifiant les dégâts concernent les deux sources de dégâts.)",
 			expansion: "Legacy",
 		},
 		{
@@ -429,7 +429,7 @@ export const cards: CardsByType = {
 			nameEn: "Arcane Salvo",
 			cost: 5,
 			description:
-				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez placer sur votre pioche une relique jouée ce tour ou une relique de votre défausse.\nLancer : Infligez 4 dégâts.",
+				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez placer sur votre pioche une relique jouée ce tour ou une relique de votre défausse.<br>Lancer : Infligez 4 dégâts.",
 			expansion: "Legacy",
 		},
 		{
@@ -438,7 +438,7 @@ export const cards: CardsByType = {
 			nameEn: "Splinter Missile",
 			cost: 5,
 			description:
-				"Lancer : Infligez 4 dégâts.\nUn allié peut défausser une carte de sa main. S'il le fait, répartissez ces dégâts comme vous le souhaitez entre la némésis et autant de serviteurs que vous voulez.",
+				"Lancer : Infligez 4 dégâts.<br>Un allié peut défausser une carte de sa main. S'il le fait, répartissez ces dégâts comme vous le souhaitez entre la némésis et autant de serviteurs que vous voulez.",
 			expansion: "Legacy",
 		},
 		{
@@ -456,7 +456,7 @@ export const cards: CardsByType = {
 			nameEn: "Breach Collision",
 			cost: 7,
 			description:
-				"Lorsque vous acquérez cette carte, vous pouvez la placer sur la défausse de n'importe quel joueur.\nLancer : Infligez 5 dégâts. Gravehold gagne 1 point de vie.",
+				"Lorsque vous acquérez cette carte, vous pouvez la placer sur la défausse de n'importe quel joueur.<br>Lancer : Infligez 5 dégâts. Gravehold gagne 1 point de vie.",
 			expansion: "Legacy",
 		},
 		{
@@ -482,7 +482,7 @@ export const cards: CardsByType = {
 			nameEn: "Blade of Wisdom",
 			cost: 6,
 			description:
-				"Lorsque vous acquerez cette carte, si sept autres cartes ou plus se trouvent dans votre défausse, gagnez 2 points de vie. Lancer : Infligez 5 dégâts.",
+				"Lorsque vous acquerez cette carte, si sept autres cartes ou plus se trouvent dans votre défausse, gagnez 2 points de vie.<br>Lancer : Infligez 5 dégâts.",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -491,7 +491,7 @@ export const cards: CardsByType = {
 			nameEn: "Burning Current",
 			cost: 3,
 			description:
-				"Lorsque préparé, lors de votre phase d'incantation, vous pouvez perdre 2 jetons Pulsation. Si vous le faites, les sorts que vous lancez ce tour infligent 1 dégât supplémentaire. Lancer : Infligez 1 dégâts. Gagnez 1 jeton Pulsation.",
+				"Lorsque préparé, lors de votre phase d'incantation, vous pouvez perdre 2 jetons Pulsation. Si vous le faites, les sorts que vous lancez ce tour infligent 1 dégât supplémentaire.<br>Lancer : Infligez 1 dégâts. Gagnez 1 jeton Pulsation.",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -517,7 +517,8 @@ export const cards: CardsByType = {
 			nameEn: "Flash of Intellect",
 			cost: 4,
 			description:
-				"(lien)Lancer : Infligez 3 dégâts. Si six autres cartes ou plus se trouvent dans votre défausse, vous pouvez acquérir un Éclair de génie de la réserve et le placer sur votre pioche.",
+				"Lancer : Infligez 3 dégâts. Si six autres cartes ou plus se trouvent dans votre défausse, vous pouvez acquérir un Éclair de génie de la réserve et le placer sur votre pioche.",
+			keyword: "link",
 			expansion: "Secrets Enfouis",
 		},
 		{
@@ -535,7 +536,8 @@ export const cards: CardsByType = {
 			nameEn: "Precision Shot",
 			cost: 3,
 			description:
-				"(lien)Lancer : Infligez 2 dégâts. Si six autres cartes ou plus se trouvent dans votre défausse, infligez 2 dégâts supplémentaires.",
+				"Lancer : Infligez 2 dégâts. Si six autres cartes ou plus se trouvent dans votre défausse, infligez 2 dégâts supplémentaires.",
+			keyword: "link",
 			expansion: "Secrets Enfouis",
 		},
 		{

@@ -18,6 +18,22 @@ describe("cards", () => {
 		},
 	);
 
+	test("le texte suit la syntaxe des CSV nanDECK (cf. utils/cardText.ts)", () => {
+		const offenders = Object.values(allCards)
+			.flat()
+			.filter(
+				(c) =>
+					/\n|Ether|(?:\d|jetons?) Éther|\. OU|Écho<br>|brèches adjacentes, de manière|\((?:duo|lien|echo)\)/.test(
+						c.description,
+					) ||
+					c.description
+						.match(/<[^>]*>/g)
+						?.some((tag) => !/^<\/?(?:br|b|i|small)>$/.test(tag)),
+			)
+			.map((c) => c.id);
+		expect(offenders).toEqual([]);
+	});
+
 	test("chaque id est unique (les cartes bannies sont enregistrées par id)", () => {
 		const ids = Object.values(allCards)
 			.flat()

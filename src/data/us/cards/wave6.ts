@@ -14,7 +14,7 @@ export const cards: CardsByType = {
 			nameEn: "Nebula Shard",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.(ou)Gagnez 1 Ether pour chaque sort que vous avez lancé pendant votre phase d'incantation ce tour.",
+				"Gagnez 2 éthers.(ou)Gagnez 1 éther pour chaque sort que vous avez lancé pendant votre phase d'incantation ce tour.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -23,7 +23,7 @@ export const cards: CardsByType = {
 			nameEn: "Scrying Sugilite",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.\nVous pouvez révéler la première carte de votre pioche. Si c'est un sort, gagnez 1 Ether supplémentaire.",
+				"Gagnez 2 éthers.<br>Vous pouvez révéler la première carte de votre pioche. Si c'est un sort, gagnez 1 éther supplémentaire.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -32,7 +32,7 @@ export const cards: CardsByType = {
 			nameEn: "Glint Splinter",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.(hr)Rappel : Vous pouvez défausser un sort préparé. Si vous le faites, gagnez 1 Ether et vous pouvez placer sur votre pioche la prochaine carte que vous acquérez ce tour.",
+				"Gagnez 2 éthers.(hr)Rappel : Vous pouvez défausser un sort préparé. Si vous le faites, gagnez 1 éther et vous pouvez placer sur votre pioche la prochaine carte que vous acquérez ce tour.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -41,7 +41,7 @@ export const cards: CardsByType = {
 			nameEn: "Galactum Cache",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nUn allié pioche autant de cartes que de marques de renfort sur cette carte, puis défausse autant de cartes.\nLa prochaine fois que vous acquérez une carte coûtant 6 Ether ou plus ce tour, renforcez cette carte.",
+				"Gagnez 2 éthers.<br>Un allié pioche autant de cartes que de marques de renfort sur cette carte, puis défausse autant de cartes.<br>La prochaine fois que vous acquérez une carte coûtant 6 éthers ou plus ce tour, renforcez cette carte.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -49,7 +49,7 @@ export const cards: CardsByType = {
 			name: "Verre stellaire",
 			nameEn: "Starglass",
 			cost: 3,
-			description: "Gagnez 2 Ether.(ou)Conjurez.",
+			description: "Gagnez 2 éthers.(ou)Conjurez.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -58,7 +58,7 @@ export const cards: CardsByType = {
 			nameEn: "Irradiated Jewel",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nVous pouvez révéler la première carte du paquet d'ordre du tour pour gagner 1 Ether supplémentaire. Si c'est une carte joueur, faites surchauffer cette carte.\nSi cette carte est entièrement en surchauffe, détruisez-la et Gravehold subit 3 dégâts.",
+				"Gagnez 2 éthers.<br>Vous pouvez révéler la première carte du paquet d'ordre du tour pour gagner 1 éther supplémentaire. Si c'est une carte joueur, faites surchauffer cette carte.<br>Si cette carte est entièrement en surchauffe, détruisez-la et Gravehold subit 3 dégâts.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -67,7 +67,7 @@ export const cards: CardsByType = {
 			nameEn: "Frozen Light",
 			cost: 5,
 			description:
-				"Gagnez 3 Ether.(hr)Vous pouvez défausser cette carte durant le tour d'un allié. Si vous le faites, cet allié gagne 1 charge et vous gagnez 1 charge.",
+				"Gagnez 3 éthers.(hr)Vous pouvez défausser cette carte durant le tour d'un allié. Si vous le faites, cet allié gagne 1 charge et vous gagnez 1 charge.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -76,7 +76,7 @@ export const cards: CardsByType = {
 			nameEn: "Cobalt Clump",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nLa prochaine fois que vous acquérez une carte coûtant 5 Ether ou plus ce tour, réduisez un serviteur au silence.",
+				"Gagnez 2 éthers.<br>La prochaine fois que vous acquérez une carte coûtant 5 éthers ou plus ce tour, réduisez un serviteur au silence.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -85,7 +85,7 @@ export const cards: CardsByType = {
 			nameEn: "Sunken Onyx",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.(hr)Vous pouvez défausser cette carte après qu'un allié a stabilisé une brèche. Si vous le faites, il stabilise de nouveau cette brèche.",
+				"Gagnez 2 éthers.(hr)Vous pouvez défausser cette carte après qu'un allié a stabilisé une brèche. Si vous le faites, il stabilise de nouveau cette brèche.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -94,7 +94,7 @@ export const cards: CardsByType = {
 			nameEn: "Leviathan Shell",
 			cost: 5,
 			description:
-				"Gagnez 2 Ether.\nSi vous avez joué ce tour au moins deux autres gemmes ou reliques coûtant 3 Ether ou plus, renforcez cette carte. Gagnez 1 Ether supplémentaire par marque de renfort sur cette carte.",
+				"Gagnez 2 éthers.<br>Si vous avez joué ce tour au moins deux autres gemmes ou reliques coûtant 3 éthers ou plus, renforcez cette carte. Gagnez 1 éther supplémentaire par marque de renfort sur cette carte.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -102,7 +102,7 @@ export const cards: CardsByType = {
 			name: "Poussière d'éther",
 			nameEn: "Aether Dust",
 			cost: 5,
-			description: "Gagnez 2 Ether.\nChaque allié gagne un jeton Ether.",
+			description: "Gagnez 2 éthers.<br>Chaque allié gagne un jeton éther.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -111,7 +111,7 @@ export const cards: CardsByType = {
 			nameEn: "Voidsteel Vein",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.(hr)Vous pouvez défausser cette carte lorsqu'un allié lance un sort coûtant 1 Ether ou plus. Si vous le faites, ce sort inflige 2 dégâts supplémentaires.",
+				"Gagnez 2 éthers.(hr)Vous pouvez défausser cette carte lorsqu'un allié lance un sort coûtant 1 éther ou plus. Si vous le faites, ce sort inflige 2 dégâts supplémentaires.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -120,7 +120,7 @@ export const cards: CardsByType = {
 			nameEn: "Darklite Sample",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.\nVous pouvez placer votre pioche sur votre défausse sans changer l'ordre des cartes.",
+				"Gagnez 2 éthers.<br>Vous pouvez placer votre pioche sur votre défausse sans changer l'ordre des cartes.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -129,7 +129,7 @@ export const cards: CardsByType = {
 			nameEn: "Shattered Rupix",
 			cost: 5,
 			description:
-				"Gagnez 3 Ether.(hr)Lorsqu'une autre carte ou un effet devrait vous faire défausser ou détruire cette carte, vous pouvez la reprendre en main. (Ignorez cet effet tant que cette carte est dans la réserve.)",
+				"Gagnez 3 éthers.(hr)Lorsqu'une autre carte ou un effet devrait vous faire défausser ou détruire cette carte, vous pouvez la reprendre en main. (Ignorez cet effet tant que cette carte est dans la réserve.)",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -138,7 +138,7 @@ export const cards: CardsByType = {
 			nameEn: "Talusoid Clod",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.(hr)Rappel : Vous pouvez subir 2 dégâts pour reprendre cette carte en main.",
+				"Gagnez 2 éthers.(hr)Rappel : Vous pouvez subir 2 dégâts pour reprendre cette carte en main.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -147,7 +147,7 @@ export const cards: CardsByType = {
 			nameEn: "Witchglass",
 			cost: 2,
 			description:
-				"Gagnez 1 Ether. Un allié gagne un jeton Ether.(hr)Vous pouvez défausser cette carte durant la phase principale d'un allié. Si vous le faites, ce joueur peut Conjurer.",
+				"Gagnez 1 éther. Un allié gagne un jeton éther.(hr)Vous pouvez défausser cette carte durant la phase principale d'un allié. Si vous le faites, ce joueur peut Conjurer.",
 			expansion: "The Ruins",
 		},
 		{
@@ -156,7 +156,7 @@ export const cards: CardsByType = {
 			nameEn: "Shimmerbead",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.(hr)Rappel : Si vous avez activé votre capacité ce tour, gagnez 1 point de vie.",
+				"Gagnez 2 éthers.(hr)Rappel : Si vous avez activé votre capacité ce tour, gagnez 1 point de vie.",
 			expansion: "The Ruins",
 		},
 		{
@@ -164,7 +164,7 @@ export const cards: CardsByType = {
 			name: "Coquille apaisante",
 			nameEn: "Allaying Shell",
 			cost: 5,
-			description: "Gagnez 2 Ether.\nRéduisez un serviteur au silence.",
+			description: "Gagnez 2 éthers.<br>Réduisez un serviteur au silence.",
 			expansion: "The Ruins",
 		},
 		{
@@ -173,7 +173,7 @@ export const cards: CardsByType = {
 			nameEn: "Pulsyrium Globe",
 			cost: 5,
 			description:
-				"Gagnez 3 Ether.(hr)Rappel : Défaussez une carte de votre main. Si vous le faites, un joueur gagne un jeton Ether.",
+				"Gagnez 3 éthers.(hr)Rappel : Défaussez une carte de votre main. Si vous le faites, un joueur gagne un jeton éther.",
 			expansion: "The Ruins",
 		},
 		{
@@ -181,7 +181,7 @@ export const cards: CardsByType = {
 			name: "Fluorite arc-en-ciel",
 			nameEn: "Rainbow Fluorite",
 			cost: 6,
-			description: "Gagnez 3 Ether.(ou)Gagnez 2 charges.",
+			description: "Gagnez 3 éthers.(ou)Gagnez 2 charges.",
 			expansion: "The Ruins",
 		},
 	],
@@ -201,7 +201,7 @@ export const cards: CardsByType = {
 			nameEn: "Brimstone Battery",
 			cost: 4,
 			description:
-				"Un joueur détruit une carte de sa main ou de sa défausse. Si cette carte coûte 3 Ether ou plus, renforcez cette carte.(ou)Connectez cette carte à la brèche d'un joueur. Lorsqu'un sort est lancé depuis cette brèche, si cette carte est entièrement renforcée, Gravehold gagne 1 point de vie.",
+				"Un joueur détruit une carte de sa main ou de sa défausse. Si cette carte coûte 3 éthers ou plus, renforcez cette carte.(ou)Connectez cette carte à la brèche d'un joueur. Lorsqu'un sort est lancé depuis cette brèche, si cette carte est entièrement renforcée, Gravehold gagne 1 point de vie.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -210,7 +210,7 @@ export const cards: CardsByType = {
 			nameEn: "Martyr's Bone",
 			cost: 3,
 			description:
-				"Stabilisez l'une de vos brèches ou Conjurez.\nVous pouvez perdre 1 charge pour faire les deux.",
+				"Stabilisez l'une de vos brèches ou Conjurez.<br>Vous pouvez perdre 1 charge pour faire les deux.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -219,7 +219,7 @@ export const cards: CardsByType = {
 			nameEn: "Void Anchor",
 			cost: 5,
 			description:
-				"Réduisez un serviteur au silence. Un allié gagne 2 jetons Ether.(hr)Rappel : Gravehold gagne 1 point de vie.",
+				"Réduisez un serviteur au silence. Un allié gagne 2 jetons éther.(hr)Rappel : Gravehold gagne 1 point de vie.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -228,7 +228,7 @@ export const cards: CardsByType = {
 			nameEn: "Phoenix Quill",
 			cost: 6,
 			description:
-				"Deux joueurs différents gagnent chacun 1 point de vie.(hr)Rappel : Perdez 1 charge pour reprendre en main une carte coûtant 3 Ether ou moins de votre défausse.",
+				"Deux joueurs différents gagnent chacun 1 point de vie.(hr)Rappel : Perdez 1 charge pour reprendre en main une carte coûtant 3 éthers ou moins de votre défausse.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -237,7 +237,7 @@ export const cards: CardsByType = {
 			nameEn: "Echo Rune",
 			cost: 2,
 			description:
-				"Un joueur gagne 1 charge.(hr)Vous pouvez défausser cette carte durant la phase principale d'un allié. Si vous le faites, il gagne 1 Ether.",
+				"Un joueur gagne 1 charge.(hr)Vous pouvez défausser cette carte durant la phase principale d'un allié. Si vous le faites, il gagne 1 éther.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -246,7 +246,7 @@ export const cards: CardsByType = {
 			nameEn: "Shifter's Cloak",
 			cost: 3,
 			description:
-				"Stabilisez la brèche d'un joueur. Si cette brèche est ouverte de cette manière, renforcez cette carte.\nSi cette carte est entièrement renforcée, lancez le sort préparé d'un joueur. Il inflige 1 dégât supplémentaire.",
+				"Stabilisez la brèche d'un joueur. Si cette brèche est ouverte de cette manière, renforcez cette carte.<br>Si cette carte est entièrement renforcée, lancez le sort préparé d'un joueur. Il inflige 1 dégât supplémentaire.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -255,7 +255,7 @@ export const cards: CardsByType = {
 			nameEn: "Electrum Rod",
 			cost: 3,
 			description:
-				"Un joueur peut stabiliser l'une de ses brèches.\nSi ce joueur a un sort préparé coûtant 5 Ether ou plus, gagnez 1 charge.",
+				"Un joueur peut stabiliser l'une de ses brèches.<br>Si ce joueur a un sort préparé coûtant 5 éthers ou plus, gagnez 1 charge.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -273,7 +273,7 @@ export const cards: CardsByType = {
 			nameEn: "Chaos Charm",
 			cost: 5,
 			description:
-				"Deux joueurs différents peuvent détruire une carte de leur main.\nVous pouvez détruire cette carte. Si vous le faites, retirez un jeton Incendie de votre position sur la carte du monde.",
+				"Deux joueurs différents peuvent détruire une carte de leur main.<br>Vous pouvez détruire cette carte. Si vous le faites, retirez un jeton Incendie de votre position sur la carte du monde.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -300,7 +300,7 @@ export const cards: CardsByType = {
 			nameEn: "Vim Infusor",
 			cost: 3,
 			description:
-				"Gagnez 1 charge.\nSi vous avez 2 points de vie ou moins, répétez cet effet.",
+				"Gagnez 1 charge.<br>Si vous avez 2 points de vie ou moins, répétez cet effet.",
 			expansion: "The Ruins",
 		},
 		{
@@ -309,7 +309,7 @@ export const cards: CardsByType = {
 			nameEn: "Contingency Kit",
 			cost: 4,
 			description:
-				"Un allié pioche deux cartes puis défausse une carte.(ou)Stabilisez la brèche d'un joueur.\nSi vous avez 2 points de vie ou moins, faites les deux.",
+				"Un allié pioche deux cartes puis défausse une carte.(ou)Stabilisez la brèche d'un joueur.<br>Si vous avez 2 points de vie ou moins, faites les deux.",
 			expansion: "The Ruins",
 		},
 		{
@@ -327,7 +327,7 @@ export const cards: CardsByType = {
 			nameEn: "Element Convertor",
 			cost: 6,
 			description:
-				"Les joueurs détruisent collectivement jusqu'à deux gemmes de leur main ou de leur défausse.\nRévélez la première carte du paquet d'ordre du tour. Si c'est une carte joueur, ce joueur gagne un jeton Ether.",
+				"Les joueurs détruisent collectivement jusqu'à deux gemmes de leur main ou de leur défausse.<br>Révélez la première carte du paquet d'ordre du tour. Si c'est une carte joueur, ce joueur gagne un jeton éther.",
 			expansion: "The Ruins",
 		},
 	],
@@ -347,7 +347,7 @@ export const cards: CardsByType = {
 			nameEn: "Parallel Self",
 			cost: 6,
 			description:
-				"Lancer : Infligez 5 dégâts.(hr)Rappel : Dépensez 2 Ether pour infliger 2 dégâts.",
+				"Lancer : Infligez 5 dégâts.(hr)Rappel : Dépensez 2 éthers pour infliger 2 dégâts.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -365,7 +365,7 @@ export const cards: CardsByType = {
 			nameEn: "Galvanize",
 			cost: 4,
 			description:
-				"Lorsque préparé, une fois durant votre phase principale, vous pouvez Conjurer.\nLancer : Infligez 2 dégâts.",
+				"Lorsque préparé, une fois durant votre phase principale, vous pouvez Conjurer.<br>Lancer : Infligez 2 dégâts.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -374,7 +374,7 @@ export const cards: CardsByType = {
 			nameEn: "Quicksilver Bolt",
 			cost: 5,
 			description:
-				"Vous pouvez préparer ce sort sur l'une de vos brèches ouvertes durant la phase principale d'un allié.\nLorsque vous préparez ce sort durant votre phase principale, renforcez cette carte.\nLancer : Infligez 3 dégâts. Si cette carte est entièrement renforcée, elle inflige 1 dégât supplémentaire.",
+				"Vous pouvez préparer ce sort sur l'une de vos brèches ouvertes durant la phase principale d'un allié.<br>Lorsque vous préparez ce sort durant votre phase principale, renforcez cette carte.<br>Lancer : Infligez 3 dégâts. Si cette carte est entièrement renforcée, elle inflige 1 dégât supplémentaire.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -383,7 +383,7 @@ export const cards: CardsByType = {
 			nameEn: "Evaporating Ray",
 			cost: 4,
 			description:
-				"Lancer : Infligez 3 dégâts. Un allié peut défausser une carte de sa main coûtant 2 Ether ou plus. S'il le fait, ce sort inflige 2 dégâts supplémentaires.",
+				"Lancer : Infligez 3 dégâts. Un allié peut défausser une carte de sa main coûtant 2 éthers ou plus. S'il le fait, ce sort inflige 2 dégâts supplémentaires.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -401,7 +401,7 @@ export const cards: CardsByType = {
 			nameEn: "Temporal Strike",
 			cost: 6,
 			description:
-				"Lorsque préparé, lorsque vous lancez un sort coûtant 2 Ether ou moins, il inflige 1 dégât supplémentaire et vous pouvez le reprendre en main.\nLancer : Infligez 4 dégâts.",
+				"Lorsque préparé, lorsque vous lancez un sort coûtant 2 éthers ou moins, il inflige 1 dégât supplémentaire et vous pouvez le reprendre en main.<br>Lancer : Infligez 4 dégâts.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -410,7 +410,7 @@ export const cards: CardsByType = {
 			nameEn: "Volcanic Shrapnel",
 			cost: 8,
 			description:
-				"Lancer : Infligez 1 dégât. Infligez 1 dégât. Infligez 1 dégât. Vous pouvez reprendre en main jusqu'à deux cartes coûtant 0 Ether de votre défausse. (Les effets modifiant les dégâts concernent chaque source de dégâts de ce sort.)",
+				"Lancer : Infligez 1 dégât. Infligez 1 dégât. Infligez 1 dégât. Vous pouvez reprendre en main jusqu'à deux cartes coûtant 0 éther de votre défausse. (Les effets modifiant les dégâts concernent chaque source de dégâts de ce sort.)",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -419,7 +419,7 @@ export const cards: CardsByType = {
 			nameEn: "Entwined Tremor",
 			cost: 8,
 			description:
-				"Lancer : Infligez 6 dégâts. Si un sort coûtant 5 Ether ou plus est préparé sur une brèche adjacente, ce sort inflige 2 dégâts supplémentaires. Si un sort coûtant 4 Ether ou moins est préparé sur une brèche adjacente, gagnez 1 charge.",
+				"Lancer : Infligez 6 dégâts. Si un sort coûtant 5 éthers ou plus est préparé sur une brèche adjacente, ce sort inflige 2 dégâts supplémentaires. Si un sort coûtant 4 éthers ou moins est préparé sur une brèche adjacente, gagnez 1 charge.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -428,7 +428,7 @@ export const cards: CardsByType = {
 			nameEn: "Grassblade",
 			cost: 2,
 			description:
-				"Vous pouvez détruire cette carte depuis votre main durant la phase principale d'un allié. Si vous le faites, piochez une carte.\nLancer : Infligez 2 dégâts.",
+				"Vous pouvez détruire cette carte depuis votre main durant la phase principale d'un allié. Si vous le faites, piochez une carte.<br>Lancer : Infligez 2 dégâts.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -437,7 +437,7 @@ export const cards: CardsByType = {
 			nameEn: "Aether Ripple",
 			cost: 3,
 			description:
-				"Lancer : Infligez 2 dégâts. Chaque allié gagne un jeton Ether.",
+				"Lancer : Infligez 2 dégâts. Chaque allié gagne un jeton éther.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -446,7 +446,7 @@ export const cards: CardsByType = {
 			nameEn: "Douse",
 			cost: 4,
 			description:
-				"Lancer : Infligez 3 dégâts.\nVous pouvez détruire cette carte. Si vous le faites, retirez un jeton Incendie de votre position sur la carte du monde.",
+				"Lancer : Infligez 3 dégâts.<br>Vous pouvez détruire cette carte. Si vous le faites, retirez un jeton Incendie de votre position sur la carte du monde.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -455,7 +455,7 @@ export const cards: CardsByType = {
 			nameEn: "Fractured Lightning",
 			cost: 4,
 			description:
-				"Lancer : Infligez 5 dégâts.\nRévélez la première carte de la pioche de la némésis. S'il s'agit d'une attaque ou d'un pouvoir, faites surchauffer cette carte.\nSi cette carte est entièrement en surchauffe, détruisez-la et la némésis se déchaîne.",
+				"Lancer : Infligez 5 dégâts.<br>Révélez la première carte de la pioche de la némésis. S'il s'agit d'une attaque ou d'un pouvoir, faites surchauffer cette carte.<br>Si cette carte est entièrement en surchauffe, détruisez-la et la némésis se déchaîne.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -464,7 +464,7 @@ export const cards: CardsByType = {
 			nameEn: "Cascade",
 			cost: 5,
 			description:
-				"Lancer : Infligez 3 dégâts. Vous pouvez reprendre en main une carte coûtant 4 Ether ou moins de votre défausse.",
+				"Lancer : Infligez 3 dégâts. Vous pouvez reprendre en main une carte coûtant 4 éthers ou moins de votre défausse.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -500,7 +500,7 @@ export const cards: CardsByType = {
 			nameEn: "Parasitic Force",
 			cost: 8,
 			description:
-				"Vous pouvez préparer ce sort sur la brèche ouverte de n'importe quel joueur. Lancer : Infligez 6 dégâts.\nVous pouvez détruire jusqu'à deux cartes de votre main ou de votre défausse.",
+				"Vous pouvez préparer ce sort sur la brèche ouverte de n'importe quel joueur.<br>Lancer : Infligez 6 dégâts.<br>Vous pouvez détruire jusqu'à deux cartes de votre main ou de votre défausse.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -509,7 +509,7 @@ export const cards: CardsByType = {
 			nameEn: "Magnify",
 			cost: 2,
 			description:
-				"Lorsque préparé, un sort supplémentaire coûtant 2 Ether ou moins peut être préparé sur cette brèche.\nLancer : Infligez 1 dégât.",
+				"Lorsque préparé, un sort supplémentaire coûtant 2 éthers ou moins peut être préparé sur cette brèche.<br>Lancer : Infligez 1 dégât.",
 			expansion: "The Ruins",
 		},
 		{
@@ -518,7 +518,7 @@ export const cards: CardsByType = {
 			nameEn: "Dawn Barrage",
 			cost: 3,
 			description:
-				"Lancer : Infligez 1 dégât.\nLes autres sorts que vous lancez pendant votre phase d'incantation ce tour infligent 1 dégât supplémentaire.",
+				"Lancer : Infligez 1 dégât.<br>Les autres sorts que vous lancez pendant votre phase d'incantation ce tour infligent 1 dégât supplémentaire.",
 			expansion: "The Ruins",
 		},
 		{
@@ -545,7 +545,7 @@ export const cards: CardsByType = {
 			nameEn: "Accelerating Field",
 			cost: 5,
 			description:
-				"Lancer : Infligez 3 dégâts.\nSi c'est la première fois que vous lancez un Champ accélérateur ce tour, vous pouvez révéler les quatre premières cartes de votre pioche. Vous pouvez prendre en main les Champs accélérateurs ainsi révélés.",
+				"Lancer : Infligez 3 dégâts.<br>Si c'est la première fois que vous lancez un Champ accélérateur ce tour, vous pouvez révéler les quatre premières cartes de votre pioche. Vous pouvez prendre en main les Champs accélérateurs ainsi révélés.",
 			expansion: "The Ruins",
 		},
 		{
@@ -571,7 +571,7 @@ export const cards: CardsByType = {
 			nameEn: "Rune Tutor",
 			cost: 5,
 			description:
-				"Lancer : Acquérez une carte coûtant 6 Ether ou moins dans la réserve et placez-la sur votre pioche.(ou)Lancer : Infligez 4 dégâts.",
+				"Lancer : Acquérez une carte coûtant 6 éthers ou moins dans la réserve et placez-la sur votre pioche.(ou)Lancer : Infligez 4 dégâts.",
 			expansion: "The Ruins",
 		},
 		{
@@ -580,7 +580,7 @@ export const cards: CardsByType = {
 			nameEn: "Bestowing Light",
 			cost: 6,
 			description:
-				"Lancer : Infligez 5 dégâts.\nUn allié gagne un jeton Ether pour chaque sort préparé sur une brèche adjacente.",
+				"Lancer : Infligez 5 dégâts.<br>Un allié gagne un jeton éther pour chaque sort préparé sur une brèche adjacente.",
 			expansion: "The Ruins",
 		},
 		{

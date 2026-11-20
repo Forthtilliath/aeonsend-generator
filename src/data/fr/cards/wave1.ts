@@ -9,7 +9,7 @@ export const cards: CardsByType = {
 			nameEn: "Burning Opal",
 			cost: 5,
 			description:
-				"Gagnez 3 Ether.\nVous pouvez défausser une carte de votre main pour qu'un allié pioche une carte.",
+				"Gagnez 3 éthers.<br>Vous pouvez défausser une carte de votre main pour qu'un allié pioche une carte.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -18,7 +18,7 @@ export const cards: CardsByType = {
 			nameEn: "Clouded Sapphire",
 			cost: 6,
 			description:
-				"Gagnez 3 Ether.\nS'il s'agit du premier Saphir nuageux que vous jouez ce tour, un allié gagne 1 charge.",
+				"Gagnez 3 éthers.<br>S'il s'agit du premier Saphir nuageux que vous jouez ce tour, un allié gagne 1 charge.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -27,7 +27,7 @@ export const cards: CardsByType = {
 			nameEn: "Diamond Cluster",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nSi c'est le second Agrégat de diamants que vous jouez ce tour, gagnez 2 Ether de plus.",
+				"Gagnez 2 éthers.<br>Si c'est le second Agrégat de diamants que vous jouez ce tour, gagnez 2 éthers de plus.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -35,7 +35,7 @@ export const cards: CardsByType = {
 			name: "Jade",
 			nameEn: "Jade",
 			cost: 2,
-			description: "Gagnez 2 Ether.",
+			description: "Gagnez 2 éthers.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -44,7 +44,7 @@ export const cards: CardsByType = {
 			nameEn: "Searing Ruby",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nGagnez 1 Ether supplémentaire qui ne peut être utilisé que pour acquérir un sort.",
+				"Gagnez 2 éthers.<br>Gagnez 1 éther supplémentaire qui ne peut être utilisé que pour acquérir un sort.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -53,7 +53,7 @@ export const cards: CardsByType = {
 			nameEn: "Sifter's Pearl",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.\nChaque joueur révèle la première carte de sa pioche et peut soit la défausser soit la remettre sur le dessus de sa pioche.",
+				"Gagnez 2 éthers.<br>Chaque joueur révèle la première carte de sa pioche et peut soit la défausser soit la remettre sur le dessus de sa pioche.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -62,7 +62,7 @@ export const cards: CardsByType = {
 			nameEn: "V'riswood Amber",
 			cost: 3,
 			description:
-				"Lorsque vous acquérez cette carte, vous pouvez la placer au-dessus de votre pioche.\nGagnez 2 Ether.",
+				"Lorsque vous acquérez cette carte, vous pouvez la placer au-dessus de votre pioche.<br>Gagnez 2 éthers.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -71,7 +71,7 @@ export const cards: CardsByType = {
 			nameEn: "Banishing Topaz",
 			cost: 5,
 			description:
-				"Gagnez 2 Ether.\nVous pouvez placer une carte de votre main sur votre pioche. Si vous le faites, gagnez 2 Ethers supplémentaires.",
+				"Gagnez 2 éthers.<br>Vous pouvez placer une carte de votre main sur votre pioche. Si vous le faites, gagnez 2 éthers supplémentaires.",
 			expansion: "Les Profondeurs",
 		},
 		{
@@ -80,7 +80,7 @@ export const cards: CardsByType = {
 			nameEn: "Leeching Agate",
 			cost: 3,
 			description:
-				"Lorsque vous gagnez cette carte, gagnez une charge.\nGagnez 2 Ether.",
+				"Lorsque vous gagnez cette carte, gagnez une charge.<br>Gagnez 2 éthers.",
 			expansion: "Les Sans-Noms",
 		},
 	],
@@ -100,7 +100,7 @@ export const cards: CardsByType = {
 			nameEn: "Bottled Vortex",
 			cost: 3,
 			description:
-				"Détruisez cette carte.\nDétruisez jusqu'à deux cartes de votre main ou de votre défausse.\nPioche une carte.",
+				"Détruisez cette carte.<br>Détruisez jusqu'à deux cartes de votre main ou de votre défausse.<br>Pioche une carte.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -109,7 +109,7 @@ export const cards: CardsByType = {
 			nameEn: "Flexing Dagger",
 			cost: 2,
 			description:
-				"La prochaine brèche que vous stabilisez ou que vous ouvrez lors de ce tour vous coûte 3 Ether de moins.(ou)Détruisez cette carte. Infligez 1 dégât.",
+				"La prochaine brèche que vous stabilisez ou que vous ouvrez lors de ce tour vous coûte 3 éthers de moins.(ou)Détruisez cette carte. Infligez 1 dégât.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -126,7 +126,7 @@ export const cards: CardsByType = {
 			name: "Talisman de mage",
 			nameEn: "Mage's Talisman",
 			cost: 5,
-			description: "Gagnez 1 charge.\nUn allié gagne 1 charge.",
+			description: "Gagnez 1 charge.<br>Un allié gagne 1 charge.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -135,7 +135,7 @@ export const cards: CardsByType = {
 			nameEn: "Unstable Prism",
 			cost: 3,
 			description:
-				"Appliquez deux fois l'effet d'une gemme de votre main, puis détruisez-là.(ou)Gagnez 2 Ether.",
+				"Appliquez deux fois l'effet d'une gemme de votre main, puis détruisez-là.(ou)Gagnez 2 éthers.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -144,7 +144,7 @@ export const cards: CardsByType = {
 			nameEn: "Transmogrifier",
 			cost: 4,
 			description:
-				"Détruisez une carte de votre main. Vous pouvez gagner une carte d'une pile de la réserve qui coûte jusqu'à 3 Ether de plus que la carte détruite.",
+				"Détruisez une carte de votre main. Vous pouvez gagner une carte d'une pile de la réserve qui coûte jusqu'à 3 éthers de plus que la carte détruite.",
 			expansion: "Les Profondeurs",
 		},
 		{
@@ -162,7 +162,7 @@ export const cards: CardsByType = {
 			nameEn: "Molten Hammer",
 			cost: 5,
 			description:
-				"Gagnez 1 charge.\nVous pouvez détruire une carte de votre main ou du dessus de la défausse de n'importe quel joueur.",
+				"Gagnez 1 charge.<br>Vous pouvez détruire une carte de votre main ou du dessus de la défausse de n'importe quel joueur.",
 			expansion: "Les Sans-Noms",
 		},
 		{
@@ -191,7 +191,7 @@ export const cards: CardsByType = {
 			nameEn: "Arcane Nexus",
 			cost: 7,
 			description:
-				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez reprendre une gemme jouée ce tour-ci en main. Lancer : Infligez 4 dégâts.",
+				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez reprendre une gemme jouée ce tour-ci en main.<br>Lancer : Infligez 4 dégâts.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -236,7 +236,7 @@ export const cards: CardsByType = {
 			nameEn: "Feral Lightning",
 			cost: 5,
 			description:
-				"Ce sort peut être préparé sur une brèche fermée sans qu'elle doive être stabilisée. Lancer : Infligez 3 dégâts.",
+				"Ce sort peut être préparé sur une brèche fermée sans qu'elle doive être stabilisée.<br>Lancer : Infligez 3 dégâts.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -253,7 +253,7 @@ export const cards: CardsByType = {
 			nameEn: "Lava Tendril",
 			cost: 4,
 			description:
-				"Lorsque préparé, à la fin de votre phase d'incantation, infligez 1 dégât. Lancer : Infligez 3 dégâts.",
+				"Lorsque préparé, à la fin de votre phase d'incantation, infligez 1 dégât.<br>Lancer : Infligez 3 dégâts.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -262,7 +262,7 @@ export const cards: CardsByType = {
 			nameEn: "Oblivion Swell",
 			cost: 5,
 			description:
-				"Lorsque préparé, une fois par tour, durant votre phase principale, gagnez 1 Ether. Lancer : Infligez 2 dégâts. Vous pouvez défausser une gemme pour infliger autant de dégâts supplémentaire que son coût.",
+				"Lorsque préparé, une fois par tour, durant votre phase principale, gagnez 1 éther.<br>Lancer : Infligez 2 dégâts. Vous pouvez défausser une gemme pour infliger autant de dégâts supplémentaire que son coût.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -298,7 +298,7 @@ export const cards: CardsByType = {
 			nameEn: "Wildfire Whip",
 			cost: 6,
 			description:
-				"Lorsque préparé, vous pouvez dépenser 2 Ether durant votre phase principale, pour lancer un sort préparé chez n'importe quel joueur. Lancer : Infligez 4 dégâts.",
+				"Lorsque préparé, vous pouvez dépenser 2 éthers durant votre phase principale, pour lancer un sort préparé chez n'importe quel joueur.<br>Lancer : Infligez 4 dégâts.",
 			expansion: "Aeon's End",
 		},
 		{
@@ -316,7 +316,7 @@ export const cards: CardsByType = {
 			nameEn: "Devouring Shadow",
 			cost: 6,
 			description:
-				"Lorsque préparé, une fois par tour, durant votre phase principale, vous pouvez détruire une carte de votre main. Lancer : Infligez 3 dégâts.",
+				"Lorsque préparé, une fois par tour, durant votre phase principale, vous pouvez détruire une carte de votre main.<br>Lancer : Infligez 3 dégâts.",
 			expansion: "Les Profondeurs",
 		},
 		{
@@ -334,7 +334,8 @@ export const cards: CardsByType = {
 			nameEn: "Monstrous Inferno",
 			cost: 8,
 			description:
-				"(duo)Lancer : Infligez 7 dégâts répartis librement entre la némésis et autant de serviteurs que souhaité.",
+				"Lancer : Infligez 7 dégâts répartis librement entre la némésis et autant de serviteurs que souhaité.",
+			keyword: "duo",
 			expansion: "Les Profondeurs",
 		},
 		{
@@ -352,7 +353,7 @@ export const cards: CardsByType = {
 			nameEn: "Blaze",
 			cost: 4,
 			description:
-				"Lorsque vous gagnez cette carte, vous pouvez la placer sur la défausse de n'importe quel joueur. Lancer : Infligez 2 dégâts. Infligez 1 dégât supplémentaire par Flamber que vous avez lancé ce tour et par autre Flamber préparé sur vos brèches.",
+				"Lorsque vous gagnez cette carte, vous pouvez la placer sur la défausse de n'importe quel joueur.<br>Lancer : Infligez 2 dégâts. Infligez 1 dégât supplémentaire par Flamber que vous avez lancé ce tour et par autre Flamber préparé sur vos brèches.",
 			expansion: "Les Sans-Noms",
 		},
 		{
@@ -369,7 +370,8 @@ export const cards: CardsByType = {
 			nameEn: "Sage's Brand",
 			cost: 7,
 			description:
-				"(duo)Lorsque préparé, piochez une carte de plus lors de votre phase de pioche. Lancer : Infligez 6 dégâts.",
+				"Lorsque préparé, piochez une carte de plus lors de votre phase de pioche.<br>Lancer : Infligez 6 dégâts.",
+			keyword: "duo",
 			expansion: "Les Sans-Noms",
 		},
 		{

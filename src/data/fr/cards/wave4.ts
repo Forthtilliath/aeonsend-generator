@@ -9,7 +9,7 @@ export const cards: CardsByType = {
 			nameEn: "Resonant Pearl",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.\nUn allié peut défauser une Perle résonnante de sa main pour pioche une carte. S'il le fait, gagnez 1 Ether supplémentaire.",
+				"Gagnez 2 éthers.<br>Un allié peut défauser une Perle résonnante de sa main pour pioche une carte. S'il le fait, gagnez 1 éther supplémentaire.",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -17,7 +17,8 @@ export const cards: CardsByType = {
 			name: "Exogranite",
 			nameEn: "Exogranite",
 			cost: 3,
-			description: "Gagnez 2 Ether.(ou)Détruisez cette carte. Gagnez 3 Ether.",
+			description:
+				"Gagnez 2 éthers.(ou)Détruisez cette carte. Gagnez 3 éthers.",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -26,7 +27,7 @@ export const cards: CardsByType = {
 			nameEn: "Lurking Sionite",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.\nSi une Sionite de l'ombre se trouve dans la défausse d'un allié, gagnez 1 Ether supplémentaire.",
+				"Gagnez 2 éthers.<br>Si une Sionite de l'ombre se trouve dans la défausse d'un allié, gagnez 1 éther supplémentaire.",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -35,7 +36,7 @@ export const cards: CardsByType = {
 			nameEn: "Recurring Jasper",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nSi la première carte de vote défausse est un sort, vous pouvez placer cette gemme sur votre pioche.",
+				"Gagnez 2 éthers.<br>Si la première carte de vote défausse est un sort, vous pouvez placer cette gemme sur votre pioche.",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -44,7 +45,7 @@ export const cards: CardsByType = {
 			nameEn: "Energized Rubidium",
 			cost: 5,
 			description:
-				"Gagnez 3 Ether.\nUn allié peut défausse une carte de sa main. S'il le fait, ce joueur gagne 1 charge.",
+				"Gagnez 3 éthers.<br>Un allié peut défausse une carte de sa main. S'il le fait, ce joueur gagne 1 charge.",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -53,7 +54,7 @@ export const cards: CardsByType = {
 			nameEn: "Fractured Quartz",
 			cost: 6,
 			description:
-				"Gagnez 2 Ether.\nVous pouvez détruire deux cartes de cette pile de cartes. Si vous le faites, gagnez 1 Ether supplémentaire.",
+				"Gagnez 2 éthers.<br>Vous pouvez détruire deux cartes de cette pile de cartes. Si vous le faites, gagnez 1 éther supplémentaire.",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -62,7 +63,7 @@ export const cards: CardsByType = {
 			nameEn: "Unrefined Blaststone",
 			cost: 6,
 			description:
-				"Gagnez 3 Ether.(ou)Détruisez une carte présente dans la pile de la réserve de cette carte. Si vous le faites, infigez 3 dégâts.",
+				"Gagnez 3 éthers.(ou)Détruisez une carte présente dans la pile de la réserve de cette carte. Si vous le faites, infigez 3 dégâts.",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -70,7 +71,7 @@ export const cards: CardsByType = {
 			name: "Olivinite",
 			nameEn: "Olivinite",
 			cost: 3,
-			description: "Gagnez 2 Ether.(ou)Infligez 1 dégât à un serviteur.",
+			description: "Gagnez 2 éthers.(ou)Infligez 1 dégât à un serviteur.",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -79,7 +80,7 @@ export const cards: CardsByType = {
 			nameEn: "Cache Glass",
 			cost: 4,
 			description:
-				"Gagnez 2 Ether.\nSi un Verre à facettes se trouve dans votre défausse, vous pouvez détruire une carte de votre défausse.",
+				"Gagnez 2 éthers.<br>Si un Verre à facettes se trouve dans votre défausse, vous pouvez détruire une carte de votre défausse.",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -88,7 +89,7 @@ export const cards: CardsByType = {
 			nameEn: "Shining Fluorite",
 			cost: 7,
 			description:
-				"Gagnez 3 Ether.\nPlacez le prochain sort que vous acquérez ce tour dans votre main.",
+				"Gagnez 3 éthers.<br>Placez le prochain sort que vous acquérez ce tour dans votre main.",
 			expansion: "De Vieux Souvenirs",
 		},
 		{
@@ -97,7 +98,7 @@ export const cards: CardsByType = {
 			nameEn: "Jeweled Brain",
 			cost: 3,
 			description:
-				"Gagnez 2 Ether.(ou)Gagnez 1 Ether. Reprenez en main une carte de votre défausse coûtant 0 Ether.",
+				"Gagnez 2 éthers.(ou)Gagnez 1 éther. Reprenez en main une carte de votre défausse coûtant 0 éther.",
 			expansion: "À l'État Sauvage",
 		},
 	],
@@ -144,7 +145,7 @@ export const cards: CardsByType = {
 			nameEn: "Aether Conduit",
 			cost: 4,
 			description:
-				"Connectez cette relique à la brèche d'un joueur. Lorsqu'un sort est lancé depuis cette brèche, le joueur qui lance ce sort gagne 1 Ether.",
+				"Connectez cette relique à la brèche d'un joueur. Lorsqu'un sort est lancé depuis cette brèche, le joueur qui lance ce sort gagne 1 éther.",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -189,7 +190,7 @@ export const cards: CardsByType = {
 			nameEn: "Reflective Conduit",
 			cost: 3,
 			description:
-				"Connectez cette relique à la brèche d'un joueur. Lorssqu'un sort est lancé depuis cette brèche, le joueur qui a lancé ce sort peut reprendre celui-ci en main au lieu de le défausser.\nS'il le fait, défaussez cette carte.",
+				"Connectez cette relique à la brèche d'un joueur. Lorssqu'un sort est lancé depuis cette brèche, le joueur qui a lancé ce sort peut reprendre celui-ci en main au lieu de le défausser.<br>S'il le fait, défaussez cette carte.",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -198,7 +199,7 @@ export const cards: CardsByType = {
 			nameEn: "Will Weaver",
 			cost: 7,
 			description:
-				"Gagnez 2 charges.\nAprès la prochaine fois que vous avez appliqué votre capacité ce tour, infligez 3 dégâts.",
+				"Gagnez 2 charges.<br>Après la prochaine fois que vous avez appliqué votre capacité ce tour, infligez 3 dégâts.",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -207,7 +208,7 @@ export const cards: CardsByType = {
 			nameEn: "Polyphase Turbine",
 			cost: 3,
 			description:
-				"S'il s'agit de la première Turbine polyphasée que vous jouez ce tour, gagnez 2 Ether.\nSinon, gagnez 1 charge et 1 Ether.",
+				"S'il s'agit de la première Turbine polyphasée que vous jouez ce tour, gagnez 2 éthers.<br>Sinon, gagnez 1 charge et 1 éther.",
 			expansion: "De Vieux Souvenirs",
 		},
 		{
@@ -244,7 +245,7 @@ export const cards: CardsByType = {
 			name: "Esprit voleur",
 			nameEn: "Thieving Spirit",
 			cost: 5,
-			description: "Lancer : Infligez 4 dégâts. Gagnez 1 Ether.",
+			description: "Lancer : Infligez 4 dégâts. Gagnez 1 éther.",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -262,7 +263,8 @@ export const cards: CardsByType = {
 			nameEn: "Reverberating Shock",
 			cost: 4,
 			description:
-				"(echo)Lancer : Infligez 1 dégât. Gagnez 1 Ether qui ne peut être utilisé que pour acquérir des cartes.",
+				"Lancer : Infligez 1 dégât. Gagnez 1 éther qui ne peut être utilisé que pour acquérir des cartes.",
+			keyword: "echo",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -288,7 +290,8 @@ export const cards: CardsByType = {
 			name: "Rebonds explosifs",
 			nameEn: "Bouncing Boom",
 			cost: 6,
-			description: "(echo)Lancer : Infligez 2 dégâts.",
+			description: "Lancer : Infligez 2 dégâts.",
+			keyword: "echo",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -306,7 +309,7 @@ export const cards: CardsByType = {
 			nameEn: "Patterned Strike",
 			cost: 7,
 			description:
-				"Lancer : Infligez 4 dégâts. Vous pouvez reprendre en main jusqu'à deux cartes de votre défausse coûtant 0 Ether.",
+				"Lancer : Infligez 4 dégâts. Vous pouvez reprendre en main jusqu'à deux cartes de votre défausse coûtant 0 éther.",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -324,7 +327,7 @@ export const cards: CardsByType = {
 			nameEn: "Spirit Lift",
 			cost: 8,
 			description:
-				"Lorsque préparé, une fois par tour, si vous gagnez une charge lors de votre tour, un allié gagne 2 charges. Lancer : Infligez 5 dégâts.",
+				"Lorsque préparé, une fois par tour, si vous gagnez une charge lors de votre tour, un allié gagne 2 charges.<br>Lancer : Infligez 5 dégâts.",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -342,7 +345,8 @@ export const cards: CardsByType = {
 			nameEn: "Chronal Arc",
 			cost: 7,
 			description:
-				"(duo)Lancer : Infligez 4 dégâts. Vous pouvez placer cette carte dans votre main.",
+				"Lancer : Infligez 4 dégâts. Vous pouvez placer cette carte dans votre main.",
+			keyword: "duo",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -351,7 +355,8 @@ export const cards: CardsByType = {
 			nameEn: "Breach Seeker",
 			cost: 5,
 			description:
-				"(echo)Lancer : Infligez 1 dégât. Stabilisez la brèche d'un allié.",
+				"Lancer : Infligez 1 dégât. Stabilisez la brèche d'un allié.",
+			keyword: "echo",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -378,7 +383,7 @@ export const cards: CardsByType = {
 			nameEn: "Crescendo Ray",
 			cost: 4,
 			description:
-				"Lancer : Infligez 3 dégâts. Gagnez 1 Ether par autre sort que vous avez préparé.",
+				"Lancer : Infligez 3 dégâts. Gagnez 1 éther par autre sort que vous avez préparé.",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -387,7 +392,7 @@ export const cards: CardsByType = {
 			nameEn: "Snap Ritual",
 			cost: 6,
 			description:
-				"Lorsque préparé, une fois par tour durant votrre phase principale, vous pouvez défausser une carte de votre main pour infligez 2 dégâts. Lancer : Infligez 3 dégâts.",
+				"Lorsque préparé, une fois par tour durant votrre phase principale, vous pouvez défausser une carte de votre main pour infligez 2 dégâts.<br>Lancer : Infligez 3 dégâts.",
 			expansion: "Rêves Brisés",
 		},
 		{
@@ -414,7 +419,7 @@ export const cards: CardsByType = {
 			nameEn: "Dust Caller",
 			cost: 5,
 			description:
-				"Lancer : Infligez 4 dégâts. Un allié reprend en main une carte de sa défausse coûtant 0 Ether.",
+				"Lancer : Infligez 4 dégâts. Un allié reprend en main une carte de sa défausse coûtant 0 éther.",
 			expansion: "De Vieux Souvenirs",
 		},
 		{
@@ -423,7 +428,7 @@ export const cards: CardsByType = {
 			nameEn: "Symbiotic Synapse",
 			cost: 7,
 			description:
-				"Si une autre Synapse symbiotique se trouve dans la défausse d'un joueur, ce sort gagne Écho. Lancer : Infligez 4 dégâts.",
+				"Si une autre Synapse symbiotique se trouve dans la défausse d'un joueur, ce sort gagne Écho.<br>Lancer : Infligez 4 dégâts.",
 			expansion: "De Vieux Souvenirs",
 		},
 		{
@@ -432,7 +437,8 @@ export const cards: CardsByType = {
 			nameEn: "Wound Mender",
 			cost: 8,
 			description:
-				"(echo)Lancer : Infligez 2 dégâts. Si ce sort a été lancé depuis une brèche III ou IV ouverte, gagnez 1 point de vie.",
+				"Lancer : Infligez 2 dégâts. Si ce sort a été lancé depuis une brèche III ou IV ouverte, gagnez 1 point de vie.",
+			keyword: "echo",
 			expansion: "À l'État Sauvage",
 		},
 	],

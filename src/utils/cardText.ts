@@ -1,61 +1,87 @@
 /**
- * Découpe le texte d'une carte du marché en blocs affichables, avec les mêmes
- * balises que les données (et que les scripts nanDECK) :
- * `(ou)` alternative, `(hr)` trait de séparation, `(duo)`/`(echo)`/`(lien)`
- * mot-clé en tête de texte, `\n` retour à la ligne.
+ * Découpe le texte d'une carte du marché en blocs affichables. La syntaxe est
+ * celle des CSV nanDECK, pour copier un texte d'un côté à l'autre tel quel :
+ * `<br>` retour à la ligne, `(ou)` alternative, `(hr)` trait de séparation,
+ * « éther(s) » remplacé par l'icône, `<b>…</b>` gras, `<small>…</small>` petit
+ * texte et `<small><i>…</i></small>` rappel de règle. Espace normale ou insécable avant les deux-points.
  */
+
+import type { CardKeywordId } from "../types";
 
 export type TextToken =
 	| { kind: "text"; value: string }
 	| { kind: "bold"; value: string }
-	/** « 3 Ether » : le nombre suivi de l'icône d'éther. */
-	| { kind: "aether"; amount: string };
+	/** Rappel de règle, en petit et en italique (`<small><i>`). */
+	| { kind: "note"; value: string }
+	/** Texte en petit, sans italique (`<small>` seul). */
+	| { kind: "small"; value: string }
+	/** « 3 éthers » : le nombre (s'il y en a un) suivi de l'icône d'éther. */
+	| { kind: "aether"; amount?: string };
 
 export type TextBlock =
 	| { kind: "line"; tokens: TextToken[] }
 	| { kind: "or" }
-	| { kind: "rule" }
-	/**
-	 * Mot-clé affiché (`label`) et/ou rappel de sa règle (`reminder`), absent
-	 * du texte des cartes.
-	 */
-	| { kind: "keyword"; label?: string; reminder?: string };
+	| { kind: "rule" };
 
-const KEYWORDS: Record<
-	string,
-	Omit<Extract<TextBlock, { kind: "keyword" }>, "kind">
-> = {
-	// Duo : pas de libellé sur la carte, seulement le rappel.
-	"(duo)": {
-		reminder: "Ce sort doit être préparé sur deux brèches adjacentes.",
-	},
-	"(echo)": { label: "Écho" },
-	// Même rappel que les cartes nanDECK (commun/carte-joueur-texte.txt).
-	"(lien)": {
+/** Mot-clé en tête de texte, porté par un champ de la carte. */
+export interface CardKeyword {
+	/** Libellé affiché (Duo n'en a pas sur la carte). */
+	label?: string;
+	/** Rappel de règle, comme sur les cartes nanDECK. */
+	reminder?: string;
+}
+
+export const CARD_KEYWORDS = {
+	echo: { label: "Écho" },
+	link: {
 		label: "Lien",
 		reminder: "Deux sorts ayant Lien peuvent être préparés sur la même brèche.",
 	},
-};
+	duo: {
+		reminder:
+			"Ce sort doit être préparé sur deux brèches adjacentes, de manière à ce qu’il touche les deux brèches. Les deux brèches sont occupées par ce sort.",
+	},
+} as const satisfies Record<CardKeywordId, CardKeyword>;
 
-const MARKERS = /(\(ou\)|\(hr\)|\(duo\)|\(echo\)|\(lien\)|\n)/;
-// Mots-clés en gras, comme sur les cartes nanDECK.
+const MARKERS = /(\(ou\)|\(hr\)|<br>)/;
+// Mots-clés en gras, comme sur les cartes nanDECK (espace normale ou insécable).
 const KEYWORD_SOURCE =
-	"Lancer :|Rappel :|Vaincu :|Durable :|Xaxos ?:|Connectez|Conjurez|Conjurer";
+	"(?:Lancer|Rappel|Vaincu|Durable|Xaxos ?)[ \\u00a0]:|Connectez|Conjurez|Conjurer";
 const INLINE = new RegExp(
-	`((?:${KEYWORD_SOURCE})(?![\\p{L}])|\\d+ Ether(?![\\p{L}]))`,
+	[
+		"<small><i>.*?</i></small>",
+		"<small>.*?</small>",
+		"<i>.*?</i>",
+		"<b>.*?</b>",
+		`(?:${KEYWORD_SOURCE})(?![\\p{L}])`,
+		"(?<![\\p{L}])(?:\\d+ )?éthers?_?(?![\\p{L}])",
+	].join("|"),
 	"u",
 );
-const AETHER = /^(\d+) Ether$/;
-const BOLD = new RegExp(`^(?:${KEYWORD_SOURCE})$`);
+const SPLIT = new RegExp(`(${INLINE.source})`, "u");
+const AETHER = /^(?:(\d+) )?éthers?_?$/;
+const BOLD = new RegExp(`^(?:${KEYWORD_SOURCE})$`, "u");
+const TAGS = /<\/?(?:small|i|b)>/g;
 
 export const tokenizeLine = (line: string): TextToken[] =>
 	line
-		.split(INLINE)
+		.split(SPLIT)
 		.filter((part) => part !== "")
 		.map((part): TextToken => {
 			const aether = AETHER.exec(part);
-			if (aether?.[1]) return { kind: "aether", amount: aether[1] };
-			if (BOLD.test(part)) return { kind: "bold", value: part };
+			if (aether)
+				return aether[1]
+					? { kind: "aether", amount: aether[1] }
+					: { kind: "aether" };
+			if (part.startsWith("<small><i>") || part.startsWith("<i>")) {
+				return { kind: "note", value: part.replace(TAGS, "") };
+			}
+			if (part.startsWith("<small>")) {
+				return { kind: "small", value: part.replace(TAGS, "") };
+			}
+			if (part.startsWith("<b>") || BOLD.test(part)) {
+				return { kind: "bold", value: part.replace(TAGS, "") };
+			}
 			return { kind: "text", value: part };
 		});
 
@@ -64,15 +90,8 @@ export const parseCardText = (description: string): TextBlock[] => {
 	for (const piece of description.split(MARKERS)) {
 		if (piece === "(ou)") blocks.push({ kind: "or" });
 		else if (piece === "(hr)") blocks.push({ kind: "rule" });
-		else if (KEYWORDS[piece]) {
-			blocks.push({ kind: "keyword", ...KEYWORDS[piece] });
-		} else if (piece.trim() !== "" && piece !== "\n") {
-			// « Lancer : » ouvre toujours une nouvelle ligne, comme sur les cartes.
-			for (const line of piece.split(/(?=Lancer :)/)) {
-				if (line.trim() !== "") {
-					blocks.push({ kind: "line", tokens: tokenizeLine(line.trim()) });
-				}
-			}
+		else if (piece !== "<br>" && piece.trim() !== "") {
+			blocks.push({ kind: "line", tokens: tokenizeLine(piece.trim()) });
 		}
 	}
 	return blocks;

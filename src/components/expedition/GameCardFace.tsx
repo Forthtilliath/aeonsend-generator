@@ -55,7 +55,7 @@ export const GameCardFace = ({
 					{card.name}
 				</span>
 				<span ref={textRef} className="game-card__text">
-					<CardText description={card.description} />
+					<CardText card={card} />
 				</span>
 				{detailed && card.conditionalCost && (
 					<span className="game-card__note">

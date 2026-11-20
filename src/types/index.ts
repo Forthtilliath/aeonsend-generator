@@ -34,12 +34,25 @@ export type Expansion =
 	| "The Wastes"
 	| "Inconnue";
 
+export type CardKeywordId = "duo" | "echo" | "link";
+
 export interface Card {
 	id: string;
 	name: string;
 	/** Nom anglais, pour retrouver la carte sur le wiki (traductions maison). */
 	nameEn?: string;
+	/**
+	 * Texte de la carte, dans la syntaxe des CSV nanDECK : `<br>` retour à la
+	 * ligne, `(ou)`, `(hr)`, « 2 éthers » pour l'icône d'éther, `<b>`, et
+	 * `<small><i>…</i></small>` pour un rappel de règle (cf. utils/cardText.ts).
+	 */
 	description: string;
+	/**
+	 * Mot-clé de sort affiché en tête du texte, avec son rappel de règle : le
+	 * texte de la carte ne le répète pas (colonnes `adjacent` et `lien` des CSV).
+	 * Duo : préparé sur deux brèches adjacentes. Aucune carte n'en a deux.
+	 */
+	keyword?: CardKeywordId;
 	/** Coût d'achat, sans développer la carte : c'est lui qui sert au tirage du marché. */
 	cost: number;
 	/** Coût pour développer la carte (mécanique apparue avec Past and Future). */
