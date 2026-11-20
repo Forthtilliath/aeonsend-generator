@@ -95,11 +95,11 @@ export const cards: CardsByType = {
 		},
 		{
 			id: "LVS-81",
-			name: "Urup Serti",
+			name: "Urupe Enrichi",
 			nameEn: "Jeweled Urup",
 			cost: 5,
 			description:
-				"Gagnez 3 éthers.(ou)S'il s'agit du second Urup Serti que vous jouez ce tour, vous pouvez détruire cette carte pour acquérir une carte d'une pile de la réserve coûtant 7 éthers ou moins.",
+				"Gagnez 3 éthers.(ou)S'il s'agit du second Urupe Enrichi que vous jouez ce tour, vous pouvez détruire cette carte pour acquérir une carte d'une pile de la réserve coûtant 7 éthers ou moins.",
 			expansion: "Le Village du Sud",
 		},
 	],
