@@ -72,7 +72,7 @@ export const cards: CardsByType = {
 			nameEn: "Fulmite Slab",
 			cost: 6,
 			description:
-				"Gagnez 1 éther. Gagnez 2 jetons Pulsation. Jusqu'à la fin du tour, vous pouvez perdre 1 jeton Pulsation pour gagner 1 éther, autant de fois que vous le souhaitez.",
+				"Gagnez 1 éther. Gagnez 2 jetons Pulsation. Jusqu’à la fin du tour, vous pouvez perdre 1 jeton Pulsation pour gagnez 1 éther autant de fois que vous le souhaitez.",
 			expansion: "Legacy",
 		},
 		{
@@ -105,7 +105,7 @@ export const cards: CardsByType = {
 			nameEn: "Echo Stone",
 			cost: 4,
 			description:
-				"Gagnez 2 éthers.<br>Si vous avez joué une autre Pierre d'écho ce tour, gagnez 1 éther supplémentaire.",
+				"Gagnez 2 éthers.<br>Si vous avez joué une autre Pierre d'Écho ce tour, gagnez 1 éther supplémentaire.",
 			expansion: "Legacy",
 		},
 		{
@@ -197,7 +197,7 @@ export const cards: CardsByType = {
 			nameEn: "Adrenal Batteries",
 			cost: 7,
 			description:
-				"Gagnez 2 jetons Pulsation. Vous pouvez perdre 4 jetons Pulsation. Si vous le faites, ouvrez la brèche fermée d'un joueur. Ensuite, acquérez un sort coûtant 5 éthers ou moins dans la réserve et préparez-le sur la brèche ouverte d'un joueur.",
+				"Gagnez 2 jetons Pulsation. Vous pouvez perdre 4 jetons Pulsation. Si vous le faites, ouvrez la brèche fermée d’un joueur. Ensuite, acquérez un sort de la réserve coûtant 5 éthers ou moins et préparez ce sort sur la brèche ouverte d’un joueur.",
 			expansion: "Legacy",
 		},
 		{
@@ -322,7 +322,7 @@ export const cards: CardsByType = {
 			nameEn: "Starfire Frenzy",
 			cost: 6,
 			description:
-				"Lancer : Infligez 4 dégâts. Vous pouvez défausser un sort de votre main. Si vous le faites, infligez 1 dégât supplémentaire et gagnez 1 charge.",
+				"Lancer\u00a0: Infligez 4 dégâts.<br>Vous pouvez défausser un sort de votre main. Si vous le faites, infligez 1 dégât supplémentaire et gagnez 1 charge.",
 			expansion: "Legacy",
 		},
 		{
@@ -331,7 +331,7 @@ export const cards: CardsByType = {
 			nameEn: "Breach Flare",
 			cost: 3,
 			description:
-				"Lancer : Infligez 2 dégâts. Stabilisez la brèche III d'un joueur.",
+				"Lancer\u00a0: Infligez 2 dégâts.<br>Stabilisez la brèche III d'un joueur.",
 			expansion: "Legacy",
 		},
 		{
@@ -340,7 +340,7 @@ export const cards: CardsByType = {
 			nameEn: "Force Transfusion",
 			cost: 4,
 			description:
-				"Lancer : Infligez 3 dégâts. Si vous avez au moins 3 charges, gagnez 1 charge.",
+				"Lancer\u00a0: Infligez 3 dégâts.<br>Si vous avez au moins 3 charges, gagnez 1 charge.",
 			expansion: "Legacy",
 		},
 		{
@@ -349,7 +349,7 @@ export const cards: CardsByType = {
 			nameEn: "Fiery Conclusion",
 			cost: 5,
 			description:
-				"Lancer : Infligez 4 dégâts. Si au moins trois piles de la réserve sont vides, infligez 3 dégâts supplémentaires.",
+				"Lancer\u00a0: Infligez 4 dégâts.<br>Si au moins trois piles de la réserve sont vides, infligez 3 dégâts supplémentaires.",
 			expansion: "Legacy",
 		},
 		{
@@ -358,7 +358,7 @@ export const cards: CardsByType = {
 			nameEn: "Bending Beam",
 			cost: 5,
 			description:
-				"Lancer : Infligez 2 dégâts. Si ce sort a été lancé depuis une brèche III ouverte, infligez 3 dégâts supplémentaires.",
+				"Lancer\u00a0: Infligez 2 dégâts.<br>Si ce sort a été lancé depuis une brèche III ouverte, infligez 3 dégâts supplémentaires.",
 			expansion: "Legacy",
 		},
 		{
@@ -367,7 +367,7 @@ export const cards: CardsByType = {
 			nameEn: "Sphere of Inversion",
 			cost: 9,
 			description:
-				"Lancer : Infligez 7 dégâts. Un allié peut détruire une carte de sa main. S'il le fait, il gagne 2 points de vie.",
+				"Lancer\u00a0: Infligez 7 dégâts.<br>Un allié peut détruire une carte de sa main. S'il le fait, il gagne 2 points de vie.",
 			expansion: "Legacy",
 		},
 		{
@@ -376,7 +376,7 @@ export const cards: CardsByType = {
 			nameEn: "Sparking Siphon",
 			cost: 3,
 			description:
-				"Lorsque vous acquérez cette carte, gagnez 2 jetons Pulsation.<br>Lancer : Infligez 2 dégâts. Vous pouvez perdre 1 jeton Pulsation. Si vous le faites, un joueur gagne 1 point de vie.",
+				"Lorsque vous acquérez cette carte, gagnez 2 jetons Pulsation.<br>Lancer\u00a0: Infligez 2 dégâts.<br>Vous pouvez perdre 1 jeton Pulsation. Si vous le faites, un joueur gagne 1 point de vie.",
 			expansion: "Legacy",
 		},
 		{
@@ -385,7 +385,7 @@ export const cards: CardsByType = {
 			nameEn: "Breach Communion",
 			cost: 4,
 			description:
-				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez gagner 1 jeton Pulsation.<br>Lancer : Infligez 2 dégâts. Vous pouvez perdre 2 jetons Pulsation. Si vous le faites, infligez 3 dégâts supplémentaires.",
+				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez gagner 1 jeton Pulsation.<br>Lancer\u00a0: Infligez 2 dégâts.<br>Vous pouvez perdre 2 jetons Pulsation. Si vous le faites, infligez 3 dégâts supplémentaires.",
 			expansion: "Legacy",
 		},
 		{
@@ -394,7 +394,7 @@ export const cards: CardsByType = {
 			nameEn: "Fleeting Vision",
 			cost: 3,
 			description:
-				"Lancer : Infligez 2 dégâts.<br>Chaque joueur peut révéler les deux premières cartes de sa pioche et défausser autant de ces cartes qu'il le souhaite.",
+				"Lancer\u00a0: Infligez 2 dégâts.<br>Chaque joueur peut révéler les deux premières cartes de sa pioche et défausser autant de ces cartes qu'il le souhaite.",
 			expansion: "Legacy",
 		},
 		{
@@ -403,7 +403,7 @@ export const cards: CardsByType = {
 			nameEn: "Thunderous Oath",
 			cost: 8,
 			description:
-				"Lancer : Infligez 6 dégâts. Gagnez 1 jeton Pulsation. Vous pouvez perdre autant de jetons Pulsation que vous le souhaitez. Si vous le faites, un allié pioche autant de cartes que de jetons Pulsation perdus de cette manière.",
+				"Lancer\u00a0: Infligez 6 dégâts.<br>Gagnez 1 jeton Pulsation. Vous pouvez perdre autant de jetons Pulsation que vous le souhaitez. Si vous le faites, un allié pioche autant de cartes que de jetons Pulsation perdus de cette manière.",
 			expansion: "Legacy",
 		},
 		{
@@ -412,7 +412,7 @@ export const cards: CardsByType = {
 			nameEn: "Pyro Geist",
 			cost: 6,
 			description:
-				"Lorsque vous préparez ce sort, infligez 1 dégât.<br>Lancer : Infligez 1 dégât. Infligez 2 dégâts. (Les effets modifiant les dégâts concernent les deux sources de dégâts.)",
+				"Lorsque vous préparez ce sort, infligez 1 dégât.<br>Lancer : Infligez 1 dégât. Infligez 2 dégâts.<br><small><i>(Les effets modifiant les dégâts concernent les deux sources de dégâts.)</i></small>",
 			expansion: "Legacy",
 		},
 		{
@@ -438,7 +438,7 @@ export const cards: CardsByType = {
 			nameEn: "Splinter Missile",
 			cost: 5,
 			description:
-				"Lancer : Infligez 4 dégâts.<br>Un allié peut défausser une carte de sa main. S'il le fait, répartissez ces dégâts comme vous le souhaitez entre la némésis et autant de serviteurs que vous voulez.",
+				"Lancer\u00a0: Infligez 4 dégâts.<br>Un allié peut défausser une carte de sa main. S'il le fait, répartissez ces dégâts comme vous le souhaitez entre la némésis et autant de serviteurs que vous voulez.",
 			expansion: "Legacy",
 		},
 		{
@@ -447,7 +447,7 @@ export const cards: CardsByType = {
 			nameEn: "Warping Haze",
 			cost: 3,
 			description:
-				"Lancer : Infligez 2 dégâts. Si vous avez au moins deux autres sorts préparés, infligez 1 dégât supplémentaire.",
+				"Lancer\u00a0: Infligez 2 dégâts.<br>Si vous avez au moins deux autres sorts préparés, infligez 1 dégât supplémentaire.",
 			expansion: "Legacy",
 		},
 		{
@@ -456,7 +456,7 @@ export const cards: CardsByType = {
 			nameEn: "Breach Collision",
 			cost: 7,
 			description:
-				"Lorsque vous acquérez cette carte, vous pouvez la placer sur la défausse de n'importe quel joueur.<br>Lancer : Infligez 5 dégâts. Gravehold gagne 1 point de vie.",
+				"Lorsque vous acquérez cette carte, vous pouvez la placer sur la défausse de n'importe quel joueur.<br>Lancer\u00a0: Infligez 5 dégâts.<br>Gravehold gagne 1 point de vie.",
 			expansion: "Legacy",
 		},
 		{

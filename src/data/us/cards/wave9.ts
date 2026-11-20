@@ -150,7 +150,7 @@ export const cards: CardsByType = {
 			nameEn: "Bell of Gravehold",
 			cost: 6,
 			description:
-				"Un joueur détruit autant de cartes de sa main qu'il le souhaite et gagne un jeton éther par carte détruite ainsi.(hr)Rappel : Défaussez une carte de votre main. Si vous le faites, un allié gagne 1 charge.",
+				"Un joueur détruit autant de cartes de sa main qu'il le souhaite et gagne 1 jeton éther par carte détruite ainsi.(hr)Rappel : Défaussez une carte de votre main. Si vous le faites, un allié gagne 1 charge.",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -207,7 +207,7 @@ export const cards: CardsByType = {
 			nameEn: "Vitrification",
 			cost: 6,
 			description:
-				"Lancer : Infligez 8 dégâts. Acquérez trois babioles et placez-les sur le dessus de votre pioche.",
+				"Lancer\u00a0: Infligez 8 dégâts.<br>Acquérez trois babioles et placez-les sur le dessus de votre pioche.",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -216,7 +216,7 @@ export const cards: CardsByType = {
 			nameEn: "Frostfire Maelstrom",
 			cost: 4,
 			description:
-				"Lorsque préparé, une fois par tour durant votre phase principale, gagnez 1 jeton Pulsation.<br>Lancer : Infligez 2 dégâts répartis comme vous le souhaitez entre les ennemis. Perdez autant de jetons Pulsation que vous le souhaitez et infligez 1 dégât supplémentaire par jeton perdu ainsi.",
+				"Lorsque préparé, une fois par tour durant votre phase principale, gagnez 1 jeton Pulsation.<br>Lancer\u00a0: Infligez 2 dégâts répartis comme vous le souhaitez entre les ennemis.<br>Perdez autant de jetons Pulsation que vous le souhaitez et infligez 1 dégât supplémentaire par jeton perdu ainsi.",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -225,7 +225,7 @@ export const cards: CardsByType = {
 			nameEn: "Jeweled Shrapnel",
 			cost: 4,
 			description:
-				"Lancer : Infligez 4 dégâts. Acquérez deux babioles et placez-les sur le dessus de votre pioche. Vous pouvez détruire une carte de votre main.",
+				"Lancer\u00a0: Infligez 4 dégâts.<br>Acquérez deux babioles et placez-les sur le dessus de votre pioche. Vous pouvez détruire une carte de votre main.",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -234,7 +234,7 @@ export const cards: CardsByType = {
 			nameEn: "Eternity's Echo",
 			cost: 7,
 			description:
-				"Lancer : Infligez 3 dégâts. Rappel : Vous pouvez lancer l'un de vos sorts préparés. Conjurez.",
+				"Lancer\u00a0: Infligez 3 dégâts.(hr)Rappel\u00a0: Vous pouvez lancer l'un de vos sorts préparés. Conjurez.",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -243,7 +243,7 @@ export const cards: CardsByType = {
 			nameEn: "Ember Gale",
 			cost: 5,
 			description:
-				"Lancer : Infligez 4 dégâts. Chaque allié ayant six cartes ou plus dans sa défausse stabilise l'une de ses brèches.",
+				"Lancer\u00a0: Infligez 4 dégâts.<br>Chaque allié ayant six cartes ou plus dans sa défausse stabilise l'une de ses brèches.",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -252,7 +252,7 @@ export const cards: CardsByType = {
 			nameEn: "Worldshift",
 			cost: 6,
 			description:
-				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez gagner 1 jeton Pulsation.<br>Lancer : Infligez 5 dégâts. Vous pouvez perdre 2 jetons Pulsation. Si vous le faites, stabilisez la brèche d'un allié.",
+				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez gagner 1 jeton Pulsation.<br>Lancer\u00a0: Infligez 5 dégâts.<br>Vous pouvez perdre 2 jetons Pulsation. Si vous le faites, stabilisez la brèche d'un allié.",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -261,7 +261,7 @@ export const cards: CardsByType = {
 			nameEn: "Inundate",
 			cost: 8,
 			description:
-				"Lancer : Infligez 6 dégâts. Un allié peut défausser une carte de sa main coûtant 4 éthers ou plus et piocher une carte. S'il le fait, infligez 4 dégâts. (Les effets qui modifient les dégâts s'appliquent à chaque fois que ce sort inflige des dégâts.)",
+				"Lancer\u00a0: Infligez 6 dégâts.<br>Un allié peut défausser une carte de sa main coûtant 4 éthers ou plus et piocher une carte. S'il le fait, infligez 4 dégâts.<br><small><i>(Les effets qui modifient les dégâts s'appliquent à chaque fois que ce sort inflige des dégâts.)</i></small>",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -271,7 +271,7 @@ export const cards: CardsByType = {
 			cost: 3,
 			developCost: 2,
 			description:
-				"Lancer : Infligez 2 dégâts. Un allié peut défausser un Pacte mortel de sa main et piocher une carte. S'il le fait, infligez 1 dégât supplémentaire et vous pouvez détruire une carte de votre main.",
+				"Lancer\u00a0: Infligez 2 dégâts.<br>Un allié peut défausser un Pacte mortel de sa main et piocher une carte. S'il le fait, infligez 1 dégât supplémentaire et vous pouvez détruire une carte de votre main.",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -280,7 +280,7 @@ export const cards: CardsByType = {
 			nameEn: "Megaflux Slice",
 			cost: 4,
 			description:
-				"Lancer : Infligez 2 dégâts. Gagnez 1 jeton Pulsation.(ou)Lancer : Vous pouvez perdre 3 jetons Pulsation. Si vous le faites, infligez 7 dégâts.",
+				"Lancer\u00a0: Infligez 2 dégâts.<br>Gagnez 1 jeton Pulsation.(ou)Lancer\u00a0: Vous pouvez perdre 3 jetons Pulsation. Si vous le faites, infligez 7 dégâts.",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -289,7 +289,7 @@ export const cards: CardsByType = {
 			nameEn: "Stonefury Eruption",
 			cost: 5,
 			description:
-				"Lancer : Infligez 4 dégâts. Chaque allié ayant une Éruption furieuse dans sa défausse gagne 1 charge.",
+				"Lancer\u00a0: Infligez 4 dégâts.<br>Chaque allié ayant une Éruption furieuse dans sa défausse gagne 1 charge.",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -298,7 +298,7 @@ export const cards: CardsByType = {
 			nameEn: "Descent of Destruction",
 			cost: 8,
 			description:
-				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez conjurer sur une brèche ouverte ou fermée.<br>Lancer : Infligez 4 dégâts. Les sorts coûtant 2 éthers ou moins que vous lancez ce tour infligent 2 dégâts supplémentaires.",
+				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez Conjurer sur une brèche ouverte ou fermée.<br>Lancer\u00a0: Infligez 4 dégâts.<br>Les sorts coûtant 2 éthers ou moins que vous lancez ce tour infligent 2 dégâts supplémentaires.",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -307,7 +307,7 @@ export const cards: CardsByType = {
 			nameEn: "Obsolescence",
 			cost: 8,
 			description:
-				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez acquérir une babiole.<br>Lancer : Infligez 1 dégât.<br>Détruisez chaque autre carte de votre défausse et de votre pioche. Infligez 2 dégâts supplémentaires par carte détruite ainsi.",
+				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez acquérir une babiole.<br>Lancer\u00a0: Infligez 1 dégât.<br>Détruisez chaque autre carte de votre défausse et de votre pioche. Infligez 2 dégâts supplémentaires par carte détruite ainsi.",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -316,7 +316,7 @@ export const cards: CardsByType = {
 			nameEn: "Boundless Fire",
 			cost: 3,
 			description:
-				"Lancer : Infligez 2 dégâts. Rappel : Perdez 1 charge pour prendre cette carte en main.",
+				"Lancer\u00a0: Infligez 2 dégâts. (hr)Rappel\u00a0: Perdez 1 charge pour prendre cette carte en main.",
 			expansion: "The Surface",
 		},
 		{
@@ -325,7 +325,7 @@ export const cards: CardsByType = {
 			nameEn: "Cosmic Pulse",
 			cost: 6,
 			description:
-				"Lorsque préparé, autant de sorts que vous le souhaitez peuvent être conjurés sur cette brèche. Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez conjurer.<br>Lancer : Infligez 3 dégâts.",
+				"Lorsque préparé, autant de sorts que vous le souhaitez peuvent être conjurés sur cette brèche.<br>Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez Conjurer.<br>Lancer\u00a0: Infligez 3 dégâts.",
 			expansion: "The Surface",
 		},
 		{
@@ -334,7 +334,7 @@ export const cards: CardsByType = {
 			nameEn: "Obliterating Arc",
 			cost: 7,
 			description:
-				"Lancer : Infligez 7 dégâts. Détruisez une carte de la pile Arc d'anéantissement de la réserve. Si vous ne le pouvez pas, subissez 2 dégâts.",
+				"Lancer\u00a0: Infligez 7 dégâts.<br>Détruisez une carte de la pile Arc d'anéantissement de la réserve. Si vous ne le pouvez pas, subissez 2 dégâts.",
 			expansion: "The Surface",
 		},
 		{
@@ -343,7 +343,7 @@ export const cards: CardsByType = {
 			nameEn: "Torrential Spike",
 			cost: 4,
 			description:
-				"Lancer : Infligez 3 dégâts. Un allié peut révéler la première carte de sa pioche. S'il révèle un sort, il le prend en main.",
+				"Lancer\u00a0: Infligez 3 dégâts.<br>Un allié peut révéler la première carte de sa pioche. S'il révèle un sort, il le prend en main.",
 			expansion: "The Returned",
 		},
 		{
@@ -352,7 +352,7 @@ export const cards: CardsByType = {
 			nameEn: "Infernal Cascade",
 			cost: 5,
 			description:
-				"Lancer : Infligez 2 dégâts. Vous pouvez lancer le sort préparé d'un joueur coûtant 2 éthers ou moins sans le défausser, puis le lancer à nouveau.",
+				"Lancer\u00a0: Infligez 2 dégâts.<br>Vous pouvez lancer le sort préparé d'un joueur coûtant 2 éthers ou moins sans le défausser, puis le lancer à nouveau.",
 			expansion: "The Returned",
 		},
 	],

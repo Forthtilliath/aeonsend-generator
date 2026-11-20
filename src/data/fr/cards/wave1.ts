@@ -71,7 +71,7 @@ export const cards: CardsByType = {
 			nameEn: "Banishing Topaz",
 			cost: 5,
 			description:
-				"Gagnez 2 éthers.<br>Vous pouvez placer une carte de votre main sur votre pioche. Si vous le faites, gagnez 2 éthers supplémentaires.",
+				"Gagnez 2 éthers.<br>Vous pouvez placer une carte de votre main sur le dessus de votre pioche. Si vous le faites, gagnez 2 éthers supplémentaires.",
 			expansion: "Les Profondeurs",
 		},
 		{
@@ -144,7 +144,7 @@ export const cards: CardsByType = {
 			nameEn: "Transmogrifier",
 			cost: 4,
 			description:
-				"Détruisez une carte de votre main. Vous pouvez gagner une carte d'une pile de la réserve qui coûte jusqu'à 3 éthers de plus que la carte détruite.",
+				"Détruisez une carte de votre main. Vous pouvez acquérir une carte de la réserve coûtant jusqu’à 3 éthers de plus que la carte détruite.",
 			expansion: "Les Profondeurs",
 		},
 		{
@@ -307,7 +307,7 @@ export const cards: CardsByType = {
 			nameEn: "Combustion",
 			cost: 5,
 			description:
-				"Lancer : Infligez 2 dégâts à un serviteur. Infligez 2 dégâts à un autre serviteur ou à la némésis.",
+				"Lancer\u00a0: Infligez 2 dégâts à un serviteur.<br>Infligez 2 dégâts à un autre serviteur ou à la némésis.",
 			expansion: "Les Profondeurs",
 		},
 		{
@@ -344,7 +344,7 @@ export const cards: CardsByType = {
 			nameEn: "Void Bond",
 			cost: 4,
 			description:
-				"Lancer : Infligez 3 dégâts. Vous pouvez lancer un sort préparé de n'importe quel joueur.",
+				"Lancer\u00a0: Infligez 3 dégâts.<br>Vous pouvez lancer le sort préparé d’un joueur.",
 			expansion: "Les Profondeurs",
 		},
 		{

@@ -336,7 +336,7 @@ export const cards: CardsByType = {
 			nameEn: "Illuminating Flame",
 			cost: 6,
 			description:
-				"Lancer : Infligez 5 dégâts. Si ce sort a été lancé depuis une brèche III ou IV ouverte, vous pouvez le détruire. Si vous le faites, gagnez 3 charges.",
+				"Lancer\u00a0: Infligez 5 dégâts.<br>Si ce sort a été lancé depuis une brèche III ou IV ouverte, vous pouvez le détruire. Si vous le faites, gagnez 3 charges.",
 			expansion: "Une Ère Nouvelle",
 		},
 		{
@@ -345,7 +345,7 @@ export const cards: CardsByType = {
 			nameEn: "Chronal Arc",
 			cost: 7,
 			description:
-				"Lancer : Infligez 4 dégâts. Vous pouvez placer cette carte dans votre main.",
+				"Lancer\u00a0: Infligez 4 dégâts.<br>Vous pouvez placer cette carte dans votre main.",
 			keyword: "duo",
 			expansion: "Une Ère Nouvelle",
 		},

@@ -129,7 +129,7 @@ export const cards: CardsByType = {
 			nameEn: "Shattered Rupix",
 			cost: 5,
 			description:
-				"Gagnez 3 éthers.(hr)Lorsqu'une autre carte ou un effet devrait vous faire défausser ou détruire cette carte, vous pouvez la reprendre en main. (Ignorez cet effet tant que cette carte est dans la réserve.)",
+				"Gagnez 3 éthers.(hr)Lorsqu’une autre carte ou effet devrait vous faire défausser ou détruire cette carte, vous pouvez la reprendre dans votre main.<br><small><i>(Ignorez cet effet tant que cette carte est dans la réserve)</i></small>",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -219,7 +219,7 @@ export const cards: CardsByType = {
 			nameEn: "Void Anchor",
 			cost: 5,
 			description:
-				"Réduisez un serviteur au silence. Un allié gagne 2 jetons éther.(hr)Rappel : Gravehold gagne 1 point de vie.",
+				"Réduisez un serviteur au silence. Un allié gagne 2 jetons éthers.(hr)Rappel : Gravehold gagne 1 point de vie.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -264,7 +264,7 @@ export const cards: CardsByType = {
 			nameEn: "Lightbringer Staff",
 			cost: 6,
 			description:
-				"Les joueurs détruisent collectivement jusqu'à deux cartes de leur main.(ou)Réduisez au silence jusqu'à deux serviteurs.(ou)Détruisez cette carte. Retirez un jeton Incendie de votre position sur la carte du monde.",
+				"Les joueurs détruisent collectivement jusqu'à deux cartes de leur main.(ou)Réduisez au silence jusqu'à deux serviteurs.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -273,7 +273,7 @@ export const cards: CardsByType = {
 			nameEn: "Chaos Charm",
 			cost: 5,
 			description:
-				"Deux joueurs différents peuvent détruire une carte de leur main.<br>Vous pouvez détruire cette carte. Si vous le faites, retirez un jeton Incendie de votre position sur la carte du monde.",
+				"Deux joueurs différents peuvent détruire une carte en main.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -338,7 +338,7 @@ export const cards: CardsByType = {
 			nameEn: "Crystal Carapace",
 			cost: 6,
 			description:
-				"Lancer : Infligez 4 dégâts.(hr)Lorsqu'une autre carte ou un effet devrait vous faire défausser ou détruire cette carte, vous pouvez la reprendre en main. Si elle était préparée, vous pouvez la préparer. (Ignorez cet effet tant que cette carte est dans la réserve.)",
+				"Lancer\u00a0: Infligez 4 dégâts.(hr)Lorsqu'une autre carte ou un effet devrait vous faire défausser ou détruire cette carte, vous pouvez la reprendre en main. Si elle était préparée, vous pouvez la préparer.<br><small><i>(Ignorez cet effet tant que cette carte est dans la réserve.) </i></small>",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -374,7 +374,7 @@ export const cards: CardsByType = {
 			nameEn: "Quicksilver Bolt",
 			cost: 5,
 			description:
-				"Vous pouvez préparer ce sort sur l'une de vos brèches ouvertes durant la phase principale d'un allié.<br>Lorsque vous préparez ce sort durant votre phase principale, renforcez cette carte.<br>Lancer : Infligez 3 dégâts. Si cette carte est entièrement renforcée, elle inflige 1 dégât supplémentaire.",
+				"Vous pouvez préparer ce sort sur l'une de vos brèches ouvertes durant la phase principale d'un allié.<br>Lorsque vous préparez ce sort durant votre phase principale, renforcez cette carte.<br>Lancer\u00a0: Infligez 3 dégâts.<br>Si cette carte est entièrement renforcée, elle inflige 1 dégât supplémentaire.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -383,7 +383,7 @@ export const cards: CardsByType = {
 			nameEn: "Evaporating Ray",
 			cost: 4,
 			description:
-				"Lancer : Infligez 3 dégâts. Un allié peut défausser une carte de sa main coûtant 2 éthers ou plus. S'il le fait, ce sort inflige 2 dégâts supplémentaires.",
+				"Lancer\u00a0: Infligez 3 dégâts.<br>Un allié peut défausser une carte de sa main coûtant 2 éthers ou plus. S'il le fait, ce sort inflige 2 dégâts supplémentaires.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -392,7 +392,7 @@ export const cards: CardsByType = {
 			nameEn: "Magnetic Burst",
 			cost: 4,
 			description:
-				"Lancer : Infligez 3 dégâts. Vous pouvez révéler les deux premières cartes de votre pioche et placer autant de ces cartes que vous le souhaitez sur votre défausse.",
+				"Lancer\u00a0: Infligez 3 dégâts.<br>Vous pouvez révéler les deux premières cartes de votre pioche et placer autant de ces cartes que vous le souhaitez sur votre défausse.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -410,7 +410,7 @@ export const cards: CardsByType = {
 			nameEn: "Volcanic Shrapnel",
 			cost: 8,
 			description:
-				"Lancer : Infligez 1 dégât. Infligez 1 dégât. Infligez 1 dégât. Vous pouvez reprendre en main jusqu'à deux cartes coûtant 0 éther de votre défausse. (Les effets modifiant les dégâts concernent chaque source de dégâts de ce sort.)",
+				"Lancer\u00a0: Infligez 1 dégât.<br>Infligez 1 dégât. Infligez 1 dégât. Vous pouvez reprendre en main jusqu'à deux cartes coûtant 0 éther de votre défausse. <br><small><i>(Les effets modifiant les dégâts concernent chaque source de dégâts de ce sort.)</i></small>",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -419,7 +419,7 @@ export const cards: CardsByType = {
 			nameEn: "Entwined Tremor",
 			cost: 8,
 			description:
-				"Lancer : Infligez 6 dégâts. Si un sort coûtant 5 éthers ou plus est préparé sur une brèche adjacente, ce sort inflige 2 dégâts supplémentaires. Si un sort coûtant 4 éthers ou moins est préparé sur une brèche adjacente, gagnez 1 charge.",
+				"Lancer\u00a0: Infligez 6 dégâts.<br>Si un sort coûtant 5 éthers ou plus est préparé sur une brèche adjacente, ce sort inflige 2 dégâts supplémentaires. Si un sort coûtant 4 éthers ou moins est préparé sur une brèche adjacente, gagnez 1 charge.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -437,7 +437,7 @@ export const cards: CardsByType = {
 			nameEn: "Aether Ripple",
 			cost: 3,
 			description:
-				"Lancer : Infligez 2 dégâts. Chaque allié gagne un jeton éther.",
+				"Lancer\u00a0: Infligez 2 dégâts.<br>Chaque allié gagne un jeton éther.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -464,7 +464,7 @@ export const cards: CardsByType = {
 			nameEn: "Cascade",
 			cost: 5,
 			description:
-				"Lancer : Infligez 3 dégâts. Vous pouvez reprendre en main une carte coûtant 4 éthers ou moins de votre défausse.",
+				"Lancer\u00a0: Infligez 3 dégâts.<br>Vous pouvez reprendre en main une carte coûtant 4 éthers ou moins de votre défausse.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -473,7 +473,7 @@ export const cards: CardsByType = {
 			nameEn: "Backfire",
 			cost: 5,
 			description:
-				"Lancer : Infligez 4 dégâts. Vous pouvez perdre 1 charge pour reprendre cette carte en main.",
+				"Lancer\u00a0: Infligez 4 dégâts.<br>Vous pouvez perdre 1 charge pour reprendre cette carte en main.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -482,7 +482,7 @@ export const cards: CardsByType = {
 			nameEn: "Rainbow Surge",
 			cost: 7,
 			description:
-				"Lancer : Infligez 5 dégâts. Si cela fait défausser un serviteur, renforcez cette carte. Gagnez 1 point de vie par marque de renfort sur cette carte.",
+				"Lancer\u00a0: Infligez 5 dégâts.<br>Si cela fait défausser un serviteur, renforcez cette carte. Gagnez 1 point de vie par marque de renfort sur cette carte.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -500,7 +500,7 @@ export const cards: CardsByType = {
 			nameEn: "Parasitic Force",
 			cost: 8,
 			description:
-				"Vous pouvez préparer ce sort sur la brèche ouverte de n'importe quel joueur.<br>Lancer : Infligez 6 dégâts.<br>Vous pouvez détruire jusqu'à deux cartes de votre main ou de votre défausse.",
+				"Vous pouvez préparer ce sort sur la brèche ouverte de n'importe quel joueur.<br>Lancer\u00a0: Infligez 6 dégâts.<br>Vous pouvez détruire jusqu'à deux cartes de votre main ou de votre défausse.",
 			expansion: "Legacy of Gravehold",
 		},
 		{

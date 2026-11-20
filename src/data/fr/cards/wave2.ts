@@ -200,7 +200,7 @@ export const cards: CardsByType = {
 			nameEn: "Drown in Flames",
 			cost: 6,
 			description:
-				"Lancer : Infligez 4 dégâts à un serviteur ou à la némésis.<br>Vous pouvez perdre 2 charges. Si vous le faites, répétez cet effet.<br>(Les effets qui modifient les dégâts s'appliquent à chaque fois que ce sort inflige des dégâts.)",
+				"Lancer\u00a0: Infligez 4 dégâts à un serviteur ou à la némésis.<br>Vous pouvez perdre 2 charges. Si vous le faites, répétez cet effet.<br><small><i>(Les effets qui modifient les dégâts s'appliquent à chaque fois que ce sort inflige des dégâts.)</i></small>",
 			expansion: "Guerre Éternelle",
 		},
 		{

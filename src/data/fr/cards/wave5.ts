@@ -99,7 +99,7 @@ export const cards: CardsByType = {
 			nameEn: "Jeweled Urup",
 			cost: 5,
 			description:
-				"Gagnez 3 éthers.<br>S'il s'agit du second Urupe Enrichi que vous jouez ce tour, vous pouvez détruire cette carte pour acquérir une carte d'une pile de la réserve coûtant 7 éthers ou moins.",
+				"Gagnez 3 éthers.(ou)S'il s'agit du second Urupe Enrichi que vous jouez ce tour, vous pouvez détruire cette carte pour acquérir une carte d'une pile de la réserve coûtant 7 éthers ou moins.",
 			expansion: "Le Village du Sud",
 		},
 	],
@@ -210,7 +210,7 @@ export const cards: CardsByType = {
 			nameEn: "Cat's Eye",
 			cost: 1,
 			description:
-				"[small]Vous ne pouvez pas acquérir cette carte si vous avez acquis une autre carte ce tour. Vous ne pouvez pas acquérir d'autres cartes si vous avez acquis cette carte ce tour.[/small]<br>Gagnez 1 charge. Vous pouvez détruire cette carte pour gagner 1 éther.",
+				"<small>Vous ne pouvez pas acquérir cette carte si vous avez acquis une autre carte ce tour. Vous ne pouvez pas acquérir d'autres cartes si vous avez acquis cette carte ce tour.</small><br>Gagnez 1 charge. Vous pouvez détruire cette carte pour gagner 1 éther.",
 			expansion: "Le Village du Sud",
 		},
 		{
@@ -367,7 +367,7 @@ export const cards: CardsByType = {
 			nameEn: "Force Catalyst",
 			cost: 4,
 			description:
-				"Lorsque préparé, durant votre phase principale, vous pouvez dépenser 3 éthers pour lancer le sort préparé de n'importe quel joueur.<br>Lancer : Infligez 3 dégâts.",
+				"Lorsque préparé, durant votre phase principale, vous pouvez dépenser 3 éthers pour lancer le sort préparé de n'importe quel joueur.<br>Lancer\u00a0: Infligez 3 dégâts.",
 			expansion: "Les Parias",
 		},
 		{

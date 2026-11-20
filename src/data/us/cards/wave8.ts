@@ -11,7 +11,7 @@ export const cards: CardsByType = {
 			cost: 3,
 			developCost: 2,
 			description:
-				"Lorsque vous acquérez cette carte, placez un jeton Électrisation sur un ennemi. Gagnez 2 éthers.",
+				"Lorsque vous acquérez cette carte, placez un jeton Électricité sur un ennemi.(hr)Gagnez 2 éthers.",
 			expansion: "The Caverns",
 		},
 		{
@@ -20,7 +20,7 @@ export const cards: CardsByType = {
 			nameEn: "Spirit Jewel",
 			cost: 4,
 			description:
-				"Gagnez 2 éthers. Vous pouvez faire subir 1 dégât à Gravehold. Si vous le faites, gagnez 1 éther supplémentaire.",
+				"Gagnez 2 éthers.<br>Vous pouvez faire subir 1 dégât à Gravehold. Si vous le faites, gagnez 1 éther supplémentaire.",
 			expansion: "The Abyss",
 		},
 		{
@@ -29,7 +29,7 @@ export const cards: CardsByType = {
 			nameEn: "Pulsing Garnet",
 			cost: 5,
 			description:
-				"Gagnez 3 éthers. Vous pouvez faire gagner 2 points de vie à un ennemi. Si vous le faites, un allié pioche une carte.",
+				"Gagnez 3 éthers.<br>Vous pouvez faire gagner 2 points de vie à un ennemi. Si vous le faites, un allié pioche une carte.",
 			expansion: "The Abyss",
 		},
 		{
@@ -38,7 +38,7 @@ export const cards: CardsByType = {
 			nameEn: "Whisper of Amethyst",
 			cost: 6,
 			description:
-				"Gagnez 3 éthers. Vous pouvez défausser la première carte du paquet Némésis. Si vous le faites, un allié gagne 2 jetons éther.",
+				"Gagnez 3 éthers.<br>Vous pouvez défausser la première carte de la pioche de la némésis. Si vous le faites, un allié gagne 2 jetons éthers.",
 			expansion: "The Abyss",
 		},
 	],
@@ -98,7 +98,7 @@ export const cards: CardsByType = {
 			nameEn: "Expunge Essence",
 			cost: 5,
 			description:
-				"Lancer : Retirez un jeton Élémentaire d'un ennemi. Si vous le faites, infligez-lui 6 dégâts.(ou)Lancer : Placez un jeton Immolation sur un ennemi et infligez-lui 2 dégâts.",
+				"Lancer\u00a0: Retirez un jeton Élémentaire d'un ennemi. Si vous le faites, infligez-lui 6 dégâts.(ou)Lancer\u00a0: Placez un jeton Immolation sur un ennemi et infligez-lui 2 dégâts.",
 			expansion: "The Caverns",
 		},
 		{
@@ -107,7 +107,7 @@ export const cards: CardsByType = {
 			nameEn: "Combust Legend",
 			cost: 4,
 			description:
-				"Lorsque préparé, après qu'un joueur a joué une relique, placez un jeton éther sur cette carte.<br>Lancer : Infligez 3 dégâts. Gagnez tous les jetons éther présents sur cette carte.",
+				"Lorsque préparé, après qu'un joueur a joué une relique, placez un jeton éther sur cette carte.<br>Lancer\u00a0: Infligez 3 dégâts.<br>Gagnez tous les jetons éther présents sur cette carte.",
 			expansion: "The Caverns",
 		},
 		{
@@ -125,7 +125,7 @@ export const cards: CardsByType = {
 			nameEn: "Memory Allocator",
 			cost: 8,
 			description:
-				"Lancer : Infligez 6 dégâts. Mettez de côté autant de cartes de votre main que vous le souhaitez. Après avoir pioché lors de votre phase de pioche, reprenez en main les cartes mises de côté.",
+				"Lancer\u00a0: Infligez 6 dégâts.<br>Mettez de côté autant de cartes de votre main que vous le souhaitez. Après avoir pioché lors de votre phase de pioche, reprenez en main les cartes mises de côté.",
 			expansion: "The Caverns",
 		},
 		{
@@ -134,7 +134,7 @@ export const cards: CardsByType = {
 			nameEn: "All-out Barrage",
 			cost: 5,
 			description:
-				"Lancer : Infligez 4 dégâts. Vous pouvez placer la dernière carte du paquet Némésis sur le dessus de ce paquet. Si vous le faites, infligez 3 dégâts supplémentaires.",
+				"Lancer\u00a0: Infligez 4 dégâts.<br>Vous pouvez placer la dernière carte du paquet Némésis sur le dessus de ce paquet. Si vous le faites, infligez 3 dégâts supplémentaires.",
 			expansion: "The Abyss",
 		},
 		{
@@ -152,7 +152,7 @@ export const cards: CardsByType = {
 			nameEn: "Spiritual Infusion",
 			cost: 4,
 			description:
-				"Lancer : Infligez 3 dégâts. Si vous avez infligé 7 dégâts ou plus ce tour, Gravehold gagne 1 point de vie.",
+				"Lancer\u00a0: Infligez 3 dégâts.<br>Si vous avez infligé 7 dégâts ou plus ce tour, Gravehold gagne 1 point de vie.",
 			expansion: "Tales of Old Gravehold",
 		},
 	],

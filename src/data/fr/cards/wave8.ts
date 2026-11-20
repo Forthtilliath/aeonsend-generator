@@ -46,7 +46,7 @@ export const cards: CardsByType = {
 			developCost: 4,
 			conditionalCost: true,
 			description:
-				"Si vous avez 2 charges ou plus, vous pouvez acquérir ou développer cette carte pour 1 éther de moins.(hr)Lorsque vous développez cette carte, stabilisez une brèche.(hr)Gagnez 3 éthers.",
+				"Si vous avez 2 charges ou plus, vous pouvez acquérir ou développer cette carte pour 1 éther_ de moins.(hr)Lorsque vous développez cette carte, stabilisez une brèche.(hr)Gagnez 3 éthers_.",
 			expansion: "Le Commencement",
 		},
 		{
@@ -198,7 +198,7 @@ export const cards: CardsByType = {
 			nameEn: "Unveil Potential",
 			cost: 7,
 			description:
-				"Lorsque préparé, vos autres sorts gagnent le texte « OU Lancer\u00a0: Infligez autant de dégâts que le coût de cette carte. »<br>Lancer : Infligez 5 dégâts.",
+				"Lorsque préparé, vos autres sorts gagnent le texte « <b>OU</b> Lancer\u00a0: Infligez autant de dégâts que le coût de cette carte. »<br>Lancer\u00a0: Infligez 5 dégâts.",
 			expansion: "Le Commencement",
 		},
 	],
