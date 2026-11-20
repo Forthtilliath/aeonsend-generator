@@ -60,6 +60,15 @@ export const cards: CardsByType = {
 			expansion: "Past and Future",
 		},
 		{
+			id: "P157",
+			name: "Éclat de citrine",
+			nameEn: "Citrine Shrapnel",
+			cost: 3,
+			description:
+				"Gagnez 1 Ether par exemplaire de cette carte dans la zone de développement.(ou)Développez un Éclat de citrine.",
+			expansion: "Past and Future",
+		},
+		{
 			id: "ORI-11",
 			name: "Rhodonix",
 			nameEn: "Rhodonix",
@@ -116,6 +125,15 @@ export const cards: CardsByType = {
 			developCost: 3,
 			description:
 				"Un joueur gagne 1 charge. S'il y a au moins deux Montres de gousset imprégnées dans la zone de développement, un joueur gagne 1 point de vie.",
+			expansion: "Past and Future",
+		},
+		{
+			id: "P164",
+			name: "Graine de cataclysme",
+			nameEn: "Cataclysm Seed",
+			cost: 7,
+			description:
+				"Gagnez 1 charge.(ou)Détruisez cette carte. Chaque joueur peut détruire autant de cartes de sa main qu'il le souhaite.",
 			expansion: "Past and Future",
 		},
 		{

@@ -76,6 +76,15 @@ export const cards: CardsByType = {
 			expansion: "Les Parias",
 		},
 		{
+			id: "P090",
+			name: "Sapal scintillant",
+			nameEn: "Coruscating Sapal",
+			cost: 4,
+			description:
+				"Gagnez 2 Ether.\nVous pouvez perdre 1 charge. Si vous le faites, gagnez 2 Ether supplémentaires.",
+			expansion: "Les Parias",
+		},
+		{
 			id: "LVS-80",
 			name: "Quilite de Célérité",
 			nameEn: "Quickening Qitite",
@@ -175,6 +184,15 @@ export const cards: CardsByType = {
 			cost: 7,
 			description:
 				"Un allié pioche trois cartes. Puis, il défausse une carte de sa main.(ou)Vous pouvez stabiliser la brèche d'un allié. Un allié peut reprendre en main une carte de sa défausse.",
+			expansion: "Les Parias",
+		},
+		{
+			id: "P102",
+			name: "Coquille bourdonnante",
+			nameEn: "Humming Shell",
+			cost: 7,
+			description:
+				"Détruisez jusqu'à deux cartes de votre main ou de votre défausse.(ou)Gagnez 2 charges.",
 			expansion: "Les Parias",
 		},
 		{
@@ -340,6 +358,15 @@ export const cards: CardsByType = {
 			cost: 8,
 			description:
 				"Lancer : Infligez 6 dégâts. Révélez puis replacez les cartes du paquet d'ordre du tour dans l'ordre de votre choix.",
+			expansion: "Les Parias",
+		},
+		{
+			id: "P097",
+			name: "Catalyseur de force",
+			nameEn: "Force Catalyst",
+			cost: 4,
+			description:
+				"Lorsque préparé, durant votre phase principale, vous pouvez dépenser 3 Ether pour lancer le sort préparé de n'importe quel joueur. Lancer : Infligez 3 dégâts.",
 			expansion: "Les Parias",
 		},
 		{

@@ -195,6 +195,15 @@ export const cards: CardsByType = {
 	],
 	spells: [
 		{
+			id: "P06",
+			name: "Noyé dans les flammes",
+			nameEn: "Drown in Flames",
+			cost: 6,
+			description:
+				"Lancer : Infligez 4 dégâts à un serviteur ou à la némésis.\nVous pouvez perdre 2 charges. Si vous le faites, répétez cet effet.\n(Les effets qui modifient les dégâts s'appliquent à chaque fois que ce sort inflige des dégâts.)",
+			expansion: "Guerre Éternelle",
+		},
+		{
 			id: "GE14",
 			name: "Aurore",
 			nameEn: "Aurora",

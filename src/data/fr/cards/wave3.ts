@@ -100,6 +100,15 @@ export const cards: CardsByType = {
 			expansion: "Legacy",
 		},
 		{
+			id: "P42",
+			name: "Pierre d'écho",
+			nameEn: "Echo Stone",
+			cost: 4,
+			description:
+				"Gagnez 2 Ether.\nSi vous avez joué une autre Pierre d'écho ce tour, gagnez 1 Ether supplémentaire.",
+			expansion: "Legacy",
+		},
+		{
 			id: "SE133",
 			name: "Voltécorce",
 			nameEn: "Jolting Crust",
@@ -380,6 +389,15 @@ export const cards: CardsByType = {
 			expansion: "Legacy",
 		},
 		{
+			id: "P30",
+			name: "Vision fugace",
+			nameEn: "Fleeting Vision",
+			cost: 3,
+			description:
+				"Lancer : Infligez 2 dégâts.\nChaque joueur peut révéler les deux premières cartes de sa pioche et défausser autant de ces cartes qu'il le souhaite.",
+			expansion: "Legacy",
+		},
+		{
 			id: "VI30",
 			name: "Serment tonitruant",
 			nameEn: "Thunderous Oath",
@@ -412,6 +430,15 @@ export const cards: CardsByType = {
 			cost: 5,
 			description:
 				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez placer sur votre pioche une relique jouée ce tour ou une relique de votre défausse.\nLancer : Infligez 4 dégâts.",
+			expansion: "Legacy",
+		},
+		{
+			id: "P36",
+			name: "Projectile fragmenté",
+			nameEn: "Splinter Missile",
+			cost: 5,
+			description:
+				"Lancer : Infligez 4 dégâts.\nUn allié peut défausser une carte de sa main. S'il le fait, répartissez ces dégâts comme vous le souhaitez entre la némésis et autant de serviteurs que vous voulez.",
 			expansion: "Legacy",
 		},
 		{

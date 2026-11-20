@@ -133,6 +133,15 @@ export const cards: CardsByType = {
 			expansion: "Legacy of Gravehold",
 		},
 		{
+			id: "P124",
+			name: "Motte de talusoïde",
+			nameEn: "Talusoid Clod",
+			cost: 4,
+			description:
+				"Gagnez 2 Ether.(hr)Rappel : Vous pouvez subir 2 dégâts pour reprendre cette carte en main.",
+			expansion: "Legacy of Gravehold",
+		},
+		{
 			id: "RU001",
 			name: "Verre de sorcière",
 			nameEn: "Witchglass",
@@ -265,6 +274,15 @@ export const cards: CardsByType = {
 			cost: 5,
 			description:
 				"Deux joueurs différents peuvent détruire une carte de leur main.\nVous pouvez détruire cette carte. Si vous le faites, retirez un jeton Incendie de votre position sur la carte du monde.",
+			expansion: "Legacy of Gravehold",
+		},
+		{
+			id: "P132",
+			name: "Spirale chronophage",
+			nameEn: "Chronophage Coil",
+			cost: 8,
+			description:
+				"Détruisez cette carte. Mélangez la carte d'ordre du tour d'un joueur dans le paquet d'ordre du tour.",
 			expansion: "Legacy of Gravehold",
 		},
 		{
@@ -474,6 +492,15 @@ export const cards: CardsByType = {
 			cost: 7,
 			description:
 				"Lancer : Retirez jusqu'à 2 jetons Bouclier des serviteurs. Infligez 5 dégâts.",
+			expansion: "Legacy of Gravehold",
+		},
+		{
+			id: "P138",
+			name: "Force parasite",
+			nameEn: "Parasitic Force",
+			cost: 8,
+			description:
+				"Vous pouvez préparer ce sort sur la brèche ouverte de n'importe quel joueur. Lancer : Infligez 6 dégâts.\nVous pouvez détruire jusqu'à deux cartes de votre main ou de votre défausse.",
 			expansion: "Legacy of Gravehold",
 		},
 		{

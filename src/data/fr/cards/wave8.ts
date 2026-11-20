@@ -49,6 +49,15 @@ export const cards: CardsByType = {
 				"Si vous avez 2 charges ou plus, vous pouvez acquérir ou développer cette carte pour 1 Ether de moins.(hr)Lorsque vous développez cette carte, stabilisez une brèche.(hr)Gagnez 3 Ether.",
 			expansion: "Le Commencement",
 		},
+		{
+			id: "P202",
+			name: "Joyau du glouton",
+			nameEn: "Glutton's Jewel",
+			cost: 6,
+			description:
+				"Gagnez 3 Ether.\nSi votre pioche et votre défausse contiennent ensemble au moins 15 cartes, placez autant de cartes que vous voulez d'une pile de la réserve autre que Joyau du glouton sur le dessus de votre pioche.",
+			expansion: "Le Commencement",
+		},
 	],
 	relics: [
 		{
@@ -86,6 +95,15 @@ export const cards: CardsByType = {
 			developCost: 4,
 			description:
 				"Lorsqu'une attaque est révélée depuis la pioche Némésis, vous pouvez révéler cette carte et la détruire pour défausser cette attaque sans la résoudre.(hr)Un joueur gagne 2 points de vie.",
+			expansion: "Le Commencement",
+		},
+		{
+			id: "P209",
+			name: "Pointe de rebond",
+			nameEn: "Rebound Spike",
+			cost: 5,
+			description:
+				"Mettez de côté deux gemmes ou reliques jouées ce tour, autres que cette carte. À la fin de votre tour, après avoir complété votre main, placez les cartes mises de côté dans votre main.",
 			expansion: "Le Commencement",
 		},
 	],
@@ -172,6 +190,15 @@ export const cards: CardsByType = {
 			cost: 8,
 			description:
 				"Lorsque préparé, une fois par tour, lorsqu'un joueur place un jeton Élément, il place un jeton Élément supplémentaire du même type sur le même adversaire. Lancer : Placez 2 jetons Poison sur un adversaire et infligez-lui 2 dégâts.",
+			expansion: "Le Commencement",
+		},
+		{
+			id: "P214",
+			name: "Révéler le potentiel",
+			nameEn: "Unveil Potential",
+			cost: 7,
+			description:
+				"Lorsque préparé, vos autres sorts gagnent le texte « OU Lancer\u00a0: Infligez autant de dégâts que le coût de cette carte. » Lancer : Infligez 5 dégâts.",
 			expansion: "Le Commencement",
 		},
 	],

@@ -1,7 +1,6 @@
 import type { CardsByType } from "../../../types";
 
-// Vague 1 : Aeon's End, Les Profondeurs. Cartes R28 à R46 et promos à ranger
-// dans leur vraie boîte, cf. CARTES-MANQUANTES.md.
+// Vague 1 : Aeon's End, Les Profondeurs, Les Sans-Noms.
 export const cards: CardsByType = {
 	gems: [
 		{

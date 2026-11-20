@@ -49,6 +49,15 @@ export const cards: CardsByType = {
 			expansion: "Beyond the Breach",
 		},
 		{
+			id: "P233",
+			name: "Débris de comète",
+			nameEn: "Comet Scrap",
+			cost: 4,
+			description:
+				"Gagnez 2 Ether.\nUn allié peut placer une carte de sa main sur le dessus de votre pioche. S'il le fait, gagnez 1 Ether supplémentaire.",
+			expansion: "Beyond the Breach",
+		},
+		{
 			id: "TS-014",
 			name: "Fragment de nébuleuse",
 			nameEn: "Nebulae Fragment",
@@ -133,6 +142,15 @@ export const cards: CardsByType = {
 			cost: 5,
 			description:
 				"Un allié gagne 3 jetons Éther. Rappel : Regardez la première carte du paquet d'ordre du tour. Vous pouvez la replacer au-dessus ou en dessous de ce paquet.",
+			expansion: "Beyond the Breach",
+		},
+		{
+			id: "P241",
+			name: "Cloche de Gravehold",
+			nameEn: "Bell of Gravehold",
+			cost: 6,
+			description:
+				"Un joueur détruit autant de cartes de sa main qu'il le souhaite et gagne un jeton Ether par carte détruite ainsi.(hr)Rappel : Défaussez une carte de votre main. Si vous le faites, un allié gagne 1 charge.",
 			expansion: "Beyond the Breach",
 		},
 		{
@@ -281,6 +299,15 @@ export const cards: CardsByType = {
 			cost: 8,
 			description:
 				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez conjurer sur une brèche ouverte ou fermée. Lancer : Infligez 4 dégâts. Les sorts coûtant 2 Ether ou moins que vous lancez ce tour infligent 2 dégâts supplémentaires.",
+			expansion: "Beyond the Breach",
+		},
+		{
+			id: "P247",
+			name: "Obsolescence",
+			nameEn: "Obsolescence",
+			cost: 8,
+			description:
+				"Lorsque préparé, une fois par tour durant votre phase principale, vous pouvez acquérir une babiole. Lancer : Infligez 1 dégât.\nDétruisez chaque autre carte de votre défausse et de votre pioche. Infligez 2 dégâts supplémentaires par carte détruite ainsi.",
 			expansion: "Beyond the Breach",
 		},
 		{
